@@ -1,5 +1,6 @@
 <?php
 add_action('create_daily_roster_files_event', 'create_daily_roster_files');
+add_action('move_waitlist_to_roster_event', 'process_waitlist_at_6pm');
 
 function create_daily_roster_files() {
     hockey_log("Starting daily roster file creation", 'debug');

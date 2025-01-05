@@ -3,23 +3,28 @@
 // Handle player check-in and check-out
 function hockeysignin_handle_form_submission() {
     if (isset($_POST['player_name']) && isset($_POST['action'])) {
-        if (!isset($_POST['hockeysignin_nonce']) || !wp_verify_nonce($_POST['hockeysignin_nonce'], 'hockeysignin_action')) {
-            die('Security check failed');
-        }
-
         $player_name = sanitize_text_field($_POST['player_name']);
         $action = sanitize_text_field($_POST['action']);
-        $date = current_time('Y-m-d');
-
+        
+        $handler = \hockeysignin\Core\FormHandler::getInstance();
+        $response = '';
+        
         if ($action === 'checkin') {
-            check_in_player($date, $player_name);
+            $response = $handler->handleCheckIn($player_name);
         } elseif ($action === 'checkout') {
-            check_out_player($player_name);
+            $response = $handler->handleCheckOut($player_name);
+        }
+        
+        if ($response) {
+            echo '<div class="updated"><p>' . esc_html($response) . '</p></div>';
         }
     }
 }
 
 function display_next_game_date() {
+    if (get_option('hockeysignin_hide_next_game', '0') === '1') {
+        return;
+    }
     $next_game_date = get_next_game_date();
     echo "The next scheduled skate date is " . esc_html(date('l, F jS', strtotime($next_game_date))) . ".";
 }

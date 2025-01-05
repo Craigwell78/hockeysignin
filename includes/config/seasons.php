@@ -9,7 +9,7 @@ return [
             'Friday' => 'Fri1030Forum',
             'Saturday' => 'Sat1030Forum'
         ],
-        'folder_format' => 'RegularSeason{year}-' . (date('Y') + 1)
+        'folder_format' => 'RegularSeason{year}-{next_year}'
     ],
     'spring' => [
         'start' => '04-01',

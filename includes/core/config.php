@@ -53,7 +53,15 @@ class Config {
 
     public function getSeasonFolder($date) {
         hockey_log("Getting season folder for date: {$date}", 'debug');
+        $month_day = date('m-d', strtotime($date));
         $year = date('Y', strtotime($date));
+        
+        // If date is between January 1st and March 31st, use previous year
+        if ($month_day < '04-01') {
+            $year = $year - 1;
+        }
+        
+        $next_year = $year + 1;
         $season_details = $this->getSeason($date);
         
         if (!$season_details) {
@@ -62,8 +70,10 @@ class Config {
         }
         
         $folder_format = $season_details['folder_format'];
-        $folder = str_replace('{year}', $year, $folder_format);
-        hockey_log("Season folder: {$folder}", 'debug');
-        return $folder;
+        $folder_format = str_replace('{year}', $year, $folder_format);
+        $folder_format = str_replace('{next_year}', $next_year, $folder_format);
+        
+        hockey_log("Season folder: {$folder_format}", 'debug');
+        return $folder_format;
     }
 }

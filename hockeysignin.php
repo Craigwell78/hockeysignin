@@ -50,10 +50,19 @@ spl_autoload_register(function ($class) {
 
 // Move initialization code into plugins_loaded hook
 add_action('plugins_loaded', function() {
+    static $loaded = false;
+    
+    if ($loaded) return;
+    
     $include_files = [
-        'admin/admin-functions.php',
-        'public/public-functions.php',
+        'includes/core/config.php',
+        'includes/core/game-schedule.php',
+        'includes/core/season-config.php',
+        'includes/core/form-handler.php',
+        'includes/roster-functions.php',
         'includes/scheduled-tasks.php',
+        'admin/admin-functions.php',
+        'public/public-functions.php'
     ];
 
     foreach ($include_files as $file) {
