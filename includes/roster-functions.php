@@ -184,107 +184,127 @@ return "{$player_name} is already checked in.";
 $player = $wpdb->get_row($wpdb->prepare("SELECT * FROM wp_participants_database WHERE CONCAT(`first_name`, ' ', `last_name`) = %s", $player_name));
 
 if ($prepaid && $player) {
-hockey_log("Player found in database: {$player_name}, Position: {$player->position}", 'debug');
+    hockey_log("Player found in database: {$player_name}, Position: {$player->position}", 'debug');
 
-$positions = [];
-if ($player->position == 'Goalie') {
-$positions = ['Goal:'];
-} elseif ($player->position == 'Forward') {
-$positions = ['F-'];
-} elseif ($player->position == 'Defence') {
-$positions = ['D-'];
-}
+    // Initialize positions array based on player's primary position
+    $primary_positions = [];
+    $secondary_positions = [];
+    
+    if ($player->position == 'Goalie') {
+        $primary_positions = ['Goal:'];
+        // Goalies can only play goal
+    } elseif ($player->position == 'Forward') {
+        $primary_positions = ['F-'];
+        $secondary_positions = ['D-'];  // Can play defense if forward spots full
+    } elseif ($player->position == 'Defence') {
+        $primary_positions = ['D-'];
+        $secondary_positions = ['F-'];  // Can play forward if defense spots full
+    }
 
-$open_spots = [];
-foreach ($positions as $position) {
-if (preg_match_all("/^{$position}\s*\n/m", $roster, $matches, PREG_OFFSET_CAPTURE)) {
-foreach ($matches[0] as $match) {
-$open_spots[] = $match[1];
-}
-}
-}
-
-if (!empty($open_spots)) {
-$random_spot = $open_spots[array_rand($open_spots)];
-$roster = substr_replace($roster, "{$positions[0]} {$player_name}\n", $random_spot, strlen("{$positions[0]}\n"));
-} else {
-hockey_log("No empty position found, adding to waitlist: {$player_name}", 'debug');
-            
-            // Extract current waitlist
-            if (preg_match('/WL:\n(.*?)(?=\n\n|$)/s', $roster, $matches)) {
-                $waitlist_section = $matches[1];
-                $waitlist_entries = array_filter(explode("\n", $waitlist_section));
-                
-                // Filter out any "WL:" entries that might have been added by mistake
-                $waitlist_entries = array_filter($waitlist_entries, function($entry) {
-                    return !preg_match('/^WL:/', trim($entry));
-                });
-                
-                // Add new entry
-                $waitlist_entries[] = $player_name;
-                
-                // Renumber all entries
-                $numbered_entries = array_map(function($index, $entry) {
-                    // Remove any existing numbers and "WL:" if present
-                    $entry = preg_replace('/^\d+\.\s*/', '', $entry);
-                    $entry = preg_replace('/^WL:\s*/', '', $entry);
-                    return ($index + 1) . ". " . trim($entry);
-                }, array_keys($waitlist_entries), $waitlist_entries);
-                
-                // Replace waitlist section in roster
-                $new_waitlist = "WL:\n" . implode("\n", $numbered_entries);
-                $roster = preg_replace('/WL:.*?(?=\n\n|$)/s', $new_waitlist, $roster);
-                
-                file_put_contents($file_path, $roster);
-                hockey_log("Added {$player_name} to waitlist", 'debug');
-                return "{$player_name} has been added to the waitlist.";
-            } else {
-                // If no waitlist section exists, create one
-                $roster .= "\nWL:\n1. {$player_name}";
-                file_put_contents($file_path, $roster);
-                hockey_log("Created new waitlist section with {$player_name}", 'debug');
-                return "{$player_name} has been added to the waitlist.";
+    // First try primary position
+    $open_spots = [];
+    foreach ($primary_positions as $position) {
+        if (preg_match_all("/^{$position}\s*\n/m", $roster, $matches, PREG_OFFSET_CAPTURE)) {
+            foreach ($matches[0] as $match) {
+                $open_spots[] = [
+                    'position' => $position,
+                    'offset' => $match[1]
+                ];
             }
         }
+    }
+
+    // If no primary spots, try secondary positions
+    if (empty($open_spots) && !empty($secondary_positions)) {
+        foreach ($secondary_positions as $position) {
+            if (preg_match_all("/^{$position}\s*\n/m", $roster, $matches, PREG_OFFSET_CAPTURE)) {
+                foreach ($matches[0] as $match) {
+                    $open_spots[] = [
+                        'position' => $position,
+                        'offset' => $match[1]
+                    ];
+                }
+            }
+        }
+    }
+
+    // If spots found, place player
+    if (!empty($open_spots)) {
+        $spot = $open_spots[array_rand($open_spots)];
+        $roster = substr_replace(
+            $roster, 
+            "{$spot['position']} {$player_name}\n", 
+            $spot['offset'], 
+            strlen("{$spot['position']}\n")
+        );
+        hockey_log("Placed {$player_name} in {$spot['position']} position", 'debug');
     } else {
-        hockey_log("Player not prepaid or not found in database, adding to waitlist: {$player_name}", 'debug');
+        // No spots available, add to top of waitlist with "regular" suffix
+        hockey_log("No empty positions found, adding prepaid player to top of waitlist: {$player_name}", 'debug');
         
-        // Extract current waitlist
         if (preg_match('/WL:\n(.*?)(?=\n\n|$)/s', $roster, $matches)) {
             $waitlist_section = $matches[1];
             $waitlist_entries = array_filter(explode("\n", $waitlist_section));
             
-            // Filter out any "WL:" entries that might have been added by mistake
-            $waitlist_entries = array_filter($waitlist_entries, function($entry) {
-                return !preg_match('/^WL:/', trim($entry));
-            });
-            
-            // Add new entry
-            $waitlist_entries[] = $player_name;
+            // Add prepaid player to start of array with "regular" suffix
+            array_unshift($waitlist_entries, $player_name . " regular");
             
             // Renumber all entries
             $numbered_entries = array_map(function($index, $entry) {
-                // Remove any existing numbers and "WL:" if present
-                $entry = preg_replace('/^\d+\.\s*/', '', $entry);
-                $entry = preg_replace('/^WL:\s*/', '', $entry);
                 return ($index + 1) . ". " . trim($entry);
             }, array_keys($waitlist_entries), $waitlist_entries);
             
-            // Replace waitlist section in roster
             $new_waitlist = "WL:\n" . implode("\n", $numbered_entries);
             $roster = preg_replace('/WL:.*?(?=\n\n|$)/s', $new_waitlist, $roster);
         } else {
-            // If no waitlist section exists, create one
-            $roster .= "\nWL:\n1. {$player_name}";
+            // If no waitlist exists, create one
+            $roster .= "\nWL:\n1. {$player_name} regular";
         }
+    }
+} else {
+    hockey_log("Player not prepaid or not found in database, adding to waitlist: {$player_name}", 'debug');
+    
+    // Extract current waitlist
+    if (preg_match('/WL:\n(.*?)(?=\n\n|$)/s', $roster, $matches)) {
+        $waitlist_section = $matches[1];
+        $waitlist_entries = array_filter(explode("\n", $waitlist_section));
         
-        file_put_contents($file_path, $roster);
-        hockey_log("Added {$player_name} to waitlist", 'debug');
-        return "{$player_name} has been added to the waitlist.";
+        // Filter out any "WL:" entries and empty lines
+        $waitlist_entries = array_filter($waitlist_entries, function($entry) {
+            $entry = trim($entry);
+            return !empty($entry) && !preg_match('/^WL:/', $entry);
+        });
+        
+        // Add new entry
+        $waitlist_entries[] = $player_name;
+        
+        // Renumber all entries
+        $numbered_entries = array_map(function($index, $entry) {
+            // Remove any existing numbers
+            $entry = preg_replace('/^\d+\.\s*/', '', $entry);
+            return ($index + 1) . ". " . trim($entry);
+        }, array_keys($waitlist_entries), $waitlist_entries);
+        
+        // Replace waitlist section in roster with proper spacing
+        $new_waitlist = "WL:\n" . implode("\n", $numbered_entries);
+        
+        // Log waitlist formatting
+        hockey_log("New waitlist format:", 'debug');
+        hockey_log($new_waitlist, 'debug');
+        
+        $roster = preg_replace('/WL:.*?(?=\n\n|$)/s', $new_waitlist, $roster);
+    } else {
+        // If no waitlist section exists, create one
+        $roster .= "\nWL:\n1. {$player_name}";
     }
     
     file_put_contents($file_path, $roster);
-    return "{$player_name} has been successfully checked in.";
+    hockey_log("Added {$player_name} to waitlist", 'debug');
+    return "{$player_name} has been added to the waitlist.";
+}
+
+file_put_contents($file_path, $roster);
+return "{$player_name} has been successfully checked in.";
 }
 
 function move_waitlist_to_roster($date) {
@@ -308,20 +328,6 @@ function move_waitlist_to_roster($date) {
     
     $roster = file_get_contents($file_path);
     
-    // Get all empty spots with their positions
-    $empty_spots = [];
-    if (preg_match_all('/^(F-|D-|Goal:)\s*$/m', $roster, $matches, PREG_OFFSET_CAPTURE)) {
-        foreach ($matches[0] as $index => $match) {
-            $empty_spots[] = [
-                'position' => $matches[1][$index][0],
-                'offset' => $match[1],
-                'length' => strlen($match[0])
-            ];
-        }
-    }
-    
-    hockey_log("Found " . count($empty_spots) . " empty spots", 'debug');
-    
     // Extract waitlisted players
     $waitlisted = [];
     if (preg_match('/WL:\n(.*?)(?=\n\n|$)/s', $roster, $matches)) {
@@ -330,41 +336,95 @@ function move_waitlist_to_roster($date) {
         
         foreach ($waitlist_entries as $entry) {
             if (preg_match('/^\d+\.\s*(.*)$/', $entry, $matches)) {
-                $waitlisted[] = trim($matches[1]);
+                $player = trim($matches[1]);
+                if (!empty($player)) {  // Only add non-empty players
+                    $waitlisted[] = $player;
+                }
             }
         }
     }
     
     hockey_log("Found " . count($waitlisted) . " waitlisted players", 'debug');
     
-    // Process moving players to roster
-    $remaining_waitlist = [];
-    foreach ($waitlisted as $player) {
-        if (!empty($empty_spots)) {
-            $spot = array_shift($empty_spots);
-            $position = $spot['position'];
-            hockey_log("Moving player {$player} to {$position} position", 'debug');
-            
-            // Replace the empty spot with the player
-            $roster = substr_replace(
-                $roster, 
-                "{$position} {$player}\n", 
-                $spot['offset'], 
-                $spot['length'] + 1  // +1 for the newline
-            );
-        } else {
-            $remaining_waitlist[] = $player;
+    // Get all empty spots with their positions (excluding Goal positions)
+    $empty_spots = [];
+    $lines = explode("\n", $roster);
+    
+    // First pass: find empty spots and their line numbers
+    foreach ($lines as $line_number => $line) {
+        $line = rtrim($line);
+        if (preg_match('/^(F-|D-)\s*$/', $line, $matches)) {
+            $empty_spots[] = [
+                'position' => $matches[1],
+                'line_number' => $line_number,
+                'original_line' => $line
+            ];
+            hockey_log("Found empty spot at line {$line_number}: position='{$matches[1]}', line='{$line}'", 'debug');
         }
     }
     
-    // Replace old waitlist with remaining players (numbered)
-    $new_waitlist = "WL:\n";
-    foreach ($remaining_waitlist as $index => $player) {
-        $new_waitlist .= ($index + 1) . ". " . $player . "\n";
+    hockey_log("Found " . count($empty_spots) . " empty spots", 'debug');
+    
+    // Process moving players to roster
+    $remaining_waitlist = [];
+    foreach ($waitlisted as $player) {
+        if (!empty($empty_spots) && !empty($player)) {
+            $spot = array_shift($empty_spots);
+            $position = $spot['position'];
+            
+            // Add asterisk to players moved from waitlist
+            $player_with_asterisk = $player . "*";
+            
+            // Create replacement line
+            $replacement = "{$position} {$player_with_asterisk}";
+            hockey_log("Moving waitlisted player '{$player}' to {$position} position at line {$spot['line_number']}", 'debug');
+            hockey_log("Original line: '{$spot['original_line']}'", 'debug');
+            hockey_log("Replacement: '{$replacement}'", 'debug');
+            
+            // Replace the line in our array
+            $lines[$spot['line_number']] = $replacement;
+        } else {
+            if (!empty($player)) {
+                $remaining_waitlist[] = $player;
+                hockey_log("Adding {$player} to remaining waitlist", 'debug');
+            }
+        }
     }
     
-    // Replace entire waitlist section
-    $roster = preg_replace('/WL:.*?(?=\n\n|$)/s', rtrim($new_waitlist), $roster);
+    // After processing player movements, handle the waitlist
+    // Find the WL: section
+    $waitlist_start = array_search("WL:", $lines);
+    if ($waitlist_start !== false) {
+        // Remove existing waitlist lines
+        $lines = array_slice($lines, 0, $waitlist_start + 1);
+        
+        // Filter out empty entries from remaining_waitlist
+        $remaining_waitlist = array_filter($remaining_waitlist, function($player) {
+            return !empty(trim($player));
+        });
+        
+        // Add numbered entries
+        if (!empty($remaining_waitlist)) {
+            foreach ($remaining_waitlist as $index => $player) {
+                $lines[] = ($index + 1) . ". " . trim($player);
+            }
+        }
+        
+        // Add a blank line after waitlist
+        $lines[] = "";
+    }
+    
+    // Rebuild roster with modified lines
+    $roster = implode("\n", $lines);
+    
+    hockey_log("Final waitlist:", 'debug');
+    if (!empty($remaining_waitlist)) {
+        foreach ($remaining_waitlist as $index => $player) {
+            hockey_log(($index + 1) . ". " . $player, 'debug');
+        }
+    } else {
+        hockey_log("No players remaining on waitlist", 'debug');
+    }
     
     file_put_contents($file_path, $roster);
     hockey_log("Waitlist processed. Moved " . (count($waitlisted) - count($remaining_waitlist)) . " players to roster", 'debug');
