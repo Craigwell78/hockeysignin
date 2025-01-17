@@ -290,41 +290,19 @@ function update_roster($date, $player_name, $prepaid, $preferred_position = null
     }
 }
 
-function move_waitlist_to_roster($date) {
-    $day_directory_map = get_day_directory_map($date);
-    $day_of_week = date('l', strtotime($date));
-    $day_directory = $day_directory_map[$day_of_week] ?? null;
-    
-    if (!$day_directory) {
-        hockey_log("No directory mapping found for {$day_of_week} on {$date}", 'error');
-        return;
-    }
-    
-    $formatted_date = date('D_M_j', strtotime($date));
-    $season = get_current_season($date);
-    $file_path = realpath(__DIR__ . "/../rosters/") . "/{$season}/{$day_directory}/Pickup_Roster-{$formatted_date}.txt";
-    
-    if (!file_exists($file_path)) {
-        hockey_log("Roster file not found: {$file_path}", 'error');
-        return;
-    }
-    
-    $roster = file_get_contents($file_path);
-    $lines = explode("\n", $roster);
-    
-    // Get roster sections
+function move_waitlist_to_roster($lines, $day_of_week) {
     $sections = get_roster_sections($lines, $day_of_week);
-    
     if (!$sections) {
         hockey_log("Error: Could not determine roster sections", 'error');
-        return;
+        return null;
     }
     
-    // Extract waitlisted players
-    $waitlisted = [];
-    $waitlist_section = array_slice($lines, $sections['waitlist']['start'], 
+    // Extract waitlist section
+    $waitlist_section = array_slice($lines, 
+        $sections['waitlist']['start'] + 1,
         $sections['waitlist']['end'] - $sections['waitlist']['start']);
     
+    $waitlisted = [];
     foreach ($waitlist_section as $line) {
         if (preg_match('/^\d+\.\s*(.*)$/', $line, $matches)) {
             $player = trim($matches[1]);
@@ -353,30 +331,19 @@ function move_waitlist_to_roster($date) {
                 hockey_log("Waitlist movement: {$player} moved to position {$position}", 'debug');
             }
         } else {
-            if (!empty($player)) {
-                $remaining_waitlist[] = $player;
-                hockey_log("Waitlist movement: {$player} remains on waitlist", 'debug');
-            }
+            $remaining_waitlist[] = $player;
         }
     }
     
-    // Rebuild waitlist section
-    $lines = array_slice($lines, 0, $sections['waitlist']['start'] + 1); // Keep everything up to WL: line
-    
-    // Add remaining waitlisted players with new numbers
-    foreach ($remaining_waitlist as $index => $player) {
-        $lines[] = ($index + 1) . ". " . $player;
+    // Rebuild waitlist section with remaining players
+    $lines = array_slice($lines, 0, $sections['waitlist']['start'] + 1);
+    foreach ($remaining_waitlist as $i => $player) {
+        $lines[] = ($i + 1) . ". " . $player;
     }
     
-    // Add final newline
-    $lines[] = "";
+    hockey_log("Waitlist processing complete. " . count($waitlisted) - count($remaining_waitlist) . " players moved, " . count($remaining_waitlist) . " remaining", 'debug');
     
-    // Save updated roster
-    file_put_contents($file_path, implode("\n", $lines));
-    
-    hockey_log("Waitlist processing complete. " . 
-        (count($waitlisted) - count($remaining_waitlist)) . " players moved, " . 
-        count($remaining_waitlist) . " remaining", 'debug');
+    return $lines;
 }
 
 function finalize_roster_at_930pm($date) {
@@ -545,87 +512,83 @@ function is_empty_position($line, $preferred_position = null) {
     return $result;
 }
 
-function find_available_spot($lines, $preferred_position = null) {
-    $day_of_week = date('l');
-    $sections = get_roster_sections($lines, $day_of_week);
-    
-    if (!$sections) {
-        hockey_log("Error: Could not determine roster sections", 'error');
-        return null;
+function determine_rink($line_number, $sections) {
+    if ($line_number >= $sections['forum']['start']) {
+        return 'Forum';
+    } elseif ($line_number >= $sections['civic']['start']) {
+        return 'Civic';
     }
+    return '';
+}
+
+function find_available_spot($lines, $preferred_position = null) {
+    $sections = get_roster_sections($lines, date('l'));
+    $end_line = isset($sections['waitlist']) ? $sections['waitlist']['start'] : count($lines);
     
-    hockey_log("Searching for spot between lines 0 and " . 
-        ($sections['waitlist']['start'] ?? count($lines)) . 
-        ($preferred_position ? " (preferred position: {$preferred_position})" : ""), 'debug');
+    hockey_log("Searching for spot between lines 0 and {$end_line} (preferred position: {$preferred_position})", 'debug');
     
     // Special handling for goalies
-    if ($preferred_position === 'Goalie' || $preferred_position === 'G') {
-        foreach ($lines as $i => $line) {
-            if ($sections['waitlist']['start'] && $i >= $sections['waitlist']['start']) {
-                break;
-            }
-            
-            $line = rtrim($line);
-            
-            // Find the Goal: line
+    if ($preferred_position === 'Goalie') {
+        for ($i = 0; $i < $end_line; $i++) {
+            $line = trim($lines[$i]);
             if ($line === 'Goal:') {
-                hockey_log("Found goalie position at line {$i}", 'debug');
-                return [
-                    'line_number' => $i,
-                    'position' => 'Goal',
-                    'original_line' => $line
-                ];
+                $next_line = isset($lines[$i + 1]) ? trim($lines[$i + 1]) : '';
+                if (empty($next_line) || $next_line === 'Dark' || $next_line === 'Light') {
+                    return [
+                        'position' => 'Goal',
+                        'line_number' => $i,
+                        'rink' => determine_rink($i, $sections)
+                    ];
+                }
             }
         }
-        
-        hockey_log("No goalie positions available", 'debug');
         return null;
     }
     
-    // For skaters (after goalie check)
+    // Regular player handling
     $available_spots = [];
-    $any_spots = [];
     
-    foreach ($lines as $i => $line) {
-        if ($sections['waitlist']['start'] && $i >= $sections['waitlist']['start']) {
-            break;
-        }
+    for ($i = 0; $i < $end_line; $i++) {
+        $line = trim($lines[$i]);
         
-        $line = rtrim($line);
-        hockey_log("Checking line {$i}: '{$line}'", 'debug');
-        
-        if (preg_match('/^[FD]-$/', $line)) {
-            $position = get_position_from_line($line);
-            $spot = [
-                'line_number' => $i,
+        if (preg_match('/^([FD])-\s*$/', $line, $matches)) {
+            $position = $matches[1];
+            $available_spots[] = [
                 'position' => $position,
-                'original_line' => $line
+                'line_number' => $i,
+                'rink' => determine_rink($i, $sections)
             ];
-            
-            hockey_log("Found empty position: {$position} at line {$i}", 'debug');
-            
-            if ($preferred_position && substr($preferred_position, 0, 1) === $position) {
-                $available_spots[] = $spot;
-            }
-            $any_spots[] = $spot;
         }
     }
     
-    // If we found preferred spots, randomly select one
     if (!empty($available_spots)) {
-        $spot = $available_spots[array_rand($available_spots)];
-        hockey_log("Selected preferred position {$spot['position']} at line {$spot['line_number']}", 'debug');
-        return $spot;
+        $f_count = count(array_filter($available_spots, fn($spot) => $spot['position'] === 'F'));
+        $d_count = count(array_filter($available_spots, fn($spot) => $spot['position'] === 'D'));
+        hockey_log("Found {$f_count} forward and {$d_count} defense spots available", 'debug');
     }
     
-    // If we found any spots, randomly select one
-    if (!empty($any_spots)) {
-        $spot = $any_spots[array_rand($any_spots)];
-        hockey_log("Selected available position {$spot['position']} at line {$spot['line_number']}", 'debug');
-        return $spot;
+    // If we have a preferred position, try to find a matching spot first
+    if ($preferred_position && !empty($available_spots)) {
+        $matching_spots = array_filter($available_spots, function($spot) use ($preferred_position) {
+            return $spot['position'] === $preferred_position[0];
+        });
+        
+        if (!empty($matching_spots)) {
+            $matching_spots = array_values($matching_spots); // Reset array keys
+            $selected = $matching_spots[array_rand($matching_spots)];
+            hockey_log("Selected preferred position {$selected['position']} at line {$selected['line_number']}", 'debug');
+            return $selected;
+        }
     }
     
-    hockey_log("No available spots found in roster", 'debug');
+    // If no preferred spot found, return random available spot
+    if (!empty($available_spots)) {
+        $available_spots = array_values($available_spots); // Reset array keys
+        $selected = $available_spots[array_rand($available_spots)];
+        hockey_log("Selected position {$selected['position']} at line {$selected['line_number']}", 'debug');
+        return $selected;
+    }
+    
     return null;
 }
 
@@ -650,41 +613,80 @@ function get_position_from_line($line) {
 }
 
 function get_roster_sections($lines, $day_of_week) {
-    if ($day_of_week !== 'Friday') {
-        return [
-            'main' => [
-                'start' => 0,
-                'end' => array_search('WL:', $lines)
-            ],
-            'waitlist' => [
-                'start' => array_search('WL:', $lines),
-                'end' => count($lines)
-            ]
-        ];
-    }
-    
-    // For Friday games, find the sections
-    $civic_start = 0; // CIVIC section starts at beginning
-    $forum_start = array_search('FORUM 10:30PM', $lines);
-    $waitlist_start = array_search('WL:', $lines);
-    
-    if ($forum_start === false || $waitlist_start === false) {
+    if ($day_of_week === 'Friday') {
+        $civic_start = false;
+        $forum_start = false;
+        $waitlist_start = false;
+        
+        foreach ($lines as $i => $line) {
+            $line = trim($line);
+            if ($line === 'CIVIC 10:30PM') {
+                $civic_start = $i;
+            }
+            if ($line === 'FORUM 10:30PM') {
+                $forum_start = $i;
+            }
+            if ($line === 'WL:') {
+                $waitlist_start = $i;
+            }
+        }
+        
+        if ($civic_start !== false && $forum_start !== false && $waitlist_start !== false) {
+            return [
+                'civic' => ['start' => $civic_start],
+                'forum' => ['start' => $forum_start],
+                'waitlist' => [
+                    'start' => $waitlist_start,
+                    'end' => count($lines)
+                ]
+            ];
+        }
+        
         hockey_log("Error: Could not find all sections in Friday roster", 'error');
         return null;
     }
     
+    // Keep existing non-Friday logic
     return [
-        'civic' => [
-            'start' => $civic_start,
-            'end' => $forum_start
-        ],
-        'forum' => [
-            'start' => $forum_start,
-            'end' => $waitlist_start
+        'main' => [
+            'start' => 0,
+            'end' => array_search('WL:', $lines)
         ],
         'waitlist' => [
-            'start' => $waitlist_start,
+            'start' => array_search('WL:', $lines),
             'end' => count($lines)
         ]
     ];
+}
+
+function get_waitlisted_players($lines, $sections) {
+    $waitlisted = [];
+    
+    if (!isset($sections['waitlist']['start'])) {
+        hockey_log("No waitlist section found", 'debug');
+        return $waitlisted;
+    }
+    
+    // Debug the waitlist section
+    hockey_log("Reading waitlist from line {$sections['waitlist']['start']}", 'debug');
+    
+    // Start after the "WL:" line
+    $start_line = $sections['waitlist']['start'] + 1;
+    
+    // Read until the end of the file
+    for ($i = $start_line; $i < count($lines); $i++) {
+        $line = trim($lines[$i]);
+        hockey_log("Processing waitlist line: '{$line}'", 'debug');
+        
+        if (preg_match('/^\d+\.\s*(.*)$/', $line, $matches)) {
+            $player = trim($matches[1]);
+            if (!empty($player)) {
+                $waitlisted[] = $player;
+                hockey_log("Found waitlisted player: {$player}", 'debug');
+            }
+        }
+    }
+    
+    hockey_log("Found " . count($waitlisted) . " players on waitlist", 'debug');
+    return $waitlisted;
 }

@@ -1730,3 +1730,2113 @@
 [17-Jan-2025 04:26:14 UTC] [HockeySignin][error] Error: Could not find all sections in Friday roster
 [17-Jan-2025 04:26:14 UTC] [HockeySignin][error] Error: Could not determine roster sections
 [17-Jan-2025 04:26:14 UTC] [HockeySignin][debug] Check-in response: Error: Could not process roster.
+[17-Jan-2025 04:40:29 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Mark Pottie
+[17-Jan-2025 04:40:29 UTC] [HockeySignin][debug] Starting check-in process for player: Mark Pottie
+[17-Jan-2025 04:40:29 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 04:40:29 UTC] [HockeySignin][debug] Player Mark Pottie prepaid status: yes
+[17-Jan-2025 04:40:29 UTC] [HockeySignin][error] Error: Could not find all sections in Friday roster
+[17-Jan-2025 04:40:29 UTC] [HockeySignin][error] Error: Could not determine roster sections
+[17-Jan-2025 04:40:29 UTC] [HockeySignin][debug] Check-in response: Error: Could not process roster.
+[17-Jan-2025 04:43:52 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Mark Pottie
+[17-Jan-2025 04:43:52 UTC] [HockeySignin][debug] Starting check-in process for player: Mark Pottie
+[17-Jan-2025 04:43:52 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 04:43:52 UTC] [HockeySignin][debug] Player Mark Pottie prepaid status: yes
+[17-Jan-2025 04:43:52 UTC] [HockeySignin][debug] First 5 lines of roster:
+[17-Jan-2025 04:43:52 UTC] [HockeySignin][debug] Line 0: **SCROLL DOWN TO SEE FORUM & CIVIC TEAMS.
+[17-Jan-2025 04:43:52 UTC] [HockeySignin][debug] Line 1: WAITLIST CONFIRMATION & ROSTER BALANCING
+[17-Jan-2025 04:43:52 UTC] [HockeySignin][debug] Line 2: OCCURS AT 6PM - CHECK BACK AT THAT TIME!**
+[17-Jan-2025 04:43:52 UTC] [HockeySignin][debug] Line 3: 
+[17-Jan-2025 04:43:52 UTC] [HockeySignin][debug] Line 4: CIVIC 10:30PM
+[17-Jan-2025 04:43:52 UTC] [HockeySignin][debug] Found Forum section at line 0: **SCROLL DOWN TO SEE FORUM & CIVIC TEAMS.
+[17-Jan-2025 04:43:52 UTC] [HockeySignin][debug] Found Waitlist section at line 1: WAITLIST CONFIRMATION & ROSTER BALANCING
+[17-Jan-2025 04:43:52 UTC] [HockeySignin][debug] Found Forum section at line 36: FORUM 10:30PM
+[17-Jan-2025 04:43:52 UTC] [HockeySignin][debug] Found Waitlist section at line 68: WL:
+[17-Jan-2025 04:43:52 UTC] [HockeySignin][error] Error: Could not find all sections in Friday roster
+[17-Jan-2025 04:43:52 UTC] [HockeySignin][error] Error: Could not determine roster sections
+[17-Jan-2025 04:43:52 UTC] [HockeySignin][debug] Check-in response: Error: Could not process roster.
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Mark Pottie
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Starting check-in process for player: Mark Pottie
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Player Mark Pottie prepaid status: yes
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Found Civic section at line 4
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Found Forum section at line 36
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Found Waitlist section at line 68
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Found Civic section at line 4
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Found Forum section at line 36
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Found Waitlist section at line 68
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 68 (preferred position: Forward)
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Checking line 0: '**SCROLL DOWN TO SEE FORUM & CIVIC TEAMS.'
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Checking line 1: 'WAITLIST CONFIRMATION & ROSTER BALANCING'
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Checking line 2: 'OCCURS AT 6PM - CHECK BACK AT THAT TIME!**'
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Checking line 3: ''
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Checking line 4: 'CIVIC 10:30PM'
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Checking line 5: ''
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Checking line 6: 'Goal:'
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Checking line 7: 'Dark'
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Checking line 8: ''
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Checking line 9: 'F-'
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Found empty position: F at line 9
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Checking line 10: 'F-'
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Found empty position: F at line 10
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Checking line 11: 'F-'
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Found empty position: F at line 11
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Checking line 12: 'F-'
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Found empty position: F at line 12
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Checking line 13: 'F-'
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Found empty position: F at line 13
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Checking line 14: 'F-'
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Found empty position: F at line 14
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Checking line 15: ''
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Checking line 16: 'D-'
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Found empty position: D at line 16
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Checking line 17: 'D-'
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Found empty position: D at line 17
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Checking line 18: 'D-'
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Found empty position: D at line 18
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Checking line 19: 'D-'
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Found empty position: D at line 19
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Checking line 20: ''
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Checking line 21: 'Goal:'
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Checking line 22: 'Light'
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Checking line 23: ''
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Checking line 24: 'F-'
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Found empty position: F at line 24
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Checking line 25: 'F-'
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Found empty position: F at line 25
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Checking line 26: 'F-'
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Found empty position: F at line 26
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Checking line 27: 'F-'
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Found empty position: F at line 27
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Checking line 28: 'F-'
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Found empty position: F at line 28
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Checking line 29: 'F-'
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Found empty position: F at line 29
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Checking line 30: ''
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Checking line 31: 'D-'
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Found empty position: D at line 31
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Checking line 32: 'D-'
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Found empty position: D at line 32
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Checking line 33: 'D-'
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Found empty position: D at line 33
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Checking line 34: 'D-'
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Found empty position: D at line 34
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Checking line 35: ''
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Checking line 36: 'FORUM 10:30PM'
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Checking line 37: ''
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Checking line 38: 'Goal:'
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Checking line 39: 'Dark'
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Checking line 40: ''
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Checking line 41: 'F-'
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Found empty position: F at line 41
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Checking line 42: 'F-'
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Found empty position: F at line 42
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Checking line 43: 'F-'
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Found empty position: F at line 43
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Checking line 44: 'F-'
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Found empty position: F at line 44
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Checking line 45: 'F-'
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Found empty position: F at line 45
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Checking line 46: 'F-'
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Found empty position: F at line 46
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Checking line 47: ''
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Checking line 48: 'D-'
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Found empty position: D at line 48
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Checking line 49: 'D-'
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Found empty position: D at line 49
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Checking line 50: 'D-'
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Found empty position: D at line 50
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Checking line 51: 'D-'
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Found empty position: D at line 51
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Checking line 52: ''
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Checking line 53: 'Goal:'
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Checking line 54: 'Light'
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Checking line 55: ''
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Checking line 56: 'F-'
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Found empty position: F at line 56
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Checking line 57: 'F-'
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Found empty position: F at line 57
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Checking line 58: 'F-'
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Found empty position: F at line 58
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Checking line 59: 'F-'
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Found empty position: F at line 59
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Checking line 60: 'F-'
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Found empty position: F at line 60
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Checking line 61: 'F-'
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Found empty position: F at line 61
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Checking line 62: ''
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Checking line 63: 'D-'
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Found empty position: D at line 63
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Checking line 64: 'D-'
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Found empty position: D at line 64
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Checking line 65: 'D-'
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Found empty position: D at line 65
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Checking line 66: 'D-'
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Found empty position: D at line 66
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Checking line 67: ''
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Selected preferred position F at line 56
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Player Mark Pottie assigned to  rink at position F
+[17-Jan-2025 04:52:16 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[17-Jan-2025 04:52:30 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Mark Pottie
+[17-Jan-2025 04:52:30 UTC] [HockeySignin][debug] Starting check-in process for player: Mark Pottie
+[17-Jan-2025 04:52:30 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 04:52:30 UTC] [HockeySignin][debug] Player Mark Pottie is already checked in
+[17-Jan-2025 04:52:30 UTC] [HockeySignin][debug] Check-in response: already_checked_in
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Pat Hamilton
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Starting check-in process for player: Pat Hamilton
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Player Pat Hamilton prepaid status: yes
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Found Civic section at line 4
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Found Forum section at line 36
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Found Waitlist section at line 68
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Found Civic section at line 4
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Found Forum section at line 36
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Found Waitlist section at line 68
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 68 (preferred position: Defence)
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Checking line 0: '**SCROLL DOWN TO SEE FORUM & CIVIC TEAMS.'
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Checking line 1: 'WAITLIST CONFIRMATION & ROSTER BALANCING'
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Checking line 2: 'OCCURS AT 6PM - CHECK BACK AT THAT TIME!**'
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Checking line 3: ''
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Checking line 4: 'CIVIC 10:30PM'
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Checking line 5: ''
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Checking line 6: 'Goal:'
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Checking line 7: 'Dark'
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Checking line 8: ''
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Checking line 9: 'F-'
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Found empty position: F at line 9
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Checking line 10: 'F-'
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Found empty position: F at line 10
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Checking line 11: 'F-'
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Found empty position: F at line 11
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Checking line 12: 'F-'
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Found empty position: F at line 12
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Checking line 13: 'F-'
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Found empty position: F at line 13
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Checking line 14: 'F-'
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Found empty position: F at line 14
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Checking line 15: ''
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Checking line 16: 'D-'
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Found empty position: D at line 16
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Checking line 17: 'D-'
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Found empty position: D at line 17
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Checking line 18: 'D-'
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Found empty position: D at line 18
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Checking line 19: 'D-'
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Found empty position: D at line 19
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Checking line 20: ''
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Checking line 21: 'Goal:'
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Checking line 22: 'Light'
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Checking line 23: ''
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Checking line 24: 'F-'
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Found empty position: F at line 24
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Checking line 25: 'F-'
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Found empty position: F at line 25
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Checking line 26: 'F-'
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Found empty position: F at line 26
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Checking line 27: 'F-'
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Found empty position: F at line 27
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Checking line 28: 'F-'
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Found empty position: F at line 28
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Checking line 29: 'F-'
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Found empty position: F at line 29
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Checking line 30: ''
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Checking line 31: 'D-'
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Found empty position: D at line 31
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Checking line 32: 'D-'
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Found empty position: D at line 32
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Checking line 33: 'D-'
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Found empty position: D at line 33
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Checking line 34: 'D-'
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Found empty position: D at line 34
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Checking line 35: ''
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Checking line 36: 'FORUM 10:30PM'
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Checking line 37: ''
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Checking line 38: 'Goal:'
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Checking line 39: 'Dark'
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Checking line 40: ''
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Checking line 41: 'F-'
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Found empty position: F at line 41
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Checking line 42: 'F-'
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Found empty position: F at line 42
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Checking line 43: 'F-'
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Found empty position: F at line 43
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Checking line 44: 'F-'
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Found empty position: F at line 44
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Checking line 45: 'F-'
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Found empty position: F at line 45
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Checking line 46: 'F-'
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Found empty position: F at line 46
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Checking line 47: ''
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Checking line 48: 'D-'
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Found empty position: D at line 48
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Checking line 49: 'D-'
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Found empty position: D at line 49
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Checking line 50: 'D-'
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Found empty position: D at line 50
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Checking line 51: 'D-'
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Found empty position: D at line 51
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Checking line 52: ''
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Checking line 53: 'Goal:'
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Checking line 54: 'Light'
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Checking line 55: ''
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Checking line 56: 'F- Mark Pottie'
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Checking line 57: 'F-'
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Found empty position: F at line 57
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Checking line 58: 'F-'
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Found empty position: F at line 58
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Checking line 59: 'F-'
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Found empty position: F at line 59
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Checking line 60: 'F-'
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Found empty position: F at line 60
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Checking line 61: 'F-'
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Found empty position: F at line 61
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Checking line 62: ''
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Checking line 63: 'D-'
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Found empty position: D at line 63
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Checking line 64: 'D-'
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Found empty position: D at line 64
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Checking line 65: 'D-'
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Found empty position: D at line 65
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Checking line 66: 'D-'
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Found empty position: D at line 66
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Checking line 67: ''
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Selected preferred position D at line 32
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Player Pat Hamilton assigned to  rink at position D
+[17-Jan-2025 04:52:38 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[17-Jan-2025 04:52:51 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Johnny Brabo
+[17-Jan-2025 04:52:51 UTC] [HockeySignin][debug] Starting check-in process for player: Johnny Brabo
+[17-Jan-2025 04:52:51 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 04:52:51 UTC] [HockeySignin][debug] Player not found in database: Johnny Brabo
+[17-Jan-2025 04:52:51 UTC] [HockeySignin][debug] Found Civic section at line 4
+[17-Jan-2025 04:52:51 UTC] [HockeySignin][debug] Found Forum section at line 36
+[17-Jan-2025 04:52:51 UTC] [HockeySignin][debug] Found Waitlist section at line 68
+[17-Jan-2025 04:52:51 UTC] [HockeySignin][debug] Non-database player Johnny Brabo added to waitlist at position 1
+[17-Jan-2025 04:52:51 UTC] [HockeySignin][debug] Check-in response: Thank you! You've been added to our waitlist for tonight. Please check back at 6pm to see if you have made the roster! You can reach us at halifaxpickuphockey@gmail.com to ask about Regular subscriber spots!
+[17-Jan-2025 04:53:04 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Scott Long
+[17-Jan-2025 04:53:04 UTC] [HockeySignin][debug] Starting check-in process for player: Scott Long
+[17-Jan-2025 04:53:04 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 04:53:04 UTC] [HockeySignin][debug] Player Scott Long prepaid status: no
+[17-Jan-2025 04:53:04 UTC] [HockeySignin][debug] Player Scott Long is not registered for Friday
+[17-Jan-2025 04:53:04 UTC] [HockeySignin][debug] Found Civic section at line 4
+[17-Jan-2025 04:53:04 UTC] [HockeySignin][debug] Found Forum section at line 36
+[17-Jan-2025 04:53:04 UTC] [HockeySignin][debug] Found Waitlist section at line 68
+[17-Jan-2025 04:53:04 UTC] [HockeySignin][debug] Non-database player Scott Long added to waitlist at position 2
+[17-Jan-2025 04:53:04 UTC] [HockeySignin][debug] Check-in response: Thank you! You've been added to our waitlist for tonight. Please check back at 6pm to see if you have made the roster! You can reach us at halifaxpickuphockey@gmail.com to ask about Regular subscriber spots!
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Pat Hickey
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Starting check-in process for player: Pat Hickey
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Player Pat Hickey prepaid status: yes
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Found Civic section at line 4
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Found Forum section at line 36
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Found Waitlist section at line 68
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Found Civic section at line 4
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Found Forum section at line 36
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Found Waitlist section at line 68
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 68 (preferred position: Defence)
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Checking line 0: '**SCROLL DOWN TO SEE FORUM & CIVIC TEAMS.'
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Checking line 1: 'WAITLIST CONFIRMATION & ROSTER BALANCING'
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Checking line 2: 'OCCURS AT 6PM - CHECK BACK AT THAT TIME!**'
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Checking line 3: ''
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Checking line 4: 'CIVIC 10:30PM'
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Checking line 5: ''
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Checking line 6: 'Goal:'
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Checking line 7: 'Dark'
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Checking line 8: ''
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Checking line 9: 'F-'
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Found empty position: F at line 9
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Checking line 10: 'F-'
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Found empty position: F at line 10
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Checking line 11: 'F-'
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Found empty position: F at line 11
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Checking line 12: 'F-'
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Found empty position: F at line 12
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Checking line 13: 'F-'
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Found empty position: F at line 13
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Checking line 14: 'F-'
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Found empty position: F at line 14
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Checking line 15: ''
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Checking line 16: 'D-'
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Found empty position: D at line 16
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Checking line 17: 'D-'
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Found empty position: D at line 17
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Checking line 18: 'D-'
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Found empty position: D at line 18
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Checking line 19: 'D-'
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Found empty position: D at line 19
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Checking line 20: ''
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Checking line 21: 'Goal:'
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Checking line 22: 'Light'
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Checking line 23: ''
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Checking line 24: 'F-'
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Found empty position: F at line 24
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Checking line 25: 'F-'
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Found empty position: F at line 25
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Checking line 26: 'F-'
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Found empty position: F at line 26
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Checking line 27: 'F-'
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Found empty position: F at line 27
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Checking line 28: 'F-'
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Found empty position: F at line 28
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Checking line 29: 'F-'
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Found empty position: F at line 29
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Checking line 30: ''
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Checking line 31: 'D-'
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Found empty position: D at line 31
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Checking line 32: 'D- Pat Hamilton'
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Checking line 33: 'D-'
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Found empty position: D at line 33
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Checking line 34: 'D-'
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Found empty position: D at line 34
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Checking line 35: ''
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Checking line 36: 'FORUM 10:30PM'
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Checking line 37: ''
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Checking line 38: 'Goal:'
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Checking line 39: 'Dark'
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Checking line 40: ''
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Checking line 41: 'F-'
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Found empty position: F at line 41
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Checking line 42: 'F-'
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Found empty position: F at line 42
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Checking line 43: 'F-'
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Found empty position: F at line 43
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Checking line 44: 'F-'
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Found empty position: F at line 44
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Checking line 45: 'F-'
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Found empty position: F at line 45
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Checking line 46: 'F-'
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Found empty position: F at line 46
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Checking line 47: ''
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Checking line 48: 'D-'
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Found empty position: D at line 48
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Checking line 49: 'D-'
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Found empty position: D at line 49
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Checking line 50: 'D-'
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Found empty position: D at line 50
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Checking line 51: 'D-'
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Found empty position: D at line 51
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Checking line 52: ''
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Checking line 53: 'Goal:'
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Checking line 54: 'Light'
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Checking line 55: ''
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Checking line 56: 'F- Mark Pottie'
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Checking line 57: 'F-'
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Found empty position: F at line 57
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Checking line 58: 'F-'
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Found empty position: F at line 58
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Checking line 59: 'F-'
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Found empty position: F at line 59
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Checking line 60: 'F-'
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Found empty position: F at line 60
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Checking line 61: 'F-'
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Found empty position: F at line 61
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Checking line 62: ''
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Checking line 63: 'D-'
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Found empty position: D at line 63
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Checking line 64: 'D-'
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Found empty position: D at line 64
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Checking line 65: 'D-'
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Found empty position: D at line 65
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Checking line 66: 'D-'
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Found empty position: D at line 66
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Checking line 67: ''
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Selected preferred position D at line 65
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Player Pat Hickey assigned to  rink at position D
+[17-Jan-2025 04:53:47 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Patrick Hickey
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Starting check-in process for player: Patrick Hickey
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Player Patrick Hickey prepaid status: yes
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Found Civic section at line 4
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Found Forum section at line 36
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Found Waitlist section at line 68
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Found Civic section at line 4
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Found Forum section at line 36
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Found Waitlist section at line 68
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 68 (preferred position: Forward)
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Checking line 0: '**SCROLL DOWN TO SEE FORUM & CIVIC TEAMS.'
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Checking line 1: 'WAITLIST CONFIRMATION & ROSTER BALANCING'
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Checking line 2: 'OCCURS AT 6PM - CHECK BACK AT THAT TIME!**'
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Checking line 3: ''
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Checking line 4: 'CIVIC 10:30PM'
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Checking line 5: ''
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Checking line 6: 'Goal:'
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Checking line 7: 'Dark'
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Checking line 8: ''
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Checking line 9: 'F-'
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Found empty position: F at line 9
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Checking line 10: 'F-'
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Found empty position: F at line 10
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Checking line 11: 'F-'
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Found empty position: F at line 11
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Checking line 12: 'F-'
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Found empty position: F at line 12
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Checking line 13: 'F-'
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Found empty position: F at line 13
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Checking line 14: 'F-'
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Found empty position: F at line 14
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Checking line 15: ''
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Checking line 16: 'D-'
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Found empty position: D at line 16
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Checking line 17: 'D-'
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Found empty position: D at line 17
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Checking line 18: 'D-'
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Found empty position: D at line 18
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Checking line 19: 'D-'
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Found empty position: D at line 19
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Checking line 20: ''
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Checking line 21: 'Goal:'
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Checking line 22: 'Light'
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Checking line 23: ''
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Checking line 24: 'F-'
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Found empty position: F at line 24
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Checking line 25: 'F-'
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Found empty position: F at line 25
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Checking line 26: 'F-'
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Found empty position: F at line 26
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Checking line 27: 'F-'
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Found empty position: F at line 27
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Checking line 28: 'F-'
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Found empty position: F at line 28
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Checking line 29: 'F-'
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Found empty position: F at line 29
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Checking line 30: ''
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Checking line 31: 'D-'
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Found empty position: D at line 31
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Checking line 32: 'D- Pat Hamilton'
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Checking line 33: 'D-'
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Found empty position: D at line 33
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Checking line 34: 'D-'
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Found empty position: D at line 34
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Checking line 35: ''
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Checking line 36: 'FORUM 10:30PM'
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Checking line 37: ''
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Checking line 38: 'Goal:'
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Checking line 39: 'Dark'
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Checking line 40: ''
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Checking line 41: 'F-'
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Found empty position: F at line 41
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Checking line 42: 'F-'
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Found empty position: F at line 42
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Checking line 43: 'F-'
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Found empty position: F at line 43
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Checking line 44: 'F-'
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Found empty position: F at line 44
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Checking line 45: 'F-'
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Found empty position: F at line 45
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Checking line 46: 'F-'
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Found empty position: F at line 46
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Checking line 47: ''
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Checking line 48: 'D-'
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Found empty position: D at line 48
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Checking line 49: 'D-'
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Found empty position: D at line 49
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Checking line 50: 'D-'
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Found empty position: D at line 50
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Checking line 51: 'D-'
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Found empty position: D at line 51
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Checking line 52: ''
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Checking line 53: 'Goal:'
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Checking line 54: 'Light'
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Checking line 55: ''
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Checking line 56: 'F- Mark Pottie'
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Checking line 57: 'F-'
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Found empty position: F at line 57
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Checking line 58: 'F-'
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Found empty position: F at line 58
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Checking line 59: 'F-'
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Found empty position: F at line 59
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Checking line 60: 'F-'
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Found empty position: F at line 60
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Checking line 61: 'F-'
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Found empty position: F at line 61
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Checking line 62: ''
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Checking line 63: 'D-'
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Found empty position: D at line 63
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Checking line 64: 'D-'
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Found empty position: D at line 64
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Checking line 65: 'D- Pat Hickey'
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Checking line 66: 'D-'
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Found empty position: D at line 66
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Checking line 67: ''
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Selected preferred position F at line 58
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Player Patrick Hickey assigned to  rink at position F
+[17-Jan-2025 04:53:54 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Cedrick Chagnon
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Starting check-in process for player: Cedrick Chagnon
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Player Cedrick Chagnon prepaid status: yes
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Found Civic section at line 4
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Found Forum section at line 36
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Found Waitlist section at line 68
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Found Civic section at line 4
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Found Forum section at line 36
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Found Waitlist section at line 68
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 68 (preferred position: Defence)
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Checking line 0: '**SCROLL DOWN TO SEE FORUM & CIVIC TEAMS.'
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Checking line 1: 'WAITLIST CONFIRMATION & ROSTER BALANCING'
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Checking line 2: 'OCCURS AT 6PM - CHECK BACK AT THAT TIME!**'
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Checking line 3: ''
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Checking line 4: 'CIVIC 10:30PM'
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Checking line 5: ''
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Checking line 6: 'Goal:'
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Checking line 7: 'Dark'
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Checking line 8: ''
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Checking line 9: 'F-'
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Found empty position: F at line 9
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Checking line 10: 'F-'
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Found empty position: F at line 10
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Checking line 11: 'F-'
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Found empty position: F at line 11
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Checking line 12: 'F-'
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Found empty position: F at line 12
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Checking line 13: 'F-'
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Found empty position: F at line 13
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Checking line 14: 'F-'
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Found empty position: F at line 14
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Checking line 15: ''
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Checking line 16: 'D-'
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Found empty position: D at line 16
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Checking line 17: 'D-'
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Found empty position: D at line 17
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Checking line 18: 'D-'
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Found empty position: D at line 18
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Checking line 19: 'D-'
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Found empty position: D at line 19
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Checking line 20: ''
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Checking line 21: 'Goal:'
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Checking line 22: 'Light'
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Checking line 23: ''
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Checking line 24: 'F-'
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Found empty position: F at line 24
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Checking line 25: 'F-'
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Found empty position: F at line 25
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Checking line 26: 'F-'
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Found empty position: F at line 26
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Checking line 27: 'F-'
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Found empty position: F at line 27
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Checking line 28: 'F-'
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Found empty position: F at line 28
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Checking line 29: 'F-'
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Found empty position: F at line 29
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Checking line 30: ''
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Checking line 31: 'D-'
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Found empty position: D at line 31
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Checking line 32: 'D- Pat Hamilton'
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Checking line 33: 'D-'
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Found empty position: D at line 33
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Checking line 34: 'D-'
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Found empty position: D at line 34
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Checking line 35: ''
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Checking line 36: 'FORUM 10:30PM'
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Checking line 37: ''
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Checking line 38: 'Goal:'
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Checking line 39: 'Dark'
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Checking line 40: ''
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Checking line 41: 'F-'
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Found empty position: F at line 41
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Checking line 42: 'F-'
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Found empty position: F at line 42
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Checking line 43: 'F-'
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Found empty position: F at line 43
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Checking line 44: 'F-'
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Found empty position: F at line 44
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Checking line 45: 'F-'
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Found empty position: F at line 45
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Checking line 46: 'F-'
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Found empty position: F at line 46
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Checking line 47: ''
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Checking line 48: 'D-'
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Found empty position: D at line 48
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Checking line 49: 'D-'
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Found empty position: D at line 49
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Checking line 50: 'D-'
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Found empty position: D at line 50
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Checking line 51: 'D-'
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Found empty position: D at line 51
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Checking line 52: ''
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Checking line 53: 'Goal:'
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Checking line 54: 'Light'
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Checking line 55: ''
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Checking line 56: 'F- Mark Pottie'
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Checking line 57: 'F-'
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Found empty position: F at line 57
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Checking line 58: 'F- Patrick Hickey'
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Checking line 59: 'F-'
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Found empty position: F at line 59
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Checking line 60: 'F-'
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Found empty position: F at line 60
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Checking line 61: 'F-'
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Found empty position: F at line 61
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Checking line 62: ''
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Checking line 63: 'D-'
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Found empty position: D at line 63
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Checking line 64: 'D-'
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Found empty position: D at line 64
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Checking line 65: 'D- Pat Hickey'
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Checking line 66: 'D-'
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Found empty position: D at line 66
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Checking line 67: ''
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Selected preferred position D at line 50
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Player Cedrick Chagnon assigned to  rink at position D
+[17-Jan-2025 04:54:07 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Cameron Bissell
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Starting check-in process for player: Cameron Bissell
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Player Cameron Bissell prepaid status: yes
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Found Civic section at line 4
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Found Forum section at line 36
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Found Waitlist section at line 68
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Found Civic section at line 4
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Found Forum section at line 36
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Found Waitlist section at line 68
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 68 (preferred position: Forward)
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Checking line 0: '**SCROLL DOWN TO SEE FORUM & CIVIC TEAMS.'
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Checking line 1: 'WAITLIST CONFIRMATION & ROSTER BALANCING'
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Checking line 2: 'OCCURS AT 6PM - CHECK BACK AT THAT TIME!**'
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Checking line 3: ''
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Checking line 4: 'CIVIC 10:30PM'
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Checking line 5: ''
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Checking line 6: 'Goal:'
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Checking line 7: 'Dark'
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Checking line 8: ''
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Checking line 9: 'F-'
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Found empty position: F at line 9
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Checking line 10: 'F-'
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Found empty position: F at line 10
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Checking line 11: 'F-'
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Found empty position: F at line 11
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Checking line 12: 'F-'
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Found empty position: F at line 12
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Checking line 13: 'F-'
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Found empty position: F at line 13
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Checking line 14: 'F-'
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Found empty position: F at line 14
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Checking line 15: ''
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Checking line 16: 'D-'
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Found empty position: D at line 16
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Checking line 17: 'D-'
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Found empty position: D at line 17
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Checking line 18: 'D-'
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Found empty position: D at line 18
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Checking line 19: 'D-'
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Found empty position: D at line 19
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Checking line 20: ''
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Checking line 21: 'Goal:'
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Checking line 22: 'Light'
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Checking line 23: ''
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Checking line 24: 'F-'
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Found empty position: F at line 24
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Checking line 25: 'F-'
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Found empty position: F at line 25
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Checking line 26: 'F-'
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Found empty position: F at line 26
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Checking line 27: 'F-'
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Found empty position: F at line 27
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Checking line 28: 'F-'
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Found empty position: F at line 28
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Checking line 29: 'F-'
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Found empty position: F at line 29
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Checking line 30: ''
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Checking line 31: 'D-'
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Found empty position: D at line 31
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Checking line 32: 'D- Pat Hamilton'
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Checking line 33: 'D-'
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Found empty position: D at line 33
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Checking line 34: 'D-'
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Found empty position: D at line 34
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Checking line 35: ''
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Checking line 36: 'FORUM 10:30PM'
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Checking line 37: ''
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Checking line 38: 'Goal:'
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Checking line 39: 'Dark'
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Checking line 40: ''
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Checking line 41: 'F-'
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Found empty position: F at line 41
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Checking line 42: 'F-'
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Found empty position: F at line 42
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Checking line 43: 'F-'
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Found empty position: F at line 43
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Checking line 44: 'F-'
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Found empty position: F at line 44
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Checking line 45: 'F-'
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Found empty position: F at line 45
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Checking line 46: 'F-'
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Found empty position: F at line 46
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Checking line 47: ''
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Checking line 48: 'D-'
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Found empty position: D at line 48
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Checking line 49: 'D-'
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Found empty position: D at line 49
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Checking line 50: 'D- Cedrick Chagnon'
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Checking line 51: 'D-'
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Found empty position: D at line 51
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Checking line 52: ''
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Checking line 53: 'Goal:'
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Checking line 54: 'Light'
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Checking line 55: ''
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Checking line 56: 'F- Mark Pottie'
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Checking line 57: 'F-'
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Found empty position: F at line 57
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Checking line 58: 'F- Patrick Hickey'
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Checking line 59: 'F-'
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Found empty position: F at line 59
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Checking line 60: 'F-'
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Found empty position: F at line 60
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Checking line 61: 'F-'
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Found empty position: F at line 61
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Checking line 62: ''
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Checking line 63: 'D-'
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Found empty position: D at line 63
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Checking line 64: 'D-'
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Found empty position: D at line 64
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Checking line 65: 'D- Pat Hickey'
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Checking line 66: 'D-'
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Found empty position: D at line 66
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Checking line 67: ''
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Selected preferred position F at line 9
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Player Cameron Bissell assigned to  rink at position F
+[17-Jan-2025 04:54:22 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[17-Jan-2025 04:57:21 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Robert MacIsaac
+[17-Jan-2025 04:57:21 UTC] [HockeySignin][debug] Starting check-in process for player: Robert MacIsaac
+[17-Jan-2025 04:57:21 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 04:57:21 UTC] [HockeySignin][debug] Player not found in database: Robert MacIsaac
+[17-Jan-2025 04:57:21 UTC] [HockeySignin][debug] Found Civic section at line 4
+[17-Jan-2025 04:57:21 UTC] [HockeySignin][debug] Found Forum section at line 36
+[17-Jan-2025 04:57:21 UTC] [HockeySignin][debug] Found Waitlist section at line 68
+[17-Jan-2025 04:57:21 UTC] [HockeySignin][debug] Non-database player Robert MacIsaac added to waitlist at position 3
+[17-Jan-2025 04:57:21 UTC] [HockeySignin][debug] Check-in response: Thank you! You've been added to our waitlist for tonight. Please check back at 6pm to see if you have made the roster! You can reach us at halifaxpickuphockey@gmail.com to ask about Regular subscriber spots!
+[17-Jan-2025 04:57:32 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Rob MacIsaac
+[17-Jan-2025 04:57:32 UTC] [HockeySignin][debug] Starting check-in process for player: Rob MacIsaac
+[17-Jan-2025 04:57:32 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 04:57:32 UTC] [HockeySignin][debug] Player Rob MacIsaac prepaid status: yes
+[17-Jan-2025 04:57:32 UTC] [HockeySignin][debug] Found Civic section at line 4
+[17-Jan-2025 04:57:32 UTC] [HockeySignin][debug] Found Forum section at line 36
+[17-Jan-2025 04:57:32 UTC] [HockeySignin][debug] Found Waitlist section at line 68
+[17-Jan-2025 04:57:32 UTC] [HockeySignin][debug] Found Civic section at line 4
+[17-Jan-2025 04:57:32 UTC] [HockeySignin][debug] Found Forum section at line 36
+[17-Jan-2025 04:57:32 UTC] [HockeySignin][debug] Found Waitlist section at line 68
+[17-Jan-2025 04:57:32 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 68 (preferred position: Defence)
+[17-Jan-2025 05:00:59 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Rob MacIsaac
+[17-Jan-2025 05:00:59 UTC] [HockeySignin][debug] Starting check-in process for player: Rob MacIsaac
+[17-Jan-2025 05:00:59 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 05:00:59 UTC] [HockeySignin][debug] Player Rob MacIsaac prepaid status: yes
+[17-Jan-2025 05:00:59 UTC] [HockeySignin][debug] Found Civic section at line 4
+[17-Jan-2025 05:00:59 UTC] [HockeySignin][debug] Found Forum section at line 36
+[17-Jan-2025 05:00:59 UTC] [HockeySignin][debug] Found Waitlist section at line 68
+[17-Jan-2025 05:00:59 UTC] [HockeySignin][debug] Found Civic section at line 4
+[17-Jan-2025 05:00:59 UTC] [HockeySignin][debug] Found Forum section at line 36
+[17-Jan-2025 05:00:59 UTC] [HockeySignin][debug] Found Waitlist section at line 68
+[17-Jan-2025 05:00:59 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 68 (preferred position: Defence)
+[17-Jan-2025 05:00:59 UTC] [HockeySignin][debug] Found empty position: F at line 10
+[17-Jan-2025 05:00:59 UTC] [HockeySignin][debug] Found empty position: F at line 11
+[17-Jan-2025 05:00:59 UTC] [HockeySignin][debug] Found empty position: F at line 12
+[17-Jan-2025 05:00:59 UTC] [HockeySignin][debug] Found empty position: F at line 13
+[17-Jan-2025 05:00:59 UTC] [HockeySignin][debug] Found empty position: F at line 14
+[17-Jan-2025 05:00:59 UTC] [HockeySignin][debug] Found empty position: D at line 16
+[17-Jan-2025 05:00:59 UTC] [HockeySignin][debug] Found empty position: D at line 17
+[17-Jan-2025 05:00:59 UTC] [HockeySignin][debug] Found empty position: D at line 18
+[17-Jan-2025 05:00:59 UTC] [HockeySignin][debug] Found empty position: D at line 19
+[17-Jan-2025 05:00:59 UTC] [HockeySignin][debug] Found empty position: F at line 24
+[17-Jan-2025 05:00:59 UTC] [HockeySignin][debug] Found empty position: F at line 25
+[17-Jan-2025 05:00:59 UTC] [HockeySignin][debug] Found empty position: F at line 26
+[17-Jan-2025 05:00:59 UTC] [HockeySignin][debug] Found empty position: F at line 27
+[17-Jan-2025 05:00:59 UTC] [HockeySignin][debug] Found empty position: F at line 28
+[17-Jan-2025 05:00:59 UTC] [HockeySignin][debug] Found empty position: F at line 29
+[17-Jan-2025 05:00:59 UTC] [HockeySignin][debug] Found empty position: D at line 31
+[17-Jan-2025 05:00:59 UTC] [HockeySignin][debug] Found empty position: D at line 33
+[17-Jan-2025 05:00:59 UTC] [HockeySignin][debug] Found empty position: D at line 34
+[17-Jan-2025 05:00:59 UTC] [HockeySignin][debug] Found empty position: F at line 41
+[17-Jan-2025 05:00:59 UTC] [HockeySignin][debug] Found empty position: F at line 42
+[17-Jan-2025 05:00:59 UTC] [HockeySignin][debug] Found empty position: F at line 43
+[17-Jan-2025 05:00:59 UTC] [HockeySignin][debug] Found empty position: F at line 44
+[17-Jan-2025 05:00:59 UTC] [HockeySignin][debug] Found empty position: F at line 45
+[17-Jan-2025 05:00:59 UTC] [HockeySignin][debug] Found empty position: F at line 46
+[17-Jan-2025 05:00:59 UTC] [HockeySignin][debug] Found empty position: D at line 48
+[17-Jan-2025 05:00:59 UTC] [HockeySignin][debug] Found empty position: D at line 49
+[17-Jan-2025 05:00:59 UTC] [HockeySignin][debug] Found empty position: D at line 51
+[17-Jan-2025 05:00:59 UTC] [HockeySignin][debug] Found empty position: F at line 57
+[17-Jan-2025 05:00:59 UTC] [HockeySignin][debug] Found empty position: F at line 59
+[17-Jan-2025 05:00:59 UTC] [HockeySignin][debug] Found empty position: F at line 60
+[17-Jan-2025 05:00:59 UTC] [HockeySignin][debug] Found empty position: F at line 61
+[17-Jan-2025 05:00:59 UTC] [HockeySignin][debug] Found empty position: D at line 63
+[17-Jan-2025 05:00:59 UTC] [HockeySignin][debug] Found empty position: D at line 64
+[17-Jan-2025 05:00:59 UTC] [HockeySignin][debug] Found empty position: D at line 66
+[17-Jan-2025 05:00:59 UTC] [HockeySignin][debug] Selected preferred position D at line 16
+[17-Jan-2025 05:00:59 UTC] [HockeySignin][debug] Player Rob MacIsaac assigned to  rink at position D
+[17-Jan-2025 05:00:59 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[17-Jan-2025 05:01:16 UTC] [HockeySignin][debug] Form submission: action=checkout, player=Rob MacIsaac
+[17-Jan-2025 05:01:16 UTC] [HockeySignin][debug] Processing checkout for player: Rob MacIsaac
+[17-Jan-2025 05:01:16 UTC] [HockeySignin][debug] Player checked out: Rob MacIsaac
+[17-Jan-2025 05:01:24 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Darien B
+[17-Jan-2025 05:01:24 UTC] [HockeySignin][debug] Starting check-in process for player: Darien B
+[17-Jan-2025 05:01:24 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 05:01:24 UTC] [HockeySignin][debug] Player not found in database: Darien B
+[17-Jan-2025 05:01:24 UTC] [HockeySignin][debug] Found Civic section at line 4
+[17-Jan-2025 05:01:24 UTC] [HockeySignin][debug] Found Forum section at line 36
+[17-Jan-2025 05:01:24 UTC] [HockeySignin][debug] Found Waitlist section at line 68
+[17-Jan-2025 05:01:24 UTC] [HockeySignin][debug] Non-database player Darien B added to waitlist at position 4
+[17-Jan-2025 05:01:24 UTC] [HockeySignin][debug] Check-in response: Thank you! You've been added to our waitlist for tonight. Please check back at 6pm to see if you have made the roster! You can reach us at halifaxpickuphockey@gmail.com to ask about Regular subscriber spots!
+[17-Jan-2025 05:01:25 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Rob MacIsaac
+[17-Jan-2025 05:01:25 UTC] [HockeySignin][debug] Starting check-in process for player: Rob MacIsaac
+[17-Jan-2025 05:01:25 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 05:01:25 UTC] [HockeySignin][debug] Player Rob MacIsaac prepaid status: yes
+[17-Jan-2025 05:01:25 UTC] [HockeySignin][debug] Found Civic section at line 4
+[17-Jan-2025 05:01:25 UTC] [HockeySignin][debug] Found Forum section at line 36
+[17-Jan-2025 05:01:25 UTC] [HockeySignin][debug] Found Waitlist section at line 68
+[17-Jan-2025 05:01:25 UTC] [HockeySignin][debug] Found Civic section at line 4
+[17-Jan-2025 05:01:25 UTC] [HockeySignin][debug] Found Forum section at line 36
+[17-Jan-2025 05:01:25 UTC] [HockeySignin][debug] Found Waitlist section at line 68
+[17-Jan-2025 05:01:25 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 68 (preferred position: Defence)
+[17-Jan-2025 05:01:25 UTC] [HockeySignin][debug] Found empty position: F at line 10
+[17-Jan-2025 05:01:25 UTC] [HockeySignin][debug] Found empty position: F at line 11
+[17-Jan-2025 05:01:25 UTC] [HockeySignin][debug] Found empty position: F at line 12
+[17-Jan-2025 05:01:25 UTC] [HockeySignin][debug] Found empty position: F at line 13
+[17-Jan-2025 05:01:25 UTC] [HockeySignin][debug] Found empty position: F at line 14
+[17-Jan-2025 05:01:25 UTC] [HockeySignin][debug] Found empty position: D at line 16
+[17-Jan-2025 05:01:25 UTC] [HockeySignin][debug] Found empty position: D at line 17
+[17-Jan-2025 05:01:25 UTC] [HockeySignin][debug] Found empty position: D at line 18
+[17-Jan-2025 05:01:25 UTC] [HockeySignin][debug] Found empty position: D at line 19
+[17-Jan-2025 05:01:25 UTC] [HockeySignin][debug] Found empty position: F at line 24
+[17-Jan-2025 05:01:25 UTC] [HockeySignin][debug] Found empty position: F at line 25
+[17-Jan-2025 05:01:25 UTC] [HockeySignin][debug] Found empty position: F at line 26
+[17-Jan-2025 05:01:25 UTC] [HockeySignin][debug] Found empty position: F at line 27
+[17-Jan-2025 05:01:25 UTC] [HockeySignin][debug] Found empty position: F at line 28
+[17-Jan-2025 05:01:25 UTC] [HockeySignin][debug] Found empty position: F at line 29
+[17-Jan-2025 05:01:25 UTC] [HockeySignin][debug] Found empty position: D at line 31
+[17-Jan-2025 05:01:25 UTC] [HockeySignin][debug] Found empty position: D at line 33
+[17-Jan-2025 05:01:25 UTC] [HockeySignin][debug] Found empty position: D at line 34
+[17-Jan-2025 05:01:25 UTC] [HockeySignin][debug] Found empty position: F at line 41
+[17-Jan-2025 05:01:25 UTC] [HockeySignin][debug] Found empty position: F at line 42
+[17-Jan-2025 05:01:25 UTC] [HockeySignin][debug] Found empty position: F at line 43
+[17-Jan-2025 05:01:25 UTC] [HockeySignin][debug] Found empty position: F at line 44
+[17-Jan-2025 05:01:25 UTC] [HockeySignin][debug] Found empty position: F at line 45
+[17-Jan-2025 05:01:25 UTC] [HockeySignin][debug] Found empty position: F at line 46
+[17-Jan-2025 05:01:25 UTC] [HockeySignin][debug] Found empty position: D at line 48
+[17-Jan-2025 05:01:25 UTC] [HockeySignin][debug] Found empty position: D at line 49
+[17-Jan-2025 05:01:25 UTC] [HockeySignin][debug] Found empty position: D at line 51
+[17-Jan-2025 05:01:25 UTC] [HockeySignin][debug] Found empty position: F at line 57
+[17-Jan-2025 05:01:25 UTC] [HockeySignin][debug] Found empty position: F at line 59
+[17-Jan-2025 05:01:25 UTC] [HockeySignin][debug] Found empty position: F at line 60
+[17-Jan-2025 05:01:25 UTC] [HockeySignin][debug] Found empty position: F at line 61
+[17-Jan-2025 05:01:25 UTC] [HockeySignin][debug] Found empty position: D at line 63
+[17-Jan-2025 05:01:25 UTC] [HockeySignin][debug] Found empty position: D at line 64
+[17-Jan-2025 05:01:25 UTC] [HockeySignin][debug] Found empty position: D at line 66
+[17-Jan-2025 05:01:25 UTC] [HockeySignin][debug] Selected preferred position D at line 16
+[17-Jan-2025 05:01:25 UTC] [HockeySignin][debug] Player Rob MacIsaac assigned to  rink at position D
+[17-Jan-2025 05:01:25 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[17-Jan-2025 05:01:40 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Anga Natarajan
+[17-Jan-2025 05:01:40 UTC] [HockeySignin][debug] Starting check-in process for player: Anga Natarajan
+[17-Jan-2025 05:01:40 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 05:01:40 UTC] [HockeySignin][debug] Player Anga Natarajan prepaid status: yes
+[17-Jan-2025 05:01:40 UTC] [HockeySignin][debug] Found Civic section at line 4
+[17-Jan-2025 05:01:40 UTC] [HockeySignin][debug] Found Forum section at line 36
+[17-Jan-2025 05:01:40 UTC] [HockeySignin][debug] Found Waitlist section at line 68
+[17-Jan-2025 05:01:40 UTC] [HockeySignin][debug] Found Civic section at line 4
+[17-Jan-2025 05:01:40 UTC] [HockeySignin][debug] Found Forum section at line 36
+[17-Jan-2025 05:01:40 UTC] [HockeySignin][debug] Found Waitlist section at line 68
+[17-Jan-2025 05:01:40 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 68 (preferred position: Forward)
+[17-Jan-2025 05:01:40 UTC] [HockeySignin][debug] Found empty position: F at line 10
+[17-Jan-2025 05:01:40 UTC] [HockeySignin][debug] Found empty position: F at line 11
+[17-Jan-2025 05:01:40 UTC] [HockeySignin][debug] Found empty position: F at line 12
+[17-Jan-2025 05:01:40 UTC] [HockeySignin][debug] Found empty position: F at line 13
+[17-Jan-2025 05:01:40 UTC] [HockeySignin][debug] Found empty position: F at line 14
+[17-Jan-2025 05:01:40 UTC] [HockeySignin][debug] Found empty position: D at line 17
+[17-Jan-2025 05:01:40 UTC] [HockeySignin][debug] Found empty position: D at line 18
+[17-Jan-2025 05:01:40 UTC] [HockeySignin][debug] Found empty position: D at line 19
+[17-Jan-2025 05:01:40 UTC] [HockeySignin][debug] Found empty position: F at line 24
+[17-Jan-2025 05:01:40 UTC] [HockeySignin][debug] Found empty position: F at line 25
+[17-Jan-2025 05:01:40 UTC] [HockeySignin][debug] Found empty position: F at line 26
+[17-Jan-2025 05:01:40 UTC] [HockeySignin][debug] Found empty position: F at line 27
+[17-Jan-2025 05:01:40 UTC] [HockeySignin][debug] Found empty position: F at line 28
+[17-Jan-2025 05:01:40 UTC] [HockeySignin][debug] Found empty position: F at line 29
+[17-Jan-2025 05:01:40 UTC] [HockeySignin][debug] Found empty position: D at line 31
+[17-Jan-2025 05:01:40 UTC] [HockeySignin][debug] Found empty position: D at line 33
+[17-Jan-2025 05:01:40 UTC] [HockeySignin][debug] Found empty position: D at line 34
+[17-Jan-2025 05:01:40 UTC] [HockeySignin][debug] Found empty position: F at line 41
+[17-Jan-2025 05:01:40 UTC] [HockeySignin][debug] Found empty position: F at line 42
+[17-Jan-2025 05:01:40 UTC] [HockeySignin][debug] Found empty position: F at line 43
+[17-Jan-2025 05:01:40 UTC] [HockeySignin][debug] Found empty position: F at line 44
+[17-Jan-2025 05:01:40 UTC] [HockeySignin][debug] Found empty position: F at line 45
+[17-Jan-2025 05:01:40 UTC] [HockeySignin][debug] Found empty position: F at line 46
+[17-Jan-2025 05:01:40 UTC] [HockeySignin][debug] Found empty position: D at line 48
+[17-Jan-2025 05:01:40 UTC] [HockeySignin][debug] Found empty position: D at line 49
+[17-Jan-2025 05:01:40 UTC] [HockeySignin][debug] Found empty position: D at line 51
+[17-Jan-2025 05:01:40 UTC] [HockeySignin][debug] Found empty position: F at line 57
+[17-Jan-2025 05:01:40 UTC] [HockeySignin][debug] Found empty position: F at line 59
+[17-Jan-2025 05:01:40 UTC] [HockeySignin][debug] Found empty position: F at line 60
+[17-Jan-2025 05:01:40 UTC] [HockeySignin][debug] Found empty position: F at line 61
+[17-Jan-2025 05:01:40 UTC] [HockeySignin][debug] Found empty position: D at line 63
+[17-Jan-2025 05:01:40 UTC] [HockeySignin][debug] Found empty position: D at line 64
+[17-Jan-2025 05:01:40 UTC] [HockeySignin][debug] Found empty position: D at line 66
+[17-Jan-2025 05:01:40 UTC] [HockeySignin][debug] Selected preferred position F at line 10
+[17-Jan-2025 05:01:40 UTC] [HockeySignin][debug] Player Anga Natarajan assigned to  rink at position F
+[17-Jan-2025 05:01:40 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[17-Jan-2025 05:01:51 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Rob Cameron
+[17-Jan-2025 05:01:51 UTC] [HockeySignin][debug] Starting check-in process for player: Rob Cameron
+[17-Jan-2025 05:01:51 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 05:01:51 UTC] [HockeySignin][debug] Player Rob Cameron prepaid status: yes
+[17-Jan-2025 05:01:51 UTC] [HockeySignin][debug] Found Civic section at line 4
+[17-Jan-2025 05:01:51 UTC] [HockeySignin][debug] Found Forum section at line 36
+[17-Jan-2025 05:01:51 UTC] [HockeySignin][debug] Found Waitlist section at line 68
+[17-Jan-2025 05:01:51 UTC] [HockeySignin][debug] Found Civic section at line 4
+[17-Jan-2025 05:01:51 UTC] [HockeySignin][debug] Found Forum section at line 36
+[17-Jan-2025 05:01:51 UTC] [HockeySignin][debug] Found Waitlist section at line 68
+[17-Jan-2025 05:01:51 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 68 (preferred position: Forward)
+[17-Jan-2025 05:01:51 UTC] [HockeySignin][debug] Found empty position: F at line 11
+[17-Jan-2025 05:01:51 UTC] [HockeySignin][debug] Found empty position: F at line 12
+[17-Jan-2025 05:01:51 UTC] [HockeySignin][debug] Found empty position: F at line 13
+[17-Jan-2025 05:01:51 UTC] [HockeySignin][debug] Found empty position: F at line 14
+[17-Jan-2025 05:01:51 UTC] [HockeySignin][debug] Found empty position: D at line 17
+[17-Jan-2025 05:01:51 UTC] [HockeySignin][debug] Found empty position: D at line 18
+[17-Jan-2025 05:01:51 UTC] [HockeySignin][debug] Found empty position: D at line 19
+[17-Jan-2025 05:01:51 UTC] [HockeySignin][debug] Found empty position: F at line 24
+[17-Jan-2025 05:01:51 UTC] [HockeySignin][debug] Found empty position: F at line 25
+[17-Jan-2025 05:01:51 UTC] [HockeySignin][debug] Found empty position: F at line 26
+[17-Jan-2025 05:01:51 UTC] [HockeySignin][debug] Found empty position: F at line 27
+[17-Jan-2025 05:01:51 UTC] [HockeySignin][debug] Found empty position: F at line 28
+[17-Jan-2025 05:01:51 UTC] [HockeySignin][debug] Found empty position: F at line 29
+[17-Jan-2025 05:01:51 UTC] [HockeySignin][debug] Found empty position: D at line 31
+[17-Jan-2025 05:01:51 UTC] [HockeySignin][debug] Found empty position: D at line 33
+[17-Jan-2025 05:01:51 UTC] [HockeySignin][debug] Found empty position: D at line 34
+[17-Jan-2025 05:01:51 UTC] [HockeySignin][debug] Found empty position: F at line 41
+[17-Jan-2025 05:01:51 UTC] [HockeySignin][debug] Found empty position: F at line 42
+[17-Jan-2025 05:01:51 UTC] [HockeySignin][debug] Found empty position: F at line 43
+[17-Jan-2025 05:01:51 UTC] [HockeySignin][debug] Found empty position: F at line 44
+[17-Jan-2025 05:01:51 UTC] [HockeySignin][debug] Found empty position: F at line 45
+[17-Jan-2025 05:01:51 UTC] [HockeySignin][debug] Found empty position: F at line 46
+[17-Jan-2025 05:01:51 UTC] [HockeySignin][debug] Found empty position: D at line 48
+[17-Jan-2025 05:01:51 UTC] [HockeySignin][debug] Found empty position: D at line 49
+[17-Jan-2025 05:01:51 UTC] [HockeySignin][debug] Found empty position: D at line 51
+[17-Jan-2025 05:01:51 UTC] [HockeySignin][debug] Found empty position: F at line 57
+[17-Jan-2025 05:01:51 UTC] [HockeySignin][debug] Found empty position: F at line 59
+[17-Jan-2025 05:01:51 UTC] [HockeySignin][debug] Found empty position: F at line 60
+[17-Jan-2025 05:01:51 UTC] [HockeySignin][debug] Found empty position: F at line 61
+[17-Jan-2025 05:01:51 UTC] [HockeySignin][debug] Found empty position: D at line 63
+[17-Jan-2025 05:01:51 UTC] [HockeySignin][debug] Found empty position: D at line 64
+[17-Jan-2025 05:01:51 UTC] [HockeySignin][debug] Found empty position: D at line 66
+[17-Jan-2025 05:01:51 UTC] [HockeySignin][debug] Selected preferred position F at line 11
+[17-Jan-2025 05:01:51 UTC] [HockeySignin][debug] Player Rob Cameron assigned to  rink at position F
+[17-Jan-2025 05:01:51 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[17-Jan-2025 05:03:36 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Glen Lefebre
+[17-Jan-2025 05:03:36 UTC] [HockeySignin][debug] Starting check-in process for player: Glen Lefebre
+[17-Jan-2025 05:03:36 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 05:03:36 UTC] [HockeySignin][debug] Player Glen Lefebre prepaid status: yes
+[17-Jan-2025 05:03:36 UTC] [HockeySignin][debug] Found Civic section at line 4
+[17-Jan-2025 05:03:36 UTC] [HockeySignin][debug] Found Forum section at line 36
+[17-Jan-2025 05:03:36 UTC] [HockeySignin][debug] Found Waitlist section at line 68
+[17-Jan-2025 05:03:36 UTC] [HockeySignin][debug] Found Civic section at line 4
+[17-Jan-2025 05:03:36 UTC] [HockeySignin][debug] Found Forum section at line 36
+[17-Jan-2025 05:03:36 UTC] [HockeySignin][debug] Found Waitlist section at line 68
+[17-Jan-2025 05:03:36 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 68 (preferred position: Forward)
+[17-Jan-2025 05:03:36 UTC] [HockeySignin][debug] Found empty position: F at line 12
+[17-Jan-2025 05:03:36 UTC] [HockeySignin][debug] Found empty position: F at line 13
+[17-Jan-2025 05:03:36 UTC] [HockeySignin][debug] Found empty position: F at line 14
+[17-Jan-2025 05:03:36 UTC] [HockeySignin][debug] Found empty position: D at line 17
+[17-Jan-2025 05:03:36 UTC] [HockeySignin][debug] Found empty position: D at line 18
+[17-Jan-2025 05:03:36 UTC] [HockeySignin][debug] Found empty position: D at line 19
+[17-Jan-2025 05:03:36 UTC] [HockeySignin][debug] Found empty position: F at line 24
+[17-Jan-2025 05:03:36 UTC] [HockeySignin][debug] Found empty position: F at line 25
+[17-Jan-2025 05:03:36 UTC] [HockeySignin][debug] Found empty position: F at line 26
+[17-Jan-2025 05:03:36 UTC] [HockeySignin][debug] Found empty position: F at line 27
+[17-Jan-2025 05:03:36 UTC] [HockeySignin][debug] Found empty position: F at line 28
+[17-Jan-2025 05:03:36 UTC] [HockeySignin][debug] Found empty position: F at line 29
+[17-Jan-2025 05:03:36 UTC] [HockeySignin][debug] Found empty position: D at line 31
+[17-Jan-2025 05:03:36 UTC] [HockeySignin][debug] Found empty position: D at line 33
+[17-Jan-2025 05:03:36 UTC] [HockeySignin][debug] Found empty position: D at line 34
+[17-Jan-2025 05:03:36 UTC] [HockeySignin][debug] Found empty position: F at line 41
+[17-Jan-2025 05:03:36 UTC] [HockeySignin][debug] Found empty position: F at line 42
+[17-Jan-2025 05:03:36 UTC] [HockeySignin][debug] Found empty position: F at line 43
+[17-Jan-2025 05:03:36 UTC] [HockeySignin][debug] Found empty position: F at line 44
+[17-Jan-2025 05:03:36 UTC] [HockeySignin][debug] Found empty position: F at line 45
+[17-Jan-2025 05:03:36 UTC] [HockeySignin][debug] Found empty position: F at line 46
+[17-Jan-2025 05:03:36 UTC] [HockeySignin][debug] Found empty position: D at line 48
+[17-Jan-2025 05:03:36 UTC] [HockeySignin][debug] Found empty position: D at line 49
+[17-Jan-2025 05:03:36 UTC] [HockeySignin][debug] Found empty position: D at line 51
+[17-Jan-2025 05:03:36 UTC] [HockeySignin][debug] Found empty position: F at line 57
+[17-Jan-2025 05:03:36 UTC] [HockeySignin][debug] Found empty position: F at line 59
+[17-Jan-2025 05:03:36 UTC] [HockeySignin][debug] Found empty position: F at line 60
+[17-Jan-2025 05:03:36 UTC] [HockeySignin][debug] Found empty position: F at line 61
+[17-Jan-2025 05:03:36 UTC] [HockeySignin][debug] Found empty position: D at line 63
+[17-Jan-2025 05:03:36 UTC] [HockeySignin][debug] Found empty position: D at line 64
+[17-Jan-2025 05:03:36 UTC] [HockeySignin][debug] Found empty position: D at line 66
+[17-Jan-2025 05:03:36 UTC] [HockeySignin][debug] Selected preferred position F at line 12
+[17-Jan-2025 05:03:36 UTC] [HockeySignin][debug] Player Glen Lefebre assigned to Civic rink at position F
+[17-Jan-2025 05:03:36 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[17-Jan-2025 05:06:06 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Jon Nickerson
+[17-Jan-2025 05:06:06 UTC] [HockeySignin][debug] Starting check-in process for player: Jon Nickerson
+[17-Jan-2025 05:06:06 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 05:06:06 UTC] [HockeySignin][debug] Player Jon Nickerson prepaid status: yes
+[17-Jan-2025 05:06:06 UTC] [HockeySignin][debug] Found Civic section at line 4
+[17-Jan-2025 05:06:06 UTC] [HockeySignin][debug] Found Forum section at line 36
+[17-Jan-2025 05:06:06 UTC] [HockeySignin][debug] Found Waitlist section at line 68
+[17-Jan-2025 05:06:06 UTC] [HockeySignin][debug] Found Civic section at line 4
+[17-Jan-2025 05:06:06 UTC] [HockeySignin][debug] Found Forum section at line 36
+[17-Jan-2025 05:06:06 UTC] [HockeySignin][debug] Found Waitlist section at line 68
+[17-Jan-2025 05:06:06 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 68 (preferred position: Forward)
+[17-Jan-2025 05:06:06 UTC] [HockeySignin][debug] Found empty position: F at line 13
+[17-Jan-2025 05:06:06 UTC] [HockeySignin][debug] Found empty position: F at line 14
+[17-Jan-2025 05:06:06 UTC] [HockeySignin][debug] Found empty position: D at line 17
+[17-Jan-2025 05:06:06 UTC] [HockeySignin][debug] Found empty position: D at line 18
+[17-Jan-2025 05:06:06 UTC] [HockeySignin][debug] Found empty position: D at line 19
+[17-Jan-2025 05:06:06 UTC] [HockeySignin][debug] Found empty position: F at line 24
+[17-Jan-2025 05:06:06 UTC] [HockeySignin][debug] Found empty position: F at line 25
+[17-Jan-2025 05:06:06 UTC] [HockeySignin][debug] Found empty position: F at line 26
+[17-Jan-2025 05:06:06 UTC] [HockeySignin][debug] Found empty position: F at line 27
+[17-Jan-2025 05:06:06 UTC] [HockeySignin][debug] Found empty position: F at line 28
+[17-Jan-2025 05:06:06 UTC] [HockeySignin][debug] Found empty position: F at line 29
+[17-Jan-2025 05:06:06 UTC] [HockeySignin][debug] Found empty position: D at line 31
+[17-Jan-2025 05:06:06 UTC] [HockeySignin][debug] Found empty position: D at line 33
+[17-Jan-2025 05:06:06 UTC] [HockeySignin][debug] Found empty position: D at line 34
+[17-Jan-2025 05:06:06 UTC] [HockeySignin][debug] Found empty position: F at line 41
+[17-Jan-2025 05:06:06 UTC] [HockeySignin][debug] Found empty position: F at line 42
+[17-Jan-2025 05:06:06 UTC] [HockeySignin][debug] Found empty position: F at line 43
+[17-Jan-2025 05:06:06 UTC] [HockeySignin][debug] Found empty position: F at line 44
+[17-Jan-2025 05:06:06 UTC] [HockeySignin][debug] Found empty position: F at line 45
+[17-Jan-2025 05:06:06 UTC] [HockeySignin][debug] Found empty position: F at line 46
+[17-Jan-2025 05:06:06 UTC] [HockeySignin][debug] Found empty position: D at line 48
+[17-Jan-2025 05:06:06 UTC] [HockeySignin][debug] Found empty position: D at line 49
+[17-Jan-2025 05:06:06 UTC] [HockeySignin][debug] Found empty position: D at line 51
+[17-Jan-2025 05:06:06 UTC] [HockeySignin][debug] Found empty position: F at line 57
+[17-Jan-2025 05:06:06 UTC] [HockeySignin][debug] Found empty position: F at line 59
+[17-Jan-2025 05:06:06 UTC] [HockeySignin][debug] Found empty position: F at line 60
+[17-Jan-2025 05:06:06 UTC] [HockeySignin][debug] Found empty position: F at line 61
+[17-Jan-2025 05:06:06 UTC] [HockeySignin][debug] Found empty position: D at line 63
+[17-Jan-2025 05:06:06 UTC] [HockeySignin][debug] Found empty position: D at line 64
+[17-Jan-2025 05:06:06 UTC] [HockeySignin][debug] Found empty position: D at line 66
+[17-Jan-2025 05:06:06 UTC] [HockeySignin][debug] Selected preferred position F at line 13
+[17-Jan-2025 05:06:06 UTC] [HockeySignin][debug] Player Jon Nickerson assigned to Civic rink at position F
+[17-Jan-2025 05:06:06 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[17-Jan-2025 05:08:22 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Darien Boudreau
+[17-Jan-2025 05:08:22 UTC] [HockeySignin][debug] Starting check-in process for player: Darien Boudreau
+[17-Jan-2025 05:08:22 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 05:08:22 UTC] [HockeySignin][debug] Player Darien Boudreau prepaid status: yes
+[17-Jan-2025 05:08:22 UTC] [HockeySignin][debug] Found Civic section at line 4
+[17-Jan-2025 05:08:22 UTC] [HockeySignin][debug] Found Forum section at line 36
+[17-Jan-2025 05:08:22 UTC] [HockeySignin][debug] Found Waitlist section at line 68
+[17-Jan-2025 05:08:22 UTC] [HockeySignin][debug] Found Civic section at line 4
+[17-Jan-2025 05:08:22 UTC] [HockeySignin][debug] Found Forum section at line 36
+[17-Jan-2025 05:08:22 UTC] [HockeySignin][debug] Found Waitlist section at line 68
+[17-Jan-2025 05:08:22 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 68 (preferred position: Defence)
+[17-Jan-2025 05:08:22 UTC] [HockeySignin][debug] Found empty position: F at line 14
+[17-Jan-2025 05:08:22 UTC] [HockeySignin][debug] Found empty position: D at line 17
+[17-Jan-2025 05:08:22 UTC] [HockeySignin][debug] Found empty position: D at line 18
+[17-Jan-2025 05:08:22 UTC] [HockeySignin][debug] Found empty position: D at line 19
+[17-Jan-2025 05:08:22 UTC] [HockeySignin][debug] Found empty position: F at line 24
+[17-Jan-2025 05:08:22 UTC] [HockeySignin][debug] Found empty position: F at line 25
+[17-Jan-2025 05:08:22 UTC] [HockeySignin][debug] Found empty position: F at line 26
+[17-Jan-2025 05:08:22 UTC] [HockeySignin][debug] Found empty position: F at line 27
+[17-Jan-2025 05:08:22 UTC] [HockeySignin][debug] Found empty position: F at line 28
+[17-Jan-2025 05:08:22 UTC] [HockeySignin][debug] Found empty position: F at line 29
+[17-Jan-2025 05:08:22 UTC] [HockeySignin][debug] Found empty position: D at line 31
+[17-Jan-2025 05:08:22 UTC] [HockeySignin][debug] Found empty position: D at line 33
+[17-Jan-2025 05:08:22 UTC] [HockeySignin][debug] Found empty position: D at line 34
+[17-Jan-2025 05:08:22 UTC] [HockeySignin][debug] Found empty position: F at line 41
+[17-Jan-2025 05:08:22 UTC] [HockeySignin][debug] Found empty position: F at line 42
+[17-Jan-2025 05:08:22 UTC] [HockeySignin][debug] Found empty position: F at line 43
+[17-Jan-2025 05:08:22 UTC] [HockeySignin][debug] Found empty position: F at line 44
+[17-Jan-2025 05:08:22 UTC] [HockeySignin][debug] Found empty position: F at line 45
+[17-Jan-2025 05:08:22 UTC] [HockeySignin][debug] Found empty position: F at line 46
+[17-Jan-2025 05:08:22 UTC] [HockeySignin][debug] Found empty position: D at line 48
+[17-Jan-2025 05:08:22 UTC] [HockeySignin][debug] Found empty position: D at line 49
+[17-Jan-2025 05:08:22 UTC] [HockeySignin][debug] Found empty position: D at line 51
+[17-Jan-2025 05:08:22 UTC] [HockeySignin][debug] Found empty position: F at line 57
+[17-Jan-2025 05:08:22 UTC] [HockeySignin][debug] Found empty position: F at line 59
+[17-Jan-2025 05:08:22 UTC] [HockeySignin][debug] Found empty position: F at line 60
+[17-Jan-2025 05:08:22 UTC] [HockeySignin][debug] Found empty position: F at line 61
+[17-Jan-2025 05:08:22 UTC] [HockeySignin][debug] Found empty position: D at line 63
+[17-Jan-2025 05:08:22 UTC] [HockeySignin][debug] Found empty position: D at line 64
+[17-Jan-2025 05:08:22 UTC] [HockeySignin][debug] Found empty position: D at line 66
+[17-Jan-2025 05:08:22 UTC] [HockeySignin][debug] Selected preferred position D at line 64
+[17-Jan-2025 05:08:22 UTC] [HockeySignin][debug] Player Darien Boudreau assigned to Forum rink at position D
+[17-Jan-2025 05:08:22 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[17-Jan-2025 05:10:20 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Rob MacIsaac
+[17-Jan-2025 05:10:20 UTC] [HockeySignin][debug] Starting check-in process for player: Rob MacIsaac
+[17-Jan-2025 05:10:20 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 05:10:20 UTC] [HockeySignin][debug] Player Rob MacIsaac prepaid status: yes
+[17-Jan-2025 05:10:20 UTC] [HockeySignin][debug] Found Civic section at line 4
+[17-Jan-2025 05:10:20 UTC] [HockeySignin][debug] Found Forum section at line 36
+[17-Jan-2025 05:10:20 UTC] [HockeySignin][debug] Found Waitlist section at line 68
+[17-Jan-2025 05:10:20 UTC] [HockeySignin][debug] Found Civic section at line 4
+[17-Jan-2025 05:10:20 UTC] [HockeySignin][debug] Found Forum section at line 36
+[17-Jan-2025 05:10:20 UTC] [HockeySignin][debug] Found Waitlist section at line 68
+[17-Jan-2025 05:10:20 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 68 (preferred position: Defence)
+[17-Jan-2025 05:10:20 UTC] [HockeySignin][debug] Found empty position: F at line 9
+[17-Jan-2025 05:10:20 UTC] [HockeySignin][debug] Found empty position: F at line 10
+[17-Jan-2025 05:10:20 UTC] [HockeySignin][debug] Found empty position: F at line 11
+[17-Jan-2025 05:10:20 UTC] [HockeySignin][debug] Found empty position: F at line 12
+[17-Jan-2025 05:10:20 UTC] [HockeySignin][debug] Found empty position: F at line 13
+[17-Jan-2025 05:10:20 UTC] [HockeySignin][debug] Found empty position: F at line 14
+[17-Jan-2025 05:10:20 UTC] [HockeySignin][debug] Found empty position: D at line 16
+[17-Jan-2025 05:10:20 UTC] [HockeySignin][debug] Found empty position: D at line 17
+[17-Jan-2025 05:10:20 UTC] [HockeySignin][debug] Found empty position: D at line 18
+[17-Jan-2025 05:10:20 UTC] [HockeySignin][debug] Found empty position: D at line 19
+[17-Jan-2025 05:10:20 UTC] [HockeySignin][debug] Found empty position: F at line 24
+[17-Jan-2025 05:10:20 UTC] [HockeySignin][debug] Found empty position: F at line 25
+[17-Jan-2025 05:10:20 UTC] [HockeySignin][debug] Found empty position: F at line 26
+[17-Jan-2025 05:10:20 UTC] [HockeySignin][debug] Found empty position: F at line 27
+[17-Jan-2025 05:10:20 UTC] [HockeySignin][debug] Found empty position: F at line 28
+[17-Jan-2025 05:10:20 UTC] [HockeySignin][debug] Found empty position: F at line 29
+[17-Jan-2025 05:10:20 UTC] [HockeySignin][debug] Found empty position: D at line 31
+[17-Jan-2025 05:10:20 UTC] [HockeySignin][debug] Found empty position: D at line 32
+[17-Jan-2025 05:10:20 UTC] [HockeySignin][debug] Found empty position: D at line 33
+[17-Jan-2025 05:10:20 UTC] [HockeySignin][debug] Found empty position: D at line 34
+[17-Jan-2025 05:10:20 UTC] [HockeySignin][debug] Found empty position: F at line 41
+[17-Jan-2025 05:10:20 UTC] [HockeySignin][debug] Found empty position: F at line 42
+[17-Jan-2025 05:10:20 UTC] [HockeySignin][debug] Found empty position: F at line 43
+[17-Jan-2025 05:10:20 UTC] [HockeySignin][debug] Found empty position: F at line 44
+[17-Jan-2025 05:10:20 UTC] [HockeySignin][debug] Found empty position: F at line 45
+[17-Jan-2025 05:10:20 UTC] [HockeySignin][debug] Found empty position: F at line 46
+[17-Jan-2025 05:10:20 UTC] [HockeySignin][debug] Found empty position: D at line 48
+[17-Jan-2025 05:10:20 UTC] [HockeySignin][debug] Found empty position: D at line 49
+[17-Jan-2025 05:10:20 UTC] [HockeySignin][debug] Found empty position: D at line 50
+[17-Jan-2025 05:10:20 UTC] [HockeySignin][debug] Found empty position: D at line 51
+[17-Jan-2025 05:10:20 UTC] [HockeySignin][debug] Found empty position: F at line 56
+[17-Jan-2025 05:10:20 UTC] [HockeySignin][debug] Found empty position: F at line 57
+[17-Jan-2025 05:10:20 UTC] [HockeySignin][debug] Found empty position: F at line 58
+[17-Jan-2025 05:10:20 UTC] [HockeySignin][debug] Found empty position: F at line 59
+[17-Jan-2025 05:10:20 UTC] [HockeySignin][debug] Found empty position: F at line 60
+[17-Jan-2025 05:10:20 UTC] [HockeySignin][debug] Found empty position: F at line 61
+[17-Jan-2025 05:10:20 UTC] [HockeySignin][debug] Found empty position: D at line 63
+[17-Jan-2025 05:10:20 UTC] [HockeySignin][debug] Found empty position: D at line 64
+[17-Jan-2025 05:10:20 UTC] [HockeySignin][debug] Found empty position: D at line 65
+[17-Jan-2025 05:10:20 UTC] [HockeySignin][debug] Found empty position: D at line 66
+[17-Jan-2025 05:10:20 UTC] [HockeySignin][debug] Selected preferred position D at line 65
+[17-Jan-2025 05:10:20 UTC] [HockeySignin][debug] Player Rob MacIsaac assigned to Forum rink at position D
+[17-Jan-2025 05:10:20 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[17-Jan-2025 05:10:31 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Johnny Bravo
+[17-Jan-2025 05:10:31 UTC] [HockeySignin][debug] Starting check-in process for player: Johnny Bravo
+[17-Jan-2025 05:10:31 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 05:10:31 UTC] [HockeySignin][debug] Player not found in database: Johnny Bravo
+[17-Jan-2025 05:10:31 UTC] [HockeySignin][debug] Found Civic section at line 4
+[17-Jan-2025 05:10:31 UTC] [HockeySignin][debug] Found Forum section at line 36
+[17-Jan-2025 05:10:31 UTC] [HockeySignin][debug] Found Waitlist section at line 68
+[17-Jan-2025 05:10:31 UTC] [HockeySignin][debug] Non-database player Johnny Bravo added to waitlist at position 1
+[17-Jan-2025 05:10:31 UTC] [HockeySignin][debug] Check-in response: Thank you! You've been added to our waitlist for tonight. Please check back at 6pm to see if you have made the roster! You can reach us at halifaxpickuphockey@gmail.com to ask about Regular subscriber spots!
+[17-Jan-2025 05:10:43 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Nathan Crawford
+[17-Jan-2025 05:10:43 UTC] [HockeySignin][debug] Starting check-in process for player: Nathan Crawford
+[17-Jan-2025 05:10:43 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 05:10:43 UTC] [HockeySignin][debug] Player Nathan Crawford prepaid status: yes
+[17-Jan-2025 05:10:43 UTC] [HockeySignin][debug] Player Nathan Crawford is a goalie
+[17-Jan-2025 05:10:43 UTC] [HockeySignin][debug] Found Civic section at line 4
+[17-Jan-2025 05:10:43 UTC] [HockeySignin][debug] Found Forum section at line 36
+[17-Jan-2025 05:10:43 UTC] [HockeySignin][debug] Found Waitlist section at line 68
+[17-Jan-2025 05:10:43 UTC] [HockeySignin][debug] Found Civic section at line 4
+[17-Jan-2025 05:10:43 UTC] [HockeySignin][debug] Found Forum section at line 36
+[17-Jan-2025 05:10:43 UTC] [HockeySignin][debug] Found Waitlist section at line 68
+[17-Jan-2025 05:10:43 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 68 (preferred position: Goalie)
+[17-Jan-2025 05:10:43 UTC] [HockeySignin][debug] Found empty position: F at line 9
+[17-Jan-2025 05:10:43 UTC] [HockeySignin][debug] Found empty position: F at line 10
+[17-Jan-2025 05:10:43 UTC] [HockeySignin][debug] Found empty position: F at line 11
+[17-Jan-2025 05:10:43 UTC] [HockeySignin][debug] Found empty position: F at line 12
+[17-Jan-2025 05:10:43 UTC] [HockeySignin][debug] Found empty position: F at line 13
+[17-Jan-2025 05:10:43 UTC] [HockeySignin][debug] Found empty position: F at line 14
+[17-Jan-2025 05:10:43 UTC] [HockeySignin][debug] Found empty position: D at line 16
+[17-Jan-2025 05:10:43 UTC] [HockeySignin][debug] Found empty position: D at line 17
+[17-Jan-2025 05:10:43 UTC] [HockeySignin][debug] Found empty position: D at line 18
+[17-Jan-2025 05:10:43 UTC] [HockeySignin][debug] Found empty position: D at line 19
+[17-Jan-2025 05:10:43 UTC] [HockeySignin][debug] Found empty position: F at line 24
+[17-Jan-2025 05:10:43 UTC] [HockeySignin][debug] Found empty position: F at line 25
+[17-Jan-2025 05:10:43 UTC] [HockeySignin][debug] Found empty position: F at line 26
+[17-Jan-2025 05:10:43 UTC] [HockeySignin][debug] Found empty position: F at line 27
+[17-Jan-2025 05:10:43 UTC] [HockeySignin][debug] Found empty position: F at line 28
+[17-Jan-2025 05:10:43 UTC] [HockeySignin][debug] Found empty position: F at line 29
+[17-Jan-2025 05:10:43 UTC] [HockeySignin][debug] Found empty position: D at line 31
+[17-Jan-2025 05:10:43 UTC] [HockeySignin][debug] Found empty position: D at line 32
+[17-Jan-2025 05:10:43 UTC] [HockeySignin][debug] Found empty position: D at line 33
+[17-Jan-2025 05:10:43 UTC] [HockeySignin][debug] Found empty position: D at line 34
+[17-Jan-2025 05:10:43 UTC] [HockeySignin][debug] Found empty position: F at line 41
+[17-Jan-2025 05:10:43 UTC] [HockeySignin][debug] Found empty position: F at line 42
+[17-Jan-2025 05:10:43 UTC] [HockeySignin][debug] Found empty position: F at line 43
+[17-Jan-2025 05:10:43 UTC] [HockeySignin][debug] Found empty position: F at line 44
+[17-Jan-2025 05:10:43 UTC] [HockeySignin][debug] Found empty position: F at line 45
+[17-Jan-2025 05:10:43 UTC] [HockeySignin][debug] Found empty position: F at line 46
+[17-Jan-2025 05:10:43 UTC] [HockeySignin][debug] Found empty position: D at line 48
+[17-Jan-2025 05:10:43 UTC] [HockeySignin][debug] Found empty position: D at line 49
+[17-Jan-2025 05:10:43 UTC] [HockeySignin][debug] Found empty position: D at line 50
+[17-Jan-2025 05:10:43 UTC] [HockeySignin][debug] Found empty position: D at line 51
+[17-Jan-2025 05:10:43 UTC] [HockeySignin][debug] Found empty position: F at line 56
+[17-Jan-2025 05:10:43 UTC] [HockeySignin][debug] Found empty position: F at line 57
+[17-Jan-2025 05:10:43 UTC] [HockeySignin][debug] Found empty position: F at line 58
+[17-Jan-2025 05:10:43 UTC] [HockeySignin][debug] Found empty position: F at line 59
+[17-Jan-2025 05:10:43 UTC] [HockeySignin][debug] Found empty position: F at line 60
+[17-Jan-2025 05:10:43 UTC] [HockeySignin][debug] Found empty position: F at line 61
+[17-Jan-2025 05:10:43 UTC] [HockeySignin][debug] Found empty position: D at line 63
+[17-Jan-2025 05:10:43 UTC] [HockeySignin][debug] Found empty position: D at line 64
+[17-Jan-2025 05:10:43 UTC] [HockeySignin][debug] Found empty position: D at line 66
+[17-Jan-2025 05:10:43 UTC] [HockeySignin][debug] Selected available position F at line 61
+[17-Jan-2025 05:10:43 UTC] [HockeySignin][debug] Player Nathan Crawford assigned to Forum rink at position F
+[17-Jan-2025 05:10:43 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[17-Jan-2025 05:13:07 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Mitchell Wasilik
+[17-Jan-2025 05:13:07 UTC] [HockeySignin][debug] Starting check-in process for player: Mitchell Wasilik
+[17-Jan-2025 05:13:07 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 05:13:07 UTC] [HockeySignin][debug] Player Mitchell Wasilik prepaid status: yes
+[17-Jan-2025 05:13:07 UTC] [HockeySignin][debug] Player Mitchell Wasilik is a goalie
+[17-Jan-2025 05:13:07 UTC] [HockeySignin][debug] Found Civic section at line 4
+[17-Jan-2025 05:13:07 UTC] [HockeySignin][debug] Found Forum section at line 36
+[17-Jan-2025 05:13:07 UTC] [HockeySignin][debug] Found Waitlist section at line 68
+[17-Jan-2025 05:13:07 UTC] [HockeySignin][debug] Found Civic section at line 4
+[17-Jan-2025 05:13:07 UTC] [HockeySignin][debug] Found Forum section at line 36
+[17-Jan-2025 05:13:07 UTC] [HockeySignin][debug] Found Waitlist section at line 68
+[17-Jan-2025 05:13:07 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 68 (preferred position: Goalie)
+[17-Jan-2025 05:13:07 UTC] [HockeySignin][debug] Found empty goalie spot at line 6
+[17-Jan-2025 05:13:07 UTC] [HockeySignin][debug] Player Mitchell Wasilik assigned to Civic rink at position Goal
+[17-Jan-2025 05:13:07 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[17-Jan-2025 05:13:18 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Nathan Crawford
+[17-Jan-2025 05:13:18 UTC] [HockeySignin][debug] Starting check-in process for player: Nathan Crawford
+[17-Jan-2025 05:13:18 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 05:13:18 UTC] [HockeySignin][debug] Player Nathan Crawford is already checked in
+[17-Jan-2025 05:13:18 UTC] [HockeySignin][debug] Check-in response: already_checked_in
+[17-Jan-2025 05:13:21 UTC] [HockeySignin][debug] Form submission: action=checkout, player=Nathan Crawford
+[17-Jan-2025 05:13:21 UTC] [HockeySignin][debug] Processing checkout for player: Nathan Crawford
+[17-Jan-2025 05:13:21 UTC] [HockeySignin][debug] Player checked out: Nathan Crawford
+[17-Jan-2025 05:13:28 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Nathan Crawford
+[17-Jan-2025 05:13:28 UTC] [HockeySignin][debug] Starting check-in process for player: Nathan Crawford
+[17-Jan-2025 05:13:28 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 05:13:28 UTC] [HockeySignin][debug] Player Nathan Crawford prepaid status: yes
+[17-Jan-2025 05:13:28 UTC] [HockeySignin][debug] Player Nathan Crawford is a goalie
+[17-Jan-2025 05:13:28 UTC] [HockeySignin][debug] Found Civic section at line 4
+[17-Jan-2025 05:13:28 UTC] [HockeySignin][debug] Found Forum section at line 36
+[17-Jan-2025 05:13:28 UTC] [HockeySignin][debug] Found Waitlist section at line 68
+[17-Jan-2025 05:13:28 UTC] [HockeySignin][debug] Found Civic section at line 4
+[17-Jan-2025 05:13:28 UTC] [HockeySignin][debug] Found Forum section at line 36
+[17-Jan-2025 05:13:28 UTC] [HockeySignin][debug] Found Waitlist section at line 68
+[17-Jan-2025 05:13:28 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 68 (preferred position: Goalie)
+[17-Jan-2025 05:13:28 UTC] [HockeySignin][debug] Found empty goalie spot at line 21
+[17-Jan-2025 05:13:28 UTC] [HockeySignin][debug] Player Nathan Crawford assigned to Civic rink at position Goal
+[17-Jan-2025 05:13:28 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[17-Jan-2025 05:13:38 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Mathieu Simard
+[17-Jan-2025 05:13:38 UTC] [HockeySignin][debug] Starting check-in process for player: Mathieu Simard
+[17-Jan-2025 05:13:38 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 05:13:38 UTC] [HockeySignin][debug] Player Mathieu Simard prepaid status: no
+[17-Jan-2025 05:13:38 UTC] [HockeySignin][debug] Player Mathieu Simard is not registered for Friday
+[17-Jan-2025 05:13:38 UTC] [HockeySignin][debug] Found Civic section at line 4
+[17-Jan-2025 05:13:38 UTC] [HockeySignin][debug] Found Forum section at line 36
+[17-Jan-2025 05:13:38 UTC] [HockeySignin][debug] Found Waitlist section at line 68
+[17-Jan-2025 05:13:38 UTC] [HockeySignin][debug] Non-database player Mathieu Simard added to waitlist at position 2
+[17-Jan-2025 05:13:38 UTC] [HockeySignin][debug] Check-in response: Thank you! You've been added to our waitlist for tonight. Please check back at 6pm to see if you have made the roster! You can reach us at halifaxpickuphockey@gmail.com to ask about Regular subscriber spots!
+[17-Jan-2025 05:13:44 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Parker Gallant
+[17-Jan-2025 05:13:44 UTC] [HockeySignin][debug] Starting check-in process for player: Parker Gallant
+[17-Jan-2025 05:13:44 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 05:13:44 UTC] [HockeySignin][debug] Player Parker Gallant prepaid status: yes
+[17-Jan-2025 05:13:44 UTC] [HockeySignin][debug] Player Parker Gallant is a goalie
+[17-Jan-2025 05:13:44 UTC] [HockeySignin][debug] Found Civic section at line 4
+[17-Jan-2025 05:13:44 UTC] [HockeySignin][debug] Found Forum section at line 36
+[17-Jan-2025 05:13:44 UTC] [HockeySignin][debug] Found Waitlist section at line 68
+[17-Jan-2025 05:13:44 UTC] [HockeySignin][debug] Found Civic section at line 4
+[17-Jan-2025 05:13:44 UTC] [HockeySignin][debug] Found Forum section at line 36
+[17-Jan-2025 05:13:44 UTC] [HockeySignin][debug] Found Waitlist section at line 68
+[17-Jan-2025 05:13:44 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 68 (preferred position: Goalie)
+[17-Jan-2025 05:13:44 UTC] [HockeySignin][debug] Found empty goalie spot at line 38
+[17-Jan-2025 05:13:44 UTC] [HockeySignin][debug] Player Parker Gallant assigned to Forum rink at position Goal
+[17-Jan-2025 05:13:44 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[17-Jan-2025 05:13:53 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Nick Sperdakes
+[17-Jan-2025 05:13:53 UTC] [HockeySignin][debug] Starting check-in process for player: Nick Sperdakes
+[17-Jan-2025 05:13:53 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 05:13:53 UTC] [HockeySignin][debug] Player Nick Sperdakes prepaid status: yes
+[17-Jan-2025 05:13:53 UTC] [HockeySignin][debug] Player Nick Sperdakes is a goalie
+[17-Jan-2025 05:13:53 UTC] [HockeySignin][debug] Found Civic section at line 4
+[17-Jan-2025 05:13:53 UTC] [HockeySignin][debug] Found Forum section at line 36
+[17-Jan-2025 05:13:53 UTC] [HockeySignin][debug] Found Waitlist section at line 68
+[17-Jan-2025 05:13:53 UTC] [HockeySignin][debug] Found Civic section at line 4
+[17-Jan-2025 05:13:53 UTC] [HockeySignin][debug] Found Forum section at line 36
+[17-Jan-2025 05:13:53 UTC] [HockeySignin][debug] Found Waitlist section at line 68
+[17-Jan-2025 05:13:53 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 68 (preferred position: Goalie)
+[17-Jan-2025 05:13:53 UTC] [HockeySignin][debug] Found empty goalie spot at line 53
+[17-Jan-2025 05:13:53 UTC] [HockeySignin][debug] Player Nick Sperdakes assigned to Forum rink at position Goal
+[17-Jan-2025 05:13:53 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[17-Jan-2025 05:13:59 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Mark Pottie
+[17-Jan-2025 05:13:59 UTC] [HockeySignin][debug] Starting check-in process for player: Mark Pottie
+[17-Jan-2025 05:13:59 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 05:13:59 UTC] [HockeySignin][debug] Player Mark Pottie prepaid status: yes
+[17-Jan-2025 05:13:59 UTC] [HockeySignin][debug] Found Civic section at line 4
+[17-Jan-2025 05:13:59 UTC] [HockeySignin][debug] Found Forum section at line 36
+[17-Jan-2025 05:13:59 UTC] [HockeySignin][debug] Found Waitlist section at line 68
+[17-Jan-2025 05:13:59 UTC] [HockeySignin][debug] Found Civic section at line 4
+[17-Jan-2025 05:13:59 UTC] [HockeySignin][debug] Found Forum section at line 36
+[17-Jan-2025 05:13:59 UTC] [HockeySignin][debug] Found Waitlist section at line 68
+[17-Jan-2025 05:13:59 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 68 (preferred position: Forward)
+[17-Jan-2025 05:13:59 UTC] [HockeySignin][debug] Found empty position: F at line 9
+[17-Jan-2025 05:13:59 UTC] [HockeySignin][debug] Found empty position: F at line 10
+[17-Jan-2025 05:13:59 UTC] [HockeySignin][debug] Found empty position: F at line 11
+[17-Jan-2025 05:13:59 UTC] [HockeySignin][debug] Found empty position: F at line 12
+[17-Jan-2025 05:13:59 UTC] [HockeySignin][debug] Found empty position: F at line 13
+[17-Jan-2025 05:13:59 UTC] [HockeySignin][debug] Found empty position: F at line 14
+[17-Jan-2025 05:13:59 UTC] [HockeySignin][debug] Found empty position: D at line 16
+[17-Jan-2025 05:13:59 UTC] [HockeySignin][debug] Found empty position: D at line 17
+[17-Jan-2025 05:13:59 UTC] [HockeySignin][debug] Found empty position: D at line 18
+[17-Jan-2025 05:13:59 UTC] [HockeySignin][debug] Found empty position: D at line 19
+[17-Jan-2025 05:13:59 UTC] [HockeySignin][debug] Found empty position: F at line 24
+[17-Jan-2025 05:13:59 UTC] [HockeySignin][debug] Found empty position: F at line 25
+[17-Jan-2025 05:13:59 UTC] [HockeySignin][debug] Found empty position: F at line 26
+[17-Jan-2025 05:13:59 UTC] [HockeySignin][debug] Found empty position: F at line 27
+[17-Jan-2025 05:13:59 UTC] [HockeySignin][debug] Found empty position: F at line 28
+[17-Jan-2025 05:13:59 UTC] [HockeySignin][debug] Found empty position: F at line 29
+[17-Jan-2025 05:13:59 UTC] [HockeySignin][debug] Found empty position: D at line 31
+[17-Jan-2025 05:13:59 UTC] [HockeySignin][debug] Found empty position: D at line 32
+[17-Jan-2025 05:13:59 UTC] [HockeySignin][debug] Found empty position: D at line 33
+[17-Jan-2025 05:13:59 UTC] [HockeySignin][debug] Found empty position: D at line 34
+[17-Jan-2025 05:13:59 UTC] [HockeySignin][debug] Found empty position: F at line 41
+[17-Jan-2025 05:13:59 UTC] [HockeySignin][debug] Found empty position: F at line 42
+[17-Jan-2025 05:13:59 UTC] [HockeySignin][debug] Found empty position: F at line 43
+[17-Jan-2025 05:13:59 UTC] [HockeySignin][debug] Found empty position: F at line 44
+[17-Jan-2025 05:13:59 UTC] [HockeySignin][debug] Found empty position: F at line 45
+[17-Jan-2025 05:13:59 UTC] [HockeySignin][debug] Found empty position: F at line 46
+[17-Jan-2025 05:13:59 UTC] [HockeySignin][debug] Found empty position: D at line 48
+[17-Jan-2025 05:13:59 UTC] [HockeySignin][debug] Found empty position: D at line 49
+[17-Jan-2025 05:13:59 UTC] [HockeySignin][debug] Found empty position: D at line 50
+[17-Jan-2025 05:13:59 UTC] [HockeySignin][debug] Found empty position: D at line 51
+[17-Jan-2025 05:13:59 UTC] [HockeySignin][debug] Found empty position: F at line 56
+[17-Jan-2025 05:13:59 UTC] [HockeySignin][debug] Found empty position: F at line 57
+[17-Jan-2025 05:13:59 UTC] [HockeySignin][debug] Found empty position: F at line 58
+[17-Jan-2025 05:13:59 UTC] [HockeySignin][debug] Found empty position: F at line 59
+[17-Jan-2025 05:13:59 UTC] [HockeySignin][debug] Found empty position: F at line 60
+[17-Jan-2025 05:13:59 UTC] [HockeySignin][debug] Found empty position: F at line 61
+[17-Jan-2025 05:13:59 UTC] [HockeySignin][debug] Found empty position: D at line 63
+[17-Jan-2025 05:13:59 UTC] [HockeySignin][debug] Found empty position: D at line 64
+[17-Jan-2025 05:13:59 UTC] [HockeySignin][debug] Found empty position: D at line 66
+[17-Jan-2025 05:13:59 UTC] [HockeySignin][debug] Selected preferred position F at line 13
+[17-Jan-2025 05:13:59 UTC] [HockeySignin][debug] Player Mark Pottie assigned to Civic rink at position F
+[17-Jan-2025 05:13:59 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[17-Jan-2025 05:14:16 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Pat Hamilton
+[17-Jan-2025 05:14:16 UTC] [HockeySignin][debug] Starting check-in process for player: Pat Hamilton
+[17-Jan-2025 05:14:16 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 05:14:16 UTC] [HockeySignin][debug] Player Pat Hamilton prepaid status: yes
+[17-Jan-2025 05:14:16 UTC] [HockeySignin][debug] Found Civic section at line 4
+[17-Jan-2025 05:14:16 UTC] [HockeySignin][debug] Found Forum section at line 36
+[17-Jan-2025 05:14:16 UTC] [HockeySignin][debug] Found Waitlist section at line 68
+[17-Jan-2025 05:14:16 UTC] [HockeySignin][debug] Found Civic section at line 4
+[17-Jan-2025 05:14:16 UTC] [HockeySignin][debug] Found Forum section at line 36
+[17-Jan-2025 05:14:16 UTC] [HockeySignin][debug] Found Waitlist section at line 68
+[17-Jan-2025 05:14:16 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 68 (preferred position: Defence)
+[17-Jan-2025 05:14:16 UTC] [HockeySignin][debug] Found empty position: F at line 9
+[17-Jan-2025 05:14:16 UTC] [HockeySignin][debug] Found empty position: F at line 10
+[17-Jan-2025 05:14:16 UTC] [HockeySignin][debug] Found empty position: F at line 11
+[17-Jan-2025 05:14:16 UTC] [HockeySignin][debug] Found empty position: F at line 12
+[17-Jan-2025 05:14:16 UTC] [HockeySignin][debug] Found empty position: F at line 14
+[17-Jan-2025 05:14:16 UTC] [HockeySignin][debug] Found empty position: D at line 16
+[17-Jan-2025 05:14:16 UTC] [HockeySignin][debug] Found empty position: D at line 17
+[17-Jan-2025 05:14:16 UTC] [HockeySignin][debug] Found empty position: D at line 18
+[17-Jan-2025 05:14:16 UTC] [HockeySignin][debug] Found empty position: D at line 19
+[17-Jan-2025 05:14:16 UTC] [HockeySignin][debug] Found empty position: F at line 24
+[17-Jan-2025 05:14:16 UTC] [HockeySignin][debug] Found empty position: F at line 25
+[17-Jan-2025 05:14:16 UTC] [HockeySignin][debug] Found empty position: F at line 26
+[17-Jan-2025 05:14:16 UTC] [HockeySignin][debug] Found empty position: F at line 27
+[17-Jan-2025 05:14:16 UTC] [HockeySignin][debug] Found empty position: F at line 28
+[17-Jan-2025 05:14:16 UTC] [HockeySignin][debug] Found empty position: F at line 29
+[17-Jan-2025 05:14:16 UTC] [HockeySignin][debug] Found empty position: D at line 31
+[17-Jan-2025 05:14:16 UTC] [HockeySignin][debug] Found empty position: D at line 32
+[17-Jan-2025 05:14:16 UTC] [HockeySignin][debug] Found empty position: D at line 33
+[17-Jan-2025 05:14:16 UTC] [HockeySignin][debug] Found empty position: D at line 34
+[17-Jan-2025 05:14:16 UTC] [HockeySignin][debug] Found empty position: F at line 41
+[17-Jan-2025 05:14:16 UTC] [HockeySignin][debug] Found empty position: F at line 42
+[17-Jan-2025 05:14:16 UTC] [HockeySignin][debug] Found empty position: F at line 43
+[17-Jan-2025 05:14:16 UTC] [HockeySignin][debug] Found empty position: F at line 44
+[17-Jan-2025 05:14:16 UTC] [HockeySignin][debug] Found empty position: F at line 45
+[17-Jan-2025 05:14:16 UTC] [HockeySignin][debug] Found empty position: F at line 46
+[17-Jan-2025 05:14:16 UTC] [HockeySignin][debug] Found empty position: D at line 48
+[17-Jan-2025 05:14:16 UTC] [HockeySignin][debug] Found empty position: D at line 49
+[17-Jan-2025 05:14:16 UTC] [HockeySignin][debug] Found empty position: D at line 50
+[17-Jan-2025 05:14:16 UTC] [HockeySignin][debug] Found empty position: D at line 51
+[17-Jan-2025 05:14:16 UTC] [HockeySignin][debug] Found empty position: F at line 56
+[17-Jan-2025 05:14:16 UTC] [HockeySignin][debug] Found empty position: F at line 57
+[17-Jan-2025 05:14:16 UTC] [HockeySignin][debug] Found empty position: F at line 58
+[17-Jan-2025 05:14:16 UTC] [HockeySignin][debug] Found empty position: F at line 59
+[17-Jan-2025 05:14:16 UTC] [HockeySignin][debug] Found empty position: F at line 60
+[17-Jan-2025 05:14:16 UTC] [HockeySignin][debug] Found empty position: F at line 61
+[17-Jan-2025 05:14:16 UTC] [HockeySignin][debug] Found empty position: D at line 63
+[17-Jan-2025 05:14:16 UTC] [HockeySignin][debug] Found empty position: D at line 64
+[17-Jan-2025 05:14:16 UTC] [HockeySignin][debug] Found empty position: D at line 66
+[17-Jan-2025 05:14:16 UTC] [HockeySignin][debug] Selected preferred position D at line 33
+[17-Jan-2025 05:14:16 UTC] [HockeySignin][debug] Player Pat Hamilton assigned to Civic rink at position D
+[17-Jan-2025 05:14:16 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[17-Jan-2025 05:14:27 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Wait Err
+[17-Jan-2025 05:14:27 UTC] [HockeySignin][debug] Starting check-in process for player: Wait Err
+[17-Jan-2025 05:14:27 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 05:14:27 UTC] [HockeySignin][debug] Player not found in database: Wait Err
+[17-Jan-2025 05:14:27 UTC] [HockeySignin][debug] Found Civic section at line 4
+[17-Jan-2025 05:14:27 UTC] [HockeySignin][debug] Found Forum section at line 36
+[17-Jan-2025 05:14:27 UTC] [HockeySignin][debug] Found Waitlist section at line 68
+[17-Jan-2025 05:14:27 UTC] [HockeySignin][debug] Non-database player Wait Err added to waitlist at position 3
+[17-Jan-2025 05:14:27 UTC] [HockeySignin][debug] Check-in response: Thank you! You've been added to our waitlist for tonight. Please check back at 6pm to see if you have made the roster! You can reach us at halifaxpickuphockey@gmail.com to ask about Regular subscriber spots!
+[17-Jan-2025 05:14:31 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Jimm Bob
+[17-Jan-2025 05:14:31 UTC] [HockeySignin][debug] Starting check-in process for player: Jimm Bob
+[17-Jan-2025 05:14:31 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 05:14:31 UTC] [HockeySignin][debug] Player not found in database: Jimm Bob
+[17-Jan-2025 05:14:31 UTC] [HockeySignin][debug] Found Civic section at line 4
+[17-Jan-2025 05:14:31 UTC] [HockeySignin][debug] Found Forum section at line 36
+[17-Jan-2025 05:14:31 UTC] [HockeySignin][debug] Found Waitlist section at line 68
+[17-Jan-2025 05:14:31 UTC] [HockeySignin][debug] Non-database player Jimm Bob added to waitlist at position 4
+[17-Jan-2025 05:14:31 UTC] [HockeySignin][debug] Check-in response: Thank you! You've been added to our waitlist for tonight. Please check back at 6pm to see if you have made the roster! You can reach us at halifaxpickuphockey@gmail.com to ask about Regular subscriber spots!
+[17-Jan-2025 05:15:29 UTC] [HockeySignin][debug] Processing waitlist at 01:15 for 2025-01-17 (Season: RegularSeason2024-2025)
+[17-Jan-2025 05:15:29 UTC] [HockeySignin][debug] Found Civic section at line 4
+[17-Jan-2025 05:15:29 UTC] [HockeySignin][debug] Found Forum section at line 36
+[17-Jan-2025 05:15:29 UTC] [HockeySignin][debug] Found Waitlist section at line 68
+[17-Jan-2025 05:15:29 UTC] [HockeySignin][debug] Processing waitlist with 0 players
+[17-Jan-2025 05:15:29 UTC] [HockeySignin][debug] Waitlist processing complete. 0 players moved, 0 remaining
+[17-Jan-2025 05:15:29 UTC] [HockeySignin][debug] Waitlist processed successfully for 2025-01-17
+[17-Jan-2025 05:18:20 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Wait One
+[17-Jan-2025 05:18:20 UTC] [HockeySignin][debug] Starting check-in process for player: Wait One
+[17-Jan-2025 05:18:20 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 05:18:20 UTC] [HockeySignin][debug] Player not found in database: Wait One
+[17-Jan-2025 05:18:20 UTC] [HockeySignin][debug] Found Civic section at line 4
+[17-Jan-2025 05:18:20 UTC] [HockeySignin][debug] Found Forum section at line 36
+[17-Jan-2025 05:18:20 UTC] [HockeySignin][debug] Found Waitlist section at line 68
+[17-Jan-2025 05:18:20 UTC] [HockeySignin][debug] Non-database player Wait One added to waitlist at position 1
+[17-Jan-2025 05:18:20 UTC] [HockeySignin][debug] Check-in response: Thank you! You've been added to our waitlist for tonight. Please check back at 6pm to see if you have made the roster! You can reach us at halifaxpickuphockey@gmail.com to ask about Regular subscriber spots!
+[17-Jan-2025 05:18:26 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Wait Two
+[17-Jan-2025 05:18:26 UTC] [HockeySignin][debug] Starting check-in process for player: Wait Two
+[17-Jan-2025 05:18:26 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 05:18:26 UTC] [HockeySignin][debug] Player not found in database: Wait Two
+[17-Jan-2025 05:18:26 UTC] [HockeySignin][debug] Found Civic section at line 4
+[17-Jan-2025 05:18:26 UTC] [HockeySignin][debug] Found Forum section at line 36
+[17-Jan-2025 05:18:26 UTC] [HockeySignin][debug] Found Waitlist section at line 68
+[17-Jan-2025 05:18:26 UTC] [HockeySignin][debug] Non-database player Wait Two added to waitlist at position 2
+[17-Jan-2025 05:18:26 UTC] [HockeySignin][debug] Check-in response: Thank you! You've been added to our waitlist for tonight. Please check back at 6pm to see if you have made the roster! You can reach us at halifaxpickuphockey@gmail.com to ask about Regular subscriber spots!
+[17-Jan-2025 05:18:29 UTC] [HockeySignin][debug] Form submission: action=checkin, player=W Three
+[17-Jan-2025 05:18:29 UTC] [HockeySignin][debug] Starting check-in process for player: W Three
+[17-Jan-2025 05:18:29 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 05:18:29 UTC] [HockeySignin][debug] Player not found in database: W Three
+[17-Jan-2025 05:18:29 UTC] [HockeySignin][debug] Found Civic section at line 4
+[17-Jan-2025 05:18:29 UTC] [HockeySignin][debug] Found Forum section at line 36
+[17-Jan-2025 05:18:29 UTC] [HockeySignin][debug] Found Waitlist section at line 68
+[17-Jan-2025 05:18:29 UTC] [HockeySignin][debug] Non-database player W Three added to waitlist at position 3
+[17-Jan-2025 05:18:29 UTC] [HockeySignin][debug] Check-in response: Thank you! You've been added to our waitlist for tonight. Please check back at 6pm to see if you have made the roster! You can reach us at halifaxpickuphockey@gmail.com to ask about Regular subscriber spots!
+[17-Jan-2025 05:18:34 UTC] [HockeySignin][debug] Form submission: action=checkin, player=W Fower
+[17-Jan-2025 05:18:34 UTC] [HockeySignin][debug] Starting check-in process for player: W Fower
+[17-Jan-2025 05:18:34 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 05:18:34 UTC] [HockeySignin][debug] Player not found in database: W Fower
+[17-Jan-2025 05:18:34 UTC] [HockeySignin][debug] Found Civic section at line 4
+[17-Jan-2025 05:18:34 UTC] [HockeySignin][debug] Found Forum section at line 36
+[17-Jan-2025 05:18:34 UTC] [HockeySignin][debug] Found Waitlist section at line 68
+[17-Jan-2025 05:18:34 UTC] [HockeySignin][debug] Non-database player W Fower added to waitlist at position 4
+[17-Jan-2025 05:18:34 UTC] [HockeySignin][debug] Check-in response: Thank you! You've been added to our waitlist for tonight. Please check back at 6pm to see if you have made the roster! You can reach us at halifaxpickuphockey@gmail.com to ask about Regular subscriber spots!
+[17-Jan-2025 05:18:39 UTC] [HockeySignin][debug] Form submission: action=checkin, player=WAIT FIFE
+[17-Jan-2025 05:18:39 UTC] [HockeySignin][debug] Starting check-in process for player: WAIT FIFE
+[17-Jan-2025 05:18:39 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 05:18:39 UTC] [HockeySignin][debug] Player not found in database: WAIT FIFE
+[17-Jan-2025 05:18:39 UTC] [HockeySignin][debug] Found Civic section at line 4
+[17-Jan-2025 05:18:39 UTC] [HockeySignin][debug] Found Forum section at line 36
+[17-Jan-2025 05:18:39 UTC] [HockeySignin][debug] Found Waitlist section at line 68
+[17-Jan-2025 05:18:39 UTC] [HockeySignin][debug] Non-database player WAIT FIFE added to waitlist at position 5
+[17-Jan-2025 05:18:39 UTC] [HockeySignin][debug] Check-in response: Thank you! You've been added to our waitlist for tonight. Please check back at 6pm to see if you have made the roster! You can reach us at halifaxpickuphockey@gmail.com to ask about Regular subscriber spots!
+[17-Jan-2025 05:18:53 UTC] [HockeySignin][debug] Processing waitlist at 01:18 for 2025-01-17 (Season: RegularSeason2024-2025)
+[17-Jan-2025 05:18:53 UTC] [HockeySignin][debug] Found Civic section at line 4
+[17-Jan-2025 05:18:53 UTC] [HockeySignin][debug] Found Forum section at line 36
+[17-Jan-2025 05:18:53 UTC] [HockeySignin][debug] Found Waitlist section at line 68
+[17-Jan-2025 05:18:53 UTC] [HockeySignin][debug] Processing waitlist with 0 players
+[17-Jan-2025 05:18:53 UTC] [HockeySignin][debug] Waitlist processing complete. 0 players moved, 0 remaining
+[17-Jan-2025 05:18:53 UTC] [HockeySignin][debug] Waitlist processed successfully for 2025-01-17
+[17-Jan-2025 05:21:12 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Waitlist one
+[17-Jan-2025 05:21:12 UTC] [HockeySignin][debug] Starting check-in process for player: Waitlist one
+[17-Jan-2025 05:21:12 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 05:21:12 UTC] [HockeySignin][debug] Player not found in database: Waitlist one
+[17-Jan-2025 05:21:12 UTC] [HockeySignin][debug] Non-database player Waitlist one added to waitlist at position 1
+[17-Jan-2025 05:21:12 UTC] [HockeySignin][debug] Check-in response: Thank you! You've been added to our waitlist for tonight. Please check back at 6pm to see if you have made the roster! You can reach us at halifaxpickuphockey@gmail.com to ask about Regular subscriber spots!
+[17-Jan-2025 05:21:16 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Wait Two
+[17-Jan-2025 05:21:16 UTC] [HockeySignin][debug] Starting check-in process for player: Wait Two
+[17-Jan-2025 05:21:16 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 05:21:16 UTC] [HockeySignin][debug] Player not found in database: Wait Two
+[17-Jan-2025 05:21:16 UTC] [HockeySignin][debug] Non-database player Wait Two added to waitlist at position 2
+[17-Jan-2025 05:21:16 UTC] [HockeySignin][debug] Check-in response: Thank you! You've been added to our waitlist for tonight. Please check back at 6pm to see if you have made the roster! You can reach us at halifaxpickuphockey@gmail.com to ask about Regular subscriber spots!
+[17-Jan-2025 05:21:28 UTC] [HockeySignin][debug] Form submission: action=checkin, player=W Three
+[17-Jan-2025 05:21:28 UTC] [HockeySignin][debug] Starting check-in process for player: W Three
+[17-Jan-2025 05:21:28 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 05:21:28 UTC] [HockeySignin][debug] Player not found in database: W Three
+[17-Jan-2025 05:21:28 UTC] [HockeySignin][debug] Non-database player W Three added to waitlist at position 3
+[17-Jan-2025 05:21:28 UTC] [HockeySignin][debug] Check-in response: Thank you! You've been added to our waitlist for tonight. Please check back at 6pm to see if you have made the roster! You can reach us at halifaxpickuphockey@gmail.com to ask about Regular subscriber spots!
+[17-Jan-2025 05:21:33 UTC] [HockeySignin][debug] Form submission: action=checkin, player=W Fower
+[17-Jan-2025 05:21:33 UTC] [HockeySignin][debug] Starting check-in process for player: W Fower
+[17-Jan-2025 05:21:33 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 05:21:33 UTC] [HockeySignin][debug] Player not found in database: W Fower
+[17-Jan-2025 05:21:33 UTC] [HockeySignin][debug] Non-database player W Fower added to waitlist at position 4
+[17-Jan-2025 05:21:33 UTC] [HockeySignin][debug] Check-in response: Thank you! You've been added to our waitlist for tonight. Please check back at 6pm to see if you have made the roster! You can reach us at halifaxpickuphockey@gmail.com to ask about Regular subscriber spots!
+[17-Jan-2025 05:21:37 UTC] [HockeySignin][debug] Form submission: action=checkin, player=WAIT FIFE
+[17-Jan-2025 05:21:37 UTC] [HockeySignin][debug] Starting check-in process for player: WAIT FIFE
+[17-Jan-2025 05:21:37 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 05:21:37 UTC] [HockeySignin][debug] Player not found in database: WAIT FIFE
+[17-Jan-2025 05:21:37 UTC] [HockeySignin][debug] Non-database player WAIT FIFE added to waitlist at position 5
+[17-Jan-2025 05:21:37 UTC] [HockeySignin][debug] Check-in response: Thank you! You've been added to our waitlist for tonight. Please check back at 6pm to see if you have made the roster! You can reach us at halifaxpickuphockey@gmail.com to ask about Regular subscriber spots!
+[17-Jan-2025 05:21:48 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Jon Nickerson
+[17-Jan-2025 05:21:48 UTC] [HockeySignin][debug] Starting check-in process for player: Jon Nickerson
+[17-Jan-2025 05:21:48 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 05:21:48 UTC] [HockeySignin][debug] Player Jon Nickerson prepaid status: yes
+[17-Jan-2025 05:21:48 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 68 (preferred position: Forward)
+[17-Jan-2025 05:21:48 UTC] [HockeySignin][debug] Found empty position: F at line 9
+[17-Jan-2025 05:21:48 UTC] [HockeySignin][debug] Found empty position: F at line 10
+[17-Jan-2025 05:21:48 UTC] [HockeySignin][debug] Found empty position: F at line 11
+[17-Jan-2025 05:21:48 UTC] [HockeySignin][debug] Found empty position: F at line 12
+[17-Jan-2025 05:21:48 UTC] [HockeySignin][debug] Found empty position: F at line 14
+[17-Jan-2025 05:21:48 UTC] [HockeySignin][debug] Found empty position: D at line 16
+[17-Jan-2025 05:21:48 UTC] [HockeySignin][debug] Found empty position: D at line 17
+[17-Jan-2025 05:21:48 UTC] [HockeySignin][debug] Found empty position: D at line 18
+[17-Jan-2025 05:21:48 UTC] [HockeySignin][debug] Found empty position: D at line 19
+[17-Jan-2025 05:21:48 UTC] [HockeySignin][debug] Found empty position: F at line 24
+[17-Jan-2025 05:21:48 UTC] [HockeySignin][debug] Found empty position: F at line 25
+[17-Jan-2025 05:21:48 UTC] [HockeySignin][debug] Found empty position: F at line 26
+[17-Jan-2025 05:21:48 UTC] [HockeySignin][debug] Found empty position: F at line 27
+[17-Jan-2025 05:21:48 UTC] [HockeySignin][debug] Found empty position: F at line 28
+[17-Jan-2025 05:21:48 UTC] [HockeySignin][debug] Found empty position: F at line 29
+[17-Jan-2025 05:21:48 UTC] [HockeySignin][debug] Found empty position: D at line 31
+[17-Jan-2025 05:21:48 UTC] [HockeySignin][debug] Found empty position: D at line 32
+[17-Jan-2025 05:21:48 UTC] [HockeySignin][debug] Found empty position: D at line 34
+[17-Jan-2025 05:21:48 UTC] [HockeySignin][debug] Found empty position: F at line 41
+[17-Jan-2025 05:21:48 UTC] [HockeySignin][debug] Found empty position: F at line 42
+[17-Jan-2025 05:21:48 UTC] [HockeySignin][debug] Found empty position: F at line 43
+[17-Jan-2025 05:21:48 UTC] [HockeySignin][debug] Found empty position: F at line 44
+[17-Jan-2025 05:21:48 UTC] [HockeySignin][debug] Found empty position: F at line 45
+[17-Jan-2025 05:21:48 UTC] [HockeySignin][debug] Found empty position: F at line 46
+[17-Jan-2025 05:21:48 UTC] [HockeySignin][debug] Found empty position: D at line 48
+[17-Jan-2025 05:21:48 UTC] [HockeySignin][debug] Found empty position: D at line 49
+[17-Jan-2025 05:21:48 UTC] [HockeySignin][debug] Found empty position: D at line 50
+[17-Jan-2025 05:21:48 UTC] [HockeySignin][debug] Found empty position: D at line 51
+[17-Jan-2025 05:21:48 UTC] [HockeySignin][debug] Found empty position: F at line 56
+[17-Jan-2025 05:21:48 UTC] [HockeySignin][debug] Found empty position: F at line 57
+[17-Jan-2025 05:21:48 UTC] [HockeySignin][debug] Found empty position: F at line 58
+[17-Jan-2025 05:21:48 UTC] [HockeySignin][debug] Found empty position: F at line 59
+[17-Jan-2025 05:21:48 UTC] [HockeySignin][debug] Found empty position: F at line 60
+[17-Jan-2025 05:21:48 UTC] [HockeySignin][debug] Found empty position: F at line 61
+[17-Jan-2025 05:21:48 UTC] [HockeySignin][debug] Found empty position: D at line 63
+[17-Jan-2025 05:21:48 UTC] [HockeySignin][debug] Found empty position: D at line 64
+[17-Jan-2025 05:21:48 UTC] [HockeySignin][debug] Found empty position: D at line 66
+[17-Jan-2025 05:21:48 UTC] [HockeySignin][debug] Selected preferred position F at line 42
+[17-Jan-2025 05:21:48 UTC] [HockeySignin][debug] Player Jon Nickerson assigned to Forum rink at position F
+[17-Jan-2025 05:21:48 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Processing waitlist at 01:22 for 2025-01-17 (Season: RegularSeason2024-2025)
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Processing waitlist with 5 players
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 68 (preferred position: )
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 9
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 10
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 11
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 12
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 14
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: D at line 16
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: D at line 17
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: D at line 18
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: D at line 19
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 24
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 25
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 26
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 27
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 28
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 29
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: D at line 31
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: D at line 32
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: D at line 34
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 41
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 43
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 44
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 45
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 46
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: D at line 48
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: D at line 49
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: D at line 50
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: D at line 51
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 56
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 57
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 58
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 59
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 60
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 61
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: D at line 63
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: D at line 64
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: D at line 66
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Selected available position F at line 11
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Waitlist movement: Waitlist one moved to Civic rink at position F
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 68 (preferred position: )
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 9
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 10
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 12
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 14
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: D at line 16
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: D at line 17
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: D at line 18
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: D at line 19
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 24
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 25
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 26
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 27
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 28
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 29
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: D at line 31
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: D at line 32
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: D at line 34
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 41
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 43
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 44
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 45
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 46
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: D at line 48
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: D at line 49
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: D at line 50
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: D at line 51
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 56
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 57
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 58
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 59
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 60
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 61
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: D at line 63
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: D at line 64
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: D at line 66
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Selected available position D at line 50
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Waitlist movement: Wait Two moved to Forum rink at position D
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 68 (preferred position: )
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 9
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 10
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 12
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 14
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: D at line 16
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: D at line 17
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: D at line 18
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: D at line 19
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 24
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 25
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 26
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 27
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 28
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 29
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: D at line 31
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: D at line 32
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: D at line 34
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 41
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 43
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 44
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 45
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 46
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: D at line 48
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: D at line 49
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: D at line 51
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 56
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 57
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 58
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 59
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 60
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 61
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: D at line 63
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: D at line 64
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: D at line 66
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Selected available position F at line 57
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Waitlist movement: W Three moved to Forum rink at position F
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 68 (preferred position: )
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 9
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 10
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 12
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 14
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: D at line 16
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: D at line 17
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: D at line 18
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: D at line 19
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 24
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 25
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 26
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 27
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 28
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 29
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: D at line 31
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: D at line 32
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: D at line 34
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 41
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 43
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 44
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 45
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 46
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: D at line 48
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: D at line 49
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: D at line 51
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 56
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 58
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 59
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 60
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 61
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: D at line 63
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: D at line 64
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: D at line 66
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Selected available position F at line 10
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Waitlist movement: W Fower moved to Civic rink at position F
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 68 (preferred position: )
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 9
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 12
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 14
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: D at line 16
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: D at line 17
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: D at line 18
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: D at line 19
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 24
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 25
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 26
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 27
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 28
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 29
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: D at line 31
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: D at line 32
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: D at line 34
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 41
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 43
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 44
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 45
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 46
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: D at line 48
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: D at line 49
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: D at line 51
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 56
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 58
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 59
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 60
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: F at line 61
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: D at line 63
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: D at line 64
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Found empty position: D at line 66
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Selected available position F at line 43
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Waitlist movement: WAIT FIFE moved to Forum rink at position F
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Waitlist processing complete. 5 players moved, 0 remaining
+[17-Jan-2025 05:22:11 UTC] [HockeySignin][debug] Waitlist processed successfully for 2025-01-17
+[17-Jan-2025 05:23:50 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Mark Pottie
+[17-Jan-2025 05:23:50 UTC] [HockeySignin][debug] Starting check-in process for player: Mark Pottie
+[17-Jan-2025 05:23:50 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 05:23:50 UTC] [HockeySignin][debug] Player Mark Pottie is already checked in
+[17-Jan-2025 05:23:50 UTC] [HockeySignin][debug] Check-in response: already_checked_in
+[17-Jan-2025 05:23:58 UTC] [HockeySignin][debug] Form submission: action=checkout, player=Mark Pottie
+[17-Jan-2025 05:23:58 UTC] [HockeySignin][debug] Processing checkout for player: Mark Pottie
+[17-Jan-2025 05:23:58 UTC] [HockeySignin][debug] Player checked out: Mark Pottie
+[17-Jan-2025 05:24:04 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Mark Pottie
+[17-Jan-2025 05:24:04 UTC] [HockeySignin][debug] Starting check-in process for player: Mark Pottie
+[17-Jan-2025 05:24:04 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 05:24:04 UTC] [HockeySignin][debug] Player Mark Pottie prepaid status: yes
+[17-Jan-2025 05:24:04 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 68 (preferred position: Forward)
+[17-Jan-2025 05:24:04 UTC] [HockeySignin][debug] Found empty position: F at line 9
+[17-Jan-2025 05:24:04 UTC] [HockeySignin][debug] Found empty position: F at line 12
+[17-Jan-2025 05:24:04 UTC] [HockeySignin][debug] Found empty position: F at line 13
+[17-Jan-2025 05:24:04 UTC] [HockeySignin][debug] Found empty position: F at line 14
+[17-Jan-2025 05:24:04 UTC] [HockeySignin][debug] Found empty position: D at line 16
+[17-Jan-2025 05:24:04 UTC] [HockeySignin][debug] Found empty position: D at line 17
+[17-Jan-2025 05:24:04 UTC] [HockeySignin][debug] Found empty position: D at line 18
+[17-Jan-2025 05:24:04 UTC] [HockeySignin][debug] Found empty position: D at line 19
+[17-Jan-2025 05:24:04 UTC] [HockeySignin][debug] Found empty position: F at line 24
+[17-Jan-2025 05:24:04 UTC] [HockeySignin][debug] Found empty position: F at line 25
+[17-Jan-2025 05:24:04 UTC] [HockeySignin][debug] Found empty position: F at line 26
+[17-Jan-2025 05:24:04 UTC] [HockeySignin][debug] Found empty position: F at line 27
+[17-Jan-2025 05:24:04 UTC] [HockeySignin][debug] Found empty position: F at line 28
+[17-Jan-2025 05:24:04 UTC] [HockeySignin][debug] Found empty position: F at line 29
+[17-Jan-2025 05:24:04 UTC] [HockeySignin][debug] Found empty position: D at line 31
+[17-Jan-2025 05:24:04 UTC] [HockeySignin][debug] Found empty position: D at line 32
+[17-Jan-2025 05:24:04 UTC] [HockeySignin][debug] Found empty position: D at line 34
+[17-Jan-2025 05:24:04 UTC] [HockeySignin][debug] Found empty position: F at line 41
+[17-Jan-2025 05:24:04 UTC] [HockeySignin][debug] Found empty position: F at line 44
+[17-Jan-2025 05:24:04 UTC] [HockeySignin][debug] Found empty position: F at line 45
+[17-Jan-2025 05:24:04 UTC] [HockeySignin][debug] Found empty position: F at line 46
+[17-Jan-2025 05:24:04 UTC] [HockeySignin][debug] Found empty position: D at line 48
+[17-Jan-2025 05:24:04 UTC] [HockeySignin][debug] Found empty position: D at line 49
+[17-Jan-2025 05:24:04 UTC] [HockeySignin][debug] Found empty position: D at line 51
+[17-Jan-2025 05:24:04 UTC] [HockeySignin][debug] Found empty position: F at line 56
+[17-Jan-2025 05:24:04 UTC] [HockeySignin][debug] Found empty position: F at line 58
+[17-Jan-2025 05:24:04 UTC] [HockeySignin][debug] Found empty position: F at line 59
+[17-Jan-2025 05:24:04 UTC] [HockeySignin][debug] Found empty position: F at line 60
+[17-Jan-2025 05:24:04 UTC] [HockeySignin][debug] Found empty position: F at line 61
+[17-Jan-2025 05:24:04 UTC] [HockeySignin][debug] Found empty position: D at line 63
+[17-Jan-2025 05:24:04 UTC] [HockeySignin][debug] Found empty position: D at line 64
+[17-Jan-2025 05:24:04 UTC] [HockeySignin][debug] Found empty position: D at line 66
+[17-Jan-2025 05:24:04 UTC] [HockeySignin][debug] Selected preferred position F at line 27
+[17-Jan-2025 05:24:04 UTC] [HockeySignin][debug] Player Mark Pottie assigned to Civic rink at position F
+[17-Jan-2025 05:24:04 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[17-Jan-2025 05:24:13 UTC] [HockeySignin][debug] Form submission: action=checkin, player=W 6
+[17-Jan-2025 05:24:13 UTC] [HockeySignin][debug] Starting check-in process for player: W 6
+[17-Jan-2025 05:24:13 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 05:24:13 UTC] [HockeySignin][debug] Player not found in database: W 6
+[17-Jan-2025 05:24:13 UTC] [HockeySignin][debug] Non-database player W 6 added to waitlist at position 1
+[17-Jan-2025 05:24:13 UTC] [HockeySignin][debug] Check-in response: Thank you! You've been added to our waitlist for tonight. Please check back at 6pm to see if you have made the roster! You can reach us at halifaxpickuphockey@gmail.com to ask about Regular subscriber spots!
+[17-Jan-2025 05:24:17 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Wait 7
+[17-Jan-2025 05:24:17 UTC] [HockeySignin][debug] Starting check-in process for player: Wait 7
+[17-Jan-2025 05:24:17 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 05:24:17 UTC] [HockeySignin][debug] Player not found in database: Wait 7
+[17-Jan-2025 05:24:17 UTC] [HockeySignin][debug] Non-database player Wait 7 added to waitlist at position 2
+[17-Jan-2025 05:24:17 UTC] [HockeySignin][debug] Check-in response: Thank you! You've been added to our waitlist for tonight. Please check back at 6pm to see if you have made the roster! You can reach us at halifaxpickuphockey@gmail.com to ask about Regular subscriber spots!
+[17-Jan-2025 05:24:22 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Wait ATE
+[17-Jan-2025 05:24:22 UTC] [HockeySignin][debug] Starting check-in process for player: Wait ATE
+[17-Jan-2025 05:24:22 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 05:24:22 UTC] [HockeySignin][debug] Player not found in database: Wait ATE
+[17-Jan-2025 05:24:22 UTC] [HockeySignin][debug] Non-database player Wait ATE added to waitlist at position 3
+[17-Jan-2025 05:24:22 UTC] [HockeySignin][debug] Check-in response: Thank you! You've been added to our waitlist for tonight. Please check back at 6pm to see if you have made the roster! You can reach us at halifaxpickuphockey@gmail.com to ask about Regular subscriber spots!
+[17-Jan-2025 05:24:32 UTC] [HockeySignin][debug] Processing waitlist at 01:24 for 2025-01-17 (Season: RegularSeason2024-2025)
+[17-Jan-2025 05:26:45 UTC] [HockeySignin][debug] Processing waitlist at 01:26 for 2025-01-17 (Season: RegularSeason2024-2025)
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Processing waitlist at 01:28 for 2025-01-17 (Season: RegularSeason2024-2025)
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Processing waitlist with 3 players
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 68 (preferred position: )
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: F at line 9
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: F at line 12
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: F at line 13
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: F at line 14
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: D at line 16
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: D at line 17
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: D at line 18
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: D at line 19
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: F at line 24
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: F at line 25
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: F at line 26
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: F at line 28
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: F at line 29
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: D at line 31
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: D at line 32
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: D at line 34
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: F at line 41
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: F at line 44
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: F at line 45
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: F at line 46
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: D at line 48
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: D at line 49
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: D at line 51
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: F at line 56
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: F at line 58
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: F at line 59
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: F at line 60
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: F at line 61
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: D at line 63
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: D at line 64
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: D at line 66
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Selected available position F at line 60
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Waitlist movement: W 6 moved to Forum rink at position F
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 68 (preferred position: )
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: F at line 9
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: F at line 12
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: F at line 13
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: F at line 14
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: D at line 16
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: D at line 17
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: D at line 18
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: D at line 19
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: F at line 24
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: F at line 25
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: F at line 26
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: F at line 28
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: F at line 29
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: D at line 31
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: D at line 32
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: D at line 34
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: F at line 41
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: F at line 44
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: F at line 45
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: F at line 46
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: D at line 48
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: D at line 49
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: D at line 51
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: F at line 56
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: F at line 58
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: F at line 59
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: F at line 61
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: D at line 63
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: D at line 64
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: D at line 66
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Selected available position F at line 13
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Waitlist movement: Wait 7 moved to Civic rink at position F
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 68 (preferred position: )
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: F at line 9
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: F at line 12
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: F at line 14
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: D at line 16
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: D at line 17
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: D at line 18
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: D at line 19
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: F at line 24
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: F at line 25
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: F at line 26
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: F at line 28
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: F at line 29
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: D at line 31
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: D at line 32
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: D at line 34
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: F at line 41
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: F at line 44
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: F at line 45
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: F at line 46
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: D at line 48
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: D at line 49
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: D at line 51
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: F at line 56
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: F at line 58
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: F at line 59
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: F at line 61
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: D at line 63
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: D at line 64
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Found empty position: D at line 66
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Selected available position D at line 49
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Waitlist movement: Wait ATE moved to Forum rink at position D
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Waitlist processing complete. 3 players moved, 0 remaining
+[17-Jan-2025 05:28:38 UTC] [HockeySignin][debug] Waitlist processed successfully for 2025-01-17
+[17-Jan-2025 05:35:37 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Nathan Crawford
+[17-Jan-2025 05:35:37 UTC] [HockeySignin][debug] Starting check-in process for player: Nathan Crawford
+[17-Jan-2025 05:35:37 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 05:35:37 UTC] [HockeySignin][debug] Player Nathan Crawford prepaid status: yes
+[17-Jan-2025 05:35:37 UTC] [HockeySignin][debug] Player Nathan Crawford is a goalie
+[17-Jan-2025 05:35:37 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 68 (preferred position: Goalie)
+[17-Jan-2025 05:35:37 UTC] [HockeySignin][debug] Player Nathan Crawford assigned to Civic rink at position Goal
+[17-Jan-2025 05:35:37 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[17-Jan-2025 05:35:43 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Mark Pottie
+[17-Jan-2025 05:35:43 UTC] [HockeySignin][debug] Starting check-in process for player: Mark Pottie
+[17-Jan-2025 05:35:43 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 05:35:43 UTC] [HockeySignin][debug] Player Mark Pottie prepaid status: yes
+[17-Jan-2025 05:35:43 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 68 (preferred position: Forward)
+[17-Jan-2025 05:35:43 UTC] [HockeySignin][debug] Found 24 forward and 16 defense spots available
+[17-Jan-2025 05:35:43 UTC] [HockeySignin][debug] Selected preferred position F at line 41
+[17-Jan-2025 05:35:43 UTC] [HockeySignin][debug] Player Mark Pottie assigned to Forum rink at position F
+[17-Jan-2025 05:35:43 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[17-Jan-2025 05:35:51 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Pat Hamilton
+[17-Jan-2025 05:35:51 UTC] [HockeySignin][debug] Starting check-in process for player: Pat Hamilton
+[17-Jan-2025 05:35:51 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 05:35:51 UTC] [HockeySignin][debug] Player Pat Hamilton prepaid status: yes
+[17-Jan-2025 05:35:51 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 68 (preferred position: Defence)
+[17-Jan-2025 05:35:51 UTC] [HockeySignin][debug] Found 23 forward and 16 defense spots available
+[17-Jan-2025 05:35:51 UTC] [HockeySignin][debug] Selected preferred position  at line 
+[17-Jan-2025 05:35:51 UTC] [HockeySignin][debug] Player Pat Hamilton added to waitlist at position 1
+[17-Jan-2025 05:35:51 UTC] [HockeySignin][debug] Check-in response: Thank you! You've been added to our waitlist for tonight. Please check back at 6pm to see if you have made the roster! You can reach us at halifaxpickuphockey@gmail.com to ask about Regular subscriber spots!
+[17-Jan-2025 05:36:08 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Rob MacIsaac
+[17-Jan-2025 05:36:08 UTC] [HockeySignin][debug] Starting check-in process for player: Rob MacIsaac
+[17-Jan-2025 05:36:08 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 05:36:08 UTC] [HockeySignin][debug] Player Rob MacIsaac prepaid status: yes
+[17-Jan-2025 05:36:08 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 68 (preferred position: Defence)
+[17-Jan-2025 05:36:08 UTC] [HockeySignin][debug] Found 23 forward and 16 defense spots available
+[17-Jan-2025 05:36:08 UTC] [HockeySignin][debug] Selected preferred position D at line 48
+[17-Jan-2025 05:36:08 UTC] [HockeySignin][debug] Player Rob MacIsaac assigned to Forum rink at position D
+[17-Jan-2025 05:36:08 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[17-Jan-2025 05:36:21 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Jon Nickerson
+[17-Jan-2025 05:36:21 UTC] [HockeySignin][debug] Starting check-in process for player: Jon Nickerson
+[17-Jan-2025 05:36:21 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 05:36:21 UTC] [HockeySignin][debug] Player Jon Nickerson prepaid status: yes
+[17-Jan-2025 05:36:21 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 68 (preferred position: Forward)
+[17-Jan-2025 05:36:21 UTC] [HockeySignin][debug] Found 23 forward and 15 defense spots available
+[17-Jan-2025 05:36:21 UTC] [HockeySignin][debug] Selected preferred position F at line 12
+[17-Jan-2025 05:36:21 UTC] [HockeySignin][debug] Player Jon Nickerson assigned to Civic rink at position F
+[17-Jan-2025 05:36:21 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[17-Jan-2025 05:36:34 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Glen Lefebre
+[17-Jan-2025 05:36:34 UTC] [HockeySignin][debug] Starting check-in process for player: Glen Lefebre
+[17-Jan-2025 05:36:34 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 05:36:34 UTC] [HockeySignin][debug] Player Glen Lefebre prepaid status: yes
+[17-Jan-2025 05:36:34 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 68 (preferred position: Forward)
+[17-Jan-2025 05:36:34 UTC] [HockeySignin][debug] Found 22 forward and 15 defense spots available
+[17-Jan-2025 05:36:34 UTC] [HockeySignin][debug] Selected preferred position F at line 11
+[17-Jan-2025 05:36:34 UTC] [HockeySignin][debug] Player Glen Lefebre assigned to Civic rink at position F
+[17-Jan-2025 05:36:34 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[17-Jan-2025 05:36:43 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Nick Sperdakes
+[17-Jan-2025 05:36:43 UTC] [HockeySignin][debug] Starting check-in process for player: Nick Sperdakes
+[17-Jan-2025 05:36:43 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 05:36:43 UTC] [HockeySignin][debug] Player Nick Sperdakes prepaid status: yes
+[17-Jan-2025 05:36:43 UTC] [HockeySignin][debug] Player Nick Sperdakes is a goalie
+[17-Jan-2025 05:36:43 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 68 (preferred position: Goalie)
+[17-Jan-2025 05:36:43 UTC] [HockeySignin][debug] Player Nick Sperdakes assigned to Civic rink at position Goal
+[17-Jan-2025 05:36:43 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[17-Jan-2025 05:36:47 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Mitchell Wasilik
+[17-Jan-2025 05:36:47 UTC] [HockeySignin][debug] Starting check-in process for player: Mitchell Wasilik
+[17-Jan-2025 05:36:47 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 05:36:47 UTC] [HockeySignin][debug] Player Mitchell Wasilik prepaid status: yes
+[17-Jan-2025 05:36:47 UTC] [HockeySignin][debug] Player Mitchell Wasilik is a goalie
+[17-Jan-2025 05:36:47 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 68 (preferred position: Goalie)
+[17-Jan-2025 05:36:47 UTC] [HockeySignin][debug] Player Mitchell Wasilik assigned to Forum rink at position Goal
+[17-Jan-2025 05:36:47 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[17-Jan-2025 05:36:55 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Parker Gallant
+[17-Jan-2025 05:36:55 UTC] [HockeySignin][debug] Starting check-in process for player: Parker Gallant
+[17-Jan-2025 05:36:55 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 05:36:55 UTC] [HockeySignin][debug] Player Parker Gallant prepaid status: yes
+[17-Jan-2025 05:36:55 UTC] [HockeySignin][debug] Player Parker Gallant is a goalie
+[17-Jan-2025 05:36:55 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 68 (preferred position: Goalie)
+[17-Jan-2025 05:36:55 UTC] [HockeySignin][debug] Player Parker Gallant assigned to Forum rink at position Goal
+[17-Jan-2025 05:36:55 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[17-Jan-2025 05:38:24 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Wait One
+[17-Jan-2025 05:38:24 UTC] [HockeySignin][debug] Starting check-in process for player: Wait One
+[17-Jan-2025 05:38:24 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 05:38:24 UTC] [HockeySignin][debug] Player not found in database: Wait One
+[17-Jan-2025 05:38:24 UTC] [HockeySignin][debug] Non-database player Wait One added to waitlist at position 2
+[17-Jan-2025 05:38:24 UTC] [HockeySignin][debug] Check-in response: Thank you! You've been added to our waitlist for tonight. Please check back at 6pm to see if you have made the roster! You can reach us at halifaxpickuphockey@gmail.com to ask about Regular subscriber spots!
+[17-Jan-2025 05:38:30 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Wait Two
+[17-Jan-2025 05:38:30 UTC] [HockeySignin][debug] Starting check-in process for player: Wait Two
+[17-Jan-2025 05:38:30 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 05:38:30 UTC] [HockeySignin][debug] Player not found in database: Wait Two
+[17-Jan-2025 05:38:30 UTC] [HockeySignin][debug] Non-database player Wait Two added to waitlist at position 3
+[17-Jan-2025 05:38:30 UTC] [HockeySignin][debug] Check-in response: Thank you! You've been added to our waitlist for tonight. Please check back at 6pm to see if you have made the roster! You can reach us at halifaxpickuphockey@gmail.com to ask about Regular subscriber spots!
+[17-Jan-2025 05:38:36 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Wait Three
+[17-Jan-2025 05:38:36 UTC] [HockeySignin][debug] Starting check-in process for player: Wait Three
+[17-Jan-2025 05:38:36 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 05:38:36 UTC] [HockeySignin][debug] Player not found in database: Wait Three
+[17-Jan-2025 05:38:36 UTC] [HockeySignin][debug] Non-database player Wait Three added to waitlist at position 4
+[17-Jan-2025 05:38:36 UTC] [HockeySignin][debug] Check-in response: Thank you! You've been added to our waitlist for tonight. Please check back at 6pm to see if you have made the roster! You can reach us at halifaxpickuphockey@gmail.com to ask about Regular subscriber spots!
+[17-Jan-2025 05:38:52 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Pat Hamilton
+[17-Jan-2025 05:38:52 UTC] [HockeySignin][debug] Starting check-in process for player: Pat Hamilton
+[17-Jan-2025 05:38:52 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 05:38:52 UTC] [HockeySignin][debug] Player Pat Hamilton is already checked in
+[17-Jan-2025 05:38:52 UTC] [HockeySignin][debug] Check-in response: already_checked_in
+[17-Jan-2025 05:38:55 UTC] [HockeySignin][debug] Form submission: action=checkout, player=Pat Hamilton
+[17-Jan-2025 05:38:55 UTC] [HockeySignin][debug] Processing checkout for player: Pat Hamilton
+[17-Jan-2025 05:38:55 UTC] [HockeySignin][debug] Player checked out: Pat Hamilton
+[17-Jan-2025 05:39:03 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Pat Hamilton
+[17-Jan-2025 05:39:03 UTC] [HockeySignin][debug] Starting check-in process for player: Pat Hamilton
+[17-Jan-2025 05:39:03 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 05:39:03 UTC] [HockeySignin][debug] Player Pat Hamilton prepaid status: yes
+[17-Jan-2025 05:39:03 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 68 (preferred position: Defence)
+[17-Jan-2025 05:39:03 UTC] [HockeySignin][debug] Found 21 forward and 15 defense spots available
+[17-Jan-2025 05:39:03 UTC] [HockeySignin][debug] Selected preferred position  at line 
+[17-Jan-2025 05:39:03 UTC] [HockeySignin][debug] Player Pat Hamilton added to waitlist at position 5
+[17-Jan-2025 05:39:03 UTC] [HockeySignin][debug] Check-in response: Thank you! You've been added to our waitlist for tonight. Please check back at 6pm to see if you have made the roster! You can reach us at halifaxpickuphockey@gmail.com to ask about Regular subscriber spots!
+[17-Jan-2025 05:41:11 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Pat Hamilton
+[17-Jan-2025 05:41:11 UTC] [HockeySignin][debug] Starting check-in process for player: Pat Hamilton
+[17-Jan-2025 05:41:11 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 05:41:11 UTC] [HockeySignin][debug] Player Pat Hamilton prepaid status: yes
+[17-Jan-2025 05:41:11 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 68 (preferred position: Defence)
+[17-Jan-2025 05:41:11 UTC] [HockeySignin][debug] Found 21 forward and 15 defense spots available
+[17-Jan-2025 05:41:11 UTC] [HockeySignin][debug] Selected preferred position D at line 65
+[17-Jan-2025 05:41:11 UTC] [HockeySignin][debug] Player Pat Hamilton assigned to Forum rink at position D
+[17-Jan-2025 05:41:11 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[17-Jan-2025 05:41:18 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Pat Hickey
+[17-Jan-2025 05:41:18 UTC] [HockeySignin][debug] Starting check-in process for player: Pat Hickey
+[17-Jan-2025 05:41:18 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 05:41:18 UTC] [HockeySignin][debug] Player Pat Hickey prepaid status: yes
+[17-Jan-2025 05:41:18 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 68 (preferred position: Defence)
+[17-Jan-2025 05:41:18 UTC] [HockeySignin][debug] Found 21 forward and 14 defense spots available
+[17-Jan-2025 05:41:18 UTC] [HockeySignin][debug] Selected preferred position D at line 31
+[17-Jan-2025 05:41:18 UTC] [HockeySignin][debug] Player Pat Hickey assigned to Civic rink at position D
+[17-Jan-2025 05:41:18 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[17-Jan-2025 05:41:22 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Patrick Hickey
+[17-Jan-2025 05:41:22 UTC] [HockeySignin][debug] Starting check-in process for player: Patrick Hickey
+[17-Jan-2025 05:41:22 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 05:41:22 UTC] [HockeySignin][debug] Player Patrick Hickey prepaid status: yes
+[17-Jan-2025 05:41:22 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 68 (preferred position: Forward)
+[17-Jan-2025 05:41:22 UTC] [HockeySignin][debug] Found 21 forward and 13 defense spots available
+[17-Jan-2025 05:41:22 UTC] [HockeySignin][debug] Selected preferred position F at line 25
+[17-Jan-2025 05:41:22 UTC] [HockeySignin][debug] Player Patrick Hickey assigned to Civic rink at position F
+[17-Jan-2025 05:41:22 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[17-Jan-2025 05:41:46 UTC] [HockeySignin][debug] Processing waitlist at 01:41 for 2025-01-17 (Season: RegularSeason2024-2025)
+[17-Jan-2025 05:41:46 UTC] [HockeySignin][debug] Processing waitlist with 3 players
+[17-Jan-2025 05:41:46 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 68 (preferred position: )
+[17-Jan-2025 05:41:46 UTC] [HockeySignin][debug] Found 20 forward and 13 defense spots available
+[17-Jan-2025 05:41:46 UTC] [HockeySignin][debug] Selected position F at line 43
+[17-Jan-2025 05:41:46 UTC] [HockeySignin][debug] Waitlist movement: Wait One moved to Forum rink at position F
+[17-Jan-2025 05:41:46 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 68 (preferred position: )
+[17-Jan-2025 05:41:46 UTC] [HockeySignin][debug] Found 19 forward and 13 defense spots available
+[17-Jan-2025 05:41:46 UTC] [HockeySignin][debug] Selected position F at line 45
+[17-Jan-2025 05:41:46 UTC] [HockeySignin][debug] Waitlist movement: Wait Two moved to Forum rink at position F
+[17-Jan-2025 05:41:46 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 68 (preferred position: )
+[17-Jan-2025 05:41:46 UTC] [HockeySignin][debug] Found 18 forward and 13 defense spots available
+[17-Jan-2025 05:41:46 UTC] [HockeySignin][debug] Selected position D at line 34
+[17-Jan-2025 05:41:46 UTC] [HockeySignin][debug] Waitlist movement: Wait Three moved to Civic rink at position D
+[17-Jan-2025 05:41:46 UTC] [HockeySignin][debug] Waitlist processing complete. 3 players moved, 0 remaining
+[17-Jan-2025 05:41:46 UTC] [HockeySignin][debug] Waitlist processed successfully for 2025-01-17
+[17-Jan-2025 05:42:36 UTC] [HockeySignin][debug] Creating daily roster files for 2025-01-17 (Friday)
+[17-Jan-2025 05:42:36 UTC] [HockeySignin][debug] Roster file created: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 05:42:51 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Pat Hamilton
+[17-Jan-2025 05:42:51 UTC] [HockeySignin][debug] Starting check-in process for player: Pat Hamilton
+[17-Jan-2025 05:42:51 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 05:42:51 UTC] [HockeySignin][debug] Player Pat Hamilton prepaid status: yes
+[17-Jan-2025 05:42:51 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 68 (preferred position: Defence)
+[17-Jan-2025 05:42:51 UTC] [HockeySignin][debug] Found 24 forward and 16 defense spots available
+[17-Jan-2025 05:42:51 UTC] [HockeySignin][debug] Selected preferred position D at line 64
+[17-Jan-2025 05:42:51 UTC] [HockeySignin][debug] Player Pat Hamilton assigned to Forum rink at position D
+[17-Jan-2025 05:42:51 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[17-Jan-2025 05:42:56 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Bean Pole
+[17-Jan-2025 05:42:56 UTC] [HockeySignin][debug] Starting check-in process for player: Bean Pole
+[17-Jan-2025 05:42:56 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 05:42:56 UTC] [HockeySignin][debug] Player not found in database: Bean Pole
+[17-Jan-2025 05:42:56 UTC] [HockeySignin][debug] Non-database player Bean Pole added to waitlist at position 1
+[17-Jan-2025 05:42:56 UTC] [HockeySignin][debug] Check-in response: Thank you! You've been added to our waitlist for tonight. Please check back at 6pm to see if you have made the roster! You can reach us at halifaxpickuphockey@gmail.com to ask about Regular subscriber spots!
+[17-Jan-2025 05:43:08 UTC] [HockeySignin][debug] Processing waitlist at 01:43 for 2025-01-17 (Season: RegularSeason2024-2025)
+[17-Jan-2025 05:43:08 UTC] [HockeySignin][debug] Processing waitlist with 1 players
+[17-Jan-2025 05:43:08 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 68 (preferred position: )
+[17-Jan-2025 05:43:08 UTC] [HockeySignin][debug] Found 24 forward and 15 defense spots available
+[17-Jan-2025 05:43:08 UTC] [HockeySignin][debug] Selected position F at line 45
+[17-Jan-2025 05:43:08 UTC] [HockeySignin][debug] Waitlist movement: Bean Pole moved to Forum rink at position F
+[17-Jan-2025 05:43:08 UTC] [HockeySignin][debug] Waitlist processing complete. 1 players moved, 0 remaining
+[17-Jan-2025 05:43:08 UTC] [HockeySignin][debug] Waitlist processed successfully for 2025-01-17

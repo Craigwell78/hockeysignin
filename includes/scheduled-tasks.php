@@ -25,8 +25,14 @@ function process_waitlist_at_6pm() {
     hockey_log("Processing waitlist at {$local_time} for {$current_date} (Season: {$season})", 'debug');
 
     if (file_exists($file_path)) {
-        move_waitlist_to_roster($current_date);
-        hockey_log("Waitlist processed successfully for {$current_date}", 'debug');
+        $roster = file_get_contents($file_path);
+        $lines = explode("\n", $roster);
+        
+        $updated_lines = move_waitlist_to_roster($lines, $day_of_week);
+        if ($updated_lines) {
+            file_put_contents($file_path, implode("\n", $updated_lines));
+            hockey_log("Waitlist processed successfully for {$current_date}", 'debug');
+        }
     } else {
         hockey_log("Roster file not found: {$file_path}", 'error');
     }
