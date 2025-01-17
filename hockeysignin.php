@@ -16,6 +16,9 @@ add_filter('doing_it_wrong_trigger_error', function($trigger_error, $function) {
     return $trigger_error;
 }, 10, 2);
 
+// Define log file location
+define('HOCKEY_LOG_FILE', plugin_dir_path(__FILE__) . 'logs/debug.log');
+
 // Load helper functions first
 require_once plugin_dir_path(__FILE__) . 'includes/helper-functions.php';
 
@@ -59,6 +62,8 @@ add_action('plugins_loaded', function() {
         'includes/core/game-schedule.php',
         'includes/core/season-config.php',
         'includes/core/form-handler.php',
+        'includes/filters/profanity-list.php',
+        'includes/filters/ProfanityFilter.php',
         'includes/roster-functions.php',
         'includes/scheduled-tasks.php',
         'admin/admin-functions.php',
@@ -91,7 +96,18 @@ register_activation_hook(__FILE__, 'hockeysignin_activate');
 register_deactivation_hook(__FILE__, 'hockeysignin_deactivation');
 
 function hockeysignin_activate() {
-    // Activation code here: For now, we don't need to do anything specific upon activation.
+    // Create logs directory if it doesn't exist
+    $logs_dir = plugin_dir_path(__FILE__) . 'logs';
+    if (!file_exists($logs_dir)) {
+        wp_mkdir_p($logs_dir);
+    }
+    
+    // Create debug.log if it doesn't exist and ensure it's writable
+    $log_file = $logs_dir . '/debug.log';
+    if (!file_exists($log_file)) {
+        touch($log_file);
+        chmod($log_file, 0664);
+    }
 }
 
 function hockeysignin_deactivation() {

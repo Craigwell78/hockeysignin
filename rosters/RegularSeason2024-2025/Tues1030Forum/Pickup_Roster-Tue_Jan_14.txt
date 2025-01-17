@@ -16,7 +16,7 @@ D- Sam Legere
 Goal: Mark Harrie
 Light
 
-F- Logan Bowen*
+F- Logan Bowen
 F- Steve Pottie
 F- Scott Long
 F- Ryan Gallant
@@ -29,11 +29,3 @@ D- Julian Dill
 D- Pat Hickey
 
 WL:
-1. Justin Dill
-2. Lou Totino
-3. Mackenzie Mitchell
-4. Darien Boudreau
-5. Guy Pratt
-6. Rene Countway
-7. Derek Countway
-8. Taff Monem

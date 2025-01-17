@@ -6,12 +6,30 @@ function hockeysignin_handle_form_submission() {
         $player_name = sanitize_text_field($_POST['player_name']);
         $action = sanitize_text_field($_POST['action']);
         
+        hockey_log("Form submission: action={$action}, player={$player_name}", 'debug');
+        
         $handler = \hockeysignin\Core\FormHandler::getInstance();
         $response = '';
         
         if ($action === 'checkin') {
             $response = $handler->handleCheckIn($player_name);
+            hockey_log("Check-in response: {$response}", 'debug');
+            
+            if ($response === 'already_checked_in') {
+                $nonce = wp_create_nonce('hockeysignin_action');
+                echo '<div class="notice"><p>' . esc_html($player_name) . ' is already checked in. 
+                      <form method="post" action="" style="display:inline;">
+                      <input type="hidden" name="player_name" value="' . esc_attr($player_name) . '">
+                      <input type="hidden" name="action" value="checkout">
+                      <input type="hidden" name="hockeysignin_nonce" value="' . $nonce . '">
+                      <button type="submit" onclick="return confirm(\'Do you want to check out ' . esc_js($player_name) . '?\');">
+                          Check Out Instead?
+                      </button>
+                      </form></p></div>';
+                return;
+            }
         } elseif ($action === 'checkout') {
+            hockey_log("Processing checkout for player: {$player_name}", 'debug');
             $response = $handler->handleCheckOut($player_name);
         }
         
@@ -51,10 +69,41 @@ function hockeysignin_shortcode() {
             <?php wp_nonce_field('hockeysignin_action', 'hockeysignin_nonce'); ?>
             <label for="player_name">Player Name:</label>
             <input type="text" id="player_name" name="player_name" required>
+            
+            <div id="new_player_info" style="display: none;">
+                <p>Not in our database? Please provide:</p>
+                <input type="text" 
+                       name="additional_info" 
+                       id="additional_info" 
+                       placeholder="Contact info (phone/email) or +1 of [player name] (optional)">
+            </div>
+            
             <button type="submit" name="action" value="checkin">Check In</button>
             <button type="submit" name="action" value="checkout">Check Out</button>
         </form>
     </div>
+    
+    <script>
+    jQuery(document).ready(function($) {
+        $('#player_name').on('change', function() {
+            var playerName = $(this).val();
+            $.ajax({
+                url: ajaxurl,
+                data: {
+                    action: 'check_player_exists',
+                    player_name: playerName
+                },
+                success: function(response) {
+                    if (!response.exists) {
+                        $('#new_player_info').show();
+                    } else {
+                        $('#new_player_info').hide();
+                    }
+                }
+            });
+        });
+    });
+    </script>
     <?php
     return ob_get_clean();
 }

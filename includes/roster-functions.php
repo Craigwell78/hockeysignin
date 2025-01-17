@@ -1,4 +1,6 @@
 <?php
+require_once __DIR__ . '/filters/ProfanityFilter.php';
+
 // Functions to manage the hockey roster files
 
 function get_current_season($date = null) {
@@ -7,31 +9,21 @@ function get_current_season($date = null) {
     }
     
     try {
-        if (!class_exists('hockeysignin\Core\Config')) {
-            throw new Exception("Config class not found");
-        }
-        
-        $config = hockeysignin\Core\Config::getInstance();
-        
-        $season_folder = $config->getSeasonFolder($date);
-        
-        if (!$season_folder) {
-            throw new Exception("No season folder returned from config");
-        }
-        
-        return $season_folder;
-        
-    } catch (Exception $e) {
         $year = date('Y', strtotime($date));
         $month_day = date('m-d', strtotime($date));
         
-        if ($month_day >= '10-01' || $month_day < '04-01') {
+        if ($month_day >= '10-01') {
             return "RegularSeason{$year}-" . ($year + 1);
+        } elseif ($month_day < '04-01') {
+            return "RegularSeason" . ($year - 1) . "-{$year}";
         } elseif ($month_day >= '04-01' && $month_day < '06-01') {
             return "Spring{$year}";
         } else {
             return "Summer{$year}";
         }
+    } catch (Exception $e) {
+        hockey_log("Error determining season: " . $e->getMessage(), 'error');
+        return null;
     }
 }
 
@@ -61,37 +53,78 @@ function is_game_day($date = null) {
 }
 
 function create_next_game_roster_files($date) {
-$day_directory_map = get_day_directory_map($date);
-$day_of_week = date('l', strtotime($date));
-$day_directory = $day_directory_map[$day_of_week] ?? null;
+    $day_of_week = date('l', strtotime($date));
+    
+    // Choose template based on day
+    $template_file = ($day_of_week === 'Friday') 
+        ? 'roster_template_friday.txt' 
+        : 'roster_template.txt';
+    
+    $template_path = realpath(__DIR__ . "/../rosters/") . "/{$template_file}";
+    
+    $day_directory_map = get_day_directory_map($date);
+    $day_directory = $day_directory_map[$day_of_week] ?? null;
 
-if (!$day_directory) {
-hockey_log("No directory mapping found for date: {$date}", 'error');
-return;
-}
+    if (!$day_directory) {
+        hockey_log("No directory mapping found for date: {$date}", 'error');
+        return;
+    }
 
-$formatted_date = date('D_M_j', strtotime($date));
-$season = get_current_season($date);
-$file_path = realpath(__DIR__ . "/../rosters/") . "/{$season}/{$day_directory}/Pickup_Roster-{$formatted_date}.txt";
+    $formatted_date = date('D_M_j', strtotime($date));
+    $season = get_current_season($date);
+    $file_path = realpath(__DIR__ . "/../rosters/") . "/{$season}/{$day_directory}/Pickup_Roster-{$formatted_date}.txt";
 
-if (!file_exists($file_path)) {
-$template_path = realpath(__DIR__ . "/../rosters/roster_template.txt");
-if (file_exists($template_path)) {
-copy($template_path, $file_path);
-chmod($file_path, 0664); // Set file permissions to 664
-hockey_log("Roster file created: {$file_path}", 'debug');
-} else {
-hockey_log("Roster template not found: {$template_path}", 'error');
-}
-}
+    if (!file_exists($file_path)) {
+        if (file_exists($template_path)) {
+            // Create directory if it doesn't exist
+            $dir = dirname($file_path);
+            if (!file_exists($dir)) {
+                wp_mkdir_p($dir);
+            }
+            
+            // Copy template to new file
+            copy($template_path, $file_path);
+            chmod($file_path, 0664); // Set file permissions to 664
+            hockey_log("Roster file created: {$file_path}", 'debug');
+        } else {
+            hockey_log("Roster template not found: {$template_path}", 'error');
+        }
+    }
 }
 
 function check_in_player($date, $player_name) {
-    global $wpdb;
+    hockey_log("Starting check-in process for player: {$player_name}", 'debug');
+    
+    // Check for profanity first
+    $filter = \hockeysignin\filters\ProfanityFilter::getInstance();
+    if ($filter->containsProfanity($player_name)) {
+        hockey_log("Check-in rejected - inappropriate content: {$player_name}", 'warning');
+        return "Check-in failed: Please use appropriate language.";
+    }
     
     if (!$date) {
         $date = current_time('Y-m-d');
     }
+    
+    // Check if player is already checked in
+    $day_directory_map = get_day_directory_map($date);
+    $day_of_week = date('l', strtotime($date));
+    $day_directory = $day_directory_map[$day_of_week] ?? null;
+    $formatted_date = date('D_M_j', strtotime($date));
+    $season = get_current_season($date);
+    $file_path = realpath(__DIR__ . "/../rosters/") . "/{$season}/{$day_directory}/Pickup_Roster-{$formatted_date}.txt";
+    
+    hockey_log("Checking roster file: {$file_path}", 'debug');
+    
+    if (file_exists($file_path)) {
+        $roster = file_get_contents($file_path);
+        if (strpos($roster, $player_name) !== false) {
+            hockey_log("Player {$player_name} is already checked in", 'debug');
+            return "already_checked_in";
+        }
+    }
+    
+    global $wpdb;
     
     $day_of_week = date('l', strtotime($date));
     
@@ -109,12 +142,24 @@ function check_in_player($date, $player_name) {
         // Check if they're registered for this day
         $prepaid = is_array($active_nights) && in_array($day_of_week, $active_nights);
         
-        hockey_log("Player found: {$player_name}, Active nights: " . print_r($active_nights, true) . ", Current day: {$day_of_week}, Prepaid: " . ($prepaid ? 'yes' : 'no'), 'debug');
+        hockey_log("Player {$player_name} prepaid status: " . ($prepaid ? 'yes' : 'no'), 'debug');
+        
+        // If player is not registered for this day, treat like non-database player
+        if (!$prepaid) {
+            hockey_log("Player {$player_name} is not registered for {$day_of_week}", 'debug');
+            return update_roster($date, $player_name, false, null, true);  // Force to waitlist
+        }
+        
+        // If player is a goalie, only allow them in goalie spots
+        if (strtolower($player->position) === 'goalie') {
+            hockey_log("Player {$player_name} is a goalie", 'debug');
+            return update_roster($date, $player_name, true, 'Goalie', false);
+        }
         
         return update_roster($date, $player_name, $prepaid, $player->position);
     } else {
         hockey_log("Player not found in database: {$player_name}", 'debug');
-        return update_roster($date, $player_name, false);
+        return update_roster($date, $player_name, false, null, true);
     }
 }
 
@@ -149,175 +194,113 @@ hockey_log("Roster file not found: {$file_path}", 'error');
 }
 }
 
-function update_roster($date, $player_name, $prepaid, $position = null) {
-global $wpdb;
-
-if (!$date) {
-$date = current_time('Y-m-d');
-}
-
-$day_directory_map = get_day_directory_map($date);
-$day_of_week = date('l', strtotime($date));
-$day_directory = $day_directory_map[$day_of_week] ?? null;
-
-if (!$day_directory) {
-hockey_log("No directory mapping found for date: {$date}", 'error');
-return "No directory mapping found for date: {$date}";
-}
-
-$formatted_date = date('D_M_j', strtotime($date));
-$season = get_current_season($date);
-$file_path = realpath(__DIR__ . "/../rosters/") . "/{$season}/{$day_directory}/Pickup_Roster-{$formatted_date}.txt";
-
-if (!file_exists($file_path)) {
-hockey_log("Roster file not found: {$file_path}", 'error');
-return "Roster file not found: {$file_path}";
-}
-$roster = file_get_contents($file_path);
-
-// Check if the player is already on the roster
-if (strpos($roster, $player_name) !== false) {
-hockey_log("Player already on the roster: {$player_name}", 'error');
-return "{$player_name} is already checked in.";
-}
-
-$player = $wpdb->get_row($wpdb->prepare("SELECT * FROM wp_participants_database WHERE CONCAT(`first_name`, ' ', `last_name`) = %s", $player_name));
-
-if ($prepaid && $player) {
-    hockey_log("Player found in database: {$player_name}, Position: {$player->position}", 'debug');
-
-    // Initialize positions array based on player's primary position
-    $primary_positions = [];
-    $secondary_positions = [];
+function update_roster($date, $player_name, $prepaid, $preferred_position = null, $forceWaitlist = false) {
+    // Check for profanity first, before any roster operations
+    $filter = \hockeysignin\Filters\ProfanityFilter::getInstance();
+    if ($filter->containsProfanity($player_name)) {
+        hockey_log("Roster update rejected - inappropriate content: {$player_name}", 'warning');
+        return "Check-in failed: Please use appropriate language.";
+    }
     
-    if ($player->position == 'Goalie') {
-        $primary_positions = ['Goal:'];
-        // Goalies can only play goal
-    } elseif ($player->position == 'Forward') {
-        $primary_positions = ['F-'];
-        $secondary_positions = ['D-'];  // Can play defense if forward spots full
-    } elseif ($player->position == 'Defence') {
-        $primary_positions = ['D-'];
-        $secondary_positions = ['F-'];  // Can play forward if defense spots full
+    // Get roster file path and contents
+    $day_of_week = date('l', strtotime($date));
+    $day_directory_map = get_day_directory_map($date);
+    $day_directory = $day_directory_map[$day_of_week] ?? null;
+    $formatted_date = date('D_M_j', strtotime($date));
+    $season = get_current_season($date);
+    $file_path = realpath(__DIR__ . "/../rosters/") . "/{$season}/{$day_directory}/Pickup_Roster-{$formatted_date}.txt";
+    
+    if (!file_exists($file_path)) {
+        hockey_log("Roster file not found: {$file_path}", 'error');
+        return "Error: Roster file not found.";
+    }
+    
+    $roster = file_get_contents($file_path);
+    $lines = explode("\n", $roster);
+    
+    // Get roster sections
+    $sections = get_roster_sections($lines, $day_of_week);
+    
+    if (!$sections) {
+        hockey_log("Error: Could not determine roster sections", 'error');
+        return "Error: Could not process roster.";
     }
 
-    // First try primary position
-    $open_spots = [];
-    foreach ($primary_positions as $position) {
-        if (preg_match_all("/^{$position}\s*\n/m", $roster, $matches, PREG_OFFSET_CAPTURE)) {
-            foreach ($matches[0] as $match) {
-                $open_spots[] = [
-                    'position' => $position,
-                    'offset' => $match[1]
-                ];
+    // Handle non-database players (forceWaitlist) first
+    if ($forceWaitlist) {
+        $waitlist_start = $sections['waitlist']['start'];
+        $waitlist_count = 0;
+        for ($i = $waitlist_start; $i < count($lines); $i++) {
+            if (preg_match('/^\d+\./', $lines[$i])) {
+                $waitlist_count++;
             }
         }
-    }
-
-    // If no primary spots, try secondary positions
-    if (empty($open_spots) && !empty($secondary_positions)) {
-        foreach ($secondary_positions as $position) {
-            if (preg_match_all("/^{$position}\s*\n/m", $roster, $matches, PREG_OFFSET_CAPTURE)) {
-                foreach ($matches[0] as $match) {
-                    $open_spots[] = [
-                        'position' => $position,
-                        'offset' => $match[1]
-                    ];
-                }
-            }
-        }
-    }
-
-    // If spots found, place player
-    if (!empty($open_spots)) {
-        $spot = $open_spots[array_rand($open_spots)];
-        $roster = substr_replace(
-            $roster, 
-            "{$spot['position']} {$player_name}\n", 
-            $spot['offset'], 
-            strlen("{$spot['position']}\n")
-        );
-        hockey_log("Placed {$player_name} in {$spot['position']} position", 'debug');
-    } else {
-        // No spots available, add to top of waitlist with "regular" suffix
-        hockey_log("No empty positions found, adding prepaid player to top of waitlist: {$player_name}", 'debug');
         
-        if (preg_match('/WL:\n(.*?)(?=\n\n|$)/s', $roster, $matches)) {
-            $waitlist_section = $matches[1];
-            $waitlist_entries = array_filter(explode("\n", $waitlist_section));
-            
-            // Add prepaid player to start of array with "regular" suffix
-            array_unshift($waitlist_entries, $player_name . " regular");
-            
-            // Renumber all entries
-            $numbered_entries = array_map(function($index, $entry) {
-                return ($index + 1) . ". " . trim($entry);
-            }, array_keys($waitlist_entries), $waitlist_entries);
-            
-            $new_waitlist = "WL:\n" . implode("\n", $numbered_entries);
-            $roster = preg_replace('/WL:.*?(?=\n\n|$)/s', $new_waitlist, $roster);
+        $lines[] = ($waitlist_count + 1) . ". " . $player_name;
+        hockey_log("Non-database player {$player_name} added to waitlist at position " . ($waitlist_count + 1), 'debug');
+        
+        file_put_contents($file_path, implode("\n", $lines));
+        return "Thank you! You've been added to our waitlist for tonight. Please check back at 6pm to see if you have made the roster! You can reach us at halifaxpickuphockey@gmail.com to ask about Regular subscriber spots!";
+    }
+
+    // Find an available spot
+    $spot = find_available_spot($lines, $preferred_position);
+    
+    if ($spot) {
+        // Player can be added to roster
+        $position = $spot['position'];
+        $player_with_mark = $prepaid ? $player_name : $player_name . "*";
+        
+        if ($position === 'Goal') {
+            // For goalies, append to the Goal: line with a space
+            $replacement = "Goal: " . $player_with_mark;
         } else {
-            // If no waitlist exists, create one
-            $roster .= "\nWL:\n1. {$player_name} regular";
+            $replacement = "{$position}- {$player_with_mark}";
         }
-    }
-} else {
-    hockey_log("Player not prepaid or not found in database, adding to waitlist: {$player_name}", 'debug');
-    
-    // Extract current waitlist
-    if (preg_match('/WL:\n(.*?)(?=\n\n|$)/s', $roster, $matches)) {
-        $waitlist_section = $matches[1];
-        $waitlist_entries = array_filter(explode("\n", $waitlist_section));
         
-        // Filter out any "WL:" entries and empty lines
-        $waitlist_entries = array_filter($waitlist_entries, function($entry) {
-            $entry = trim($entry);
-            return !empty($entry) && !preg_match('/^WL:/', $entry);
-        });
+        $lines[$spot['line_number']] = $replacement;
         
-        // Add new entry
-        $waitlist_entries[] = $player_name;
+        // Log the assignment (keep detailed logging but simplify user message)
+        if ($day_of_week === 'Friday') {
+            hockey_log("Player {$player_name} assigned to {$spot['rink']} rink at position {$position}", 'debug');
+        } else {
+            hockey_log("Player {$player_name} assigned to position {$position}", 'debug');
+        }
         
-        // Renumber all entries
-        $numbered_entries = array_map(function($index, $entry) {
-            // Remove any existing numbers
-            $entry = preg_replace('/^\d+\.\s*/', '', $entry);
-            return ($index + 1) . ". " . trim($entry);
-        }, array_keys($waitlist_entries), $waitlist_entries);
-        
-        // Replace waitlist section in roster with proper spacing
-        $new_waitlist = "WL:\n" . implode("\n", $numbered_entries);
-        
-        // Log waitlist formatting
-        hockey_log("New waitlist format:", 'debug');
-        hockey_log($new_waitlist, 'debug');
-        
-        $roster = preg_replace('/WL:.*?(?=\n\n|$)/s', $new_waitlist, $roster);
+        file_put_contents($file_path, implode("\n", $lines));
+        return "You have been added to the roster. Please check back after 6pm for finalized teams.";
     } else {
-        // If no waitlist section exists, create one
-        $roster .= "\nWL:\n1. {$player_name}";
+        // Add to waitlist
+        $waitlist_start = $sections['waitlist']['start'];
+        
+        // Get current waitlist numbers
+        $waitlist_count = 0;
+        for ($i = $waitlist_start; $i < count($lines); $i++) {
+            if (preg_match('/^\d+\./', $lines[$i])) {
+                $waitlist_count++;
+            }
+        }
+        
+        // Add player to waitlist
+        $lines[] = ($waitlist_count + 1) . ". " . $player_name;
+        hockey_log("Player {$player_name} added to waitlist at position " . ($waitlist_count + 1), 'debug');
+        
+        file_put_contents($file_path, implode("\n", $lines));
+        return "Thank you! You've been added to our waitlist for tonight. Please check back at 6pm to see if you have made the roster! You can reach us at halifaxpickuphockey@gmail.com to ask about Regular subscriber spots!";
     }
-    
-    file_put_contents($file_path, $roster);
-    hockey_log("Added {$player_name} to waitlist", 'debug');
-    return "{$player_name} has been added to the waitlist.";
-}
-
-file_put_contents($file_path, $roster);
-return "{$player_name} has been successfully checked in.";
 }
 
 function move_waitlist_to_roster($date) {
     $day_directory_map = get_day_directory_map($date);
-    $day_of_week = date_i18n('l', strtotime($date));
+    $day_of_week = date('l', strtotime($date));
     $day_directory = $day_directory_map[$day_of_week] ?? null;
     
     if (!$day_directory) {
-        hockey_log("No directory mapping found for date: {$date}", 'error');
+        hockey_log("No directory mapping found for {$day_of_week} on {$date}", 'error');
         return;
     }
     
-    $formatted_date = date_i18n('D_M_j', strtotime($date));
+    $formatted_date = date('D_M_j', strtotime($date));
     $season = get_current_season($date);
     $file_path = realpath(__DIR__ . "/../rosters/") . "/{$season}/{$day_directory}/Pickup_Roster-{$formatted_date}.txt";
     
@@ -327,107 +310,73 @@ function move_waitlist_to_roster($date) {
     }
     
     $roster = file_get_contents($file_path);
+    $lines = explode("\n", $roster);
+    
+    // Get roster sections
+    $sections = get_roster_sections($lines, $day_of_week);
+    
+    if (!$sections) {
+        hockey_log("Error: Could not determine roster sections", 'error');
+        return;
+    }
     
     // Extract waitlisted players
     $waitlisted = [];
-    if (preg_match('/WL:\n(.*?)(?=\n\n|$)/s', $roster, $matches)) {
-        $waitlist_section = $matches[1];
-        $waitlist_entries = array_filter(explode("\n", $waitlist_section));
-        
-        foreach ($waitlist_entries as $entry) {
-            if (preg_match('/^\d+\.\s*(.*)$/', $entry, $matches)) {
-                $player = trim($matches[1]);
-                if (!empty($player)) {  // Only add non-empty players
-                    $waitlisted[] = $player;
-                }
+    $waitlist_section = array_slice($lines, $sections['waitlist']['start'], 
+        $sections['waitlist']['end'] - $sections['waitlist']['start']);
+    
+    foreach ($waitlist_section as $line) {
+        if (preg_match('/^\d+\.\s*(.*)$/', $line, $matches)) {
+            $player = trim($matches[1]);
+            if (!empty($player)) {
+                $waitlisted[] = $player;
             }
         }
     }
     
-    hockey_log("Found " . count($waitlisted) . " waitlisted players", 'debug');
-    
-    // Get all empty spots with their positions (excluding Goal positions)
-    $empty_spots = [];
-    $lines = explode("\n", $roster);
-    
-    // First pass: find empty spots and their line numbers
-    foreach ($lines as $line_number => $line) {
-        $line = rtrim($line);
-        if (preg_match('/^(F-|D-)\s*$/', $line, $matches)) {
-            $empty_spots[] = [
-                'position' => $matches[1],
-                'line_number' => $line_number,
-                'original_line' => $line
-            ];
-            hockey_log("Found empty spot at line {$line_number}: position='{$matches[1]}', line='{$line}'", 'debug');
-        }
-    }
-    
-    hockey_log("Found " . count($empty_spots) . " empty spots", 'debug');
+    hockey_log("Processing waitlist with " . count($waitlisted) . " players", 'debug');
     
     // Process moving players to roster
     $remaining_waitlist = [];
     foreach ($waitlisted as $player) {
-        if (!empty($empty_spots) && !empty($player)) {
-            $spot = array_shift($empty_spots);
+        $spot = find_available_spot($lines);
+        if ($spot) {
             $position = $spot['position'];
-            
-            // Add asterisk to players moved from waitlist
             $player_with_asterisk = $player . "*";
-            
-            // Create replacement line
-            $replacement = "{$position} {$player_with_asterisk}";
-            hockey_log("Moving waitlisted player '{$player}' to {$position} position at line {$spot['line_number']}", 'debug');
-            hockey_log("Original line: '{$spot['original_line']}'", 'debug');
-            hockey_log("Replacement: '{$replacement}'", 'debug');
-            
-            // Replace the line in our array
+            $replacement = "{$position}- {$player_with_asterisk}";
             $lines[$spot['line_number']] = $replacement;
+            
+            // Log assignment with rink information for Fridays
+            if ($day_of_week === 'Friday') {
+                hockey_log("Waitlist movement: {$player} moved to {$spot['rink']} rink at position {$position}", 'debug');
+            } else {
+                hockey_log("Waitlist movement: {$player} moved to position {$position}", 'debug');
+            }
         } else {
             if (!empty($player)) {
                 $remaining_waitlist[] = $player;
-                hockey_log("Adding {$player} to remaining waitlist", 'debug');
+                hockey_log("Waitlist movement: {$player} remains on waitlist", 'debug');
             }
         }
     }
     
-    // After processing player movements, handle the waitlist
-    // Find the WL: section
-    $waitlist_start = array_search("WL:", $lines);
-    if ($waitlist_start !== false) {
-        // Remove existing waitlist lines
-        $lines = array_slice($lines, 0, $waitlist_start + 1);
-        
-        // Filter out empty entries from remaining_waitlist
-        $remaining_waitlist = array_filter($remaining_waitlist, function($player) {
-            return !empty(trim($player));
-        });
-        
-        // Add numbered entries
-        if (!empty($remaining_waitlist)) {
-            foreach ($remaining_waitlist as $index => $player) {
-                $lines[] = ($index + 1) . ". " . trim($player);
-            }
-        }
-        
-        // Add a blank line after waitlist
-        $lines[] = "";
+    // Rebuild waitlist section
+    $lines = array_slice($lines, 0, $sections['waitlist']['start'] + 1); // Keep everything up to WL: line
+    
+    // Add remaining waitlisted players with new numbers
+    foreach ($remaining_waitlist as $index => $player) {
+        $lines[] = ($index + 1) . ". " . $player;
     }
     
-    // Rebuild roster with modified lines
-    $roster = implode("\n", $lines);
+    // Add final newline
+    $lines[] = "";
     
-    hockey_log("Final waitlist:", 'debug');
-    if (!empty($remaining_waitlist)) {
-        foreach ($remaining_waitlist as $index => $player) {
-            hockey_log(($index + 1) . ". " . $player, 'debug');
-        }
-    } else {
-        hockey_log("No players remaining on waitlist", 'debug');
-    }
+    // Save updated roster
+    file_put_contents($file_path, implode("\n", $lines));
     
-    file_put_contents($file_path, $roster);
-    hockey_log("Waitlist processed. Moved " . (count($waitlisted) - count($remaining_waitlist)) . " players to roster", 'debug');
+    hockey_log("Waitlist processing complete. " . 
+        (count($waitlisted) - count($remaining_waitlist)) . " players moved, " . 
+        count($remaining_waitlist) . " remaining", 'debug');
 }
 
 function finalize_roster_at_930pm($date) {
@@ -563,4 +512,179 @@ function contains_profanity($text) {
         }
     }
     return false;
+}
+
+function log_new_player_info($player_name, $additional_info = '') {
+    $timestamp = date('Y-m-d H:i:s');
+    
+    $log_message = sprintf(
+        "[%s] NEW PLAYER: %s%s\n",
+        $timestamp,
+        $player_name,
+        $additional_info ? " | Info: " . $additional_info : ""
+    );
+    
+    $new_players_log = plugin_dir_path(__DIR__) . 'logs/new_players.log';
+    error_log($log_message, 3, $new_players_log);
+}
+
+function is_empty_position($line, $preferred_position = null) {
+    $line = trim($line);
+    
+    if ($preferred_position) {
+        $pattern = '/^' . preg_quote($preferred_position, '/') . '-$/';
+        $result = preg_match($pattern, $line);
+        if ($result) {
+            hockey_log("Found empty position matching preference: {$preferred_position}", 'debug');
+        }
+        return $result;
+    }
+    
+    $pattern = '/^[FD]-$/';
+    $result = preg_match($pattern, $line);
+    return $result;
+}
+
+function find_available_spot($lines, $preferred_position = null) {
+    $day_of_week = date('l');
+    $sections = get_roster_sections($lines, $day_of_week);
+    
+    if (!$sections) {
+        hockey_log("Error: Could not determine roster sections", 'error');
+        return null;
+    }
+    
+    hockey_log("Searching for spot between lines 0 and " . 
+        ($sections['waitlist']['start'] ?? count($lines)) . 
+        ($preferred_position ? " (preferred position: {$preferred_position})" : ""), 'debug');
+    
+    // Special handling for goalies
+    if ($preferred_position === 'Goalie' || $preferred_position === 'G') {
+        foreach ($lines as $i => $line) {
+            if ($sections['waitlist']['start'] && $i >= $sections['waitlist']['start']) {
+                break;
+            }
+            
+            $line = rtrim($line);
+            
+            // Find the Goal: line
+            if ($line === 'Goal:') {
+                hockey_log("Found goalie position at line {$i}", 'debug');
+                return [
+                    'line_number' => $i,
+                    'position' => 'Goal',
+                    'original_line' => $line
+                ];
+            }
+        }
+        
+        hockey_log("No goalie positions available", 'debug');
+        return null;
+    }
+    
+    // For skaters (after goalie check)
+    $available_spots = [];
+    $any_spots = [];
+    
+    foreach ($lines as $i => $line) {
+        if ($sections['waitlist']['start'] && $i >= $sections['waitlist']['start']) {
+            break;
+        }
+        
+        $line = rtrim($line);
+        hockey_log("Checking line {$i}: '{$line}'", 'debug');
+        
+        if (preg_match('/^[FD]-$/', $line)) {
+            $position = get_position_from_line($line);
+            $spot = [
+                'line_number' => $i,
+                'position' => $position,
+                'original_line' => $line
+            ];
+            
+            hockey_log("Found empty position: {$position} at line {$i}", 'debug');
+            
+            if ($preferred_position && substr($preferred_position, 0, 1) === $position) {
+                $available_spots[] = $spot;
+            }
+            $any_spots[] = $spot;
+        }
+    }
+    
+    // If we found preferred spots, randomly select one
+    if (!empty($available_spots)) {
+        $spot = $available_spots[array_rand($available_spots)];
+        hockey_log("Selected preferred position {$spot['position']} at line {$spot['line_number']}", 'debug');
+        return $spot;
+    }
+    
+    // If we found any spots, randomly select one
+    if (!empty($any_spots)) {
+        $spot = $any_spots[array_rand($any_spots)];
+        hockey_log("Selected available position {$spot['position']} at line {$spot['line_number']}", 'debug');
+        return $spot;
+    }
+    
+    hockey_log("No available spots found in roster", 'debug');
+    return null;
+}
+
+// Helper function to count filled positions in a section
+function count_filled_positions($lines, $start, $end) {
+    $count = 0;
+    for ($i = $start; $i < $end; $i++) {
+        $line = rtrim($lines[$i]);
+        if (preg_match('/^[FD]-\s+\S/', $line)) { // Matches positions that have a player
+            $count++;
+        }
+    }
+    return $count;
+}
+
+// Helper function to get position from line
+function get_position_from_line($line) {
+    if (preg_match('/^([FD])-/', $line, $matches)) {
+        return $matches[1];
+    }
+    return null;
+}
+
+function get_roster_sections($lines, $day_of_week) {
+    if ($day_of_week !== 'Friday') {
+        return [
+            'main' => [
+                'start' => 0,
+                'end' => array_search('WL:', $lines)
+            ],
+            'waitlist' => [
+                'start' => array_search('WL:', $lines),
+                'end' => count($lines)
+            ]
+        ];
+    }
+    
+    // For Friday games, find the sections
+    $civic_start = 0; // CIVIC section starts at beginning
+    $forum_start = array_search('FORUM 10:30PM', $lines);
+    $waitlist_start = array_search('WL:', $lines);
+    
+    if ($forum_start === false || $waitlist_start === false) {
+        hockey_log("Error: Could not find all sections in Friday roster", 'error');
+        return null;
+    }
+    
+    return [
+        'civic' => [
+            'start' => $civic_start,
+            'end' => $forum_start
+        ],
+        'forum' => [
+            'start' => $forum_start,
+            'end' => $waitlist_start
+        ],
+        'waitlist' => [
+            'start' => $waitlist_start,
+            'end' => count($lines)
+        ]
+    ];
 }
