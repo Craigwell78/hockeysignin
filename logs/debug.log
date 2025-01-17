@@ -3840,3 +3840,245 @@
 [17-Jan-2025 05:43:08 UTC] [HockeySignin][debug] Waitlist movement: Bean Pole moved to Forum rink at position F
 [17-Jan-2025 05:43:08 UTC] [HockeySignin][debug] Waitlist processing complete. 1 players moved, 0 remaining
 [17-Jan-2025 05:43:08 UTC] [HockeySignin][debug] Waitlist processed successfully for 2025-01-17
+[17-Jan-2025 12:00:01 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Michael Robinson F
+[17-Jan-2025 12:00:01 UTC] [HockeySignin][debug] Starting check-in process for player: Michael Robinson F
+[17-Jan-2025 12:00:01 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 12:00:01 UTC] [HockeySignin][debug] Player not found in database: Michael Robinson F
+[17-Jan-2025 12:00:01 UTC] [HockeySignin][error] Roster file not found: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 12:00:01 UTC] [HockeySignin][debug] Check-in response: Error: Roster file not found.
+[17-Jan-2025 12:00:01 UTC] [HockeySignin][debug] Creating daily roster files for 2025-01-17 (Friday)
+[17-Jan-2025 12:00:01 UTC] [HockeySignin][debug] Roster file created: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 12:00:01 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Michael Robinson F
+[17-Jan-2025 12:00:01 UTC] [HockeySignin][debug] Starting check-in process for player: Michael Robinson F
+[17-Jan-2025 12:00:01 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 12:00:01 UTC] [HockeySignin][debug] Player not found in database: Michael Robinson F
+[17-Jan-2025 12:00:01 UTC] [HockeySignin][debug] Non-database player Michael Robinson F added to waitlist at position 1
+[17-Jan-2025 12:00:01 UTC] [HockeySignin][debug] Check-in response: Thank you! You've been added to our waitlist for tonight. Please check back at 6pm to see if you have made the roster! You can reach us at halifaxpickuphockey@gmail.com to ask about Regular subscriber spots!
+[17-Jan-2025 12:00:57 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Mackenzie Mitchell
+[17-Jan-2025 12:00:57 UTC] [HockeySignin][debug] Starting check-in process for player: Mackenzie Mitchell
+[17-Jan-2025 12:00:57 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 12:00:57 UTC] [HockeySignin][debug] Player Mackenzie Mitchell prepaid status: yes
+[17-Jan-2025 12:00:57 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 68 (preferred position: Forward)
+[17-Jan-2025 12:00:57 UTC] [HockeySignin][debug] Found 24 forward and 16 defense spots available
+[17-Jan-2025 12:00:57 UTC] [HockeySignin][debug] Selected preferred position F at line 27
+[17-Jan-2025 12:00:57 UTC] [HockeySignin][debug] Player Mackenzie Mitchell assigned to Civic rink at position F
+[17-Jan-2025 12:00:57 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[17-Jan-2025 12:02:31 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Nathan Crawford
+[17-Jan-2025 12:02:31 UTC] [HockeySignin][debug] Starting check-in process for player: Nathan Crawford
+[17-Jan-2025 12:02:31 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 12:02:31 UTC] [HockeySignin][debug] Player Nathan Crawford prepaid status: yes
+[17-Jan-2025 12:02:31 UTC] [HockeySignin][debug] Player Nathan Crawford is a goalie
+[17-Jan-2025 12:02:31 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 68 (preferred position: Goalie)
+[17-Jan-2025 12:02:31 UTC] [HockeySignin][debug] Player Nathan Crawford assigned to Civic rink at position Goal
+[17-Jan-2025 12:02:31 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[17-Jan-2025 12:02:46 UTC] [HockeySignin][debug] Form submission: action=checkout, player=Nathan Crawford
+[17-Jan-2025 12:02:46 UTC] [HockeySignin][debug] Processing checkout for player: Nathan Crawford
+[17-Jan-2025 12:02:46 UTC] [HockeySignin][debug] Player checked out: Nathan Crawford
+[17-Jan-2025 12:03:30 UTC] [HockeySignin][debug] Form submission: action=checkin, player=N crawford
+[17-Jan-2025 12:03:30 UTC] [HockeySignin][debug] Starting check-in process for player: N crawford
+[17-Jan-2025 12:03:30 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 12:03:30 UTC] [HockeySignin][debug] Player not found in database: N crawford
+[17-Jan-2025 12:03:30 UTC] [HockeySignin][debug] Non-database player N crawford added to waitlist at position 2
+[17-Jan-2025 12:03:30 UTC] [HockeySignin][debug] Check-in response: Thank you! You've been added to our waitlist for tonight. Please check back at 6pm to see if you have made the roster! You can reach us at halifaxpickuphockey@gmail.com to ask about Regular subscriber spots!
+[17-Jan-2025 12:04:34 UTC] [HockeySignin][debug] Form submission: action=checkout, player=N crawford
+[17-Jan-2025 12:04:34 UTC] [HockeySignin][debug] Processing checkout for player: N crawford
+[17-Jan-2025 12:04:34 UTC] [HockeySignin][debug] Player checked out: N crawford
+[17-Jan-2025 12:05:00 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Slug Bemis
+[17-Jan-2025 12:05:00 UTC] [HockeySignin][debug] Starting check-in process for player: Slug Bemis
+[17-Jan-2025 12:05:00 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 12:05:00 UTC] [HockeySignin][debug] Player Slug Bemis prepaid status: yes
+[17-Jan-2025 12:05:00 UTC] [HockeySignin][debug] Player Slug Bemis is a goalie
+[17-Jan-2025 12:05:00 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 68 (preferred position: Goalie)
+[17-Jan-2025 12:05:00 UTC] [HockeySignin][debug] Player Slug Bemis assigned to Civic rink at position Goal
+[17-Jan-2025 12:05:00 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[17-Jan-2025 12:05:32 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Slug Bemis
+[17-Jan-2025 12:05:32 UTC] [HockeySignin][debug] Starting check-in process for player: Slug Bemis
+[17-Jan-2025 12:05:32 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 12:05:32 UTC] [HockeySignin][debug] Player Slug Bemis is already checked in
+[17-Jan-2025 12:05:32 UTC] [HockeySignin][debug] Check-in response: already_checked_in
+[17-Jan-2025 12:05:42 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Parker Gallant
+[17-Jan-2025 12:05:42 UTC] [HockeySignin][debug] Starting check-in process for player: Parker Gallant
+[17-Jan-2025 12:05:42 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 12:05:42 UTC] [HockeySignin][debug] Player Parker Gallant prepaid status: yes
+[17-Jan-2025 12:05:42 UTC] [HockeySignin][debug] Player Parker Gallant is a goalie
+[17-Jan-2025 12:05:42 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 68 (preferred position: Goalie)
+[17-Jan-2025 12:05:42 UTC] [HockeySignin][debug] Player Parker Gallant assigned to Civic rink at position Goal
+[17-Jan-2025 12:05:42 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[17-Jan-2025 12:07:21 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Rob Cameron
+[17-Jan-2025 12:07:21 UTC] [HockeySignin][debug] Starting check-in process for player: Rob Cameron
+[17-Jan-2025 12:07:21 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 12:07:21 UTC] [HockeySignin][debug] Player Rob Cameron prepaid status: yes
+[17-Jan-2025 12:07:21 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 68 (preferred position: Forward)
+[17-Jan-2025 12:07:21 UTC] [HockeySignin][debug] Found 23 forward and 16 defense spots available
+[17-Jan-2025 12:07:21 UTC] [HockeySignin][debug] Selected preferred position F at line 45
+[17-Jan-2025 12:07:21 UTC] [HockeySignin][debug] Player Rob Cameron assigned to Forum rink at position F
+[17-Jan-2025 12:07:21 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[17-Jan-2025 12:07:39 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Anga Natarajan
+[17-Jan-2025 12:07:39 UTC] [HockeySignin][debug] Starting check-in process for player: Anga Natarajan
+[17-Jan-2025 12:07:39 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 12:07:39 UTC] [HockeySignin][debug] Player Anga Natarajan prepaid status: yes
+[17-Jan-2025 12:07:39 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 68 (preferred position: Forward)
+[17-Jan-2025 12:07:39 UTC] [HockeySignin][debug] Found 22 forward and 16 defense spots available
+[17-Jan-2025 12:07:39 UTC] [HockeySignin][debug] Selected preferred position F at line 11
+[17-Jan-2025 12:07:39 UTC] [HockeySignin][debug] Player Anga Natarajan assigned to Civic rink at position F
+[17-Jan-2025 12:07:39 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[17-Jan-2025 12:11:32 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Sébastien Dufour
+[17-Jan-2025 12:11:32 UTC] [HockeySignin][debug] Starting check-in process for player: Sébastien Dufour
+[17-Jan-2025 12:11:32 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 12:11:32 UTC] [HockeySignin][debug] Player Sébastien Dufour prepaid status: yes
+[17-Jan-2025 12:11:32 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 68 (preferred position: Defence)
+[17-Jan-2025 12:11:32 UTC] [HockeySignin][debug] Found 21 forward and 16 defense spots available
+[17-Jan-2025 12:11:32 UTC] [HockeySignin][debug] Selected preferred position D at line 34
+[17-Jan-2025 12:11:32 UTC] [HockeySignin][debug] Player Sébastien Dufour assigned to Civic rink at position D
+[17-Jan-2025 12:11:32 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[17-Jan-2025 12:12:29 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Dan Grenier
+[17-Jan-2025 12:12:29 UTC] [HockeySignin][debug] Starting check-in process for player: Dan Grenier
+[17-Jan-2025 12:12:29 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 12:12:29 UTC] [HockeySignin][debug] Player Dan Grenier prepaid status: yes
+[17-Jan-2025 12:12:29 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 68 (preferred position: Defence)
+[17-Jan-2025 12:12:29 UTC] [HockeySignin][debug] Found 21 forward and 15 defense spots available
+[17-Jan-2025 12:12:29 UTC] [HockeySignin][debug] Selected preferred position D at line 33
+[17-Jan-2025 12:12:29 UTC] [HockeySignin][debug] Player Dan Grenier assigned to Civic rink at position D
+[17-Jan-2025 12:12:29 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[17-Jan-2025 12:19:27 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Felix Curtiss
+[17-Jan-2025 12:19:27 UTC] [HockeySignin][debug] Starting check-in process for player: Felix Curtiss
+[17-Jan-2025 12:19:27 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 12:19:27 UTC] [HockeySignin][debug] Player Felix Curtiss prepaid status: yes
+[17-Jan-2025 12:19:27 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 68 (preferred position: Forward)
+[17-Jan-2025 12:19:27 UTC] [HockeySignin][debug] Found 21 forward and 14 defense spots available
+[17-Jan-2025 12:19:27 UTC] [HockeySignin][debug] Selected preferred position F at line 28
+[17-Jan-2025 12:19:27 UTC] [HockeySignin][debug] Player Felix Curtiss assigned to Civic rink at position F
+[17-Jan-2025 12:19:27 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[17-Jan-2025 12:20:58 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Julien Elia
+[17-Jan-2025 12:20:58 UTC] [HockeySignin][debug] Starting check-in process for player: Julien Elia
+[17-Jan-2025 12:20:58 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 12:20:58 UTC] [HockeySignin][debug] Player Julien Elia prepaid status: yes
+[17-Jan-2025 12:20:58 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 68 (preferred position: Defence)
+[17-Jan-2025 12:20:58 UTC] [HockeySignin][debug] Found 20 forward and 14 defense spots available
+[17-Jan-2025 12:20:58 UTC] [HockeySignin][debug] Selected preferred position D at line 19
+[17-Jan-2025 12:20:58 UTC] [HockeySignin][debug] Player Julien Elia assigned to Civic rink at position D
+[17-Jan-2025 12:20:58 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[17-Jan-2025 12:23:33 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Glen Lefebre
+[17-Jan-2025 12:23:33 UTC] [HockeySignin][debug] Starting check-in process for player: Glen Lefebre
+[17-Jan-2025 12:23:33 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 12:23:33 UTC] [HockeySignin][debug] Player Glen Lefebre prepaid status: yes
+[17-Jan-2025 12:23:33 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 68 (preferred position: Forward)
+[17-Jan-2025 12:23:33 UTC] [HockeySignin][debug] Found 20 forward and 13 defense spots available
+[17-Jan-2025 12:23:33 UTC] [HockeySignin][debug] Selected preferred position F at line 26
+[17-Jan-2025 12:23:33 UTC] [HockeySignin][debug] Player Glen Lefebre assigned to Civic rink at position F
+[17-Jan-2025 12:23:33 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[17-Jan-2025 12:25:23 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Josh LeBlanc
+[17-Jan-2025 12:25:23 UTC] [HockeySignin][debug] Starting check-in process for player: Josh LeBlanc
+[17-Jan-2025 12:25:23 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 12:25:23 UTC] [HockeySignin][debug] Player not found in database: Josh LeBlanc
+[17-Jan-2025 12:25:23 UTC] [HockeySignin][debug] Non-database player Josh LeBlanc added to waitlist at position 3
+[17-Jan-2025 12:25:23 UTC] [HockeySignin][debug] Check-in response: Thank you! You've been added to our waitlist for tonight. Please check back at 6pm to see if you have made the roster! You can reach us at halifaxpickuphockey@gmail.com to ask about Regular subscriber spots!
+[17-Jan-2025 12:27:48 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Mitch Wasilik
+[17-Jan-2025 12:27:48 UTC] [HockeySignin][debug] Starting check-in process for player: Mitch Wasilik
+[17-Jan-2025 12:27:48 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 12:27:48 UTC] [HockeySignin][debug] Player Mitch Wasilik prepaid status: yes
+[17-Jan-2025 12:27:48 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 68 (preferred position: Defence)
+[17-Jan-2025 12:27:48 UTC] [HockeySignin][debug] Found 19 forward and 13 defense spots available
+[17-Jan-2025 12:27:48 UTC] [HockeySignin][debug] Selected preferred position D at line 17
+[17-Jan-2025 12:27:48 UTC] [HockeySignin][debug] Player Mitch Wasilik assigned to Civic rink at position D
+[17-Jan-2025 12:27:48 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[17-Jan-2025 12:29:06 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Jon Nickerson
+[17-Jan-2025 12:29:06 UTC] [HockeySignin][debug] Starting check-in process for player: Jon Nickerson
+[17-Jan-2025 12:29:06 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 12:29:06 UTC] [HockeySignin][debug] Player Jon Nickerson prepaid status: yes
+[17-Jan-2025 12:29:06 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 68 (preferred position: Forward)
+[17-Jan-2025 12:29:06 UTC] [HockeySignin][debug] Found 19 forward and 12 defense spots available
+[17-Jan-2025 12:29:06 UTC] [HockeySignin][debug] Selected preferred position F at line 13
+[17-Jan-2025 12:29:06 UTC] [HockeySignin][debug] Player Jon Nickerson assigned to Civic rink at position F
+[17-Jan-2025 12:29:06 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[17-Jan-2025 12:36:45 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Nathan Crawford
+[17-Jan-2025 12:36:45 UTC] [HockeySignin][debug] Starting check-in process for player: Nathan Crawford
+[17-Jan-2025 12:36:45 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 12:36:45 UTC] [HockeySignin][debug] Player Nathan Crawford prepaid status: yes
+[17-Jan-2025 12:36:45 UTC] [HockeySignin][debug] Player Nathan Crawford is a goalie
+[17-Jan-2025 12:36:45 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 68 (preferred position: Goalie)
+[17-Jan-2025 12:36:45 UTC] [HockeySignin][debug] Player Nathan Crawford assigned to Forum rink at position Goal
+[17-Jan-2025 12:36:45 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[17-Jan-2025 12:39:57 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Dan Grenier
+[17-Jan-2025 12:39:57 UTC] [HockeySignin][debug] Starting check-in process for player: Dan Grenier
+[17-Jan-2025 12:39:57 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 12:39:57 UTC] [HockeySignin][debug] Player Dan Grenier is already checked in
+[17-Jan-2025 12:39:57 UTC] [HockeySignin][debug] Check-in response: already_checked_in
+[17-Jan-2025 12:53:07 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Andrey Gromov
+[17-Jan-2025 12:53:07 UTC] [HockeySignin][debug] Starting check-in process for player: Andrey Gromov
+[17-Jan-2025 12:53:07 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 12:53:07 UTC] [HockeySignin][debug] Player Andrey Gromov prepaid status: yes
+[17-Jan-2025 12:53:07 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 68 (preferred position: Defence)
+[17-Jan-2025 12:53:07 UTC] [HockeySignin][debug] Found 18 forward and 12 defense spots available
+[17-Jan-2025 12:53:07 UTC] [HockeySignin][debug] Selected preferred position D at line 49
+[17-Jan-2025 12:53:07 UTC] [HockeySignin][debug] Player Andrey Gromov assigned to Forum rink at position D
+[17-Jan-2025 12:53:07 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[17-Jan-2025 12:55:56 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Pat Hamilton
+[17-Jan-2025 12:55:56 UTC] [HockeySignin][debug] Starting check-in process for player: Pat Hamilton
+[17-Jan-2025 12:55:56 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 12:55:56 UTC] [HockeySignin][debug] Player Pat Hamilton prepaid status: yes
+[17-Jan-2025 12:55:56 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 68 (preferred position: Defence)
+[17-Jan-2025 12:55:56 UTC] [HockeySignin][debug] Found 18 forward and 11 defense spots available
+[17-Jan-2025 12:55:56 UTC] [HockeySignin][debug] Selected preferred position D at line 66
+[17-Jan-2025 12:55:56 UTC] [HockeySignin][debug] Player Pat Hamilton assigned to Forum rink at position D
+[17-Jan-2025 12:55:56 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[17-Jan-2025 12:56:07 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Mark Pottie
+[17-Jan-2025 12:56:07 UTC] [HockeySignin][debug] Starting check-in process for player: Mark Pottie
+[17-Jan-2025 12:56:07 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 12:56:07 UTC] [HockeySignin][debug] Player Mark Pottie prepaid status: yes
+[17-Jan-2025 12:56:07 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 68 (preferred position: Forward)
+[17-Jan-2025 12:56:07 UTC] [HockeySignin][debug] Found 18 forward and 10 defense spots available
+[17-Jan-2025 12:56:07 UTC] [HockeySignin][debug] Selected preferred position F at line 44
+[17-Jan-2025 12:56:07 UTC] [HockeySignin][debug] Player Mark Pottie assigned to Forum rink at position F
+[17-Jan-2025 12:56:07 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[17-Jan-2025 13:02:18 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Brad Smith
+[17-Jan-2025 13:02:18 UTC] [HockeySignin][debug] Starting check-in process for player: Brad Smith
+[17-Jan-2025 13:02:18 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 13:02:18 UTC] [HockeySignin][debug] Player Brad Smith prepaid status: yes
+[17-Jan-2025 13:02:18 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 68 (preferred position: Forward)
+[17-Jan-2025 13:02:18 UTC] [HockeySignin][debug] Found 17 forward and 10 defense spots available
+[17-Jan-2025 13:02:18 UTC] [HockeySignin][debug] Selected preferred position F at line 10
+[17-Jan-2025 13:02:18 UTC] [HockeySignin][debug] Player Brad Smith assigned to Civic rink at position F
+[17-Jan-2025 13:02:18 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[17-Jan-2025 13:05:11 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Ivan
+[17-Jan-2025 13:05:11 UTC] [HockeySignin][debug] Starting check-in process for player: Ivan
+[17-Jan-2025 13:05:11 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 13:05:11 UTC] [HockeySignin][debug] Player not found in database: Ivan
+[17-Jan-2025 13:05:11 UTC] [HockeySignin][debug] Non-database player Ivan added to waitlist at position 4
+[17-Jan-2025 13:05:11 UTC] [HockeySignin][debug] Check-in response: Thank you! You've been added to our waitlist for tonight. Please check back at 6pm to see if you have made the roster! You can reach us at halifaxpickuphockey@gmail.com to ask about Regular subscriber spots!
+[17-Jan-2025 13:05:18 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Mykola
+[17-Jan-2025 13:05:18 UTC] [HockeySignin][debug] Starting check-in process for player: Mykola
+[17-Jan-2025 13:05:18 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 13:05:18 UTC] [HockeySignin][debug] Player not found in database: Mykola
+[17-Jan-2025 13:05:18 UTC] [HockeySignin][debug] Non-database player Mykola added to waitlist at position 5
+[17-Jan-2025 13:05:18 UTC] [HockeySignin][debug] Check-in response: Thank you! You've been added to our waitlist for tonight. Please check back at 6pm to see if you have made the roster! You can reach us at halifaxpickuphockey@gmail.com to ask about Regular subscriber spots!
+[17-Jan-2025 13:08:10 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Alex Flinn
+[17-Jan-2025 13:08:10 UTC] [HockeySignin][debug] Starting check-in process for player: Alex Flinn
+[17-Jan-2025 13:08:10 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 13:08:10 UTC] [HockeySignin][debug] Player Alex Flinn prepaid status: yes
+[17-Jan-2025 13:08:10 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 68 (preferred position: Defence)
+[17-Jan-2025 13:08:10 UTC] [HockeySignin][debug] Found 16 forward and 10 defense spots available
+[17-Jan-2025 13:08:10 UTC] [HockeySignin][debug] Selected preferred position D at line 51
+[17-Jan-2025 13:08:10 UTC] [HockeySignin][debug] Player Alex Flinn assigned to Forum rink at position D
+[17-Jan-2025 13:08:10 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[17-Jan-2025 13:14:40 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Ryan Andrews
+[17-Jan-2025 13:14:40 UTC] [HockeySignin][debug] Starting check-in process for player: Ryan Andrews
+[17-Jan-2025 13:14:40 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 13:14:40 UTC] [HockeySignin][debug] Player Ryan Andrews prepaid status: yes
+[17-Jan-2025 13:14:40 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 68 (preferred position: Forward)
+[17-Jan-2025 13:14:40 UTC] [HockeySignin][debug] Found 16 forward and 9 defense spots available
+[17-Jan-2025 13:14:40 UTC] [HockeySignin][debug] Selected preferred position F at line 29
+[17-Jan-2025 13:14:40 UTC] [HockeySignin][debug] Player Ryan Andrews assigned to Civic rink at position F
+[17-Jan-2025 13:14:40 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[17-Jan-2025 13:17:07 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Tyler Hynes
+[17-Jan-2025 13:17:07 UTC] [HockeySignin][debug] Starting check-in process for player: Tyler Hynes
+[17-Jan-2025 13:17:07 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 13:17:07 UTC] [HockeySignin][debug] Player not found in database: Tyler Hynes
+[17-Jan-2025 13:17:07 UTC] [HockeySignin][debug] Non-database player Tyler Hynes added to waitlist at position 6
+[17-Jan-2025 13:17:07 UTC] [HockeySignin][debug] Check-in response: Thank you! You've been added to our waitlist for tonight. Please check back at 6pm to see if you have made the roster! You can reach us at halifaxpickuphockey@gmail.com to ask about Regular subscriber spots!
+[17-Jan-2025 13:21:41 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Tyler collett
+[17-Jan-2025 13:21:41 UTC] [HockeySignin][debug] Starting check-in process for player: Tyler collett
+[17-Jan-2025 13:21:41 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Fri1030Forum/Pickup_Roster-Fri_Jan_17.txt
+[17-Jan-2025 13:21:41 UTC] [HockeySignin][debug] Player not found in database: Tyler collett
+[17-Jan-2025 13:21:41 UTC] [HockeySignin][debug] Non-database player Tyler collett added to waitlist at position 7
+[17-Jan-2025 13:21:41 UTC] [HockeySignin][debug] Check-in response: Thank you! You've been added to our waitlist for tonight. Please check back at 6pm to see if you have made the roster! You can reach us at halifaxpickuphockey@gmail.com to ask about Regular subscriber spots!

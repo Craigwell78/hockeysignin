@@ -114,3 +114,14 @@ function hockeysignin_deactivation() {
     wp_clear_scheduled_hook('create_daily_roster_files_event');
     wp_clear_scheduled_hook('move_waitlist_to_roster_event');
 }
+
+function enqueue_hockey_roster_styles() {
+    wp_enqueue_style(
+        'hockey-roster-styles',
+        plugins_url('public/css/roster-styles.css', __FILE__),
+        array(),
+        '1.0.0'
+    );
+}
+add_action('wp_enqueue_scripts', 'enqueue_hockey_roster_styles');
+add_action('admin_enqueue_scripts', 'enqueue_hockey_roster_styles');

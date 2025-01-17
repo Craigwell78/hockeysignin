@@ -400,7 +400,7 @@ function display_roster($date = null) {
     $roster_content = get_current_roster();
     
     if ($roster_content !== false) {
-        return nl2br($roster_content); // Convert newlines to <br> tags for HTML display
+        return '<div class="hockey-roster-display">' . esc_html($roster_content) . '</div>';
     }
     
     // Only show schedule info when no roster is available
@@ -412,7 +412,7 @@ function display_roster($date = null) {
         $base_message .= "<br><br>The next scheduled skate date is " . $next_game_day_formatted . ".";
     }
     
-    return $base_message;
+    return '<div class="hockey-roster-display">' . $base_message . '</div>';
 }
 
 function check_in_player_after_6pm($date, $player_name) {

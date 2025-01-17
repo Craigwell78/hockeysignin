@@ -1,0 +1,39 @@
+.hockey-roster-display {
+    white-space: pre-wrap !important;
+    display: block !important;
+    line-height: 1.5;
+    padding: 15px;
+    margin: 0 auto;
+    max-width: 800px;
+    overflow-x: auto;
+    text-align: left;
+    width: fit-content;
+    min-width: 300px;
+    transform: none;
+    left: auto;
+    position: static;
+}
+
+/* Desktop styles */
+@media screen and (min-width: 768px) {
+    .hockey-roster-display {
+        font-size: 19px;
+        margin: 20px auto;
+    }
+}
+
+/* Mobile styles */
+@media screen and (max-width: 767px) {
+    .hockey-roster-display {
+        font-size: 17px;
+        padding: 10px 15px;
+        margin: 10px auto;
+        width: 90%;
+    }
+    
+    /* Style for the header text above roster */
+    .hockey-roster-display p {
+        margin-bottom: 15px;
+        line-height: 1.4;
+    }
+}
