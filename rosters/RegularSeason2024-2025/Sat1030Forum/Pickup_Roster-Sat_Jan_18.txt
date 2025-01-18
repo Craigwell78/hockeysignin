@@ -1,7 +1,7 @@
 Goal:
 Dark
 
-F-
+F- Dan Henri
 F- Steve Pottie
 F-
 F- Ryan Drane
@@ -10,7 +10,7 @@ F-
 
 D- Zenon Pilipowicz
 D-
-D-
+D- 
 D- Jay Parise
 
 Goal:
@@ -19,9 +19,9 @@ Light
 F- Aidan reed
 F- Felix Curtiss
 F- Johnny mindorff
-F-
-F-
-F-
+F- 
+F- Ben Fitch
+F- 
 
 D-
 D- Cody Nichols
@@ -29,6 +29,6 @@ D- Pat Hamilton
 D- Pat Hickey
 
 WL:
-1. Darien Boudrea
+1. Darien Boudreau
 2. Shane pottie
 3. Devin Pittman

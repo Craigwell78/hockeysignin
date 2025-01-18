@@ -4869,3 +4869,228 @@
 [18-Jan-2025 13:28:45 UTC] [HockeySignin][debug] Player not found in database: Devin Pittman
 [18-Jan-2025 13:28:45 UTC] [HockeySignin][debug] Non-database player Devin Pittman added to waitlist at position 3
 [18-Jan-2025 13:28:45 UTC] [HockeySignin][debug] Check-in response: Thank you! You've been added to our waitlist for tonight. Please check back at 6pm to see if you have made the roster! You can reach us at halifaxpickuphockey@gmail.com to ask about Regular subscriber spots!
+[18-Jan-2025 13:41:12 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Ben Fitch
+[18-Jan-2025 13:41:12 UTC] [HockeySignin][debug] Starting check-in process for player: Ben Fitch
+[18-Jan-2025 13:41:12 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Sat1030Forum/Pickup_Roster-Sat_Jan_18.txt
+[18-Jan-2025 13:41:12 UTC] [HockeySignin][debug] Player Ben Fitch prepaid status: yes
+[18-Jan-2025 13:41:34 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Ben Fitch
+[18-Jan-2025 13:41:34 UTC] [HockeySignin][debug] Starting check-in process for player: Ben Fitch
+[18-Jan-2025 13:41:34 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Sat1030Forum/Pickup_Roster-Sat_Jan_18.txt
+[18-Jan-2025 13:41:34 UTC] [HockeySignin][debug] Player Ben Fitch prepaid status: yes
+[18-Jan-2025 13:43:03 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Ben Fitch
+[18-Jan-2025 13:43:03 UTC] [HockeySignin][debug] Starting check-in process for player: Ben Fitch
+[18-Jan-2025 13:43:03 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Sat1030Forum/Pickup_Roster-Sat_Jan_18.txt
+[18-Jan-2025 13:43:03 UTC] [HockeySignin][debug] Player Ben Fitch prepaid status: yes
+[18-Jan-2025 13:46:05 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Ben Fitch
+[18-Jan-2025 13:46:05 UTC] [HockeySignin][debug] Starting check-in process for player: Ben Fitch
+[18-Jan-2025 13:46:05 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Sat1030Forum/Pickup_Roster-Sat_Jan_18.txt
+[18-Jan-2025 13:46:05 UTC] [HockeySignin][debug] Player Ben Fitch prepaid status: yes
+[18-Jan-2025 13:49:56 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Ben Fitch
+[18-Jan-2025 13:49:56 UTC] [HockeySignin][debug] Starting check-in process for player: Ben Fitch
+[18-Jan-2025 13:49:56 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Sat1030Forum/Pickup_Roster-Sat_Jan_18.txt
+[18-Jan-2025 13:49:56 UTC] [HockeySignin][debug] Player Ben Fitch prepaid status: yes
+[18-Jan-2025 13:55:25 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Ben Fitch
+[18-Jan-2025 13:55:25 UTC] [HockeySignin][debug] Starting check-in process for player: Ben Fitch
+[18-Jan-2025 13:55:25 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Sat1030Forum/Pickup_Roster-Sat_Jan_18.txt
+[18-Jan-2025 13:55:25 UTC] [HockeySignin][debug] Player Ben Fitch prepaid status: yes
+[18-Jan-2025 13:59:49 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Ben Fitch
+[18-Jan-2025 13:59:49 UTC] [HockeySignin][debug] Starting check-in process for player: Ben Fitch
+[18-Jan-2025 13:59:49 UTC] [HockeySignin][debug] Starting check-in process for player: Ben Fitch
+[18-Jan-2025 13:59:49 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Sat1030Forum/Pickup_Roster-Sat_Jan_18.txt
+[18-Jan-2025 13:59:49 UTC] [HockeySignin][debug] Player Ben Fitch prepaid status: yes
+[18-Jan-2025 14:00:04 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Mark Pottie
+[18-Jan-2025 14:00:04 UTC] [HockeySignin][debug] Starting check-in process for player: Mark Pottie
+[18-Jan-2025 14:00:04 UTC] [HockeySignin][debug] Starting check-in process for player: Mark Pottie
+[18-Jan-2025 14:00:04 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Sat1030Forum/Pickup_Roster-Sat_Jan_18.txt
+[18-Jan-2025 14:00:04 UTC] [HockeySignin][debug] Player Mark Pottie prepaid status: yes
+[18-Jan-2025 14:05:55 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Ben Fitch
+[18-Jan-2025 14:05:55 UTC] [HockeySignin][debug] Starting check-in process for player: Ben Fitch
+[18-Jan-2025 14:05:55 UTC] [HockeySignin][debug] Starting check-in process for player: Ben Fitch
+[18-Jan-2025 14:05:55 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Sat1030Forum/Pickup_Roster-Sat_Jan_18.txt
+[18-Jan-2025 14:05:55 UTC] [HockeySignin][debug] Player Ben Fitch prepaid status: yes
+[18-Jan-2025 14:08:04 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Josh LeBlanc
+[18-Jan-2025 14:08:04 UTC] [HockeySignin][debug] Starting check-in process for player: Josh LeBlanc
+[18-Jan-2025 14:08:04 UTC] [HockeySignin][debug] Starting check-in process for player: Josh LeBlanc
+[18-Jan-2025 14:08:04 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Sat1030Forum/Pickup_Roster-Sat_Jan_18.txt
+[18-Jan-2025 14:08:04 UTC] [HockeySignin][debug] Player not found in database: Josh LeBlanc
+[18-Jan-2025 14:08:10 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Josh LeBlanc
+[18-Jan-2025 14:08:10 UTC] [HockeySignin][debug] Starting check-in process for player: Josh LeBlanc
+[18-Jan-2025 14:08:10 UTC] [HockeySignin][debug] Starting check-in process for player: Josh LeBlanc
+[18-Jan-2025 14:08:10 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Sat1030Forum/Pickup_Roster-Sat_Jan_18.txt
+[18-Jan-2025 14:08:10 UTC] [HockeySignin][debug] Player not found in database: Josh LeBlanc
+[18-Jan-2025 14:08:25 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Josh LeBlanc
+[18-Jan-2025 14:08:25 UTC] [HockeySignin][debug] Starting check-in process for player: Josh LeBlanc
+[18-Jan-2025 14:08:25 UTC] [HockeySignin][debug] Starting check-in process for player: Josh LeBlanc
+[18-Jan-2025 14:08:25 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Sat1030Forum/Pickup_Roster-Sat_Jan_18.txt
+[18-Jan-2025 14:08:25 UTC] [HockeySignin][debug] Player not found in database: Josh LeBlanc
+[18-Jan-2025 14:08:53 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Ben Fitch
+[18-Jan-2025 14:08:53 UTC] [HockeySignin][debug] Starting check-in process for player: Ben Fitch
+[18-Jan-2025 14:08:53 UTC] [HockeySignin][debug] Starting check-in process for player: Ben Fitch
+[18-Jan-2025 14:08:53 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Sat1030Forum/Pickup_Roster-Sat_Jan_18.txt
+[18-Jan-2025 14:08:53 UTC] [HockeySignin][debug] Player Ben Fitch prepaid status: yes
+[18-Jan-2025 14:08:53 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: Forward)
+[18-Jan-2025 14:08:53 UTC] [HockeySignin][error] Missing required sections in determine_rink
+[18-Jan-2025 14:08:53 UTC] [HockeySignin][error] Missing required sections in determine_rink
+[18-Jan-2025 14:08:53 UTC] [HockeySignin][error] Missing required sections in determine_rink
+[18-Jan-2025 14:08:53 UTC] [HockeySignin][error] Missing required sections in determine_rink
+[18-Jan-2025 14:08:53 UTC] [HockeySignin][error] Missing required sections in determine_rink
+[18-Jan-2025 14:08:53 UTC] [HockeySignin][error] Missing required sections in determine_rink
+[18-Jan-2025 14:08:53 UTC] [HockeySignin][error] Missing required sections in determine_rink
+[18-Jan-2025 14:08:53 UTC] [HockeySignin][error] Missing required sections in determine_rink
+[18-Jan-2025 14:08:53 UTC] [HockeySignin][error] Missing required sections in determine_rink
+[18-Jan-2025 14:08:53 UTC] [HockeySignin][error] Missing required sections in determine_rink
+[18-Jan-2025 14:08:53 UTC] [HockeySignin][debug] Found 7 forward and 3 defense spots available
+[18-Jan-2025 14:08:53 UTC] [HockeySignin][debug] Selected preferred position F at line 22
+[18-Jan-2025 14:08:53 UTC] [HockeySignin][debug] Player Ben Fitch assigned to position F
+[18-Jan-2025 14:08:53 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[18-Jan-2025 14:11:09 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Mark Pottie
+[18-Jan-2025 14:11:09 UTC] [HockeySignin][debug] Starting check-in process for player: Mark Pottie
+[18-Jan-2025 14:11:09 UTC] [HockeySignin][debug] Starting check-in process for player: Mark Pottie
+[18-Jan-2025 14:11:09 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Sat1030Forum/Pickup_Roster-Sat_Jan_18.txt
+[18-Jan-2025 14:11:09 UTC] [HockeySignin][debug] Player Mark Pottie prepaid status: yes
+[18-Jan-2025 14:11:09 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: Forward)
+[18-Jan-2025 14:11:09 UTC] [HockeySignin][error] Missing required sections in determine_rink
+[18-Jan-2025 14:11:09 UTC] [HockeySignin][error] Missing required sections in determine_rink
+[18-Jan-2025 14:11:09 UTC] [HockeySignin][error] Missing required sections in determine_rink
+[18-Jan-2025 14:11:09 UTC] [HockeySignin][error] Missing required sections in determine_rink
+[18-Jan-2025 14:11:09 UTC] [HockeySignin][error] Missing required sections in determine_rink
+[18-Jan-2025 14:11:09 UTC] [HockeySignin][error] Missing required sections in determine_rink
+[18-Jan-2025 14:11:09 UTC] [HockeySignin][error] Missing required sections in determine_rink
+[18-Jan-2025 14:11:09 UTC] [HockeySignin][error] Missing required sections in determine_rink
+[18-Jan-2025 14:11:09 UTC] [HockeySignin][error] Missing required sections in determine_rink
+[18-Jan-2025 14:11:09 UTC] [HockeySignin][debug] Found 6 forward and 3 defense spots available
+[18-Jan-2025 14:11:09 UTC] [HockeySignin][debug] Selected preferred position F at line 3
+[18-Jan-2025 14:11:09 UTC] [HockeySignin][debug] Player Mark Pottie assigned to position F
+[18-Jan-2025 14:11:09 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[18-Jan-2025 14:11:46 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Dan Henri
+[18-Jan-2025 14:11:46 UTC] [HockeySignin][debug] Starting check-in process for player: Dan Henri
+[18-Jan-2025 14:11:46 UTC] [HockeySignin][debug] Starting check-in process for player: Dan Henri
+[18-Jan-2025 14:11:46 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Sat1030Forum/Pickup_Roster-Sat_Jan_18.txt
+[18-Jan-2025 14:11:46 UTC] [HockeySignin][debug] Player Dan Henri prepaid status: yes
+[18-Jan-2025 14:11:46 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: Defence)
+[18-Jan-2025 14:11:46 UTC] [HockeySignin][error] Missing required sections in determine_rink
+[18-Jan-2025 14:11:46 UTC] [HockeySignin][error] Missing required sections in determine_rink
+[18-Jan-2025 14:11:46 UTC] [HockeySignin][error] Missing required sections in determine_rink
+[18-Jan-2025 14:11:46 UTC] [HockeySignin][error] Missing required sections in determine_rink
+[18-Jan-2025 14:11:46 UTC] [HockeySignin][error] Missing required sections in determine_rink
+[18-Jan-2025 14:11:46 UTC] [HockeySignin][error] Missing required sections in determine_rink
+[18-Jan-2025 14:11:46 UTC] [HockeySignin][error] Missing required sections in determine_rink
+[18-Jan-2025 14:11:46 UTC] [HockeySignin][error] Missing required sections in determine_rink
+[18-Jan-2025 14:11:46 UTC] [HockeySignin][error] Missing required sections in determine_rink
+[18-Jan-2025 14:11:46 UTC] [HockeySignin][debug] Found 6 forward and 3 defense spots available
+[18-Jan-2025 14:11:46 UTC] [HockeySignin][debug] Selected preferred position D at line 12
+[18-Jan-2025 14:11:46 UTC] [HockeySignin][debug] Player Dan Henri assigned to position D
+[18-Jan-2025 14:11:46 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[18-Jan-2025 14:15:39 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Ben Fitch
+[18-Jan-2025 14:15:39 UTC] [HockeySignin][debug] Starting check-in process for player: Ben Fitch
+[18-Jan-2025 14:15:39 UTC] [HockeySignin][debug] Starting check-in process for player: Ben Fitch
+[18-Jan-2025 14:15:39 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Sat1030Forum/Pickup_Roster-Sat_Jan_18.txt
+[18-Jan-2025 14:15:39 UTC] [HockeySignin][debug] Player Ben Fitch is already checked in
+[18-Jan-2025 14:15:39 UTC] [HockeySignin][debug] Check-in response: already_checked_in
+[18-Jan-2025 14:19:11 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Mark Pottie
+[18-Jan-2025 14:19:11 UTC] [HockeySignin][debug] Starting check-in process for player: Mark Pottie
+[18-Jan-2025 14:19:11 UTC] [HockeySignin][debug] Starting check-in process for player: Mark Pottie
+[18-Jan-2025 14:19:11 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Sat1030Forum/Pickup_Roster-Sat_Jan_18.txt
+[18-Jan-2025 14:19:11 UTC] [HockeySignin][debug] Player Mark Pottie prepaid status: yes
+[18-Jan-2025 14:19:11 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: Forward)
+[18-Jan-2025 14:19:11 UTC] [HockeySignin][error] Missing required sections in determine_rink
+[18-Jan-2025 14:19:11 UTC] [HockeySignin][error] Missing required sections in determine_rink
+[18-Jan-2025 14:19:11 UTC] [HockeySignin][error] Missing required sections in determine_rink
+[18-Jan-2025 14:19:11 UTC] [HockeySignin][error] Missing required sections in determine_rink
+[18-Jan-2025 14:19:11 UTC] [HockeySignin][error] Missing required sections in determine_rink
+[18-Jan-2025 14:19:11 UTC] [HockeySignin][error] Missing required sections in determine_rink
+[18-Jan-2025 14:19:11 UTC] [HockeySignin][error] Missing required sections in determine_rink
+[18-Jan-2025 14:19:11 UTC] [HockeySignin][error] Missing required sections in determine_rink
+[18-Jan-2025 14:19:11 UTC] [HockeySignin][debug] Found 5 forward and 3 defense spots available
+[18-Jan-2025 14:19:11 UTC] [HockeySignin][debug] Selected preferred position F at line 23
+[18-Jan-2025 14:19:11 UTC] [HockeySignin][debug] Player Mark Pottie assigned to position F
+[18-Jan-2025 14:19:11 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[18-Jan-2025 14:21:50 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Mark Pottie
+[18-Jan-2025 14:21:50 UTC] [HockeySignin][debug] Starting check-in process for player: Mark Pottie
+[18-Jan-2025 14:21:50 UTC] [HockeySignin][debug] Starting check-in process for player: Mark Pottie
+[18-Jan-2025 14:21:50 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Sat1030Forum/Pickup_Roster-Sat_Jan_18.txt
+[18-Jan-2025 14:21:50 UTC] [HockeySignin][debug] Player Mark Pottie prepaid status: yes
+[18-Jan-2025 14:21:50 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: Forward)
+[18-Jan-2025 14:21:50 UTC] [HockeySignin][error] Missing required sections in determine_rink
+[18-Jan-2025 14:21:50 UTC] [HockeySignin][error] Missing required sections in determine_rink
+[18-Jan-2025 14:21:50 UTC] [HockeySignin][error] Missing required sections in determine_rink
+[18-Jan-2025 14:21:50 UTC] [HockeySignin][error] Missing required sections in determine_rink
+[18-Jan-2025 14:21:50 UTC] [HockeySignin][error] Missing required sections in determine_rink
+[18-Jan-2025 14:21:50 UTC] [HockeySignin][error] Missing required sections in determine_rink
+[18-Jan-2025 14:21:50 UTC] [HockeySignin][error] Missing required sections in determine_rink
+[18-Jan-2025 14:21:50 UTC] [HockeySignin][error] Missing required sections in determine_rink
+[18-Jan-2025 14:21:50 UTC] [HockeySignin][debug] Found 5 forward and 3 defense spots available
+[18-Jan-2025 14:21:50 UTC] [HockeySignin][debug] Selected preferred position F at line 21
+[18-Jan-2025 14:21:50 UTC] [HockeySignin][debug] Player Mark Pottie assigned to position F
+[18-Jan-2025 14:21:50 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[18-Jan-2025 14:23:05 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Wait Test
+[18-Jan-2025 14:23:05 UTC] [HockeySignin][debug] Starting check-in process for player: Wait Test
+[18-Jan-2025 14:23:05 UTC] [HockeySignin][debug] Starting check-in process for player: Wait Test
+[18-Jan-2025 14:23:05 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Sat1030Forum/Pickup_Roster-Sat_Jan_18.txt
+[18-Jan-2025 14:23:05 UTC] [HockeySignin][debug] Player not found in database: Wait Test
+[18-Jan-2025 14:23:05 UTC] [HockeySignin][debug] Non-database player Wait Test added to waitlist at position 4
+[18-Jan-2025 14:23:05 UTC] [HockeySignin][debug] Check-in response: Thank you! You've been added to our waitlist for tonight. Please check back at 6pm to see if you have made the roster! You can reach us at halifaxpickuphockey@gmail.com to ask about Regular subscriber spots!
+[18-Jan-2025 14:23:14 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Mark Pottie
+[18-Jan-2025 14:23:14 UTC] [HockeySignin][debug] Starting check-in process for player: Mark Pottie
+[18-Jan-2025 14:23:14 UTC] [HockeySignin][debug] Starting check-in process for player: Mark Pottie
+[18-Jan-2025 14:23:14 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Sat1030Forum/Pickup_Roster-Sat_Jan_18.txt
+[18-Jan-2025 14:23:14 UTC] [HockeySignin][debug] Player Mark Pottie prepaid status: yes
+[18-Jan-2025 14:23:14 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: Forward)
+[18-Jan-2025 14:23:14 UTC] [HockeySignin][error] Missing required sections in determine_rink
+[18-Jan-2025 14:23:14 UTC] [HockeySignin][error] Missing required sections in determine_rink
+[18-Jan-2025 14:23:14 UTC] [HockeySignin][error] Missing required sections in determine_rink
+[18-Jan-2025 14:23:14 UTC] [HockeySignin][error] Missing required sections in determine_rink
+[18-Jan-2025 14:23:14 UTC] [HockeySignin][error] Missing required sections in determine_rink
+[18-Jan-2025 14:23:14 UTC] [HockeySignin][error] Missing required sections in determine_rink
+[18-Jan-2025 14:23:14 UTC] [HockeySignin][error] Missing required sections in determine_rink
+[18-Jan-2025 14:23:14 UTC] [HockeySignin][error] Missing required sections in determine_rink
+[18-Jan-2025 14:23:14 UTC] [HockeySignin][debug] Found 5 forward and 3 defense spots available
+[18-Jan-2025 14:23:14 UTC] [HockeySignin][debug] Selected preferred position F at line 23
+[18-Jan-2025 14:23:14 UTC] [HockeySignin][debug] Player Mark Pottie assigned to position F
+[18-Jan-2025 14:23:14 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[18-Jan-2025 14:24:20 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Mark Pottie
+[18-Jan-2025 14:24:20 UTC] [HockeySignin][debug] Starting check-in process for player: Mark Pottie
+[18-Jan-2025 14:24:20 UTC] [HockeySignin][debug] Starting check-in process for player: Mark Pottie
+[18-Jan-2025 14:24:20 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Sat1030Forum/Pickup_Roster-Sat_Jan_18.txt
+[18-Jan-2025 14:24:20 UTC] [HockeySignin][debug] Player Mark Pottie prepaid status: yes
+[18-Jan-2025 14:24:20 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: Forward)
+[18-Jan-2025 14:24:20 UTC] [HockeySignin][error] Missing required sections in determine_rink
+[18-Jan-2025 14:24:20 UTC] [HockeySignin][error] Missing required sections in determine_rink
+[18-Jan-2025 14:24:20 UTC] [HockeySignin][error] Missing required sections in determine_rink
+[18-Jan-2025 14:24:20 UTC] [HockeySignin][error] Missing required sections in determine_rink
+[18-Jan-2025 14:24:20 UTC] [HockeySignin][error] Missing required sections in determine_rink
+[18-Jan-2025 14:24:20 UTC] [HockeySignin][error] Missing required sections in determine_rink
+[18-Jan-2025 14:24:20 UTC] [HockeySignin][error] Missing required sections in determine_rink
+[18-Jan-2025 14:24:20 UTC] [HockeySignin][error] Missing required sections in determine_rink
+[18-Jan-2025 14:24:20 UTC] [HockeySignin][debug] Found 5 forward and 3 defense spots available
+[18-Jan-2025 14:24:20 UTC] [HockeySignin][debug] Selected preferred position F at line 7
+[18-Jan-2025 14:24:20 UTC] [HockeySignin][debug] Player Mark Pottie assigned to position F
+[18-Jan-2025 14:24:20 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[18-Jan-2025 14:24:32 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Mark Pottie
+[18-Jan-2025 14:24:32 UTC] [HockeySignin][debug] Starting check-in process for player: Mark Pottie
+[18-Jan-2025 14:24:32 UTC] [HockeySignin][debug] Starting check-in process for player: Mark Pottie
+[18-Jan-2025 14:24:32 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Sat1030Forum/Pickup_Roster-Sat_Jan_18.txt
+[18-Jan-2025 14:24:32 UTC] [HockeySignin][debug] Player Mark Pottie is already checked in
+[18-Jan-2025 14:24:32 UTC] [HockeySignin][debug] Check-in response: already_checked_in
+[18-Jan-2025 14:24:35 UTC] [HockeySignin][debug] Form submission: action=checkout, player=Mark Pottie
+[18-Jan-2025 14:24:35 UTC] [HockeySignin][debug] Processing checkout for player: Mark Pottie
+[18-Jan-2025 14:24:35 UTC] [HockeySignin][debug] Player checked out: Mark Pottie
+[18-Jan-2025 14:34:13 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Mark Pottie
+[18-Jan-2025 14:34:13 UTC] [HockeySignin][debug] Starting check-in process for player: Mark Pottie
+[18-Jan-2025 14:34:13 UTC] [HockeySignin][debug] Starting check-in process for player: Mark Pottie
+[18-Jan-2025 14:34:13 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Sat1030Forum/Pickup_Roster-Sat_Jan_18.txt
+[18-Jan-2025 14:34:13 UTC] [HockeySignin][debug] Player Mark Pottie prepaid status: yes
+[18-Jan-2025 14:34:13 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: Forward)
+[18-Jan-2025 14:34:13 UTC] [HockeySignin][debug] Found 5 forward and 3 defense spots available
+[18-Jan-2025 14:34:13 UTC] [HockeySignin][debug] Found empty position: F at line 5
+[18-Jan-2025 14:34:13 UTC] [HockeySignin][debug] Player Mark Pottie assigned to position F
+[18-Jan-2025 14:34:13 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[18-Jan-2025 14:34:21 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Mark Pottie
+[18-Jan-2025 14:34:21 UTC] [HockeySignin][debug] Starting check-in process for player: Mark Pottie
+[18-Jan-2025 14:34:21 UTC] [HockeySignin][debug] Starting check-in process for player: Mark Pottie
+[18-Jan-2025 14:34:21 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Sat1030Forum/Pickup_Roster-Sat_Jan_18.txt
+[18-Jan-2025 14:34:21 UTC] [HockeySignin][debug] Player Mark Pottie is already checked in
+[18-Jan-2025 14:34:21 UTC] [HockeySignin][debug] Check-in response: already_checked_in
+[18-Jan-2025 14:34:24 UTC] [HockeySignin][debug] Form submission: action=checkout, player=Mark Pottie
+[18-Jan-2025 14:34:24 UTC] [HockeySignin][debug] Processing checkout for player: Mark Pottie
+[18-Jan-2025 14:34:24 UTC] [HockeySignin][debug] Player checked out: Mark Pottie

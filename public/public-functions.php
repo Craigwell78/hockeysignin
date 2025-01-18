@@ -8,58 +8,44 @@ function hockeysignin_handle_form_submission() {
     header("Pragma: no-cache");
     
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
-        if (isset($_POST['player_name'])) {
-            $player_name = sanitize_text_field($_POST['player_name']);
-            $action = sanitize_text_field($_POST['action']);
+        if (!isset($_POST['player_name'])) {
+            return;
+        }
+
+        $player_name = sanitize_text_field($_POST['player_name']);
+        $action = sanitize_text_field($_POST['action']);
+        
+        hockey_log("Form submission: action={$action}, player={$player_name}", 'debug');
+        
+        $handler = \hockeysignin\Core\FormHandler::getInstance();
+        $response = '';
+        
+        if ($action === 'checkin') {
+            hockey_log("Starting check-in process for player: {$player_name}", 'debug');
+            $response = $handler->handleCheckIn($player_name);
+            hockey_log("Check-in response: {$response}", 'debug');
             
-            hockey_log("Form submission: action={$action}, player={$player_name}", 'debug');
-            
-            $handler = \hockeysignin\Core\FormHandler::getInstance();
-            $response = '';
-            
-            if ($action === 'checkin') {
-                $response = $handler->handleCheckIn($player_name);
-                hockey_log("Check-in response: {$response}", 'debug');
-                
-                if ($response === 'already_checked_in') {
-                    $nonce = wp_create_nonce('hockeysignin_action');
-                    echo '<div class="notice"><p>' . esc_html($player_name) . ' is already checked in. 
-                          <form method="post" action="" style="display:inline;">
-                          <input type="hidden" name="player_name" value="' . esc_attr($player_name) . '">
-                          <input type="hidden" name="action" value="checkout">
-                          <input type="hidden" name="hockeysignin_nonce" value="' . $nonce . '">
-                          <button type="submit" onclick="return confirm(\'Do you want to check out ' . esc_js($player_name) . '?\');">
-                              Check Out Instead?
-                          </button>
-                          </form></p></div>';
-                    return;
-                }
-            } elseif ($action === 'checkout') {
-                hockey_log("Processing checkout for player: {$player_name}", 'debug');
-                $response = $handler->handleCheckOut($player_name);
+            if ($response === 'already_checked_in') {
+                $nonce = wp_create_nonce('hockeysignin_action');
+                echo '<div class="notice"><p>' . esc_html($player_name) . ' is already checked in. 
+                      <form method="post" action="" style="display:inline;">
+                      <input type="hidden" name="player_name" value="' . esc_attr($player_name) . '">
+                      <input type="hidden" name="action" value="checkout">
+                      <input type="hidden" name="hockeysignin_nonce" value="' . $nonce . '">
+                      <button type="submit" onclick="return confirm(\'Do you want to check out ' . esc_js($player_name) . '?\');">
+                          Check Out Instead?
+                      </button>
+                      </form></p></div>';
+                return;
             }
-            
-            if ($response) {
-                echo '<div class="updated"><p>' . esc_html($response) . '</p></div>';
-            }
+        } elseif ($action === 'checkout') {
+            hockey_log("Processing checkout for player: {$player_name}", 'debug');
+            $response = $handler->handleCheckOut($player_name);
         }
         
-        // After processing, add JavaScript to clear form and prevent resubmission
-        add_action('wp_footer', function() {
-            ?>
-            <script>
-                document.addEventListener('DOMContentLoaded', function() {
-                    if (window.history.replaceState) {
-                        window.history.replaceState(null, null, window.location.href);
-                    }
-                    var form = document.getElementById('hockey-signin-form');
-                    if (form) {
-                        form.reset();
-                    }
-                });
-            </script>
-            <?php
-        });
+        if ($response) {
+            echo '<div class="updated"><p>' . esc_html($response) . '</p></div>';
+        }
     }
 }
 add_action('init', 'hockeysignin_handle_form_submission');

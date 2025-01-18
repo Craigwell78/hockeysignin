@@ -253,9 +253,9 @@ function update_roster($date, $player_name, $prepaid, $preferred_position = null
         
         if ($position === 'Goal') {
             // For goalies, append to the Goal: line with a space
-            $replacement = "Goal: " . $player_with_mark . " *confirming*";
+            $replacement = "Goal: " . $player_with_mark;
         } else {
-            $replacement = "{$position}- {$player_with_mark} *confirming*";
+            $replacement = "{$position}- {$player_with_mark}";
         }
         
         $lines[$spot['line_number']] = $replacement;
@@ -321,7 +321,7 @@ function move_waitlist_to_roster($lines, $day_of_week) {
         if ($spot) {
             $position = $spot['position'];
             $player_with_asterisk = $player . "*";
-            $replacement = "{$position}- {$player_with_asterisk} *confirming*";
+            $replacement = "{$position}- {$player_with_asterisk}";
             $lines[$spot['line_number']] = $replacement;
             
             // Log assignment with rink information for Fridays
@@ -510,19 +510,6 @@ function is_empty_position($line, $preferred_position = null) {
     return $result;
 }
 
-function determine_rink($line_number, $sections) {
-    // Convert section keys to lowercase for case-insensitive comparison
-    $sections = array_change_key_case($sections, CASE_LOWER);
-    
-    // Add null coalescing to prevent undefined array key warnings
-    if ($line_number >= ($sections['forum']['start'] ?? PHP_INT_MAX)) {
-        return 'Forum';
-    } elseif ($line_number >= ($sections['civic']['start'] ?? PHP_INT_MAX)) {
-        return 'Civic';
-    }
-    return '';
-}
-
 function find_available_spot($lines, $preferred_position = null) {
     $sections = get_roster_sections($lines, date('l'));
     $end_line = isset($sections['waitlist']) ? $sections['waitlist']['start'] : count($lines);
@@ -537,58 +524,46 @@ function find_available_spot($lines, $preferred_position = null) {
                 $next_line = isset($lines[$i + 1]) ? trim($lines[$i + 1]) : '';
                 if (empty($next_line) || $next_line === 'Dark' || $next_line === 'Light') {
                     return [
-                        'position' => 'Goal',
                         'line_number' => $i,
-                        'rink' => determine_rink($i, $sections)
+                        'position' => 'Goal'
                     ];
                 }
             }
         }
-        return null;
     }
     
-    // Regular player handling
-    $available_spots = [];
+    // Count available spots for forwards and defense
+    $forward_spots = 0;
+    $defense_spots = 0;
     
     for ($i = 0; $i < $end_line; $i++) {
         $line = trim($lines[$i]);
+        if ($line === 'F-') {
+            $forward_spots++;
+        } elseif ($line === 'D-') {
+            $defense_spots++;
+        }
+    }
+    
+    hockey_log("Found {$forward_spots} forward and {$defense_spots} defense spots available", 'debug');
+    
+    // Find first available spot matching preferred position
+    for ($i = 0; $i < $end_line; $i++) {
+        $line = trim($lines[$i]);
         
-        if (preg_match('/^([FD])-\s*$/', $line, $matches)) {
-            $position = $matches[1];
-            $available_spots[] = [
-                'position' => $position,
+        if ($preferred_position === 'Forward' && $line === 'F-') {
+            hockey_log("Found empty position: F at line {$i}", 'debug');
+            return [
                 'line_number' => $i,
-                'rink' => determine_rink($i, $sections)
+                'position' => 'F'
+            ];
+        } elseif ($preferred_position === 'Defence' && $line === 'D-') {
+            hockey_log("Found empty position: D at line {$i}", 'debug');
+            return [
+                'line_number' => $i,
+                'position' => 'D'
             ];
         }
-    }
-    
-    if (!empty($available_spots)) {
-        $f_count = count(array_filter($available_spots, fn($spot) => $spot['position'] === 'F'));
-        $d_count = count(array_filter($available_spots, fn($spot) => $spot['position'] === 'D'));
-        hockey_log("Found {$f_count} forward and {$d_count} defense spots available", 'debug');
-    }
-    
-    // If we have a preferred position, try to find a matching spot first
-    if ($preferred_position && !empty($available_spots)) {
-        $matching_spots = array_filter($available_spots, function($spot) use ($preferred_position) {
-            return $spot['position'] === $preferred_position[0];
-        });
-        
-        if (!empty($matching_spots)) {
-            $matching_spots = array_values($matching_spots); // Reset array keys
-            $selected = $matching_spots[array_rand($matching_spots)];
-            hockey_log("Selected preferred position {$selected['position']} at line {$selected['line_number']}", 'debug');
-            return $selected;
-        }
-    }
-    
-    // If no preferred spot found, return random available spot
-    if (!empty($available_spots)) {
-        $available_spots = array_values($available_spots); // Reset array keys
-        $selected = $available_spots[array_rand($available_spots)];
-        hockey_log("Selected position {$selected['position']} at line {$selected['line_number']}", 'debug');
-        return $selected;
     }
     
     return null;
@@ -622,36 +597,43 @@ function get_roster_sections($lines, $day_of_week) {
         
         foreach ($lines as $i => $line) {
             $line = trim($line);
-            // Look for exact matches for section headers
             if ($line === 'CIVIC 10:30PM') {
                 $civic_start = $i;
-                hockey_log("Found Civic section at line {$i}", 'debug');
             }
             if ($line === 'FORUM 10:30PM') {
                 $forum_start = $i;
-                hockey_log("Found Forum section at line {$i}", 'debug');
             }
             if ($line === 'WL:') {
                 $waitlist_start = $i;
-                hockey_log("Found Waitlist section at line {$i}", 'debug');
             }
         }
         
-        // Basic validation and return
         if ($civic_start !== false && $forum_start !== false && $waitlist_start !== false) {
             return [
                 'civic' => ['start' => $civic_start],
                 'forum' => ['start' => $forum_start],
-                'waitlist' => ['start' => $waitlist_start]
+                'waitlist' => [
+                    'start' => $waitlist_start,
+                    'end' => count($lines)
+                ]
             ];
         }
         
-        hockey_log("Error: Could not find all required sections in Friday roster", 'error');
+        hockey_log("Error: Could not find all sections in Friday roster", 'error');
         return null;
     }
     
-    // Existing code for other days remains unchanged
-    return get_regular_day_sections($lines);
+    // Keep existing non-Friday logic
+    return [
+        'main' => [
+            'start' => 0,
+            'end' => array_search('WL:', $lines)
+        ],
+        'waitlist' => [
+            'start' => array_search('WL:', $lines),
+            'end' => count($lines)
+        ]
+    ];
 }
 
 function get_waitlisted_players($lines, $sections) {
@@ -684,4 +666,41 @@ function get_waitlisted_players($lines, $sections) {
     
     hockey_log("Found " . count($waitlisted) . " players on waitlist", 'debug');
     return $waitlisted;
+}
+
+// For moving waitlist players to roster during 6pm event
+function move_waitlist_player_to_roster($player_name, $spot, $is_6pm_event = false) {
+    $position = $spot['position'];
+    $player_with_mark = $player_name . " *";
+    
+    // Only add "confirming" text during 6pm event
+    if ($is_6pm_event) {
+        $player_with_mark .= " *confirming*";
+    }
+    
+    if ($position === 'Goal') {
+        $replacement = "Goal: " . $player_with_mark;
+    } else {
+        $replacement = "{$position}- " . $player_with_mark;
+    }
+    
+    $lines[$spot['line_number']] = $replacement;
+    return $lines;
+}
+
+function assign_player_to_spot($player_name, $spot, $is_waitlist_move = false) {
+    $position = $spot['position'];
+    
+    // Only add confirming text if it's a waitlist move during 6pm event
+    if ($is_waitlist_move) {
+        $player_with_mark = $player_name . " * *confirming*";
+    } else {
+        $player_with_mark = $player_name;
+    }
+    
+    if ($position === 'Goal') {
+        return "Goal: " . $player_with_mark;
+    } else {
+        return "{$position}- " . $player_with_mark;
+    }
 }
