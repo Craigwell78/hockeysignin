@@ -622,43 +622,36 @@ function get_roster_sections($lines, $day_of_week) {
         
         foreach ($lines as $i => $line) {
             $line = trim($line);
+            // Look for exact matches for section headers
             if ($line === 'CIVIC 10:30PM') {
                 $civic_start = $i;
+                hockey_log("Found Civic section at line {$i}", 'debug');
             }
             if ($line === 'FORUM 10:30PM') {
                 $forum_start = $i;
+                hockey_log("Found Forum section at line {$i}", 'debug');
             }
             if ($line === 'WL:') {
                 $waitlist_start = $i;
+                hockey_log("Found Waitlist section at line {$i}", 'debug');
             }
         }
         
+        // Basic validation and return
         if ($civic_start !== false && $forum_start !== false && $waitlist_start !== false) {
             return [
                 'civic' => ['start' => $civic_start],
                 'forum' => ['start' => $forum_start],
-                'waitlist' => [
-                    'start' => $waitlist_start,
-                    'end' => count($lines)
-                ]
+                'waitlist' => ['start' => $waitlist_start]
             ];
         }
         
-        hockey_log("Error: Could not find all sections in Friday roster", 'error');
+        hockey_log("Error: Could not find all required sections in Friday roster", 'error');
         return null;
     }
     
-    // Keep existing non-Friday logic
-    return [
-        'main' => [
-            'start' => 0,
-            'end' => array_search('WL:', $lines)
-        ],
-        'waitlist' => [
-            'start' => array_search('WL:', $lines),
-            'end' => count($lines)
-        ]
-    ];
+    // Existing code for other days remains unchanged
+    return get_regular_day_sections($lines);
 }
 
 function get_waitlisted_players($lines, $sections) {
