@@ -1,39 +1,45 @@
-.hockey-roster-display {
-    white-space: pre-wrap !important;
+/* Common container styles */
+body .hockey-roster-display, 
+body .hockeysignin-message {
     display: block !important;
-    line-height: 1.5;
-    padding: 15px;
-    margin: 0 auto;
-    max-width: 800px;
-    overflow-x: auto;
-    text-align: left;
-    width: fit-content;
-    min-width: 300px;
-    transform: none;
-    left: auto;
-    position: static;
+    line-height: 1.5 !important;
+    padding: 15px !important;
+    margin: 20px auto !important;
+    background-color: rgba(0, 0, 0, 0.2) !important;
+    border-radius: 4px !important;
+    font-size: 19px !important;
+    font-family: inherit !important;
 }
 
-/* Desktop styles */
-@media screen and (min-width: 768px) {
-    .hockey-roster-display {
-        font-size: 19px;
-        margin: 20px auto;
-    }
+/* Specific roster display container */
+body .hockey-roster-display {
+    width: 800px !important;
+    margin: 20px auto !important;
+    text-align: left !important;
+    white-space: pre-wrap !important;
+}
+
+/* Specific message container */
+body .hockeysignin-message {
+    width: fit-content !important;
+    text-align: center !important;
+}
+
+/* Force pre tag alignment inside roster display */
+body .hockey-roster-display pre {
+    text-align: left !important;
+    margin: 0 !important;
+    white-space: pre-wrap !important;
+    font-family: inherit !important;
 }
 
 /* Mobile styles */
 @media screen and (max-width: 767px) {
-    .hockey-roster-display {
-        font-size: 17px;
-        padding: 10px 15px;
-        margin: 10px auto;
-        width: 90%;
-    }
-    
-    /* Style for the header text above roster */
-    .hockey-roster-display p {
-        margin-bottom: 15px;
-        line-height: 1.4;
+    body .hockey-roster-display, 
+    body .hockeysignin-message {
+        width: 90% !important;
+        font-size: 17px !important;
+        padding: 10px 15px !important;
+        margin: 10px auto !important;
     }
 }

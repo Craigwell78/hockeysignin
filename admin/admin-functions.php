@@ -17,6 +17,24 @@ function hockeysignin_settings_page() {
         </form>
     </div>
     <?php
+    
+    // Add new testing mode setting
+    register_setting('hockeysignin_options', 'hockeysignin_testing_mode');
+    
+    add_settings_section(
+        'hockeysignin_testing_section',
+        'Testing Mode Settings',
+        'hockeysignin_testing_section_callback',
+        'hockeysignin'
+    );
+    
+    add_settings_field(
+        'hockeysignin_testing_mode',
+        'Enable Testing Mode',
+        'hockeysignin_testing_mode_callback',
+        'hockeysignin',
+        'hockeysignin_testing_section'
+    );
 }
 
 function hockeysignin_admin_page() {
@@ -98,36 +116,54 @@ function get_next_game_date() {
 
 add_action('admin_menu', 'hockeysignin_add_admin_menu');
 
-function hockeysignin_register_settings() {
+function hockeysignin_settings_init() {
+    // Register all settings
     register_setting('hockeysignin_settings_group', 'hockeysignin_off_state');
     register_setting('hockeysignin_settings_group', 'hockeysignin_custom_text');
     register_setting('hockeysignin_settings_group', 'hockeysignin_hide_next_game');
-    
-    add_settings_section('hockeysignin_main_section', 'Main Settings', null, 'hockeysignin_settings');
-    
-    add_settings_field('hockeysignin_off_state', 'Turn Off Sign-in', 'hockeysignin_off_state_callback', 'hockeysignin_settings', 'hockeysignin_main_section');
-    add_settings_field('hockeysignin_custom_text', 'Custom Text', 'hockeysignin_custom_text_callback', 'hockeysignin_settings', 'hockeysignin_main_section');
+    register_setting('hockeysignin_settings_group', 'hockeysignin_testing_mode');
+
+    // Main settings section
+    add_settings_section(
+        'hockeysignin_main_section',
+        'Main Settings',
+        null,
+        'hockeysignin_settings'
+    );
+
+    // Add fields
     add_settings_field(
-        'hockeysignin_hide_next_game',
-        'Hide Next Game Date',
-        function() {
-            $hide_next_game = get_option('hockeysignin_hide_next_game', '0');
-            echo '<input type="checkbox" id="hockeysignin_hide_next_game" name="hockeysignin_hide_next_game" value="1" ' . checked('1', $hide_next_game, false) . '/>';
-            echo '<label for="hockeysignin_hide_next_game">Hide the "next scheduled skate date" message</label>';
-        },
+        'hockeysignin_off_state',
+        'Turn Off Sign-in',
+        'hockeysignin_off_state_callback',
+        'hockeysignin_settings',
+        'hockeysignin_main_section'
+    );
+
+    add_settings_field(
+        'hockeysignin_testing_mode',
+        'Enable Testing Mode',
+        'hockeysignin_testing_mode_callback',
         'hockeysignin_settings',
         'hockeysignin_main_section'
     );
 }
 
+// Add the missing callback functions
 function hockeysignin_off_state_callback() {
-    $checked = get_option('hockeysignin_off_state') ? 'checked' : '';
-    echo '<input type="checkbox" name="hockeysignin_off_state" value="1" ' . $checked . '> Disable Sign-in';
+    $off_state = get_option('hockeysignin_off_state', '0');
+    echo '<input type="checkbox" id="hockeysignin_off_state" 
+          name="hockeysignin_off_state" 
+          value="1" ' . checked('1', $off_state, false) . '/>
+          <label for="hockeysignin_off_state"> Disable player check-in</label>';
 }
 
-function hockeysignin_custom_text_callback() {
-    $text = get_option('hockeysignin_custom_text', 'Sign-in is currently disabled.');
-    echo '<textarea name="hockeysignin_custom_text" rows="5" cols="50">' . esc_textarea($text) . '</textarea>';
+function hockeysignin_testing_mode_callback() {
+    $testing_mode = get_option('hockeysignin_testing_mode', '0');
+    echo '<input type="checkbox" id="hockeysignin_testing_mode" 
+          name="hockeysignin_testing_mode" 
+          value="1" ' . checked('1', $testing_mode, false) . '/>
+          <label for="hockeysignin_testing_mode"> Allow check-in form at any time (for testing)</label>';
 }
 
-add_action('admin_init', 'hockeysignin_register_settings');
+add_action('admin_init', 'hockeysignin_settings_init');

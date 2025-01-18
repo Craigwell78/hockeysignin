@@ -120,8 +120,11 @@ function enqueue_hockey_roster_styles() {
         'hockey-roster-styles',
         plugins_url('public/css/roster-styles.css', __FILE__),
         array(),
-        '1.0.0'
+        '1.0.1'
     );
 }
 add_action('wp_enqueue_scripts', 'enqueue_hockey_roster_styles');
 add_action('admin_enqueue_scripts', 'enqueue_hockey_roster_styles');
+
+// Add after your existing requires
+require_once plugin_dir_path(__FILE__) . 'includes/class-checkin-visibility.php';

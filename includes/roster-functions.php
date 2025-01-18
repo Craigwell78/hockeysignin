@@ -403,16 +403,14 @@ function display_roster($date = null) {
         return '<div class="hockey-roster-display">' . esc_html($roster_content) . '</div>';
     }
     
-    // Only show schedule info when no roster is available
-    $base_message = "Our skates are Tuesday 10:30pm Forum, Thursday 10:30pm Civic, and Friday & Saturday 10:30pm Forum.<br><br>Check in begins at 8:00am for each skate.";
-    
+    // Show next game date when no roster is available
     if (get_option('hockeysignin_hide_next_game', '0') !== '1') {
         $next_game_day = calculate_next_game_day();
         $next_game_day_formatted = date_i18n('l, F jS', strtotime($next_game_day));
-        $base_message .= "<br><br>The next scheduled skate date is " . $next_game_day_formatted . ".";
+        return '<div class="hockey-roster-display">The next scheduled skate date is ' . $next_game_day_formatted . '.</div>';
     }
     
-    return '<div class="hockey-roster-display">' . $base_message . '</div>';
+    return '';
 }
 
 function check_in_player_after_6pm($date, $player_name) {
