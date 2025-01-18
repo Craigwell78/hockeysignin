@@ -5094,3 +5094,15 @@
 [18-Jan-2025 14:34:24 UTC] [HockeySignin][debug] Form submission: action=checkout, player=Mark Pottie
 [18-Jan-2025 14:34:24 UTC] [HockeySignin][debug] Processing checkout for player: Mark Pottie
 [18-Jan-2025 14:34:24 UTC] [HockeySignin][debug] Player checked out: Mark Pottie
+[18-Jan-2025 14:39:16 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Pat Hamilton
+[18-Jan-2025 14:39:16 UTC] [HockeySignin][debug] Starting check-in process for player: Pat Hamilton
+[18-Jan-2025 14:39:16 UTC] [HockeySignin][debug] Starting check-in process for player: Pat Hamilton
+[18-Jan-2025 14:39:16 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Sat1030Forum/Pickup_Roster-Sat_Jan_18.txt
+[18-Jan-2025 14:39:16 UTC] [HockeySignin][debug] Player Pat Hamilton is already checked in
+[18-Jan-2025 14:39:16 UTC] [HockeySignin][debug] Check-in response: already_checked_in
+[18-Jan-2025 14:40:41 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Aidan reed
+[18-Jan-2025 14:40:41 UTC] [HockeySignin][debug] Starting check-in process for player: Aidan reed
+[18-Jan-2025 14:40:41 UTC] [HockeySignin][debug] Starting check-in process for player: Aidan reed
+[18-Jan-2025 14:40:41 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Sat1030Forum/Pickup_Roster-Sat_Jan_18.txt
+[18-Jan-2025 14:40:41 UTC] [HockeySignin][debug] Player Aidan reed is already checked in
+[18-Jan-2025 14:40:41 UTC] [HockeySignin][debug] Check-in response: already_checked_in
