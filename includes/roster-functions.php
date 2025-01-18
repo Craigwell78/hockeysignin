@@ -253,9 +253,9 @@ function update_roster($date, $player_name, $prepaid, $preferred_position = null
         
         if ($position === 'Goal') {
             // For goalies, append to the Goal: line with a space
-            $replacement = "Goal: " . $player_with_mark;
+            $replacement = "Goal: " . $player_with_mark . " *confirming*";
         } else {
-            $replacement = "{$position}- {$player_with_mark}";
+            $replacement = "{$position}- {$player_with_mark} *confirming*";
         }
         
         $lines[$spot['line_number']] = $replacement;
@@ -321,7 +321,7 @@ function move_waitlist_to_roster($lines, $day_of_week) {
         if ($spot) {
             $position = $spot['position'];
             $player_with_asterisk = $player . "*";
-            $replacement = "{$position}- {$player_with_asterisk}";
+            $replacement = "{$position}- {$player_with_asterisk} *confirming*";
             $lines[$spot['line_number']] = $replacement;
             
             // Log assignment with rink information for Fridays
