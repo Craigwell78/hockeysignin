@@ -511,9 +511,13 @@ function is_empty_position($line, $preferred_position = null) {
 }
 
 function determine_rink($line_number, $sections) {
-    if ($line_number >= $sections['forum']['start']) {
+    // Convert section keys to lowercase for case-insensitive comparison
+    $sections = array_change_key_case($sections, CASE_LOWER);
+    
+    // Add null coalescing to prevent undefined array key warnings
+    if ($line_number >= ($sections['forum']['start'] ?? PHP_INT_MAX)) {
         return 'Forum';
-    } elseif ($line_number >= $sections['civic']['start']) {
+    } elseif ($line_number >= ($sections['civic']['start'] ?? PHP_INT_MAX)) {
         return 'Civic';
     }
     return '';

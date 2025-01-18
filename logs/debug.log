@@ -4815,3 +4815,49 @@
 [18-Jan-2025 12:35:34 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Sat1030Forum/Pickup_Roster-Sat_Jan_18.txt
 [18-Jan-2025 12:35:34 UTC] [HockeySignin][debug] Player Pat Hamilton is already checked in
 [18-Jan-2025 12:35:34 UTC] [HockeySignin][debug] Check-in response: already_checked_in
+[18-Jan-2025 12:44:14 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Pat Hickey
+[18-Jan-2025 12:44:14 UTC] [HockeySignin][debug] Starting check-in process for player: Pat Hickey
+[18-Jan-2025 12:44:14 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Sat1030Forum/Pickup_Roster-Sat_Jan_18.txt
+[18-Jan-2025 12:44:14 UTC] [HockeySignin][debug] Player Pat Hickey prepaid status: yes
+[18-Jan-2025 12:44:14 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: Defence)
+[18-Jan-2025 12:44:14 UTC] [HockeySignin][debug] Found 8 forward and 6 defense spots available
+[18-Jan-2025 12:44:14 UTC] [HockeySignin][debug] Selected preferred position D at line 28
+[18-Jan-2025 12:44:14 UTC] [HockeySignin][debug] Player Pat Hickey assigned to position D
+[18-Jan-2025 12:44:14 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[18-Jan-2025 12:45:33 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Ryan Drane
+[18-Jan-2025 12:45:33 UTC] [HockeySignin][debug] Starting check-in process for player: Ryan Drane
+[18-Jan-2025 12:45:33 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Sat1030Forum/Pickup_Roster-Sat_Jan_18.txt
+[18-Jan-2025 12:45:33 UTC] [HockeySignin][debug] Player Ryan Drane prepaid status: yes
+[18-Jan-2025 12:45:33 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: Forward)
+[18-Jan-2025 12:45:33 UTC] [HockeySignin][debug] Found 8 forward and 5 defense spots available
+[18-Jan-2025 12:45:33 UTC] [HockeySignin][debug] Selected preferred position F at line 6
+[18-Jan-2025 12:45:33 UTC] [HockeySignin][debug] Player Ryan Drane assigned to position F
+[18-Jan-2025 12:45:33 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[18-Jan-2025 12:46:06 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Zenon Pilipowicz
+[18-Jan-2025 12:46:06 UTC] [HockeySignin][debug] Starting check-in process for player: Zenon Pilipowicz
+[18-Jan-2025 12:46:06 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Sat1030Forum/Pickup_Roster-Sat_Jan_18.txt
+[18-Jan-2025 12:46:06 UTC] [HockeySignin][debug] Player Zenon Pilipowicz prepaid status: yes
+[18-Jan-2025 12:46:06 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: Defence)
+[18-Jan-2025 12:46:06 UTC] [HockeySignin][debug] Found 7 forward and 5 defense spots available
+[18-Jan-2025 12:46:06 UTC] [HockeySignin][debug] Selected preferred position D at line 10
+[18-Jan-2025 12:46:06 UTC] [HockeySignin][debug] Player Zenon Pilipowicz assigned to position D
+[18-Jan-2025 12:46:06 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[18-Jan-2025 12:57:43 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Cody Nichols
+[18-Jan-2025 12:57:43 UTC] [HockeySignin][debug] Starting check-in process for player: Cody Nichols
+[18-Jan-2025 12:57:43 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Sat1030Forum/Pickup_Roster-Sat_Jan_18.txt
+[18-Jan-2025 12:57:43 UTC] [HockeySignin][debug] Player Cody Nichols prepaid status: yes
+[18-Jan-2025 12:57:43 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: Defence)
+[18-Jan-2025 12:57:43 UTC] [HockeySignin][debug] Found 7 forward and 4 defense spots available
+[18-Jan-2025 12:57:43 UTC] [HockeySignin][debug] Selected preferred position D at line 26
+[18-Jan-2025 12:57:43 UTC] [HockeySignin][debug] Player Cody Nichols assigned to position D
+[18-Jan-2025 12:57:43 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[18-Jan-2025 13:14:00 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Pat Hamilton
+[18-Jan-2025 13:14:00 UTC] [HockeySignin][debug] Starting check-in process for player: Pat Hamilton
+[18-Jan-2025 13:14:00 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Sat1030Forum/Pickup_Roster-Sat_Jan_18.txt
+[18-Jan-2025 13:14:00 UTC] [HockeySignin][debug] Player Pat Hamilton is already checked in
+[18-Jan-2025 13:14:00 UTC] [HockeySignin][debug] Check-in response: already_checked_in
+[18-Jan-2025 13:18:13 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Pat Hamilton
+[18-Jan-2025 13:18:13 UTC] [HockeySignin][debug] Starting check-in process for player: Pat Hamilton
+[18-Jan-2025 13:18:13 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Sat1030Forum/Pickup_Roster-Sat_Jan_18.txt
+[18-Jan-2025 13:18:13 UTC] [HockeySignin][debug] Player Pat Hamilton is already checked in
+[18-Jan-2025 13:18:13 UTC] [HockeySignin][debug] Check-in response: already_checked_in
