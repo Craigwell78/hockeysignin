@@ -5106,3 +5106,1312 @@
 [18-Jan-2025 14:40:41 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Sat1030Forum/Pickup_Roster-Sat_Jan_18.txt
 [18-Jan-2025 14:40:41 UTC] [HockeySignin][debug] Player Aidan reed is already checked in
 [18-Jan-2025 14:40:41 UTC] [HockeySignin][debug] Check-in response: already_checked_in
+[18-Jan-2025 15:26:04 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Rob MacIsaac
+[18-Jan-2025 15:26:04 UTC] [HockeySignin][debug] Starting check-in process for player: Rob MacIsaac
+[18-Jan-2025 15:26:04 UTC] [HockeySignin][debug] Starting check-in process for player: Rob MacIsaac
+[18-Jan-2025 15:26:04 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Sat1030Forum/Pickup_Roster-Sat_Jan_18.txt
+[18-Jan-2025 15:26:04 UTC] [HockeySignin][debug] Player Rob MacIsaac prepaid status: yes
+[18-Jan-2025 15:26:04 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: Defence)
+[18-Jan-2025 15:26:04 UTC] [HockeySignin][debug] Found 5 forward and 3 defense spots available
+[18-Jan-2025 15:26:04 UTC] [HockeySignin][debug] Found empty position: D at line 11
+[18-Jan-2025 15:26:04 UTC] [HockeySignin][debug] Player Rob MacIsaac assigned to position D
+[18-Jan-2025 15:26:04 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[18-Jan-2025 15:35:41 UTC] [HockeySignin][debug] Form submission: action=checkout, player=Sean Ryan
+[18-Jan-2025 15:35:41 UTC] [HockeySignin][debug] Processing checkout for player: Sean Ryan
+[18-Jan-2025 15:35:41 UTC] [HockeySignin][debug] Player checked out: Sean Ryan
+[18-Jan-2025 15:46:39 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Pat Hamilton
+[18-Jan-2025 15:46:39 UTC] [HockeySignin][debug] Starting check-in process for player: Pat Hamilton
+[18-Jan-2025 15:46:39 UTC] [HockeySignin][debug] Starting check-in process for player: Pat Hamilton
+[18-Jan-2025 15:46:39 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Sat1030Forum/Pickup_Roster-Sat_Jan_18.txt
+[18-Jan-2025 15:46:39 UTC] [HockeySignin][debug] Player Pat Hamilton is already checked in
+[18-Jan-2025 15:46:39 UTC] [HockeySignin][debug] Check-in response: already_checked_in
+[18-Jan-2025 16:11:36 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Morgan MacNeil
+[18-Jan-2025 16:11:36 UTC] [HockeySignin][debug] Starting check-in process for player: Morgan MacNeil
+[18-Jan-2025 16:11:36 UTC] [HockeySignin][debug] Starting check-in process for player: Morgan MacNeil
+[18-Jan-2025 16:11:36 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Sat1030Forum/Pickup_Roster-Sat_Jan_18.txt
+[18-Jan-2025 16:11:36 UTC] [HockeySignin][debug] Player not found in database: Morgan MacNeil
+[18-Jan-2025 16:11:36 UTC] [HockeySignin][debug] Non-database player Morgan MacNeil added to waitlist at position 4
+[18-Jan-2025 16:11:36 UTC] [HockeySignin][debug] Check-in response: Thank you! You've been added to our waitlist for tonight. Please check back at 6pm to see if you have made the roster! You can reach us at halifaxpickuphockey@gmail.com to ask about Regular subscriber spots!
+[18-Jan-2025 16:16:09 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Pat Hamilton
+[18-Jan-2025 16:16:09 UTC] [HockeySignin][debug] Starting check-in process for player: Pat Hamilton
+[18-Jan-2025 16:16:09 UTC] [HockeySignin][debug] Starting check-in process for player: Pat Hamilton
+[18-Jan-2025 16:16:09 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Sat1030Forum/Pickup_Roster-Sat_Jan_18.txt
+[18-Jan-2025 16:16:09 UTC] [HockeySignin][debug] Player Pat Hamilton is already checked in
+[18-Jan-2025 16:16:09 UTC] [HockeySignin][debug] Check-in response: already_checked_in
+[18-Jan-2025 16:16:52 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Parker gallant
+[18-Jan-2025 16:16:52 UTC] [HockeySignin][debug] Starting check-in process for player: Parker gallant
+[18-Jan-2025 16:16:52 UTC] [HockeySignin][debug] Starting check-in process for player: Parker gallant
+[18-Jan-2025 16:16:52 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Sat1030Forum/Pickup_Roster-Sat_Jan_18.txt
+[18-Jan-2025 16:16:52 UTC] [HockeySignin][debug] Player Parker gallant prepaid status: yes
+[18-Jan-2025 16:16:52 UTC] [HockeySignin][debug] Player Parker gallant is a goalie
+[18-Jan-2025 16:16:52 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: Goalie)
+[18-Jan-2025 16:16:52 UTC] [HockeySignin][debug] Player Parker gallant assigned to position Goal
+[18-Jan-2025 16:16:52 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[18-Jan-2025 16:22:44 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Pat Hamilton
+[18-Jan-2025 16:22:44 UTC] [HockeySignin][debug] Starting check-in process for player: Pat Hamilton
+[18-Jan-2025 16:22:44 UTC] [HockeySignin][debug] Starting check-in process for player: Pat Hamilton
+[18-Jan-2025 16:22:44 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Sat1030Forum/Pickup_Roster-Sat_Jan_18.txt
+[18-Jan-2025 16:22:44 UTC] [HockeySignin][debug] Player Pat Hamilton is already checked in
+[18-Jan-2025 16:22:44 UTC] [HockeySignin][debug] Check-in response: already_checked_in
+[18-Jan-2025 16:37:44 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Joel Pearl
+[18-Jan-2025 16:37:44 UTC] [HockeySignin][debug] Starting check-in process for player: Joel Pearl
+[18-Jan-2025 16:37:44 UTC] [HockeySignin][debug] Starting check-in process for player: Joel Pearl
+[18-Jan-2025 16:37:44 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Sat1030Forum/Pickup_Roster-Sat_Jan_18.txt
+[18-Jan-2025 16:37:44 UTC] [HockeySignin][debug] Player not found in database: Joel Pearl
+[18-Jan-2025 16:37:44 UTC] [HockeySignin][debug] Non-database player Joel Pearl added to waitlist at position 5
+[18-Jan-2025 16:37:44 UTC] [HockeySignin][debug] Check-in response: Thank you! You've been added to our waitlist for tonight. Please check back at 6pm to see if you have made the roster! You can reach us at halifaxpickuphockey@gmail.com to ask about Regular subscriber spots!
+[18-Jan-2025 16:59:54 UTC] [HockeySignin][debug] Form submission: action=checkout, player=Devin Pittman
+[18-Jan-2025 16:59:54 UTC] [HockeySignin][debug] Processing checkout for player: Devin Pittman
+[18-Jan-2025 16:59:54 UTC] [HockeySignin][debug] Player checked out: Devin Pittman
+[18-Jan-2025 17:10:40 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Pat Hamilton
+[18-Jan-2025 17:10:40 UTC] [HockeySignin][debug] Starting check-in process for player: Pat Hamilton
+[18-Jan-2025 17:10:40 UTC] [HockeySignin][debug] Starting check-in process for player: Pat Hamilton
+[18-Jan-2025 17:10:40 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Sat1030Forum/Pickup_Roster-Sat_Jan_18.txt
+[18-Jan-2025 17:10:40 UTC] [HockeySignin][debug] Player Pat Hamilton is already checked in
+[18-Jan-2025 17:10:40 UTC] [HockeySignin][debug] Check-in response: already_checked_in
+[18-Jan-2025 17:41:56 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Mark pottie
+[18-Jan-2025 17:41:56 UTC] [HockeySignin][debug] Starting check-in process for player: Mark pottie
+[18-Jan-2025 17:41:56 UTC] [HockeySignin][debug] Starting check-in process for player: Mark pottie
+[18-Jan-2025 17:41:56 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Sat1030Forum/Pickup_Roster-Sat_Jan_18.txt
+[18-Jan-2025 17:41:56 UTC] [HockeySignin][debug] Player Mark pottie prepaid status: yes
+[18-Jan-2025 17:41:56 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: Forward)
+[18-Jan-2025 17:41:56 UTC] [HockeySignin][debug] Found 5 forward and 2 defense spots available
+[18-Jan-2025 17:41:56 UTC] [HockeySignin][debug] Found empty position: F at line 5
+[18-Jan-2025 17:41:56 UTC] [HockeySignin][debug] Player Mark pottie assigned to position F
+[18-Jan-2025 17:41:56 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[18-Jan-2025 18:31:10 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Kyle Charron
+[18-Jan-2025 18:31:10 UTC] [HockeySignin][debug] Starting check-in process for player: Kyle Charron
+[18-Jan-2025 18:31:10 UTC] [HockeySignin][debug] Check-in response: Security check failed
+[18-Jan-2025 18:34:56 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Korey Kostner
+[18-Jan-2025 18:34:56 UTC] [HockeySignin][debug] Starting check-in process for player: Korey Kostner
+[18-Jan-2025 18:34:56 UTC] [HockeySignin][debug] Starting check-in process for player: Korey Kostner
+[18-Jan-2025 18:34:56 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Sat1030Forum/Pickup_Roster-Sat_Jan_18.txt
+[18-Jan-2025 18:34:56 UTC] [HockeySignin][debug] Player Korey Kostner prepaid status: no
+[18-Jan-2025 18:34:56 UTC] [HockeySignin][debug] Player Korey Kostner is not registered for Saturday
+[18-Jan-2025 18:34:56 UTC] [HockeySignin][debug] Non-database player Korey Kostner added to waitlist at position 6
+[18-Jan-2025 18:34:56 UTC] [HockeySignin][debug] Check-in response: Thank you! You've been added to our waitlist for tonight. Please check back at 6pm to see if you have made the roster! You can reach us at halifaxpickuphockey@gmail.com to ask about Regular subscriber spots!
+[18-Jan-2025 18:48:44 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Ryan Hackett
+[18-Jan-2025 18:48:44 UTC] [HockeySignin][debug] Starting check-in process for player: Ryan Hackett
+[18-Jan-2025 18:48:44 UTC] [HockeySignin][debug] Starting check-in process for player: Ryan Hackett
+[18-Jan-2025 18:48:44 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Sat1030Forum/Pickup_Roster-Sat_Jan_18.txt
+[18-Jan-2025 18:48:44 UTC] [HockeySignin][debug] Player Ryan Hackett prepaid status: yes
+[18-Jan-2025 18:48:44 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: Defence)
+[18-Jan-2025 18:48:44 UTC] [HockeySignin][debug] Found 4 forward and 2 defense spots available
+[18-Jan-2025 18:48:44 UTC] [HockeySignin][debug] Found empty position: D at line 12
+[18-Jan-2025 18:48:44 UTC] [HockeySignin][debug] Player Ryan Hackett assigned to position D
+[18-Jan-2025 18:48:44 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[18-Jan-2025 19:06:28 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Ryan Sidney
+[18-Jan-2025 19:06:28 UTC] [HockeySignin][debug] Starting check-in process for player: Ryan Sidney
+[18-Jan-2025 19:06:28 UTC] [HockeySignin][debug] Starting check-in process for player: Ryan Sidney
+[18-Jan-2025 19:06:28 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Sat1030Forum/Pickup_Roster-Sat_Jan_18.txt
+[18-Jan-2025 19:06:28 UTC] [HockeySignin][debug] Player Ryan Sidney prepaid status: yes
+[18-Jan-2025 19:06:28 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: Forward)
+[18-Jan-2025 19:06:28 UTC] [HockeySignin][debug] Found 4 forward and 1 defense spots available
+[18-Jan-2025 19:06:28 UTC] [HockeySignin][debug] Found empty position: F at line 7
+[18-Jan-2025 19:06:28 UTC] [HockeySignin][debug] Player Ryan Sidney assigned to position F
+[18-Jan-2025 19:06:28 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[18-Jan-2025 19:26:08 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Ken LeBlanc
+[18-Jan-2025 19:26:08 UTC] [HockeySignin][debug] Starting check-in process for player: Ken LeBlanc
+[18-Jan-2025 19:26:08 UTC] [HockeySignin][debug] Starting check-in process for player: Ken LeBlanc
+[18-Jan-2025 19:26:08 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Sat1030Forum/Pickup_Roster-Sat_Jan_18.txt
+[18-Jan-2025 19:26:08 UTC] [HockeySignin][debug] Player Ken LeBlanc prepaid status: yes
+[18-Jan-2025 19:26:08 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: Forward)
+[18-Jan-2025 19:26:08 UTC] [HockeySignin][debug] Found 3 forward and 1 defense spots available
+[18-Jan-2025 19:26:08 UTC] [HockeySignin][debug] Found empty position: F at line 8
+[18-Jan-2025 19:26:08 UTC] [HockeySignin][debug] Player Ken LeBlanc assigned to position F
+[18-Jan-2025 19:26:08 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[18-Jan-2025 19:29:25 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Kyle Charron
+[18-Jan-2025 19:29:25 UTC] [HockeySignin][debug] Starting check-in process for player: Kyle Charron
+[18-Jan-2025 19:29:25 UTC] [HockeySignin][debug] Check-in response: Security check failed
+[18-Jan-2025 19:53:45 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Ben Swain
+[18-Jan-2025 19:53:45 UTC] [HockeySignin][debug] Starting check-in process for player: Ben Swain
+[18-Jan-2025 19:53:45 UTC] [HockeySignin][debug] Starting check-in process for player: Ben Swain
+[18-Jan-2025 19:53:45 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Sat1030Forum/Pickup_Roster-Sat_Jan_18.txt
+[18-Jan-2025 19:53:45 UTC] [HockeySignin][debug] Player Ben Swain prepaid status: yes
+[18-Jan-2025 19:53:45 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: Forward)
+[18-Jan-2025 19:53:45 UTC] [HockeySignin][debug] Found 2 forward and 1 defense spots available
+[18-Jan-2025 19:53:45 UTC] [HockeySignin][debug] Found empty position: F at line 21
+[18-Jan-2025 19:53:45 UTC] [HockeySignin][debug] Player Ben Swain assigned to position F
+[18-Jan-2025 19:53:45 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[18-Jan-2025 20:02:14 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Sam Legere
+[18-Jan-2025 20:02:14 UTC] [HockeySignin][debug] Starting check-in process for player: Sam Legere
+[18-Jan-2025 20:02:14 UTC] [HockeySignin][debug] Starting check-in process for player: Sam Legere
+[18-Jan-2025 20:02:14 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Sat1030Forum/Pickup_Roster-Sat_Jan_18.txt
+[18-Jan-2025 20:02:14 UTC] [HockeySignin][debug] Player Sam Legere prepaid status: yes
+[18-Jan-2025 20:02:14 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: Forward)
+[18-Jan-2025 20:02:14 UTC] [HockeySignin][debug] Found 1 forward and 1 defense spots available
+[18-Jan-2025 20:02:14 UTC] [HockeySignin][debug] Found empty position: F at line 23
+[18-Jan-2025 20:02:14 UTC] [HockeySignin][debug] Player Sam Legere assigned to position F
+[18-Jan-2025 20:02:14 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[18-Jan-2025 20:12:35 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Michael Coakley
+[18-Jan-2025 20:12:35 UTC] [HockeySignin][debug] Starting check-in process for player: Michael Coakley
+[18-Jan-2025 20:12:35 UTC] [HockeySignin][debug] Starting check-in process for player: Michael Coakley
+[18-Jan-2025 20:12:35 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Sat1030Forum/Pickup_Roster-Sat_Jan_18.txt
+[18-Jan-2025 20:12:35 UTC] [HockeySignin][debug] Player Michael Coakley prepaid status: yes
+[18-Jan-2025 20:12:35 UTC] [HockeySignin][debug] Player Michael Coakley is a goalie
+[18-Jan-2025 20:12:35 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: Goalie)
+[18-Jan-2025 20:12:35 UTC] [HockeySignin][debug] Player Michael Coakley assigned to position Goal
+[18-Jan-2025 20:12:35 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[18-Jan-2025 20:27:35 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Austen Bedore
+[18-Jan-2025 20:27:35 UTC] [HockeySignin][debug] Starting check-in process for player: Austen Bedore
+[18-Jan-2025 20:27:35 UTC] [HockeySignin][debug] Starting check-in process for player: Austen Bedore
+[18-Jan-2025 20:27:35 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Sat1030Forum/Pickup_Roster-Sat_Jan_18.txt
+[18-Jan-2025 20:27:35 UTC] [HockeySignin][debug] Player Austen Bedore prepaid status: yes
+[18-Jan-2025 20:27:35 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: Defence)
+[18-Jan-2025 20:27:35 UTC] [HockeySignin][debug] Found 0 forward and 1 defense spots available
+[18-Jan-2025 20:27:35 UTC] [HockeySignin][debug] Found empty position: D at line 25
+[18-Jan-2025 20:27:35 UTC] [HockeySignin][debug] Player Austen Bedore assigned to position D
+[18-Jan-2025 20:27:35 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[18-Jan-2025 20:43:30 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Austen Bedore
+[18-Jan-2025 20:43:30 UTC] [HockeySignin][debug] Starting check-in process for player: Austen Bedore
+[18-Jan-2025 20:43:30 UTC] [HockeySignin][debug] Starting check-in process for player: Austen Bedore
+[18-Jan-2025 20:43:30 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Sat1030Forum/Pickup_Roster-Sat_Jan_18.txt
+[18-Jan-2025 20:43:30 UTC] [HockeySignin][debug] Player Austen Bedore is already checked in
+[18-Jan-2025 20:43:30 UTC] [HockeySignin][debug] Check-in response: already_checked_in
+[18-Jan-2025 20:47:06 UTC] [HockeySignin][debug] Form submission: action=checkout, player=Korey Kostner
+[18-Jan-2025 20:47:06 UTC] [HockeySignin][debug] Processing checkout for player: Korey Kostner
+[18-Jan-2025 20:47:06 UTC] [HockeySignin][debug] Player checked out: Korey Kostner
+[18-Jan-2025 21:30:09 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Pat Hamilton
+[18-Jan-2025 21:30:09 UTC] [HockeySignin][debug] Starting check-in process for player: Pat Hamilton
+[18-Jan-2025 21:30:09 UTC] [HockeySignin][debug] Starting check-in process for player: Pat Hamilton
+[18-Jan-2025 21:30:09 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Sat1030Forum/Pickup_Roster-Sat_Jan_18.txt
+[18-Jan-2025 21:30:09 UTC] [HockeySignin][debug] Player Pat Hamilton is already checked in
+[18-Jan-2025 21:30:09 UTC] [HockeySignin][debug] Check-in response: already_checked_in
+[18-Jan-2025 21:34:35 UTC] [HockeySignin][debug] Form submission: action=checkout, player=Devin Pittman
+[18-Jan-2025 21:34:35 UTC] [HockeySignin][debug] Processing checkout for player: Devin Pittman
+[18-Jan-2025 21:34:35 UTC] [HockeySignin][debug] Player checked out: Devin Pittman
+[18-Jan-2025 21:38:41 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Kyle Charron
+[18-Jan-2025 21:38:41 UTC] [HockeySignin][debug] Starting check-in process for player: Kyle Charron
+[18-Jan-2025 21:38:41 UTC] [HockeySignin][debug] Check-in response: Security check failed
+[18-Jan-2025 21:38:48 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Kyle Charron
+[18-Jan-2025 21:38:48 UTC] [HockeySignin][debug] Starting check-in process for player: Kyle Charron
+[18-Jan-2025 21:38:48 UTC] [HockeySignin][debug] Check-in response: Security check failed
+[18-Jan-2025 22:03:39 UTC] [HockeySignin][debug] Processing waitlist at 18:03 for 2025-01-18 (Season: RegularSeason2024-2025)
+[18-Jan-2025 22:03:39 UTC] [HockeySignin][debug] Processing waitlist with 4 players
+[18-Jan-2025 22:03:39 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: )
+[18-Jan-2025 22:03:39 UTC] [HockeySignin][debug] Found 0 forward and 0 defense spots available
+[18-Jan-2025 22:03:39 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: )
+[18-Jan-2025 22:03:39 UTC] [HockeySignin][debug] Found 0 forward and 0 defense spots available
+[18-Jan-2025 22:03:39 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: )
+[18-Jan-2025 22:03:39 UTC] [HockeySignin][debug] Found 0 forward and 0 defense spots available
+[18-Jan-2025 22:03:39 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: )
+[18-Jan-2025 22:03:39 UTC] [HockeySignin][debug] Found 0 forward and 0 defense spots available
+[18-Jan-2025 22:03:39 UTC] [HockeySignin][debug] Waitlist processing complete. 0 players moved, 4 remaining
+[18-Jan-2025 22:03:39 UTC] [HockeySignin][debug] Waitlist processed successfully for 2025-01-18
+[18-Jan-2025 23:54:31 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Kyle Charron
+[18-Jan-2025 23:54:31 UTC] [HockeySignin][debug] Starting check-in process for player: Kyle Charron
+[18-Jan-2025 23:54:31 UTC] [HockeySignin][debug] Check-in response: Security check failed
+[19-Jan-2025 00:51:39 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Pat Hamilton
+[19-Jan-2025 00:51:39 UTC] [HockeySignin][debug] Starting check-in process for player: Pat Hamilton
+[19-Jan-2025 00:51:39 UTC] [HockeySignin][debug] Starting check-in process for player: Pat Hamilton
+[19-Jan-2025 00:51:39 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Sat1030Forum/Pickup_Roster-Sat_Jan_18.txt
+[19-Jan-2025 00:51:39 UTC] [HockeySignin][debug] Player Pat Hamilton is already checked in
+[19-Jan-2025 00:51:39 UTC] [HockeySignin][debug] Check-in response: already_checked_in
+[19-Jan-2025 01:07:08 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Kyle Charron
+[19-Jan-2025 01:07:08 UTC] [HockeySignin][debug] Starting check-in process for player: Kyle Charron
+[19-Jan-2025 01:07:08 UTC] [HockeySignin][debug] Check-in response: Security check failed
+[19-Jan-2025 04:15:37 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 04:20:25 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 04:39:36 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 04:40:33 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 04:41:16 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 05:01:11 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 05:09:11 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 05:18:58 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 05:34:09 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 05:36:56 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 05:42:32 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 05:48:43 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 05:51:20 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 05:51:40 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 05:51:41 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 05:51:44 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 05:53:23 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 05:53:25 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 05:57:00 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 05:58:16 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 06:13:41 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 06:38:38 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 06:47:24 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 07:02:29 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 07:11:09 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 07:12:43 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 07:40:57 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 07:54:11 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 07:58:43 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 08:05:40 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 08:11:54 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 08:45:10 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 08:51:55 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 09:04:07 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 09:17:33 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 09:26:01 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 09:52:33 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 10:07:56 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 10:36:35 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 10:42:59 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 10:47:47 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 11:00:08 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 11:04:26 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 11:10:06 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 11:10:06 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 11:14:34 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 11:18:31 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 11:19:03 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 11:19:25 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 11:25:22 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 11:25:24 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 11:38:48 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 11:42:42 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 11:59:43 UTC] [HockeySignin][debug] Creating daily roster files for 2025-01-19 (Sunday)
+[19-Jan-2025 11:59:43 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 11:59:43 UTC] [HockeySignin][error] No directory mapping found for date: 2025-01-19
+[19-Jan-2025 12:00:44 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 12:16:04 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 12:20:50 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 12:33:54 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 12:34:27 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 12:41:42 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 12:55:43 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 13:10:19 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 13:10:59 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 13:11:15 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 13:33:44 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 13:37:06 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 13:37:07 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 13:37:09 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 13:58:28 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 14:10:19 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 14:35:34 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 14:40:53 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 14:59:54 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 15:03:26 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 15:30:57 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 15:43:27 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 15:48:13 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 16:05:34 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 16:32:47 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 16:34:14 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 16:34:50 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 17:02:01 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 17:02:02 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 17:10:32 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 17:10:39 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 17:37:24 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 17:41:30 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 17:46:09 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 17:47:40 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 17:47:40 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 17:47:43 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 17:59:33 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 18:02:13 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 18:03:18 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 18:03:42 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 18:05:31 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 18:06:05 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 18:06:22 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 18:07:17 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 18:08:24 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 18:11:32 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 18:12:53 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 18:13:21 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 18:23:25 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 18:23:26 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 18:25:33 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 18:25:49 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 18:25:53 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 18:26:23 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 18:26:33 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 18:26:58 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 18:27:02 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 18:42:24 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 18:55:47 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 18:57:08 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 18:59:10 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 19:07:56 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Kyle Charron
+[19-Jan-2025 19:07:56 UTC] [HockeySignin][debug] Starting check-in process for player: Kyle Charron
+[19-Jan-2025 19:07:56 UTC] [HockeySignin][debug] Check-in response: Security check failed
+[19-Jan-2025 19:07:56 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 19:11:04 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 19:26:26 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 19:29:59 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 19:30:21 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 19:39:15 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 19:40:52 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 19:50:40 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 20:23:49 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 20:35:01 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 20:35:03 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 20:35:20 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 20:43:11 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 20:44:18 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 20:48:12 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 21:01:29 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 21:03:20 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 21:03:33 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 21:06:32 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 21:10:50 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 21:10:59 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 21:42:34 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 21:43:17 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 21:44:26 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 21:44:28 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 21:45:53 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 21:45:56 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 22:00:58 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 22:00:58 UTC] [HockeySignin][debug] Processing waitlist at 18:00 for 2025-01-19 (Season: RegularSeason2024-2025)
+[19-Jan-2025 22:00:58 UTC] [HockeySignin][error] Roster file not found: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025//Pickup_Roster-Sun_Jan_19.txt
+[19-Jan-2025 22:02:54 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 22:03:43 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 22:08:40 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 22:08:44 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 22:08:49 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 22:20:34 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 22:29:24 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 22:34:23 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 22:37:17 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 22:44:16 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 22:56:26 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 23:02:00 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[19-Jan-2025 23:45:56 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[20-Jan-2025 00:07:07 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[20-Jan-2025 00:21:47 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[20-Jan-2025 00:29:49 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[20-Jan-2025 00:33:27 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[20-Jan-2025 00:45:57 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[20-Jan-2025 00:46:46 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[20-Jan-2025 01:04:32 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[20-Jan-2025 01:23:50 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[20-Jan-2025 01:23:51 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[20-Jan-2025 01:23:56 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[20-Jan-2025 01:24:23 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[20-Jan-2025 01:29:09 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[20-Jan-2025 01:31:13 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[20-Jan-2025 01:32:12 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[20-Jan-2025 01:48:39 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[20-Jan-2025 01:50:22 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[20-Jan-2025 02:29:16 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[20-Jan-2025 03:20:40 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[20-Jan-2025 03:49:14 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[20-Jan-2025 03:50:41 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[20-Jan-2025 03:50:58 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[20-Jan-2025 03:51:01 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[20-Jan-2025 03:53:14 UTC] [HockeySignin][error] No directory mapping found for Sunday on 2025-01-19
+[20-Jan-2025 04:03:51 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 04:16:57 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 05:08:03 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 05:15:02 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 05:19:18 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 05:32:20 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 05:37:08 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 06:04:28 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 06:05:07 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 06:12:00 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 06:14:41 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 06:55:12 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 07:13:02 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 07:22:53 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 07:29:43 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 07:45:48 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 07:57:05 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 08:12:55 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 08:13:11 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 08:16:37 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 08:23:25 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 08:25:15 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 08:32:42 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 08:49:18 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 08:51:24 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 09:05:10 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 09:14:07 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 09:14:11 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 09:19:57 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 09:29:14 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 09:34:28 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 09:45:06 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 10:34:40 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 10:38:52 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 10:40:37 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 10:40:37 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 10:44:33 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 10:45:25 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 10:48:36 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 10:48:41 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 10:49:00 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 10:57:18 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 11:10:49 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 11:19:11 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 11:20:27 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 11:21:55 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 11:22:11 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 11:26:08 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 11:28:52 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 11:37:03 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 11:59:33 UTC] [HockeySignin][debug] Creating daily roster files for 2025-01-20 (Monday)
+[20-Jan-2025 11:59:33 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 11:59:33 UTC] [HockeySignin][error] No directory mapping found for date: 2025-01-20
+[20-Jan-2025 12:15:01 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 12:28:59 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 12:31:45 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 12:46:07 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 12:54:04 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 13:11:39 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 13:22:17 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 13:45:41 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 13:51:37 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 13:52:07 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 14:08:30 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 14:08:34 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 14:09:02 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 14:12:02 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 14:28:06 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 14:44:35 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 14:49:54 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 14:49:55 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 14:55:35 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 15:12:36 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 15:14:42 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 15:20:58 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 15:40:12 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 15:41:56 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 15:42:02 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 15:44:22 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 15:52:02 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 15:55:00 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 16:04:12 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 16:21:17 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 16:22:58 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 16:23:34 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 16:24:16 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 16:41:50 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 16:49:20 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 16:49:51 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 16:51:24 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 16:52:51 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 16:53:23 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 17:17:53 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 17:53:32 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 17:55:53 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 17:55:55 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 17:56:00 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 17:56:29 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 18:04:09 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 18:04:10 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 18:06:49 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 18:07:07 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 18:07:21 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 18:30:48 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 18:42:16 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 18:51:07 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 19:23:36 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 19:38:50 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 19:38:51 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 20:04:28 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 20:04:29 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 20:09:50 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 21:19:10 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 21:26:31 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 21:31:22 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 21:34:29 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 21:40:23 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 21:47:03 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 21:48:43 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 22:00:08 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 22:00:08 UTC] [HockeySignin][debug] Processing waitlist at 18:00 for 2025-01-20 (Season: RegularSeason2024-2025)
+[20-Jan-2025 22:00:08 UTC] [HockeySignin][error] Roster file not found: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025//Pickup_Roster-Mon_Jan_20.txt
+[20-Jan-2025 22:14:18 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 22:20:19 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 22:20:19 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 22:22:19 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 22:34:30 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 22:34:31 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 22:38:21 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 22:55:02 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 22:55:03 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 22:56:59 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 23:01:51 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 23:10:27 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 23:20:56 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[20-Jan-2025 23:53:28 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[21-Jan-2025 00:08:28 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[21-Jan-2025 00:17:06 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[21-Jan-2025 00:20:20 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[21-Jan-2025 00:21:02 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[21-Jan-2025 01:00:03 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[21-Jan-2025 01:16:40 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[21-Jan-2025 01:19:08 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[21-Jan-2025 01:22:45 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[21-Jan-2025 01:39:09 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[21-Jan-2025 01:54:31 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[21-Jan-2025 02:30:08 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[21-Jan-2025 02:36:36 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[21-Jan-2025 02:41:02 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[21-Jan-2025 02:49:04 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[21-Jan-2025 03:01:44 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[21-Jan-2025 03:04:19 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[21-Jan-2025 03:07:07 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[21-Jan-2025 03:14:03 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[21-Jan-2025 03:22:19 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[21-Jan-2025 03:33:10 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[21-Jan-2025 03:56:04 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[21-Jan-2025 03:57:19 UTC] [HockeySignin][error] No directory mapping found for Monday on 2025-01-20
+[21-Jan-2025 11:59:33 UTC] [HockeySignin][debug] Creating daily roster files for 2025-01-21 (Tuesday)
+[21-Jan-2025 11:59:33 UTC] [HockeySignin][debug] Roster file created: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Tues1030Forum/Pickup_Roster-Tue_Jan_21.txt
+[21-Jan-2025 12:00:05 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Lou Totino
+[21-Jan-2025 12:00:05 UTC] [HockeySignin][debug] Starting check-in process for player: Lou Totino
+[21-Jan-2025 12:00:05 UTC] [HockeySignin][debug] Starting check-in process for player: Lou Totino
+[21-Jan-2025 12:00:05 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Tues1030Forum/Pickup_Roster-Tue_Jan_21.txt
+[21-Jan-2025 12:00:05 UTC] [HockeySignin][debug] Player not found in database: Lou Totino
+[21-Jan-2025 12:00:05 UTC] [HockeySignin][debug] Non-database player Lou Totino added to waitlist at position 1
+[21-Jan-2025 12:00:05 UTC] [HockeySignin][debug] Check-in response: Thank you! You've been added to our waitlist for tonight. Please check back at 6pm to see if you have made the roster! You can reach us at halifaxpickuphockey@gmail.com to ask about Regular subscriber spots!
+[21-Jan-2025 12:00:06 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Michael Robinson
+[21-Jan-2025 12:00:06 UTC] [HockeySignin][debug] Starting check-in process for player: Michael Robinson
+[21-Jan-2025 12:00:06 UTC] [HockeySignin][debug] Starting check-in process for player: Michael Robinson
+[21-Jan-2025 12:00:06 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Tues1030Forum/Pickup_Roster-Tue_Jan_21.txt
+[21-Jan-2025 12:00:06 UTC] [HockeySignin][debug] Player not found in database: Michael Robinson
+[21-Jan-2025 12:00:06 UTC] [HockeySignin][debug] Non-database player Michael Robinson added to waitlist at position 2
+[21-Jan-2025 12:00:06 UTC] [HockeySignin][debug] Check-in response: Thank you! You've been added to our waitlist for tonight. Please check back at 6pm to see if you have made the roster! You can reach us at halifaxpickuphockey@gmail.com to ask about Regular subscriber spots!
+[21-Jan-2025 12:00:11 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Shane pottie
+[21-Jan-2025 12:00:11 UTC] [HockeySignin][debug] Starting check-in process for player: Shane pottie
+[21-Jan-2025 12:00:11 UTC] [HockeySignin][debug] Starting check-in process for player: Shane pottie
+[21-Jan-2025 12:00:11 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Tues1030Forum/Pickup_Roster-Tue_Jan_21.txt
+[21-Jan-2025 12:00:11 UTC] [HockeySignin][debug] Player not found in database: Shane pottie
+[21-Jan-2025 12:00:11 UTC] [HockeySignin][debug] Non-database player Shane pottie added to waitlist at position 3
+[21-Jan-2025 12:00:11 UTC] [HockeySignin][debug] Check-in response: Thank you! You've been added to our waitlist for tonight. Please check back at 6pm to see if you have made the roster! You can reach us at halifaxpickuphockey@gmail.com to ask about Regular subscriber spots!
+[21-Jan-2025 12:00:37 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Steve Pottie
+[21-Jan-2025 12:00:37 UTC] [HockeySignin][debug] Starting check-in process for player: Steve Pottie
+[21-Jan-2025 12:00:37 UTC] [HockeySignin][debug] Starting check-in process for player: Steve Pottie
+[21-Jan-2025 12:00:37 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Tues1030Forum/Pickup_Roster-Tue_Jan_21.txt
+[21-Jan-2025 12:00:37 UTC] [HockeySignin][debug] Player Steve Pottie prepaid status: yes
+[21-Jan-2025 12:00:37 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: Forward)
+[21-Jan-2025 12:00:37 UTC] [HockeySignin][debug] Found 12 forward and 8 defense spots available
+[21-Jan-2025 12:00:37 UTC] [HockeySignin][debug] Found empty position: F at line 3
+[21-Jan-2025 12:00:37 UTC] [HockeySignin][debug] Player Steve Pottie assigned to position F
+[21-Jan-2025 12:00:37 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[21-Jan-2025 12:00:39 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Darien Boudreau
+[21-Jan-2025 12:00:39 UTC] [HockeySignin][debug] Starting check-in process for player: Darien Boudreau
+[21-Jan-2025 12:00:39 UTC] [HockeySignin][debug] Starting check-in process for player: Darien Boudreau
+[21-Jan-2025 12:00:39 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Tues1030Forum/Pickup_Roster-Tue_Jan_21.txt
+[21-Jan-2025 12:00:39 UTC] [HockeySignin][debug] Player Darien Boudreau prepaid status: no
+[21-Jan-2025 12:00:39 UTC] [HockeySignin][debug] Player Darien Boudreau is not registered for Tuesday
+[21-Jan-2025 12:00:39 UTC] [HockeySignin][debug] Non-database player Darien Boudreau added to waitlist at position 4
+[21-Jan-2025 12:00:39 UTC] [HockeySignin][debug] Check-in response: Thank you! You've been added to our waitlist for tonight. Please check back at 6pm to see if you have made the roster! You can reach us at halifaxpickuphockey@gmail.com to ask about Regular subscriber spots!
+[21-Jan-2025 12:08:07 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Alex Flinn
+[21-Jan-2025 12:08:07 UTC] [HockeySignin][debug] Starting check-in process for player: Alex Flinn
+[21-Jan-2025 12:08:07 UTC] [HockeySignin][debug] Starting check-in process for player: Alex Flinn
+[21-Jan-2025 12:08:07 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Tues1030Forum/Pickup_Roster-Tue_Jan_21.txt
+[21-Jan-2025 12:08:07 UTC] [HockeySignin][debug] Player Alex Flinn prepaid status: yes
+[21-Jan-2025 12:08:07 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: Defence)
+[21-Jan-2025 12:08:07 UTC] [HockeySignin][debug] Found 11 forward and 8 defense spots available
+[21-Jan-2025 12:08:07 UTC] [HockeySignin][debug] Found empty position: D at line 10
+[21-Jan-2025 12:08:07 UTC] [HockeySignin][debug] Player Alex Flinn assigned to position D
+[21-Jan-2025 12:08:07 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[21-Jan-2025 12:08:51 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Pat Hickey
+[21-Jan-2025 12:08:51 UTC] [HockeySignin][debug] Starting check-in process for player: Pat Hickey
+[21-Jan-2025 12:08:51 UTC] [HockeySignin][debug] Starting check-in process for player: Pat Hickey
+[21-Jan-2025 12:08:51 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Tues1030Forum/Pickup_Roster-Tue_Jan_21.txt
+[21-Jan-2025 12:08:51 UTC] [HockeySignin][debug] Player Pat Hickey prepaid status: yes
+[21-Jan-2025 12:08:51 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: Defence)
+[21-Jan-2025 12:08:51 UTC] [HockeySignin][debug] Found 11 forward and 7 defense spots available
+[21-Jan-2025 12:08:51 UTC] [HockeySignin][debug] Found empty position: D at line 11
+[21-Jan-2025 12:08:51 UTC] [HockeySignin][debug] Player Pat Hickey assigned to position D
+[21-Jan-2025 12:08:51 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[21-Jan-2025 12:14:03 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Adam hooper
+[21-Jan-2025 12:14:03 UTC] [HockeySignin][debug] Starting check-in process for player: Adam hooper
+[21-Jan-2025 12:14:03 UTC] [HockeySignin][debug] Starting check-in process for player: Adam hooper
+[21-Jan-2025 12:14:03 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Tues1030Forum/Pickup_Roster-Tue_Jan_21.txt
+[21-Jan-2025 12:14:03 UTC] [HockeySignin][debug] Player Adam hooper prepaid status: yes
+[21-Jan-2025 12:14:03 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: Forward)
+[21-Jan-2025 12:14:03 UTC] [HockeySignin][debug] Found 11 forward and 6 defense spots available
+[21-Jan-2025 12:14:03 UTC] [HockeySignin][debug] Found empty position: F at line 4
+[21-Jan-2025 12:14:03 UTC] [HockeySignin][debug] Player Adam hooper assigned to position F
+[21-Jan-2025 12:14:03 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[21-Jan-2025 12:15:37 UTC] [HockeySignin][debug] Form submission: action=checkin, player=James Forren
+[21-Jan-2025 12:15:37 UTC] [HockeySignin][debug] Starting check-in process for player: James Forren
+[21-Jan-2025 12:15:37 UTC] [HockeySignin][debug] Starting check-in process for player: James Forren
+[21-Jan-2025 12:15:37 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Tues1030Forum/Pickup_Roster-Tue_Jan_21.txt
+[21-Jan-2025 12:15:37 UTC] [HockeySignin][debug] Player not found in database: James Forren
+[21-Jan-2025 12:15:37 UTC] [HockeySignin][debug] Non-database player James Forren added to waitlist at position 5
+[21-Jan-2025 12:15:37 UTC] [HockeySignin][debug] Check-in response: Thank you! You've been added to our waitlist for tonight. Please check back at 6pm to see if you have made the roster! You can reach us at halifaxpickuphockey@gmail.com to ask about Regular subscriber spots!
+[21-Jan-2025 12:22:36 UTC] [HockeySignin][debug] Form submission: action=checkin, player=James Forren
+[21-Jan-2025 12:22:36 UTC] [HockeySignin][debug] Starting check-in process for player: James Forren
+[21-Jan-2025 12:22:36 UTC] [HockeySignin][debug] Starting check-in process for player: James Forren
+[21-Jan-2025 12:22:36 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Tues1030Forum/Pickup_Roster-Tue_Jan_21.txt
+[21-Jan-2025 12:22:36 UTC] [HockeySignin][debug] Player James Forren is already checked in
+[21-Jan-2025 12:22:36 UTC] [HockeySignin][debug] Check-in response: already_checked_in
+[21-Jan-2025 12:32:23 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Dan Grenier
+[21-Jan-2025 12:32:23 UTC] [HockeySignin][debug] Starting check-in process for player: Dan Grenier
+[21-Jan-2025 12:32:23 UTC] [HockeySignin][debug] Starting check-in process for player: Dan Grenier
+[21-Jan-2025 12:32:23 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Tues1030Forum/Pickup_Roster-Tue_Jan_21.txt
+[21-Jan-2025 12:32:23 UTC] [HockeySignin][debug] Player Dan Grenier prepaid status: yes
+[21-Jan-2025 12:32:23 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: Defence)
+[21-Jan-2025 12:32:23 UTC] [HockeySignin][debug] Found 10 forward and 6 defense spots available
+[21-Jan-2025 12:32:23 UTC] [HockeySignin][debug] Found empty position: D at line 12
+[21-Jan-2025 12:32:23 UTC] [HockeySignin][debug] Player Dan Grenier assigned to position D
+[21-Jan-2025 12:32:23 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[21-Jan-2025 12:49:01 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Steve Patterson
+[21-Jan-2025 12:49:01 UTC] [HockeySignin][debug] Starting check-in process for player: Steve Patterson
+[21-Jan-2025 12:49:01 UTC] [HockeySignin][debug] Starting check-in process for player: Steve Patterson
+[21-Jan-2025 12:49:01 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Tues1030Forum/Pickup_Roster-Tue_Jan_21.txt
+[21-Jan-2025 12:49:01 UTC] [HockeySignin][debug] Player Steve Patterson prepaid status: yes
+[21-Jan-2025 12:49:01 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: Forward)
+[21-Jan-2025 12:49:01 UTC] [HockeySignin][debug] Found 10 forward and 5 defense spots available
+[21-Jan-2025 12:49:01 UTC] [HockeySignin][debug] Found empty position: F at line 5
+[21-Jan-2025 12:49:01 UTC] [HockeySignin][debug] Player Steve Patterson assigned to position F
+[21-Jan-2025 12:49:01 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[21-Jan-2025 12:59:30 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Tim Richardson
+[21-Jan-2025 12:59:30 UTC] [HockeySignin][debug] Starting check-in process for player: Tim Richardson
+[21-Jan-2025 12:59:30 UTC] [HockeySignin][debug] Starting check-in process for player: Tim Richardson
+[21-Jan-2025 12:59:30 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Tues1030Forum/Pickup_Roster-Tue_Jan_21.txt
+[21-Jan-2025 12:59:30 UTC] [HockeySignin][debug] Player Tim Richardson prepaid status: yes
+[21-Jan-2025 12:59:30 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: Defence)
+[21-Jan-2025 12:59:30 UTC] [HockeySignin][debug] Found 9 forward and 5 defense spots available
+[21-Jan-2025 12:59:30 UTC] [HockeySignin][debug] Found empty position: D at line 13
+[21-Jan-2025 12:59:30 UTC] [HockeySignin][debug] Player Tim Richardson assigned to position D
+[21-Jan-2025 12:59:30 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[21-Jan-2025 13:21:14 UTC] [HockeySignin][debug] Form submission: action=checkin, player=David Frost
+[21-Jan-2025 13:21:14 UTC] [HockeySignin][debug] Starting check-in process for player: David Frost
+[21-Jan-2025 13:21:14 UTC] [HockeySignin][debug] Starting check-in process for player: David Frost
+[21-Jan-2025 13:21:14 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Tues1030Forum/Pickup_Roster-Tue_Jan_21.txt
+[21-Jan-2025 13:21:14 UTC] [HockeySignin][debug] Player David Frost prepaid status: yes
+[21-Jan-2025 13:21:14 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: Forward)
+[21-Jan-2025 13:21:14 UTC] [HockeySignin][debug] Found 9 forward and 4 defense spots available
+[21-Jan-2025 13:21:14 UTC] [HockeySignin][debug] Found empty position: F at line 6
+[21-Jan-2025 13:21:14 UTC] [HockeySignin][debug] Player David Frost assigned to position F
+[21-Jan-2025 13:21:14 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[21-Jan-2025 13:41:01 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Sanchez clarke
+[21-Jan-2025 13:41:01 UTC] [HockeySignin][debug] Starting check-in process for player: Sanchez clarke
+[21-Jan-2025 13:41:01 UTC] [HockeySignin][debug] Starting check-in process for player: Sanchez clarke
+[21-Jan-2025 13:41:01 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Tues1030Forum/Pickup_Roster-Tue_Jan_21.txt
+[21-Jan-2025 13:41:01 UTC] [HockeySignin][debug] Player Sanchez clarke prepaid status: yes
+[21-Jan-2025 13:41:01 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: Forward)
+[21-Jan-2025 13:41:01 UTC] [HockeySignin][debug] Found 8 forward and 4 defense spots available
+[21-Jan-2025 13:41:01 UTC] [HockeySignin][debug] Found empty position: F at line 7
+[21-Jan-2025 13:41:01 UTC] [HockeySignin][debug] Player Sanchez clarke assigned to position F
+[21-Jan-2025 13:41:01 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[21-Jan-2025 13:43:38 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Julian Dill
+[21-Jan-2025 13:43:38 UTC] [HockeySignin][debug] Starting check-in process for player: Julian Dill
+[21-Jan-2025 13:43:38 UTC] [HockeySignin][debug] Starting check-in process for player: Julian Dill
+[21-Jan-2025 13:43:38 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Tues1030Forum/Pickup_Roster-Tue_Jan_21.txt
+[21-Jan-2025 13:43:38 UTC] [HockeySignin][debug] Player Julian Dill prepaid status: no
+[21-Jan-2025 13:43:38 UTC] [HockeySignin][debug] Player Julian Dill is not registered for Tuesday
+[21-Jan-2025 13:43:38 UTC] [HockeySignin][debug] Non-database player Julian Dill added to waitlist at position 6
+[21-Jan-2025 13:43:38 UTC] [HockeySignin][debug] Check-in response: Thank you! You've been added to our waitlist for tonight. Please check back at 6pm to see if you have made the roster! You can reach us at halifaxpickuphockey@gmail.com to ask about Regular subscriber spots!
+[21-Jan-2025 13:43:52 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Justin Dill
+[21-Jan-2025 13:43:52 UTC] [HockeySignin][debug] Starting check-in process for player: Justin Dill
+[21-Jan-2025 13:43:52 UTC] [HockeySignin][debug] Starting check-in process for player: Justin Dill
+[21-Jan-2025 13:43:52 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Tues1030Forum/Pickup_Roster-Tue_Jan_21.txt
+[21-Jan-2025 13:43:52 UTC] [HockeySignin][debug] Player Justin Dill prepaid status: no
+[21-Jan-2025 13:43:52 UTC] [HockeySignin][debug] Player Justin Dill is not registered for Tuesday
+[21-Jan-2025 13:43:52 UTC] [HockeySignin][debug] Non-database player Justin Dill added to waitlist at position 7
+[21-Jan-2025 13:43:52 UTC] [HockeySignin][debug] Check-in response: Thank you! You've been added to our waitlist for tonight. Please check back at 6pm to see if you have made the roster! You can reach us at halifaxpickuphockey@gmail.com to ask about Regular subscriber spots!
+[21-Jan-2025 13:46:21 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Rob MacIsaac
+[21-Jan-2025 13:46:21 UTC] [HockeySignin][debug] Starting check-in process for player: Rob MacIsaac
+[21-Jan-2025 13:46:21 UTC] [HockeySignin][debug] Starting check-in process for player: Rob MacIsaac
+[21-Jan-2025 13:46:21 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Tues1030Forum/Pickup_Roster-Tue_Jan_21.txt
+[21-Jan-2025 13:46:21 UTC] [HockeySignin][debug] Player Rob MacIsaac prepaid status: yes
+[21-Jan-2025 13:46:21 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: Defence)
+[21-Jan-2025 13:46:21 UTC] [HockeySignin][debug] Found 7 forward and 4 defense spots available
+[21-Jan-2025 13:46:21 UTC] [HockeySignin][debug] Found empty position: D at line 25
+[21-Jan-2025 13:46:21 UTC] [HockeySignin][debug] Player Rob MacIsaac assigned to position D
+[21-Jan-2025 13:46:21 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[21-Jan-2025 13:49:53 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Mark Pottie
+[21-Jan-2025 13:49:53 UTC] [HockeySignin][debug] Starting check-in process for player: Mark Pottie
+[21-Jan-2025 13:49:53 UTC] [HockeySignin][debug] Starting check-in process for player: Mark Pottie
+[21-Jan-2025 13:49:53 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Tues1030Forum/Pickup_Roster-Tue_Jan_21.txt
+[21-Jan-2025 13:49:53 UTC] [HockeySignin][debug] Player Mark Pottie prepaid status: yes
+[21-Jan-2025 13:49:53 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: Forward)
+[21-Jan-2025 13:49:53 UTC] [HockeySignin][debug] Found 7 forward and 3 defense spots available
+[21-Jan-2025 13:49:53 UTC] [HockeySignin][debug] Found empty position: F at line 8
+[21-Jan-2025 13:49:53 UTC] [HockeySignin][debug] Player Mark Pottie assigned to position F
+[21-Jan-2025 13:49:53 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[21-Jan-2025 13:57:30 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Justin Dill
+[21-Jan-2025 13:57:30 UTC] [HockeySignin][debug] Starting check-in process for player: Justin Dill
+[21-Jan-2025 13:57:30 UTC] [HockeySignin][debug] Starting check-in process for player: Justin Dill
+[21-Jan-2025 13:57:30 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Tues1030Forum/Pickup_Roster-Tue_Jan_21.txt
+[21-Jan-2025 13:57:30 UTC] [HockeySignin][debug] Player Justin Dill is already checked in
+[21-Jan-2025 13:57:30 UTC] [HockeySignin][debug] Check-in response: already_checked_in
+[21-Jan-2025 14:05:44 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Aidan Child
+[21-Jan-2025 14:05:44 UTC] [HockeySignin][debug] Starting check-in process for player: Aidan Child
+[21-Jan-2025 14:05:44 UTC] [HockeySignin][debug] Starting check-in process for player: Aidan Child
+[21-Jan-2025 14:05:44 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Tues1030Forum/Pickup_Roster-Tue_Jan_21.txt
+[21-Jan-2025 14:05:44 UTC] [HockeySignin][debug] Player Aidan Child prepaid status: no
+[21-Jan-2025 14:05:44 UTC] [HockeySignin][debug] Player Aidan Child is not registered for Tuesday
+[21-Jan-2025 14:05:44 UTC] [HockeySignin][debug] Non-database player Aidan Child added to waitlist at position 8
+[21-Jan-2025 14:05:44 UTC] [HockeySignin][debug] Check-in response: Thank you! You've been added to our waitlist for tonight. Please check back at 6pm to see if you have made the roster! You can reach us at halifaxpickuphockey@gmail.com to ask about Regular subscriber spots!
+[21-Jan-2025 14:05:58 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Kris Jansen
+[21-Jan-2025 14:05:58 UTC] [HockeySignin][debug] Starting check-in process for player: Kris Jansen
+[21-Jan-2025 14:05:58 UTC] [HockeySignin][debug] Starting check-in process for player: Kris Jansen
+[21-Jan-2025 14:05:58 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Tues1030Forum/Pickup_Roster-Tue_Jan_21.txt
+[21-Jan-2025 14:05:58 UTC] [HockeySignin][debug] Player Kris Jansen prepaid status: no
+[21-Jan-2025 14:05:58 UTC] [HockeySignin][debug] Player Kris Jansen is not registered for Tuesday
+[21-Jan-2025 14:05:58 UTC] [HockeySignin][debug] Non-database player Kris Jansen added to waitlist at position 9
+[21-Jan-2025 14:05:58 UTC] [HockeySignin][debug] Check-in response: Thank you! You've been added to our waitlist for tonight. Please check back at 6pm to see if you have made the roster! You can reach us at halifaxpickuphockey@gmail.com to ask about Regular subscriber spots!
+[21-Jan-2025 14:06:17 UTC] [HockeySignin][debug] Form submission: action=checkout, player=Aidan child
+[21-Jan-2025 14:06:17 UTC] [HockeySignin][debug] Processing checkout for player: Aidan child
+[21-Jan-2025 14:06:17 UTC] [HockeySignin][debug] Player checked out: Aidan child
+[21-Jan-2025 14:06:27 UTC] [HockeySignin][debug] Form submission: action=checkout, player=Kris Jansen
+[21-Jan-2025 14:06:27 UTC] [HockeySignin][debug] Processing checkout for player: Kris Jansen
+[21-Jan-2025 14:06:27 UTC] [HockeySignin][debug] Player checked out: Kris Jansen
+[21-Jan-2025 14:06:35 UTC] [HockeySignin][debug] Form submission: action=checkout, player=Aidan Child
+[21-Jan-2025 14:06:35 UTC] [HockeySignin][debug] Processing checkout for player: Aidan Child
+[21-Jan-2025 14:06:35 UTC] [HockeySignin][debug] Player checked out: Aidan Child
+[21-Jan-2025 14:58:04 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Ryan Gallant
+[21-Jan-2025 14:58:04 UTC] [HockeySignin][debug] Starting check-in process for player: Ryan Gallant
+[21-Jan-2025 14:58:04 UTC] [HockeySignin][debug] Starting check-in process for player: Ryan Gallant
+[21-Jan-2025 14:58:04 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Tues1030Forum/Pickup_Roster-Tue_Jan_21.txt
+[21-Jan-2025 14:58:04 UTC] [HockeySignin][debug] Player Ryan Gallant prepaid status: yes
+[21-Jan-2025 14:58:04 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: Forward)
+[21-Jan-2025 14:58:04 UTC] [HockeySignin][debug] Found 6 forward and 3 defense spots available
+[21-Jan-2025 14:58:04 UTC] [HockeySignin][debug] Found empty position: F at line 18
+[21-Jan-2025 14:58:04 UTC] [HockeySignin][debug] Player Ryan Gallant assigned to position F
+[21-Jan-2025 14:58:04 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[21-Jan-2025 15:39:39 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Chris McNeill
+[21-Jan-2025 15:39:39 UTC] [HockeySignin][debug] Starting check-in process for player: Chris McNeill
+[21-Jan-2025 15:39:39 UTC] [HockeySignin][debug] Starting check-in process for player: Chris McNeill
+[21-Jan-2025 15:39:39 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Tues1030Forum/Pickup_Roster-Tue_Jan_21.txt
+[21-Jan-2025 15:39:39 UTC] [HockeySignin][debug] Player Chris McNeill prepaid status: yes
+[21-Jan-2025 15:39:39 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: Forward)
+[21-Jan-2025 15:39:39 UTC] [HockeySignin][debug] Found 5 forward and 3 defense spots available
+[21-Jan-2025 15:39:39 UTC] [HockeySignin][debug] Found empty position: F at line 19
+[21-Jan-2025 15:39:39 UTC] [HockeySignin][debug] Player Chris McNeill assigned to position F
+[21-Jan-2025 15:39:39 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[21-Jan-2025 16:30:05 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Nathan van Rensburg
+[21-Jan-2025 16:30:05 UTC] [HockeySignin][debug] Starting check-in process for player: Nathan van Rensburg
+[21-Jan-2025 16:30:05 UTC] [HockeySignin][debug] Starting check-in process for player: Nathan van Rensburg
+[21-Jan-2025 16:30:05 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Tues1030Forum/Pickup_Roster-Tue_Jan_21.txt
+[21-Jan-2025 16:30:05 UTC] [HockeySignin][debug] Player Nathan van Rensburg prepaid status: yes
+[21-Jan-2025 16:30:05 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: Defence)
+[21-Jan-2025 16:30:05 UTC] [HockeySignin][debug] Found 4 forward and 3 defense spots available
+[21-Jan-2025 16:30:05 UTC] [HockeySignin][debug] Found empty position: D at line 26
+[21-Jan-2025 16:30:05 UTC] [HockeySignin][debug] Player Nathan van Rensburg assigned to position D
+[21-Jan-2025 16:30:05 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[21-Jan-2025 16:58:26 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Scott Long
+[21-Jan-2025 16:58:26 UTC] [HockeySignin][debug] Starting check-in process for player: Scott Long
+[21-Jan-2025 16:58:26 UTC] [HockeySignin][debug] Starting check-in process for player: Scott Long
+[21-Jan-2025 16:58:26 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Tues1030Forum/Pickup_Roster-Tue_Jan_21.txt
+[21-Jan-2025 16:58:26 UTC] [HockeySignin][debug] Player Scott Long prepaid status: yes
+[21-Jan-2025 16:58:26 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: Forward)
+[21-Jan-2025 16:58:26 UTC] [HockeySignin][debug] Found 4 forward and 2 defense spots available
+[21-Jan-2025 16:58:26 UTC] [HockeySignin][debug] Found empty position: F at line 20
+[21-Jan-2025 16:58:26 UTC] [HockeySignin][debug] Player Scott Long assigned to position F
+[21-Jan-2025 16:58:26 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[21-Jan-2025 17:15:50 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Ryan Hackett
+[21-Jan-2025 17:15:50 UTC] [HockeySignin][debug] Starting check-in process for player: Ryan Hackett
+[21-Jan-2025 17:15:50 UTC] [HockeySignin][debug] Starting check-in process for player: Ryan Hackett
+[21-Jan-2025 17:15:50 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Tues1030Forum/Pickup_Roster-Tue_Jan_21.txt
+[21-Jan-2025 17:15:50 UTC] [HockeySignin][debug] Player Ryan Hackett prepaid status: yes
+[21-Jan-2025 17:15:50 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: Defence)
+[21-Jan-2025 17:15:50 UTC] [HockeySignin][debug] Found 3 forward and 2 defense spots available
+[21-Jan-2025 17:15:50 UTC] [HockeySignin][debug] Found empty position: D at line 27
+[21-Jan-2025 17:15:50 UTC] [HockeySignin][debug] Player Ryan Hackett assigned to position D
+[21-Jan-2025 17:15:50 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[21-Jan-2025 17:22:19 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Jeff Benoit
+[21-Jan-2025 17:22:19 UTC] [HockeySignin][debug] Starting check-in process for player: Jeff Benoit
+[21-Jan-2025 17:22:19 UTC] [HockeySignin][debug] Starting check-in process for player: Jeff Benoit
+[21-Jan-2025 17:22:19 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Tues1030Forum/Pickup_Roster-Tue_Jan_21.txt
+[21-Jan-2025 17:22:19 UTC] [HockeySignin][debug] Player not found in database: Jeff Benoit
+[21-Jan-2025 17:22:19 UTC] [HockeySignin][debug] Non-database player Jeff Benoit added to waitlist at position 8
+[21-Jan-2025 17:22:19 UTC] [HockeySignin][debug] Check-in response: Thank you! You've been added to our waitlist for tonight. Please check back at 6pm to see if you have made the roster! You can reach us at halifaxpickuphockey@gmail.com to ask about Regular subscriber spots!
+[21-Jan-2025 18:29:48 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Justin Dill
+[21-Jan-2025 18:29:48 UTC] [HockeySignin][debug] Starting check-in process for player: Justin Dill
+[21-Jan-2025 18:29:48 UTC] [HockeySignin][debug] Starting check-in process for player: Justin Dill
+[21-Jan-2025 18:29:48 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Tues1030Forum/Pickup_Roster-Tue_Jan_21.txt
+[21-Jan-2025 18:29:48 UTC] [HockeySignin][debug] Player Justin Dill is already checked in
+[21-Jan-2025 18:29:48 UTC] [HockeySignin][debug] Check-in response: already_checked_in
+[21-Jan-2025 18:50:02 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Justin Dill
+[21-Jan-2025 18:50:02 UTC] [HockeySignin][debug] Starting check-in process for player: Justin Dill
+[21-Jan-2025 18:50:02 UTC] [HockeySignin][debug] Starting check-in process for player: Justin Dill
+[21-Jan-2025 18:50:02 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Tues1030Forum/Pickup_Roster-Tue_Jan_21.txt
+[21-Jan-2025 18:50:02 UTC] [HockeySignin][debug] Player Justin Dill is already checked in
+[21-Jan-2025 18:50:02 UTC] [HockeySignin][debug] Check-in response: already_checked_in
+[21-Jan-2025 19:05:27 UTC] [HockeySignin][debug] Form submission: action=checkin, player=matt slaunwhite
+[21-Jan-2025 19:05:27 UTC] [HockeySignin][debug] Starting check-in process for player: matt slaunwhite
+[21-Jan-2025 19:05:27 UTC] [HockeySignin][debug] Starting check-in process for player: matt slaunwhite
+[21-Jan-2025 19:05:27 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Tues1030Forum/Pickup_Roster-Tue_Jan_21.txt
+[21-Jan-2025 19:05:27 UTC] [HockeySignin][debug] Player matt slaunwhite prepaid status: yes
+[21-Jan-2025 19:05:27 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: Forward)
+[21-Jan-2025 19:05:27 UTC] [HockeySignin][debug] Found 3 forward and 1 defense spots available
+[21-Jan-2025 19:05:27 UTC] [HockeySignin][debug] Found empty position: F at line 21
+[21-Jan-2025 19:05:27 UTC] [HockeySignin][debug] Player matt slaunwhite assigned to position F
+[21-Jan-2025 19:05:27 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[21-Jan-2025 19:23:19 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Mathieu Simard
+[21-Jan-2025 19:23:19 UTC] [HockeySignin][debug] Starting check-in process for player: Mathieu Simard
+[21-Jan-2025 19:23:19 UTC] [HockeySignin][debug] Starting check-in process for player: Mathieu Simard
+[21-Jan-2025 19:23:19 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Tues1030Forum/Pickup_Roster-Tue_Jan_21.txt
+[21-Jan-2025 19:23:19 UTC] [HockeySignin][debug] Player Mathieu Simard prepaid status: yes
+[21-Jan-2025 19:23:19 UTC] [HockeySignin][debug] Player Mathieu Simard is a goalie
+[21-Jan-2025 19:23:19 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: Goalie)
+[21-Jan-2025 19:23:19 UTC] [HockeySignin][debug] Player Mathieu Simard assigned to position Goal
+[21-Jan-2025 19:23:19 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[21-Jan-2025 19:41:42 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Mark Harrie
+[21-Jan-2025 19:41:42 UTC] [HockeySignin][debug] Starting check-in process for player: Mark Harrie
+[21-Jan-2025 19:41:42 UTC] [HockeySignin][debug] Starting check-in process for player: Mark Harrie
+[21-Jan-2025 19:41:42 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Tues1030Forum/Pickup_Roster-Tue_Jan_21.txt
+[21-Jan-2025 19:41:42 UTC] [HockeySignin][debug] Player Mark Harrie prepaid status: yes
+[21-Jan-2025 19:41:42 UTC] [HockeySignin][debug] Player Mark Harrie is a goalie
+[21-Jan-2025 19:41:42 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: Goalie)
+[21-Jan-2025 19:41:42 UTC] [HockeySignin][debug] Player Mark Harrie assigned to position Goal
+[21-Jan-2025 19:41:42 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[21-Jan-2025 20:15:29 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Darien Boudreau
+[21-Jan-2025 20:15:29 UTC] [HockeySignin][debug] Starting check-in process for player: Darien Boudreau
+[21-Jan-2025 20:15:29 UTC] [HockeySignin][debug] Starting check-in process for player: Darien Boudreau
+[21-Jan-2025 20:15:29 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Tues1030Forum/Pickup_Roster-Tue_Jan_21.txt
+[21-Jan-2025 20:15:29 UTC] [HockeySignin][debug] Player Darien Boudreau is already checked in
+[21-Jan-2025 20:15:29 UTC] [HockeySignin][debug] Check-in response: already_checked_in
+[21-Jan-2025 20:39:09 UTC] [HockeySignin][debug] Form submission: action=checkout, player=Chris McNeill
+[21-Jan-2025 20:39:09 UTC] [HockeySignin][debug] Processing checkout for player: Chris McNeill
+[21-Jan-2025 20:39:09 UTC] [HockeySignin][debug] Player checked out: Chris McNeill
+[21-Jan-2025 21:11:15 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Sam Legere
+[21-Jan-2025 21:11:15 UTC] [HockeySignin][debug] Starting check-in process for player: Sam Legere
+[21-Jan-2025 21:11:15 UTC] [HockeySignin][debug] Starting check-in process for player: Sam Legere
+[21-Jan-2025 21:11:15 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Tues1030Forum/Pickup_Roster-Tue_Jan_21.txt
+[21-Jan-2025 21:11:15 UTC] [HockeySignin][debug] Player Sam Legere prepaid status: yes
+[21-Jan-2025 21:11:15 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: Forward)
+[21-Jan-2025 21:11:15 UTC] [HockeySignin][debug] Found 3 forward and 1 defense spots available
+[21-Jan-2025 21:11:15 UTC] [HockeySignin][debug] Found empty position: F at line 19
+[21-Jan-2025 21:11:15 UTC] [HockeySignin][debug] Player Sam Legere assigned to position F
+[21-Jan-2025 21:11:15 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[21-Jan-2025 21:49:46 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Julian Dill
+[21-Jan-2025 21:49:46 UTC] [HockeySignin][debug] Starting check-in process for player: Julian Dill
+[21-Jan-2025 21:49:46 UTC] [HockeySignin][debug] Starting check-in process for player: Julian Dill
+[21-Jan-2025 21:49:46 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Tues1030Forum/Pickup_Roster-Tue_Jan_21.txt
+[21-Jan-2025 21:49:46 UTC] [HockeySignin][debug] Player Julian Dill is already checked in
+[21-Jan-2025 21:49:46 UTC] [HockeySignin][debug] Check-in response: already_checked_in
+[21-Jan-2025 22:00:39 UTC] [HockeySignin][debug] Processing waitlist at 18:00 for 2025-01-21 (Season: RegularSeason2024-2025)
+[21-Jan-2025 22:00:39 UTC] [HockeySignin][debug] Processing waitlist with 8 players
+[21-Jan-2025 22:00:39 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: )
+[21-Jan-2025 22:00:39 UTC] [HockeySignin][debug] Found 2 forward and 1 defense spots available
+[21-Jan-2025 22:00:39 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: )
+[21-Jan-2025 22:00:39 UTC] [HockeySignin][debug] Found 2 forward and 1 defense spots available
+[21-Jan-2025 22:00:39 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: )
+[21-Jan-2025 22:00:39 UTC] [HockeySignin][debug] Found 2 forward and 1 defense spots available
+[21-Jan-2025 22:00:39 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: )
+[21-Jan-2025 22:00:39 UTC] [HockeySignin][debug] Found 2 forward and 1 defense spots available
+[21-Jan-2025 22:00:39 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: )
+[21-Jan-2025 22:00:39 UTC] [HockeySignin][debug] Found 2 forward and 1 defense spots available
+[21-Jan-2025 22:00:39 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: )
+[21-Jan-2025 22:00:39 UTC] [HockeySignin][debug] Found 2 forward and 1 defense spots available
+[21-Jan-2025 22:00:39 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: )
+[21-Jan-2025 22:00:39 UTC] [HockeySignin][debug] Found 2 forward and 1 defense spots available
+[21-Jan-2025 22:00:39 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: )
+[21-Jan-2025 22:00:39 UTC] [HockeySignin][debug] Found 2 forward and 1 defense spots available
+[21-Jan-2025 22:00:39 UTC] [HockeySignin][debug] Waitlist processing complete. 0 players moved, 8 remaining
+[21-Jan-2025 22:00:39 UTC] [HockeySignin][debug] Waitlist processed successfully for 2025-01-21
+[21-Jan-2025 22:17:04 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Julian Dill
+[21-Jan-2025 22:17:04 UTC] [HockeySignin][debug] Starting check-in process for player: Julian Dill
+[21-Jan-2025 22:17:04 UTC] [HockeySignin][debug] Starting check-in process for player: Julian Dill
+[21-Jan-2025 22:17:04 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Tues1030Forum/Pickup_Roster-Tue_Jan_21.txt
+[21-Jan-2025 22:17:04 UTC] [HockeySignin][debug] Player Julian Dill is already checked in
+[21-Jan-2025 22:17:04 UTC] [HockeySignin][debug] Check-in response: already_checked_in
+[21-Jan-2025 22:26:54 UTC] [HockeySignin][debug] Processing waitlist at 18:26 for 2025-01-21 (Season: RegularSeason2024-2025)
+[21-Jan-2025 22:30:18 UTC] [HockeySignin][debug] Processing waitlist at 18:30 for 2025-01-21 (Season: RegularSeason2024-2025)
+[21-Jan-2025 22:30:18 UTC] [HockeySignin][debug] Processing waitlist with 8 players
+[21-Jan-2025 22:30:18 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: )
+[21-Jan-2025 22:30:18 UTC] [HockeySignin][debug] Found 2 forward and 1 defense spots available
+[21-Jan-2025 22:30:18 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: )
+[21-Jan-2025 22:30:18 UTC] [HockeySignin][debug] Found 2 forward and 1 defense spots available
+[21-Jan-2025 22:30:18 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: )
+[21-Jan-2025 22:30:18 UTC] [HockeySignin][debug] Found 2 forward and 1 defense spots available
+[21-Jan-2025 22:30:18 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: )
+[21-Jan-2025 22:30:18 UTC] [HockeySignin][debug] Found 2 forward and 1 defense spots available
+[21-Jan-2025 22:30:18 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: )
+[21-Jan-2025 22:30:18 UTC] [HockeySignin][debug] Found 2 forward and 1 defense spots available
+[21-Jan-2025 22:30:18 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: )
+[21-Jan-2025 22:30:18 UTC] [HockeySignin][debug] Found 2 forward and 1 defense spots available
+[21-Jan-2025 22:30:18 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: )
+[21-Jan-2025 22:30:18 UTC] [HockeySignin][debug] Found 2 forward and 1 defense spots available
+[21-Jan-2025 22:30:18 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: )
+[21-Jan-2025 22:30:18 UTC] [HockeySignin][debug] Found 2 forward and 1 defense spots available
+[21-Jan-2025 22:30:18 UTC] [HockeySignin][debug] Waitlist processing complete. 0 players moved, 8 remaining
+[21-Jan-2025 22:30:18 UTC] [HockeySignin][debug] Waitlist processed successfully for 2025-01-21
+[21-Jan-2025 22:32:12 UTC] [HockeySignin][debug] Processing waitlist at 18:32 for 2025-01-21 (Season: RegularSeason2024-2025)
+[21-Jan-2025 22:32:12 UTC] [HockeySignin][debug] Processing waitlist with 8 players
+[21-Jan-2025 22:32:12 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: )
+[21-Jan-2025 22:32:12 UTC] [HockeySignin][debug] Found 2 forward and 1 defense spots available
+[21-Jan-2025 22:32:12 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: )
+[21-Jan-2025 22:32:12 UTC] [HockeySignin][debug] Found 2 forward and 1 defense spots available
+[21-Jan-2025 22:32:12 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: )
+[21-Jan-2025 22:32:12 UTC] [HockeySignin][debug] Found 2 forward and 1 defense spots available
+[21-Jan-2025 22:32:12 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: )
+[21-Jan-2025 22:32:12 UTC] [HockeySignin][debug] Found 2 forward and 1 defense spots available
+[21-Jan-2025 22:32:12 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: )
+[21-Jan-2025 22:32:12 UTC] [HockeySignin][debug] Found 2 forward and 1 defense spots available
+[21-Jan-2025 22:32:12 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: )
+[21-Jan-2025 22:32:12 UTC] [HockeySignin][debug] Found 2 forward and 1 defense spots available
+[21-Jan-2025 22:32:12 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: )
+[21-Jan-2025 22:32:12 UTC] [HockeySignin][debug] Found 2 forward and 1 defense spots available
+[21-Jan-2025 22:32:12 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: )
+[21-Jan-2025 22:32:12 UTC] [HockeySignin][debug] Found 2 forward and 1 defense spots available
+[21-Jan-2025 22:32:12 UTC] [HockeySignin][debug] Waitlist processing complete. 0 players moved, 8 remaining
+[21-Jan-2025 22:32:12 UTC] [HockeySignin][debug] Waitlist processed successfully for 2025-01-21
+[21-Jan-2025 22:33:24 UTC] [HockeySignin][debug] Processing waitlist at 18:33 for 2025-01-21 (Season: RegularSeason2024-2025)
+[21-Jan-2025 22:33:24 UTC] [HockeySignin][debug] Processing waitlist with 8 players
+[21-Jan-2025 22:33:24 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: )
+[21-Jan-2025 22:33:24 UTC] [HockeySignin][debug] Found 2 forward and 1 defense spots available
+[21-Jan-2025 22:33:24 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: )
+[21-Jan-2025 22:33:24 UTC] [HockeySignin][debug] Found 2 forward and 1 defense spots available
+[21-Jan-2025 22:33:24 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: )
+[21-Jan-2025 22:33:24 UTC] [HockeySignin][debug] Found 2 forward and 1 defense spots available
+[21-Jan-2025 22:33:24 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: )
+[21-Jan-2025 22:33:24 UTC] [HockeySignin][debug] Found 2 forward and 1 defense spots available
+[21-Jan-2025 22:33:24 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: )
+[21-Jan-2025 22:33:24 UTC] [HockeySignin][debug] Found 2 forward and 1 defense spots available
+[21-Jan-2025 22:33:24 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: )
+[21-Jan-2025 22:33:24 UTC] [HockeySignin][debug] Found 2 forward and 1 defense spots available
+[21-Jan-2025 22:33:24 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: )
+[21-Jan-2025 22:33:24 UTC] [HockeySignin][debug] Found 2 forward and 1 defense spots available
+[21-Jan-2025 22:33:24 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: )
+[21-Jan-2025 22:33:24 UTC] [HockeySignin][debug] Found 2 forward and 1 defense spots available
+[21-Jan-2025 22:33:24 UTC] [HockeySignin][debug] Waitlist processing complete. 0 players moved, 8 remaining
+[21-Jan-2025 22:33:24 UTC] [HockeySignin][debug] Waitlist processed successfully for 2025-01-21
+[21-Jan-2025 22:34:31 UTC] [HockeySignin][debug] Processing waitlist at 18:34 for 2025-01-21 (Season: RegularSeason2024-2025)
+[21-Jan-2025 22:34:31 UTC] [HockeySignin][debug] Sections found: Array
+(
+    [main] => Array
+        (
+            [start] => 0
+            [end] => 30
+        )
+
+    [waitlist] => Array
+        (
+            [start] => 30
+            [end] => 39
+        )
+
+)
+
+[21-Jan-2025 22:34:31 UTC] [HockeySignin][debug] Waitlist section: Array
+(
+    [0] => 1. Lou Totino
+    [1] => 2. Michael Robinson
+    [2] => 3. Shane pottie
+    [3] => 4. Darien Boudreau
+    [4] => 5. James Forren
+    [5] => 6. Julian Dill
+    [6] => 7. Justin Dill
+    [7] => 8. Jeff Benoit
+)
+
+[21-Jan-2025 22:34:31 UTC] [HockeySignin][debug] Added player to waitlist array: Lou Totino
+[21-Jan-2025 22:34:31 UTC] [HockeySignin][debug] Added player to waitlist array: Michael Robinson
+[21-Jan-2025 22:34:31 UTC] [HockeySignin][debug] Added player to waitlist array: Shane pottie
+[21-Jan-2025 22:34:31 UTC] [HockeySignin][debug] Added player to waitlist array: Darien Boudreau
+[21-Jan-2025 22:34:31 UTC] [HockeySignin][debug] Added player to waitlist array: James Forren
+[21-Jan-2025 22:34:31 UTC] [HockeySignin][debug] Added player to waitlist array: Julian Dill
+[21-Jan-2025 22:34:31 UTC] [HockeySignin][debug] Added player to waitlist array: Justin Dill
+[21-Jan-2025 22:34:31 UTC] [HockeySignin][debug] Added player to waitlist array: Jeff Benoit
+[21-Jan-2025 22:34:31 UTC] [HockeySignin][debug] Processing waitlist with 8 players
+[21-Jan-2025 22:34:31 UTC] [HockeySignin][debug] Looking for spot for player: Lou Totino
+[21-Jan-2025 22:34:31 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: )
+[21-Jan-2025 22:34:31 UTC] [HockeySignin][debug] Found 2 forward and 1 defense spots available
+[21-Jan-2025 22:34:31 UTC] [HockeySignin][debug] Spot found: No
+[21-Jan-2025 22:34:31 UTC] [HockeySignin][debug] No spot found for Lou Totino, adding to remaining waitlist
+[21-Jan-2025 22:34:31 UTC] [HockeySignin][debug] Looking for spot for player: Michael Robinson
+[21-Jan-2025 22:34:31 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: )
+[21-Jan-2025 22:34:31 UTC] [HockeySignin][debug] Found 2 forward and 1 defense spots available
+[21-Jan-2025 22:34:31 UTC] [HockeySignin][debug] Spot found: No
+[21-Jan-2025 22:34:31 UTC] [HockeySignin][debug] No spot found for Michael Robinson, adding to remaining waitlist
+[21-Jan-2025 22:34:31 UTC] [HockeySignin][debug] Looking for spot for player: Shane pottie
+[21-Jan-2025 22:34:31 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: )
+[21-Jan-2025 22:34:31 UTC] [HockeySignin][debug] Found 2 forward and 1 defense spots available
+[21-Jan-2025 22:34:31 UTC] [HockeySignin][debug] Spot found: No
+[21-Jan-2025 22:34:31 UTC] [HockeySignin][debug] No spot found for Shane pottie, adding to remaining waitlist
+[21-Jan-2025 22:34:31 UTC] [HockeySignin][debug] Looking for spot for player: Darien Boudreau
+[21-Jan-2025 22:34:31 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: )
+[21-Jan-2025 22:34:31 UTC] [HockeySignin][debug] Found 2 forward and 1 defense spots available
+[21-Jan-2025 22:34:31 UTC] [HockeySignin][debug] Spot found: No
+[21-Jan-2025 22:34:31 UTC] [HockeySignin][debug] No spot found for Darien Boudreau, adding to remaining waitlist
+[21-Jan-2025 22:34:31 UTC] [HockeySignin][debug] Looking for spot for player: James Forren
+[21-Jan-2025 22:34:31 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: )
+[21-Jan-2025 22:34:31 UTC] [HockeySignin][debug] Found 2 forward and 1 defense spots available
+[21-Jan-2025 22:34:31 UTC] [HockeySignin][debug] Spot found: No
+[21-Jan-2025 22:34:31 UTC] [HockeySignin][debug] No spot found for James Forren, adding to remaining waitlist
+[21-Jan-2025 22:34:31 UTC] [HockeySignin][debug] Looking for spot for player: Julian Dill
+[21-Jan-2025 22:34:31 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: )
+[21-Jan-2025 22:34:31 UTC] [HockeySignin][debug] Found 2 forward and 1 defense spots available
+[21-Jan-2025 22:34:31 UTC] [HockeySignin][debug] Spot found: No
+[21-Jan-2025 22:34:31 UTC] [HockeySignin][debug] No spot found for Julian Dill, adding to remaining waitlist
+[21-Jan-2025 22:34:31 UTC] [HockeySignin][debug] Looking for spot for player: Justin Dill
+[21-Jan-2025 22:34:31 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: )
+[21-Jan-2025 22:34:31 UTC] [HockeySignin][debug] Found 2 forward and 1 defense spots available
+[21-Jan-2025 22:34:31 UTC] [HockeySignin][debug] Spot found: No
+[21-Jan-2025 22:34:31 UTC] [HockeySignin][debug] No spot found for Justin Dill, adding to remaining waitlist
+[21-Jan-2025 22:34:31 UTC] [HockeySignin][debug] Looking for spot for player: Jeff Benoit
+[21-Jan-2025 22:34:31 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: )
+[21-Jan-2025 22:34:31 UTC] [HockeySignin][debug] Found 2 forward and 1 defense spots available
+[21-Jan-2025 22:34:31 UTC] [HockeySignin][debug] Spot found: No
+[21-Jan-2025 22:34:31 UTC] [HockeySignin][debug] No spot found for Jeff Benoit, adding to remaining waitlist
+[21-Jan-2025 22:34:31 UTC] [HockeySignin][debug] Lines before waitlist rebuild: Array
+(
+    [0] => Goal: Mathieu Simard
+    [1] => Dark
+    [2] => 
+    [3] => F- Steve Pottie
+    [4] => F- Adam hooper
+    [5] => F- Steve Patterson
+    [6] => F- David Frost
+    [7] => F- Sanchez clarke
+    [8] => F- Mark Pottie
+    [9] => 
+    [10] => D- Alex Flinn
+    [11] => D- Pat Hickey
+    [12] => D- Dan Grenier
+    [13] => D- Tim Richardson
+    [14] => 
+    [15] => Goal: Mark Harrie
+    [16] => Light
+    [17] => 
+    [18] => F- Ryan Gallant
+    [19] => F- Sam Legere
+    [20] => F- Scott Long
+    [21] => F- matt slaunwhite
+    [22] => F-
+    [23] => F-
+    [24] => 
+    [25] => D- Rob MacIsaac
+    [26] => D- Nathan van Rensburg
+    [27] => D- Ryan Hackett
+    [28] => D-
+    [29] => 
+    [30] => WL:
+    [31] => 1. Lou Totino
+    [32] => 2. Michael Robinson
+    [33] => 3. Shane pottie
+    [34] => 4. Darien Boudreau
+    [35] => 5. James Forren
+    [36] => 6. Julian Dill
+    [37] => 7. Justin Dill
+    [38] => 8. Jeff Benoit
+)
+
+[21-Jan-2025 22:34:31 UTC] [HockeySignin][debug] Waitlist processing complete. 0 players moved, 8 remaining
+[21-Jan-2025 22:34:31 UTC] [HockeySignin][debug] Final lines: Array
+(
+    [0] => Goal: Mathieu Simard
+    [1] => Dark
+    [2] => 
+    [3] => F- Steve Pottie
+    [4] => F- Adam hooper
+    [5] => F- Steve Patterson
+    [6] => F- David Frost
+    [7] => F- Sanchez clarke
+    [8] => F- Mark Pottie
+    [9] => 
+    [10] => D- Alex Flinn
+    [11] => D- Pat Hickey
+    [12] => D- Dan Grenier
+    [13] => D- Tim Richardson
+    [14] => 
+    [15] => Goal: Mark Harrie
+    [16] => Light
+    [17] => 
+    [18] => F- Ryan Gallant
+    [19] => F- Sam Legere
+    [20] => F- Scott Long
+    [21] => F- matt slaunwhite
+    [22] => F-
+    [23] => F-
+    [24] => 
+    [25] => D- Rob MacIsaac
+    [26] => D- Nathan van Rensburg
+    [27] => D- Ryan Hackett
+    [28] => D-
+    [29] => 
+    [30] => WL:
+    [31] => 1. Lou Totino
+    [32] => 2. Michael Robinson
+    [33] => 3. Shane pottie
+    [34] => 4. Darien Boudreau
+    [35] => 5. James Forren
+    [36] => 6. Julian Dill
+    [37] => 7. Justin Dill
+    [38] => 8. Jeff Benoit
+)
+
+[21-Jan-2025 22:34:31 UTC] [HockeySignin][debug] Waitlist processed successfully for 2025-01-21
+[21-Jan-2025 22:36:21 UTC] [HockeySignin][debug] Processing waitlist at 18:36 for 2025-01-21 (Season: RegularSeason2024-2025)
+[21-Jan-2025 22:36:21 UTC] [HockeySignin][debug] Sections found: Array
+(
+    [main] => Array
+        (
+            [start] => 0
+            [end] => 30
+        )
+
+    [waitlist] => Array
+        (
+            [start] => 30
+            [end] => 39
+        )
+
+)
+
+[21-Jan-2025 22:36:21 UTC] [HockeySignin][debug] Waitlist section: Array
+(
+    [0] => 1. Lou Totino
+    [1] => 2. Michael Robinson
+    [2] => 3. Shane pottie
+    [3] => 4. Darien Boudreau
+    [4] => 5. James Forren
+    [5] => 6. Julian Dill
+    [6] => 7. Justin Dill
+    [7] => 8. Jeff Benoit
+)
+
+[21-Jan-2025 22:36:21 UTC] [HockeySignin][debug] Added player to waitlist array: Lou Totino
+[21-Jan-2025 22:36:21 UTC] [HockeySignin][debug] Added player to waitlist array: Michael Robinson
+[21-Jan-2025 22:36:21 UTC] [HockeySignin][debug] Added player to waitlist array: Shane pottie
+[21-Jan-2025 22:36:21 UTC] [HockeySignin][debug] Added player to waitlist array: Darien Boudreau
+[21-Jan-2025 22:36:21 UTC] [HockeySignin][debug] Added player to waitlist array: James Forren
+[21-Jan-2025 22:36:21 UTC] [HockeySignin][debug] Added player to waitlist array: Julian Dill
+[21-Jan-2025 22:36:21 UTC] [HockeySignin][debug] Added player to waitlist array: Justin Dill
+[21-Jan-2025 22:36:21 UTC] [HockeySignin][debug] Added player to waitlist array: Jeff Benoit
+[21-Jan-2025 22:36:21 UTC] [HockeySignin][debug] Processing waitlist with 8 players
+[21-Jan-2025 22:36:21 UTC] [HockeySignin][debug] Looking for spot for player: Lou Totino
+[21-Jan-2025 22:36:21 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30
+[21-Jan-2025 22:36:21 UTC] [HockeySignin][debug] Found 2 forward and 1 defense spots available
+[21-Jan-2025 22:36:21 UTC] [HockeySignin][debug] Selected position F at line 22
+[21-Jan-2025 22:36:21 UTC] [HockeySignin][debug] Spot found: Yes at line 22
+[21-Jan-2025 22:36:21 UTC] [HockeySignin][debug] Before replacement at line 22: F-
+[21-Jan-2025 22:36:21 UTC] [HockeySignin][debug] After replacement at line 22: F- Lou Totino* *confirming*
+[21-Jan-2025 22:36:21 UTC] [HockeySignin][debug] Waitlist movement: Lou Totino moved to position F
+[21-Jan-2025 22:36:21 UTC] [HockeySignin][debug] Looking for spot for player: Michael Robinson
+[21-Jan-2025 22:36:21 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30
+[21-Jan-2025 22:36:21 UTC] [HockeySignin][debug] Found 1 forward and 1 defense spots available
+[21-Jan-2025 22:36:21 UTC] [HockeySignin][debug] Selected position F at line 23
+[21-Jan-2025 22:36:21 UTC] [HockeySignin][debug] Spot found: Yes at line 23
+[21-Jan-2025 22:36:21 UTC] [HockeySignin][debug] Before replacement at line 23: F-
+[21-Jan-2025 22:36:21 UTC] [HockeySignin][debug] After replacement at line 23: F- Michael Robinson* *confirming*
+[21-Jan-2025 22:36:21 UTC] [HockeySignin][debug] Waitlist movement: Michael Robinson moved to position F
+[21-Jan-2025 22:36:21 UTC] [HockeySignin][debug] Looking for spot for player: Shane pottie
+[21-Jan-2025 22:36:21 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30
+[21-Jan-2025 22:36:21 UTC] [HockeySignin][debug] Found 0 forward and 1 defense spots available
+[21-Jan-2025 22:36:21 UTC] [HockeySignin][debug] Selected position D at line 28
+[21-Jan-2025 22:36:21 UTC] [HockeySignin][debug] Spot found: Yes at line 28
+[21-Jan-2025 22:36:21 UTC] [HockeySignin][debug] Before replacement at line 28: D-
+[21-Jan-2025 22:36:21 UTC] [HockeySignin][debug] After replacement at line 28: D- Shane pottie* *confirming*
+[21-Jan-2025 22:36:21 UTC] [HockeySignin][debug] Waitlist movement: Shane pottie moved to position D
+[21-Jan-2025 22:36:21 UTC] [HockeySignin][debug] Looking for spot for player: Darien Boudreau
+[21-Jan-2025 22:36:21 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30
+[21-Jan-2025 22:36:21 UTC] [HockeySignin][debug] Found 0 forward and 0 defense spots available
+[21-Jan-2025 22:36:21 UTC] [HockeySignin][debug] Spot found: No
+[21-Jan-2025 22:36:21 UTC] [HockeySignin][debug] No spot found for Darien Boudreau, adding to remaining waitlist
+[21-Jan-2025 22:36:21 UTC] [HockeySignin][debug] Looking for spot for player: James Forren
+[21-Jan-2025 22:36:21 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30
+[21-Jan-2025 22:36:21 UTC] [HockeySignin][debug] Found 0 forward and 0 defense spots available
+[21-Jan-2025 22:36:21 UTC] [HockeySignin][debug] Spot found: No
+[21-Jan-2025 22:36:21 UTC] [HockeySignin][debug] No spot found for James Forren, adding to remaining waitlist
+[21-Jan-2025 22:36:21 UTC] [HockeySignin][debug] Looking for spot for player: Julian Dill
+[21-Jan-2025 22:36:21 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30
+[21-Jan-2025 22:36:21 UTC] [HockeySignin][debug] Found 0 forward and 0 defense spots available
+[21-Jan-2025 22:36:21 UTC] [HockeySignin][debug] Spot found: No
+[21-Jan-2025 22:36:21 UTC] [HockeySignin][debug] No spot found for Julian Dill, adding to remaining waitlist
+[21-Jan-2025 22:36:21 UTC] [HockeySignin][debug] Looking for spot for player: Justin Dill
+[21-Jan-2025 22:36:21 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30
+[21-Jan-2025 22:36:21 UTC] [HockeySignin][debug] Found 0 forward and 0 defense spots available
+[21-Jan-2025 22:36:21 UTC] [HockeySignin][debug] Spot found: No
+[21-Jan-2025 22:36:21 UTC] [HockeySignin][debug] No spot found for Justin Dill, adding to remaining waitlist
+[21-Jan-2025 22:36:21 UTC] [HockeySignin][debug] Looking for spot for player: Jeff Benoit
+[21-Jan-2025 22:36:21 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30
+[21-Jan-2025 22:36:21 UTC] [HockeySignin][debug] Found 0 forward and 0 defense spots available
+[21-Jan-2025 22:36:21 UTC] [HockeySignin][debug] Spot found: No
+[21-Jan-2025 22:36:21 UTC] [HockeySignin][debug] No spot found for Jeff Benoit, adding to remaining waitlist
+[21-Jan-2025 22:36:21 UTC] [HockeySignin][debug] Lines before waitlist rebuild: Array
+(
+    [0] => Goal: Mathieu Simard
+    [1] => Dark
+    [2] => 
+    [3] => F- Steve Pottie
+    [4] => F- Adam hooper
+    [5] => F- Steve Patterson
+    [6] => F- David Frost
+    [7] => F- Sanchez clarke
+    [8] => F- Mark Pottie
+    [9] => 
+    [10] => D- Alex Flinn
+    [11] => D- Pat Hickey
+    [12] => D- Dan Grenier
+    [13] => D- Tim Richardson
+    [14] => 
+    [15] => Goal: Mark Harrie
+    [16] => Light
+    [17] => 
+    [18] => F- Ryan Gallant
+    [19] => F- Sam Legere
+    [20] => F- Scott Long
+    [21] => F- matt slaunwhite
+    [22] => F- Lou Totino* *confirming*
+    [23] => F- Michael Robinson* *confirming*
+    [24] => 
+    [25] => D- Rob MacIsaac
+    [26] => D- Nathan van Rensburg
+    [27] => D- Ryan Hackett
+    [28] => D- Shane pottie* *confirming*
+    [29] => 
+    [30] => WL:
+    [31] => 1. Lou Totino
+    [32] => 2. Michael Robinson
+    [33] => 3. Shane pottie
+    [34] => 4. Darien Boudreau
+    [35] => 5. James Forren
+    [36] => 6. Julian Dill
+    [37] => 7. Justin Dill
+    [38] => 8. Jeff Benoit
+)
+
+[21-Jan-2025 22:36:21 UTC] [HockeySignin][debug] Waitlist processing complete. 3 players moved, 5 remaining
+[21-Jan-2025 22:36:21 UTC] [HockeySignin][debug] Final lines: Array
+(
+    [0] => Goal: Mathieu Simard
+    [1] => Dark
+    [2] => 
+    [3] => F- Steve Pottie
+    [4] => F- Adam hooper
+    [5] => F- Steve Patterson
+    [6] => F- David Frost
+    [7] => F- Sanchez clarke
+    [8] => F- Mark Pottie
+    [9] => 
+    [10] => D- Alex Flinn
+    [11] => D- Pat Hickey
+    [12] => D- Dan Grenier
+    [13] => D- Tim Richardson
+    [14] => 
+    [15] => Goal: Mark Harrie
+    [16] => Light
+    [17] => 
+    [18] => F- Ryan Gallant
+    [19] => F- Sam Legere
+    [20] => F- Scott Long
+    [21] => F- matt slaunwhite
+    [22] => F- Lou Totino* *confirming*
+    [23] => F- Michael Robinson* *confirming*
+    [24] => 
+    [25] => D- Rob MacIsaac
+    [26] => D- Nathan van Rensburg
+    [27] => D- Ryan Hackett
+    [28] => D- Shane pottie* *confirming*
+    [29] => 
+    [30] => WL:
+    [31] => 1. Darien Boudreau
+    [32] => 2. James Forren
+    [33] => 3. Julian Dill
+    [34] => 4. Justin Dill
+    [35] => 5. Jeff Benoit
+)
+
+[21-Jan-2025 22:36:21 UTC] [HockeySignin][debug] Waitlist processed successfully for 2025-01-21
+[21-Jan-2025 23:29:35 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Julian Dill
+[21-Jan-2025 23:29:35 UTC] [HockeySignin][debug] Starting check-in process for player: Julian Dill
+[21-Jan-2025 23:29:35 UTC] [HockeySignin][debug] Starting check-in process for player: Julian Dill
+[21-Jan-2025 23:29:35 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Tues1030Forum/Pickup_Roster-Tue_Jan_21.txt
+[21-Jan-2025 23:29:35 UTC] [HockeySignin][debug] Player Julian Dill is already checked in
+[21-Jan-2025 23:29:35 UTC] [HockeySignin][debug] Check-in response: already_checked_in
+[22-Jan-2025 00:00:31 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Darien Boudreau
+[22-Jan-2025 00:00:31 UTC] [HockeySignin][debug] Starting check-in process for player: Darien Boudreau
+[22-Jan-2025 00:00:31 UTC] [HockeySignin][debug] Starting check-in process for player: Darien Boudreau
+[22-Jan-2025 00:00:31 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Tues1030Forum/Pickup_Roster-Tue_Jan_21.txt
+[22-Jan-2025 00:00:31 UTC] [HockeySignin][debug] Player Darien Boudreau is already checked in
+[22-Jan-2025 00:00:31 UTC] [HockeySignin][debug] Check-in response: already_checked_in
