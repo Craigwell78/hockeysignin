@@ -8,7 +8,7 @@ F- Sanchez Clarke
 F- 
 F- Mark Pottie
 
-D-
+D- 
 D- Pat Hickey
 D- Tim Richardson
 D- 
@@ -35,4 +35,4 @@ WL:
 4. Taylor Selinger
 5. Shane Pottie
 6. Mike Gouthro
-7. Julian myers
+7. Julian Myers

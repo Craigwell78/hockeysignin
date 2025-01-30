@@ -95,6 +95,9 @@ function create_next_game_roster_files($date) {
 function check_in_player($date, $player_name) {
     hockey_log("Starting check-in process for player: {$player_name}", 'debug');
     
+    // Capitalize the player name
+    $player_name = capitalize_player_name($player_name);
+    
     // Check for profanity first
     $filter = \hockeysignin\filters\ProfanityFilter::getInstance();
     if ($filter->containsProfanity($player_name)) {
@@ -164,34 +167,42 @@ function check_in_player($date, $player_name) {
 }
 
 function check_out_player($player_name) {
-$date = current_time('Y-m-d');
-$day_directory_map = get_day_directory_map($date);
-$day_of_week = date('l', strtotime($date));
-$day_directory = $day_directory_map[$day_of_week] ?? null;
-$formatted_date = date('D_M_j', strtotime($date));
-$season = get_current_season($date);
-$file_path = realpath(__DIR__ . "/../rosters/") . "/{$season}/{$day_directory}/Pickup_Roster-{$formatted_date}.txt";
-
-if (file_exists($file_path)) {
-$roster = file_get_contents($file_path);
-$roster_lines = explode("\n", $roster);
-$updated_roster = [];
-
-foreach ($roster_lines as $line) {
-// Check if the line contains the player's name
-if (strpos($line, $player_name) !== false) {
-// Remove only the player's name, keep the position marker
-$line = preg_replace('/\b' . preg_quote($player_name, '/') . '\b/', '', $line);
-$line = trim($line); // Remove any extra spaces
-}
-$updated_roster[] = $line;
-}
-
-file_put_contents($file_path, implode("\n", $updated_roster));
-hockey_log("Player checked out: {$player_name}", 'debug');
-} else {
-hockey_log("Roster file not found: {$file_path}", 'error');
-}
+    hockey_log("Processing checkout for player: {$player_name}", 'debug');
+    
+    $current_date = current_time('Y-m-d');
+    $day_directory_map = get_day_directory_map($current_date);
+    $day_of_week = date('l', strtotime($current_date));
+    $day_directory = $day_directory_map[$day_of_week] ?? null;
+    $formatted_date = date('D_M_j', strtotime($current_date));
+    $season = get_current_season($current_date);
+    $file_path = realpath(__DIR__ . "/../rosters/") . "/{$season}/{$day_directory}/Pickup_Roster-{$formatted_date}.txt";
+    
+    if (!file_exists($file_path)) {
+        return "No roster file found for today.";
+    }
+    
+    $roster = file_get_contents($file_path);
+    $lines = explode("\n", $roster);
+    $player_found = false;
+    
+    // Process each line
+    foreach ($lines as $i => $line) {
+        // Case insensitive search for the player name
+        if (stripos($line, $player_name) !== false) {
+            // Remove the player from the line
+            $lines[$i] = preg_replace('/([FDG]-\s*)' . preg_quote($player_name, '/') . '.*$/i', '$1', $line);
+            $player_found = true;
+            break;
+        }
+    }
+    
+    if ($player_found) {
+        file_put_contents($file_path, implode("\n", $lines));
+        hockey_log("Player checked out: {$player_name}", 'debug');
+        return "Player checked out successfully.";
+    }
+    
+    return "Player not found on the roster.";
 }
 
 function update_roster($date, $player_name, $prepaid, $preferred_position = null, $forceWaitlist = false) {
@@ -737,4 +748,17 @@ function assign_player_to_spot($player_name, $spot, $is_waitlist_move = false) {
     } else {
         return "{$position}- " . $player_with_mark;
     }
+}
+
+function capitalize_player_name($name) {
+    // Split the name into parts
+    $name_parts = explode(' ', trim($name));
+    
+    // Capitalize first letter of each part
+    $capitalized_parts = array_map(function($part) {
+        return ucfirst(strtolower($part));
+    }, $name_parts);
+    
+    // Join the parts back together
+    return implode(' ', $capitalized_parts);
 }

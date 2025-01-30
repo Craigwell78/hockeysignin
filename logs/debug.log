@@ -183,3 +183,117 @@
 [30-Jan-2025 15:31:40 UTC] [HockeySignin][debug] Player Julian myers is not registered for Thursday
 [30-Jan-2025 15:31:40 UTC] [HockeySignin][debug] Non-database player Julian myers added to waitlist at position 7
 [30-Jan-2025 15:31:40 UTC] [HockeySignin][debug] Check-in response: Thank you! You've been added to our waitlist for tonight. Please check back at 6pm to see if you have made the roster! You can reach us at halifaxpickuphockey@gmail.com to ask about Regular subscriber spots!
+[30-Jan-2025 15:45:47 UTC] [HockeySignin][debug] Form submission: action=checkin, player=jason craig
+[30-Jan-2025 15:45:47 UTC] [HockeySignin][debug] Starting check-in process for player: jason craig
+[30-Jan-2025 15:45:47 UTC] [HockeySignin][debug] Starting check-in process for player: jason craig
+[30-Jan-2025 15:45:47 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Thur1030Civic/Pickup_Roster-Thu_Jan_30.txt
+[30-Jan-2025 15:45:47 UTC] [HockeySignin][debug] Player Jason Craig prepaid status: yes
+[30-Jan-2025 15:45:47 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: Defence)
+[30-Jan-2025 15:45:47 UTC] [HockeySignin][debug] Available spots - Forward: 7, Defense: 4, Goalie: 1
+[30-Jan-2025 15:45:47 UTC] [HockeySignin][debug] Found available defense spots for preferred position
+[30-Jan-2025 15:45:47 UTC] [HockeySignin][debug] Selected defense spot at line 10
+[30-Jan-2025 15:45:47 UTC] [HockeySignin][debug] Player Jason Craig assigned to position D
+[30-Jan-2025 15:45:47 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[30-Jan-2025 15:45:56 UTC] [HockeySignin][debug] Form submission: action=checkin, player=jason craig
+[30-Jan-2025 15:45:56 UTC] [HockeySignin][debug] Starting check-in process for player: jason craig
+[30-Jan-2025 15:45:56 UTC] [HockeySignin][debug] Starting check-in process for player: jason craig
+[30-Jan-2025 15:45:56 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Thur1030Civic/Pickup_Roster-Thu_Jan_30.txt
+[30-Jan-2025 15:45:56 UTC] [HockeySignin][debug] Player Jason Craig is already checked in
+[30-Jan-2025 15:45:56 UTC] [HockeySignin][debug] Check-in response: already_checked_in
+[30-Jan-2025 15:46:00 UTC] [HockeySignin][debug] Form submission: action=checkout, player=jason craig
+[30-Jan-2025 15:46:00 UTC] [HockeySignin][debug] Processing checkout for player: jason craig
+[30-Jan-2025 15:46:00 UTC] [HockeySignin][debug] Player checked out: jason craig
+[30-Jan-2025 15:46:08 UTC] [HockeySignin][debug] Form submission: action=checkout, player=jason craig
+[30-Jan-2025 15:46:08 UTC] [HockeySignin][debug] Processing checkout for player: jason craig
+[30-Jan-2025 15:46:08 UTC] [HockeySignin][debug] Player checked out: jason craig
+[30-Jan-2025 15:46:17 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Jason Craig
+[30-Jan-2025 15:46:17 UTC] [HockeySignin][debug] Starting check-in process for player: Jason Craig
+[30-Jan-2025 15:46:17 UTC] [HockeySignin][debug] Starting check-in process for player: Jason Craig
+[30-Jan-2025 15:46:17 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Thur1030Civic/Pickup_Roster-Thu_Jan_30.txt
+[30-Jan-2025 15:46:17 UTC] [HockeySignin][debug] Player Jason Craig is already checked in
+[30-Jan-2025 15:46:17 UTC] [HockeySignin][debug] Check-in response: already_checked_in
+[30-Jan-2025 15:46:19 UTC] [HockeySignin][debug] Form submission: action=checkout, player=Jason Craig
+[30-Jan-2025 15:46:19 UTC] [HockeySignin][debug] Processing checkout for player: Jason Craig
+[30-Jan-2025 15:46:19 UTC] [HockeySignin][debug] Player checked out: Jason Craig
+[30-Jan-2025 15:46:40 UTC] [HockeySignin][debug] Form submission: action=checkin, player=wait list
+[30-Jan-2025 15:46:40 UTC] [HockeySignin][debug] Starting check-in process for player: wait list
+[30-Jan-2025 15:46:40 UTC] [HockeySignin][debug] Starting check-in process for player: wait list
+[30-Jan-2025 15:46:40 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Thur1030Civic/Pickup_Roster-Thu_Jan_30.txt
+[30-Jan-2025 15:46:40 UTC] [HockeySignin][debug] Player not found in database: Wait List
+[30-Jan-2025 15:46:40 UTC] [HockeySignin][debug] Non-database player Wait List added to waitlist at position 8
+[30-Jan-2025 15:46:40 UTC] [HockeySignin][debug] Check-in response: Thank you! You've been added to our waitlist for tonight. Please check back at 6pm to see if you have made the roster! You can reach us at halifaxpickuphockey@gmail.com to ask about Regular subscriber spots!
+[30-Jan-2025 15:46:50 UTC] [HockeySignin][debug] Form submission: action=checkout, player=Wait List
+[30-Jan-2025 15:46:50 UTC] [HockeySignin][debug] Processing checkout for player: Wait List
+[30-Jan-2025 15:46:50 UTC] [HockeySignin][debug] Player checked out: Wait List
+[30-Jan-2025 15:49:02 UTC] [HockeySignin][debug] Form submission: action=checkin, player=jason craig
+[30-Jan-2025 15:49:02 UTC] [HockeySignin][debug] Starting check-in process for player: jason craig
+[30-Jan-2025 15:49:02 UTC] [HockeySignin][debug] Starting check-in process for player: jason craig
+[30-Jan-2025 15:49:02 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Thur1030Civic/Pickup_Roster-Thu_Jan_30.txt
+[30-Jan-2025 15:49:02 UTC] [HockeySignin][debug] Player Jason Craig prepaid status: yes
+[30-Jan-2025 15:49:02 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: Defence)
+[30-Jan-2025 15:49:02 UTC] [HockeySignin][debug] Available spots - Forward: 7, Defense: 4, Goalie: 1
+[30-Jan-2025 15:49:02 UTC] [HockeySignin][debug] Found available defense spots for preferred position
+[30-Jan-2025 15:49:02 UTC] [HockeySignin][debug] Selected defense spot at line 25
+[30-Jan-2025 15:49:02 UTC] [HockeySignin][debug] Player Jason Craig assigned to position D
+[30-Jan-2025 15:49:02 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[30-Jan-2025 15:49:11 UTC] [HockeySignin][debug] Form submission: action=checkout, player=jason craig
+[30-Jan-2025 15:49:11 UTC] [HockeySignin][debug] Processing checkout for player: jason craig
+[30-Jan-2025 15:49:11 UTC] [HockeySignin][debug] Processing checkout for player: jason craig
+[30-Jan-2025 15:49:11 UTC] [HockeySignin][debug] Player checked out: jason craig
+[30-Jan-2025 15:49:24 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Jason Craig
+[30-Jan-2025 15:49:24 UTC] [HockeySignin][debug] Starting check-in process for player: Jason Craig
+[30-Jan-2025 15:49:24 UTC] [HockeySignin][debug] Starting check-in process for player: Jason Craig
+[30-Jan-2025 15:49:24 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Thur1030Civic/Pickup_Roster-Thu_Jan_30.txt
+[30-Jan-2025 15:49:24 UTC] [HockeySignin][debug] Player Jason Craig prepaid status: yes
+[30-Jan-2025 15:49:24 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: Defence)
+[30-Jan-2025 15:49:24 UTC] [HockeySignin][debug] Available spots - Forward: 7, Defense: 4, Goalie: 1
+[30-Jan-2025 15:49:24 UTC] [HockeySignin][debug] Found available defense spots for preferred position
+[30-Jan-2025 15:49:24 UTC] [HockeySignin][debug] Selected defense spot at line 25
+[30-Jan-2025 15:49:24 UTC] [HockeySignin][debug] Player Jason Craig assigned to position D
+[30-Jan-2025 15:49:24 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[30-Jan-2025 15:49:30 UTC] [HockeySignin][debug] Form submission: action=checkin, player=Jason craig
+[30-Jan-2025 15:49:30 UTC] [HockeySignin][debug] Starting check-in process for player: Jason craig
+[30-Jan-2025 15:49:30 UTC] [HockeySignin][debug] Starting check-in process for player: Jason craig
+[30-Jan-2025 15:49:30 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Thur1030Civic/Pickup_Roster-Thu_Jan_30.txt
+[30-Jan-2025 15:49:30 UTC] [HockeySignin][debug] Player Jason Craig is already checked in
+[30-Jan-2025 15:49:30 UTC] [HockeySignin][debug] Check-in response: already_checked_in
+[30-Jan-2025 15:49:32 UTC] [HockeySignin][debug] Form submission: action=checkout, player=Jason craig
+[30-Jan-2025 15:49:32 UTC] [HockeySignin][debug] Processing checkout for player: Jason craig
+[30-Jan-2025 15:49:32 UTC] [HockeySignin][debug] Processing checkout for player: Jason craig
+[30-Jan-2025 15:49:32 UTC] [HockeySignin][debug] Player checked out: Jason craig
+[30-Jan-2025 15:50:02 UTC] [HockeySignin][debug] Form submission: action=checkin, player=jason CRaig
+[30-Jan-2025 15:50:02 UTC] [HockeySignin][debug] Starting check-in process for player: jason CRaig
+[30-Jan-2025 15:50:02 UTC] [HockeySignin][debug] Starting check-in process for player: jason CRaig
+[30-Jan-2025 15:50:02 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Thur1030Civic/Pickup_Roster-Thu_Jan_30.txt
+[30-Jan-2025 15:50:02 UTC] [HockeySignin][debug] Player Jason Craig prepaid status: yes
+[30-Jan-2025 15:50:02 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: Defence)
+[30-Jan-2025 15:50:02 UTC] [HockeySignin][debug] Available spots - Forward: 7, Defense: 4, Goalie: 1
+[30-Jan-2025 15:50:02 UTC] [HockeySignin][debug] Found available defense spots for preferred position
+[30-Jan-2025 15:50:02 UTC] [HockeySignin][debug] Selected defense spot at line 13
+[30-Jan-2025 15:50:02 UTC] [HockeySignin][debug] Player Jason Craig assigned to position D
+[30-Jan-2025 15:50:02 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[30-Jan-2025 15:50:15 UTC] [HockeySignin][debug] Form submission: action=checkout, player=jAson cRAIG
+[30-Jan-2025 15:50:15 UTC] [HockeySignin][debug] Processing checkout for player: jAson cRAIG
+[30-Jan-2025 15:50:15 UTC] [HockeySignin][debug] Processing checkout for player: jAson cRAIG
+[30-Jan-2025 15:50:15 UTC] [HockeySignin][debug] Player checked out: jAson cRAIG
+[30-Jan-2025 15:50:29 UTC] [HockeySignin][debug] Form submission: action=checkin, player=jASON CRAIG
+[30-Jan-2025 15:50:29 UTC] [HockeySignin][debug] Starting check-in process for player: jASON CRAIG
+[30-Jan-2025 15:50:29 UTC] [HockeySignin][debug] Starting check-in process for player: jASON CRAIG
+[30-Jan-2025 15:50:29 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Thur1030Civic/Pickup_Roster-Thu_Jan_30.txt
+[30-Jan-2025 15:50:29 UTC] [HockeySignin][debug] Player Jason Craig prepaid status: yes
+[30-Jan-2025 15:50:29 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: Defence)
+[30-Jan-2025 15:50:29 UTC] [HockeySignin][debug] Available spots - Forward: 7, Defense: 4, Goalie: 1
+[30-Jan-2025 15:50:29 UTC] [HockeySignin][debug] Found available defense spots for preferred position
+[30-Jan-2025 15:50:29 UTC] [HockeySignin][debug] Selected defense spot at line 10
+[30-Jan-2025 15:50:29 UTC] [HockeySignin][debug] Player Jason Craig assigned to position D
+[30-Jan-2025 15:50:29 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[30-Jan-2025 15:50:37 UTC] [HockeySignin][debug] Form submission: action=checkin, player=jason craig
+[30-Jan-2025 15:50:37 UTC] [HockeySignin][debug] Starting check-in process for player: jason craig
+[30-Jan-2025 15:50:37 UTC] [HockeySignin][debug] Starting check-in process for player: jason craig
+[30-Jan-2025 15:50:37 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Thur1030Civic/Pickup_Roster-Thu_Jan_30.txt
+[30-Jan-2025 15:50:37 UTC] [HockeySignin][debug] Player Jason Craig is already checked in
+[30-Jan-2025 15:50:37 UTC] [HockeySignin][debug] Check-in response: already_checked_in
+[30-Jan-2025 15:50:41 UTC] [HockeySignin][debug] Form submission: action=checkout, player=jason craig
+[30-Jan-2025 15:50:41 UTC] [HockeySignin][debug] Processing checkout for player: jason craig
+[30-Jan-2025 15:50:41 UTC] [HockeySignin][debug] Processing checkout for player: jason craig
+[30-Jan-2025 15:50:41 UTC] [HockeySignin][debug] Player checked out: jason craig
