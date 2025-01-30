@@ -12,6 +12,16 @@ function hockeysignin_handle_form_submission() {
             return;
         }
 
+        // Generate a unique submission ID
+        if (!session_id()) {
+            session_start();
+        }
+        
+        $submission_id = $_POST['submission_id'] ?? '';
+        if (empty($submission_id) || isset($_SESSION['processed_submissions'][$submission_id])) {
+            return;
+        }
+
         $player_name = sanitize_text_field($_POST['player_name']);
         $action = sanitize_text_field($_POST['action']);
         
@@ -25,6 +35,9 @@ function hockeysignin_handle_form_submission() {
             $response = $handler->handleCheckIn($player_name);
             hockey_log("Check-in response: {$response}", 'debug');
             
+            // Mark this submission as processed
+            $_SESSION['processed_submissions'][$submission_id] = true;
+            
             if ($response === 'already_checked_in') {
                 $nonce = wp_create_nonce('hockeysignin_action');
                 echo '<div class="notice"><p>' . esc_html($player_name) . ' is already checked in. 
@@ -32,6 +45,7 @@ function hockeysignin_handle_form_submission() {
                       <input type="hidden" name="player_name" value="' . esc_attr($player_name) . '">
                       <input type="hidden" name="action" value="checkout">
                       <input type="hidden" name="hockeysignin_nonce" value="' . $nonce . '">
+                      <input type="hidden" name="submission_id" value="' . uniqid('checkout_', true) . '">
                       <button type="submit" onclick="return confirm(\'Do you want to check out ' . esc_js($player_name) . '?\');">
                           Check Out Instead?
                       </button>
@@ -41,6 +55,7 @@ function hockeysignin_handle_form_submission() {
         } elseif ($action === 'checkout') {
             hockey_log("Processing checkout for player: {$player_name}", 'debug');
             $response = $handler->handleCheckOut($player_name);
+            $_SESSION['processed_submissions'][$submission_id] = true;
         }
         
         if ($response) {
@@ -87,6 +102,8 @@ function hockeysignin_shortcode() {
     <div class="hockeysignin-container">
         <form method="post" action="" id="hockey-signin-form">
             <?php wp_nonce_field('hockeysignin_action', 'hockeysignin_nonce'); ?>
+            <input type="hidden" name="submission_id" value="<?php echo uniqid('signin_', true); ?>">
+            
             <label for="player_name">Player Name:</label>
             <input type="text" id="player_name" name="player_name" required>
             

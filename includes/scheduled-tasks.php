@@ -13,7 +13,7 @@ add_action('admin_init', function() {
     
     if ($_POST['action'] === 'trigger_waitlist_processing') {
         hockey_log("Manual trigger received", 'debug');
-        do_action('move_waitlist_to_roster_event');
+        process_waitlist_at_6pm();
     }
     
     if ($_POST['action'] === 'undo_waitlist_processing') {

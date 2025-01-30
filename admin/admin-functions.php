@@ -58,8 +58,22 @@ function hockeysignin_admin_page() {
     
     // Check if it's past 6 PM
     if ($current_time >= '18:00') {
-        move_waitlist_to_roster($current_date);
-        echo '<div class="updated"><p>Roster has been automatically updated at 6 PM.</p></div>';
+        $day_of_week = date('l', strtotime($current_date));
+        $day_directory_map = get_day_directory_map($current_date);
+        $day_directory = $day_directory_map[$day_of_week] ?? null;
+        
+        if ($day_directory) {
+            $formatted_date = date('D_M_j', strtotime($current_date));
+            $season = get_current_season($current_date);
+            $file_path = realpath(__DIR__ . "/../rosters/") . "/{$season}/{$day_directory}/Pickup_Roster-{$formatted_date}.txt";
+            
+            if (file_exists($file_path)) {
+                $roster = file_get_contents($file_path);
+                $lines = explode("\n", $roster);
+                move_waitlist_to_roster($lines, $day_of_week);
+                echo '<div class="updated"><p>Roster has been automatically updated at 6 PM.</p></div>';
+            }
+        }
     }
     
     if (isset($_POST['check_in_player'])) {
