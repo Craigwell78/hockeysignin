@@ -3,13 +3,13 @@
 add_action('create_daily_roster_files_event', 'create_daily_roster_files');
 add_action('move_waitlist_to_roster_event', 'process_waitlist_at_6pm');
 
-// Add a test action to verify hook functionality
-add_action('init', function() {
-    hockey_log("Scheduled tasks file loaded", 'debug');
-});
-
 // Add manual trigger capability
 add_action('admin_post_trigger_waitlist_processing', function() {
+    // Check if user has permission
+    if (!current_user_can('manage_options')) {
+        wp_die('Sorry, you are not allowed to access this page.');
+    }
+    
     hockey_log("Manual trigger received", 'debug');
     do_action('move_waitlist_to_roster_event');
     wp_redirect(admin_url('admin.php?page=hockey-settings&processed=1'));

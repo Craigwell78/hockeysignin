@@ -559,7 +559,7 @@ function find_available_spot($lines, $preferred_position = null) {
                ", Goalie: " . count($goalie_spots), 'debug');
     
     // Special handling for goalies
-    if (strtolower($preferred_position) === 'goalie') {
+    if ($preferred_position !== null && strtolower($preferred_position) === 'goalie') {
         if (!empty($goalie_spots)) {
             hockey_log("Found available goalie spot for goalie player", 'debug');
             $spot = $goalie_spots[array_rand($goalie_spots)];
@@ -571,8 +571,9 @@ function find_available_spot($lines, $preferred_position = null) {
     }
     
     // Non-goalie players can only be assigned to forward or defense positions
-    if ($preferred_position) {
-        switch (strtolower($preferred_position)) {
+    if ($preferred_position !== null) {
+        $position_lower = strtolower($preferred_position);
+        switch ($position_lower) {
             case 'forward':
                 if (!empty($forward_spots)) {
                     hockey_log("Found available forward spots for preferred position", 'debug');
