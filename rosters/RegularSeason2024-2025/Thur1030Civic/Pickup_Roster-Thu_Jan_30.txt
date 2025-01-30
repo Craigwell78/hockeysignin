@@ -5,25 +5,25 @@ F- Kyle Charron
 F-
 F- David Frost
 F- Sanchez Clarke
-F-
+F- 
 F- Mark Pottie
 
 D-
 D- Pat Hickey
 D- Tim Richardson
-D-
+D- 
 
 Goal:
 Light
 
 F- Jared Boudreau
 F-
-F-
-F-
-F-
+F- 
+F- 
+F- 
 F-
 
-D-
+D- 
 D- Logan MacLean
 D- Rob MacIsaac
 D-
@@ -35,3 +35,4 @@ WL:
 4. Taylor Selinger
 5. Shane Pottie
 6. Mike Gouthro
+7. Julian myers
