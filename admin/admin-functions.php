@@ -88,6 +88,13 @@ function hockeysignin_admin_page() {
     echo '<input type="submit" class="button-primary" value="Start Next Game">';
     echo '</form>';
 
+    // Add manual waitlist processing button
+    echo '<form method="post" action="' . admin_url('admin-post.php') . '" style="margin-top: 10px;">';
+    echo '<input type="hidden" name="action" value="trigger_waitlist_processing">';
+    wp_nonce_field('hockeysignin_action', 'hockeysignin_nonce');
+    echo '<input type="submit" class="button-secondary" value="Process Waitlist Now" onclick="return confirm(\'Process the waitlist now?\');">';
+    echo '</form>';
+
     echo '<h2>Manual Player Check-In</h2>';
     echo '<form method="post" action="">';
     wp_nonce_field('hockeysignin_action', 'hockeysignin_nonce');

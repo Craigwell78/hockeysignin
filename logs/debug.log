@@ -1076,3 +1076,258 @@
 [30-Jan-2025 14:13:46 UTC] [HockeySignin][debug] Selected defense spot at line 26
 [30-Jan-2025 14:13:46 UTC] [HockeySignin][debug] Player Logan MacLean assigned to position D
 [30-Jan-2025 14:13:46 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[30-Jan-2025 14:25:18 UTC] [HockeySignin][debug] Scheduled tasks file loaded
+[30-Jan-2025 14:25:24 UTC] [HockeySignin][debug] Scheduled tasks file loaded
+[30-Jan-2025 14:25:31 UTC] [HockeySignin][debug] Scheduled tasks file loaded
+[30-Jan-2025 14:26:04 UTC] [HockeySignin][debug] Scheduled tasks file loaded
+[30-Jan-2025 14:26:07 UTC] [HockeySignin][debug] Scheduled tasks file loaded
+[30-Jan-2025 14:26:34 UTC] [HockeySignin][debug] Scheduled tasks file loaded
+[30-Jan-2025 14:27:57 UTC] [HockeySignin][debug] Scheduled tasks file loaded
+[30-Jan-2025 14:28:02 UTC] [HockeySignin][debug] Scheduled tasks file loaded
+[30-Jan-2025 14:28:09 UTC] [HockeySignin][debug] Scheduled tasks file loaded
+[30-Jan-2025 14:28:16 UTC] [HockeySignin][debug] Scheduled tasks file loaded
+[30-Jan-2025 14:28:18 UTC] [HockeySignin][debug] Scheduled tasks file loaded
+[30-Jan-2025 14:28:24 UTC] [HockeySignin][debug] Scheduled tasks file loaded
+[30-Jan-2025 14:28:52 UTC] [HockeySignin][debug] Scheduled tasks file loaded
+[30-Jan-2025 14:28:54 UTC] [HockeySignin][debug] Scheduled tasks file loaded
+[30-Jan-2025 14:29:06 UTC] [HockeySignin][debug] Scheduled tasks file loaded
+[30-Jan-2025 14:29:59 UTC] [HockeySignin][debug] Scheduled tasks file loaded
+[30-Jan-2025 14:31:58 UTC] [HockeySignin][debug] Scheduled tasks file loaded
+[30-Jan-2025 14:32:26 UTC] [HockeySignin][debug] Scheduled tasks file loaded
+[30-Jan-2025 14:32:36 UTC] [HockeySignin][debug] Scheduled tasks file loaded
+[30-Jan-2025 14:32:39 UTC] [HockeySignin][debug] Scheduled tasks file loaded
+[30-Jan-2025 14:33:40 UTC] [HockeySignin][debug] Scheduled tasks file loaded
+[30-Jan-2025 14:33:42 UTC] [HockeySignin][debug] Scheduled tasks file loaded
+[30-Jan-2025 14:33:42 UTC] [HockeySignin][debug] Manual trigger received
+[30-Jan-2025 14:33:42 UTC] [HockeySignin][debug] Starting waitlist processing job
+[30-Jan-2025 14:33:42 UTC] [HockeySignin][debug] Processing for date: 2025-01-30 (Thursday)
+[30-Jan-2025 14:33:42 UTC] [HockeySignin][debug] Directory map: Array
+(
+    [Thursday] => Thur1030Civic
+)
+
+[30-Jan-2025 14:33:42 UTC] [HockeySignin][debug] Attempting to process file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Thur1030Civic/Pickup_Roster-Thu_Jan_30.txt
+[30-Jan-2025 14:33:42 UTC] [HockeySignin][debug] Found roster file, calling move_waitlist_to_roster()
+[30-Jan-2025 14:33:54 UTC] [HockeySignin][debug] Scheduled tasks file loaded
+[30-Jan-2025 14:34:38 UTC] [HockeySignin][debug] Scheduled tasks file loaded
+[30-Jan-2025 14:35:03 UTC] [HockeySignin][debug] Scheduled tasks file loaded
+[30-Jan-2025 14:35:04 UTC] [HockeySignin][debug] Scheduled tasks file loaded
+[30-Jan-2025 14:35:20 UTC] [HockeySignin][debug] Scheduled tasks file loaded
+[30-Jan-2025 14:35:20 UTC] [HockeySignin][debug] Form submission: action=checkin, player=David Frost
+[30-Jan-2025 14:35:20 UTC] [HockeySignin][debug] Starting check-in process for player: David Frost
+[30-Jan-2025 14:35:20 UTC] [HockeySignin][debug] Starting check-in process for player: David Frost
+[30-Jan-2025 14:35:20 UTC] [HockeySignin][debug] Checking roster file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Thur1030Civic/Pickup_Roster-Thu_Jan_30.txt
+[30-Jan-2025 14:35:20 UTC] [HockeySignin][debug] Player David Frost prepaid status: yes
+[30-Jan-2025 14:35:20 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30 (preferred position: Forward)
+[30-Jan-2025 14:35:20 UTC] [HockeySignin][debug] Available spots - Forward: 7, Defense: 4, Goalie: 1
+[30-Jan-2025 14:35:20 UTC] [HockeySignin][debug] Found available forward spots for preferred position
+[30-Jan-2025 14:35:20 UTC] [HockeySignin][debug] Selected forward spot at line 5
+[30-Jan-2025 14:35:20 UTC] [HockeySignin][debug] Player David Frost assigned to position F
+[30-Jan-2025 14:35:20 UTC] [HockeySignin][debug] Check-in response: You have been added to the roster. Please check back after 6pm for finalized teams.
+[30-Jan-2025 14:44:29 UTC] [HockeySignin][debug] Scheduled tasks file loaded
+[30-Jan-2025 14:45:20 UTC] [HockeySignin][debug] Scheduled tasks file loaded
+[30-Jan-2025 14:45:24 UTC] [HockeySignin][debug] Scheduled tasks file loaded
+[30-Jan-2025 14:45:26 UTC] [HockeySignin][debug] Scheduled tasks file loaded
+[30-Jan-2025 14:45:30 UTC] [HockeySignin][debug] Scheduled tasks file loaded
+[30-Jan-2025 14:45:31 UTC] [HockeySignin][debug] Scheduled tasks file loaded
+[30-Jan-2025 14:45:34 UTC] [HockeySignin][debug] Scheduled tasks file loaded
+[30-Jan-2025 14:45:36 UTC] [HockeySignin][debug] Scheduled tasks file loaded
+[30-Jan-2025 14:45:38 UTC] [HockeySignin][debug] Scheduled tasks file loaded
+[30-Jan-2025 14:45:40 UTC] [HockeySignin][debug] Scheduled tasks file loaded
+[30-Jan-2025 14:45:43 UTC] [HockeySignin][debug] Scheduled tasks file loaded
+[30-Jan-2025 14:45:47 UTC] [HockeySignin][debug] Scheduled tasks file loaded
+[30-Jan-2025 14:45:49 UTC] [HockeySignin][debug] Scheduled tasks file loaded
+[30-Jan-2025 14:45:54 UTC] [HockeySignin][debug] Scheduled tasks file loaded
+[30-Jan-2025 14:45:54 UTC] [HockeySignin][debug] Scheduled tasks file loaded
+[30-Jan-2025 14:45:57 UTC] [HockeySignin][debug] Scheduled tasks file loaded
+[30-Jan-2025 14:46:11 UTC] [HockeySignin][debug] Scheduled tasks file loaded
+[30-Jan-2025 14:46:31 UTC] [HockeySignin][debug] Scheduled tasks file loaded
+[30-Jan-2025 14:46:38 UTC] [HockeySignin][debug] Scheduled tasks file loaded
+[30-Jan-2025 14:46:43 UTC] [HockeySignin][debug] Scheduled tasks file loaded
+[30-Jan-2025 14:46:46 UTC] [HockeySignin][debug] Scheduled tasks file loaded
+[30-Jan-2025 14:46:48 UTC] [HockeySignin][debug] Scheduled tasks file loaded
+[30-Jan-2025 14:46:53 UTC] [HockeySignin][debug] Scheduled tasks file loaded
+[30-Jan-2025 14:47:03 UTC] [HockeySignin][debug] Scheduled tasks file loaded
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] Scheduled tasks file loaded
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] Manual trigger received
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] Starting waitlist processing job
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] Processing for date: 2025-01-30 (Thursday)
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] Directory map: Array
+(
+    [Thursday] => Thur1030Civic
+)
+
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] Attempting to process file: /var/www/html/wordpress/wp-content/plugins/hockeysignin/rosters/RegularSeason2024-2025/Thur1030Civic/Pickup_Roster-Thu_Jan_30.txt
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] Found roster file, reading contents
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] Sections found: Array
+(
+    [main] => Array
+        (
+            [start] => 0
+            [end] => 30
+        )
+
+    [waitlist] => Array
+        (
+            [start] => 30
+            [end] => 37
+        )
+
+)
+
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] Waitlist section: Array
+(
+    [0] => 1. James Forren
+    [1] => 2. Josh LeBlanc
+    [2] => 3. Lou Totino
+    [3] => 4. Taylor Selinger
+    [4] => 5. Shane Pottie
+    [5] => 6. Mike Gouthro
+)
+
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] Added player to waitlist array: James Forren
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] Added player to waitlist array: Josh LeBlanc
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] Added player to waitlist array: Lou Totino
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] Added player to waitlist array: Taylor Selinger
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] Added player to waitlist array: Shane Pottie
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] Added player to waitlist array: Mike Gouthro
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] Processing waitlist with 6 players
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] Looking for spot for player: James Forren
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] Available spots - Forward: 6, Defense: 4, Goalie: 1
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] Falling back to random position selection (excluding goalie spots)
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] Selected random spot: D at line 28
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] Spot found: Yes at line 28
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] Before replacement at line 28: D-
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] After replacement at line 28: D- James Forren* *confirming*
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] Waitlist movement: James Forren moved to position D
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] Looking for spot for player: Josh LeBlanc
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] Available spots - Forward: 6, Defense: 3, Goalie: 1
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] Falling back to random position selection (excluding goalie spots)
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] Selected random spot: F at line 23
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] Spot found: Yes at line 23
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] Before replacement at line 23: F-
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] After replacement at line 23: F- Josh LeBlanc* *confirming*
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] Waitlist movement: Josh LeBlanc moved to position F
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] Looking for spot for player: Lou Totino
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] Available spots - Forward: 5, Defense: 3, Goalie: 1
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] Falling back to random position selection (excluding goalie spots)
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] Selected random spot: D at line 10
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] Spot found: Yes at line 10
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] Before replacement at line 10: D-
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] After replacement at line 10: D- Lou Totino* *confirming*
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] Waitlist movement: Lou Totino moved to position D
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] Looking for spot for player: Taylor Selinger
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] Available spots - Forward: 5, Defense: 2, Goalie: 1
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] Falling back to random position selection (excluding goalie spots)
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] Selected random spot: D at line 13
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] Spot found: Yes at line 13
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] Before replacement at line 13: D-
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] After replacement at line 13: D- Taylor Selinger* *confirming*
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] Waitlist movement: Taylor Selinger moved to position D
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] Looking for spot for player: Shane Pottie
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] Available spots - Forward: 5, Defense: 1, Goalie: 1
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] Falling back to random position selection (excluding goalie spots)
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] Selected random spot: F at line 7
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] Spot found: Yes at line 7
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] Before replacement at line 7: F-
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] After replacement at line 7: F- Shane Pottie* *confirming*
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] Waitlist movement: Shane Pottie moved to position F
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] Looking for spot for player: Mike Gouthro
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] Searching for spot between lines 0 and 30
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] Available spots - Forward: 4, Defense: 1, Goalie: 1
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] Falling back to random position selection (excluding goalie spots)
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] Selected random spot: F at line 4
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] Spot found: Yes at line 4
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] Before replacement at line 4: F-
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] After replacement at line 4: F- Mike Gouthro* *confirming*
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] Waitlist movement: Mike Gouthro moved to position F
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] Lines before waitlist rebuild: Array
+(
+    [0] => Goal: Mitchell Wasilik
+    [1] => Dark
+    [2] => 
+    [3] => F- Kyle Charron
+    [4] => F- Mike Gouthro* *confirming*
+    [5] => F- David Frost
+    [6] => F- Sanchez Clarke
+    [7] => F- Shane Pottie* *confirming*
+    [8] => F- Mark Pottie
+    [9] => 
+    [10] => D- Lou Totino* *confirming*
+    [11] => D- Pat Hickey
+    [12] => D- Tim Richardson
+    [13] => D- Taylor Selinger* *confirming*
+    [14] => 
+    [15] => Goal:
+    [16] => Light
+    [17] => 
+    [18] => F- Jared Boudreau
+    [19] => F-
+    [20] => F-
+    [21] => F- Steve Patterson
+    [22] => F-
+    [23] => F- Josh LeBlanc* *confirming*
+    [24] => 
+    [25] => D-
+    [26] => D- Logan MacLean
+    [27] => D- Rob MacIsaac
+    [28] => D- James Forren* *confirming*
+    [29] => 
+    [30] => WL:
+    [31] => 1. James Forren
+    [32] => 2. Josh LeBlanc
+    [33] => 3. Lou Totino
+    [34] => 4. Taylor Selinger
+    [35] => 5. Shane Pottie
+    [36] => 6. Mike Gouthro
+)
+
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] Waitlist processing complete. 6 players moved, 0 remaining
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] Final lines: Array
+(
+    [0] => Goal: Mitchell Wasilik
+    [1] => Dark
+    [2] => 
+    [3] => F- Kyle Charron
+    [4] => F- Mike Gouthro* *confirming*
+    [5] => F- David Frost
+    [6] => F- Sanchez Clarke
+    [7] => F- Shane Pottie* *confirming*
+    [8] => F- Mark Pottie
+    [9] => 
+    [10] => D- Lou Totino* *confirming*
+    [11] => D- Pat Hickey
+    [12] => D- Tim Richardson
+    [13] => D- Taylor Selinger* *confirming*
+    [14] => 
+    [15] => Goal:
+    [16] => Light
+    [17] => 
+    [18] => F- Jared Boudreau
+    [19] => F-
+    [20] => F-
+    [21] => F- Steve Patterson
+    [22] => F-
+    [23] => F- Josh LeBlanc* *confirming*
+    [24] => 
+    [25] => D-
+    [26] => D- Logan MacLean
+    [27] => D- Rob MacIsaac
+    [28] => D- James Forren* *confirming*
+    [29] => 
+    [30] => WL:
+)
+
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] Waitlist processing complete and file updated
+[30-Jan-2025 14:47:15 UTC] [HockeySignin][debug] Scheduled tasks file loaded
+[30-Jan-2025 14:48:12 UTC] [HockeySignin][debug] Scheduled tasks file loaded
+[30-Jan-2025 14:50:46 UTC] [HockeySignin][debug] Scheduled tasks file loaded
+[30-Jan-2025 14:50:47 UTC] [HockeySignin][debug] Scheduled tasks file loaded
+[30-Jan-2025 14:56:50 UTC] [HockeySignin][debug] Scheduled tasks file loaded
+[30-Jan-2025 14:56:51 UTC] [HockeySignin][debug] Scheduled tasks file loaded
+[30-Jan-2025 15:06:38 UTC] [HockeySignin][debug] Scheduled tasks file loaded
