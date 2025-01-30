@@ -41,7 +41,7 @@ spl_autoload_register(function ($class) {
     
     // Convert namespace to file path
     $file = plugin_dir_path(__FILE__) . 'includes' . DIRECTORY_SEPARATOR . 
-           str_replace('\\', DIRECTORY_SEPARATOR, strtolower($relative_class)) . '.php';
+           'class-' . str_replace('\\', DIRECTORY_SEPARATOR, strtolower($relative_class)) . '.php';
     
     if (file_exists($file)) {
         require_once $file;
@@ -59,9 +59,9 @@ add_action('plugins_loaded', function() {
     
     $include_files = [
         'includes/core/config.php',
+        'includes/class-form-handler.php',
         'includes/core/game-schedule.php',
-        'includes/core/season-config.php',
-        'includes/core/form-handler.php',
+        'includes/core/season-config.php',        
         'includes/filters/profanity-list.php',
         'includes/filters/ProfanityFilter.php',
         'includes/roster-functions.php',
@@ -82,12 +82,35 @@ add_action('plugins_loaded', function() {
 
 // Move scheduling code into init hook
 add_action('init', function() {
+    // Clear any existing schedules first
+    wp_clear_scheduled_hook('create_daily_roster_files_event');
+    wp_clear_scheduled_hook('move_waitlist_to_roster_event');
+    
+    // Get current time in site's timezone
+    $site_timezone = new DateTimeZone(wp_timezone_string());
+    $current_time = new DateTime('now', $site_timezone);
+    
+    // Schedule roster creation for next 8am
+    $roster_time = new DateTime('today 8:00:00', $site_timezone);
+    if ($current_time > $roster_time) {
+        $roster_time->modify('+1 day');
+    }
+    $roster_utc = $roster_time->setTimezone(new DateTimeZone('UTC'))->getTimestamp();
+    
+    // Schedule waitlist processing for next 6pm
+    $waitlist_time = new DateTime('today 18:00:00', $site_timezone);
+    if ($current_time > $waitlist_time) {
+        $waitlist_time->modify('+1 day');
+    }
+    $waitlist_utc = $waitlist_time->setTimezone(new DateTimeZone('UTC'))->getTimestamp();
+    
+    // Only schedule if not already scheduled
     if (!wp_next_scheduled('create_daily_roster_files_event')) {
-        wp_schedule_event(time(), 'daily', 'create_daily_roster_files_event');
+        wp_schedule_event($roster_utc, 'daily', 'create_daily_roster_files_event');
     }
     
     if (!wp_next_scheduled('move_waitlist_to_roster_event')) {
-        wp_schedule_event(strtotime('18:00:00'), 'daily', 'move_waitlist_to_roster_event');
+        wp_schedule_event($waitlist_utc, 'daily', 'move_waitlist_to_roster_event');
     }
 });
 

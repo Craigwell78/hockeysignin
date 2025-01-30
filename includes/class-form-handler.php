@@ -1,9 +1,11 @@
 <?php
 
-namespace hockeysignin\Core;
+namespace HockeySignin;
 
-class FormHandler {
+class Form_Handler {
     private static $instance = null;
+    private $nonce_action = 'hockeysignin_action';
+    private $nonce_field = 'hockeysignin_nonce';
     
     private function __construct() {}
     
@@ -14,8 +16,19 @@ class FormHandler {
         return self::$instance;
     }
     
+    public function verify_nonce($nonce = null, $action = null) {
+        $nonce = $nonce ?? $_POST[$this->nonce_field] ?? null;
+        $action = $action ?? $this->nonce_action;
+        
+        if (!$nonce || !wp_verify_nonce($nonce, $action)) {
+            hockey_log("Security check failed", 'debug');
+            return false;
+        }
+        return true;
+    }
+    
     public function handleCheckIn($player_name, $date = null) {
-        if (!$this->verifyNonce()) {
+        if (!$this->verify_nonce()) {
             return 'Security check failed';
         }
         
@@ -24,16 +37,11 @@ class FormHandler {
     }
     
     public function handleCheckOut($player_name) {
-        if (!$this->verifyNonce()) {
+        if (!$this->verify_nonce()) {
             return 'Security check failed';
         }
         
         check_out_player($player_name);
         return "{$player_name} has been checked out.";
-    }
-    
-    private function verifyNonce() {
-        return isset($_POST['hockeysignin_nonce']) && 
-               wp_verify_nonce($_POST['hockeysignin_nonce'], 'hockeysignin_action');
     }
 } 

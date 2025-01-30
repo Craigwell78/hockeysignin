@@ -1,11 +1,14 @@
 <?php
+// Only register the action handlers
 add_action('create_daily_roster_files_event', 'create_daily_roster_files');
 add_action('move_waitlist_to_roster_event', 'process_waitlist_at_6pm');
 
 function create_daily_roster_files() {
     $current_date = current_time('Y-m-d');
     $day_of_week = date('l', strtotime($current_date));
-    hockey_log("Creating daily roster files for {$current_date} ({$day_of_week})", 'debug');
+    $local_time = current_time('H:i');
+    
+    hockey_log("Starting daily roster file creation at {$local_time} for {$current_date} ({$day_of_week})", 'debug');
     
     // Call the existing function to create the roster
     create_next_game_roster_files($current_date);
@@ -22,24 +25,14 @@ function process_waitlist_at_6pm() {
     
     $local_time = current_time('H:i');
     
-    hockey_log("Processing waitlist at {$local_time} for {$current_date} (Season: {$season})", 'debug');
+    hockey_log("Current season: " . $season, 'debug');
+    hockey_log("Day directory map: " . print_r($day_directory_map, true), 'debug');
+    hockey_log("Processing waitlist at {$local_time} for {$current_date}", 'debug');
 
     if (file_exists($file_path)) {
-        $roster = file_get_contents($file_path);
-        $lines = explode("\n", $roster);
-        
-        $updated_lines = move_waitlist_to_roster($lines, $day_of_week);
-        if ($updated_lines) {
-            file_put_contents($file_path, implode("\n", $updated_lines));
-            hockey_log("Waitlist processed successfully for {$current_date}", 'debug');
-        }
+        move_waitlist_to_roster($current_date);
+        hockey_log("Waitlist processed successfully for {$current_date}", 'debug');
     } else {
         hockey_log("Roster file not found: {$file_path}", 'error');
     }
-}
-
-if (!wp_next_scheduled('move_waitlist_to_roster_event')) {
-    $local_time = new DateTime('18:00:00', new DateTimeZone(wp_timezone_string()));
-    $utc_time = $local_time->setTimezone(new DateTimeZone('UTC'))->getTimestamp();
-    wp_schedule_event($utc_time, 'daily', 'move_waitlist_to_roster_event');
 }

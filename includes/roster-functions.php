@@ -244,7 +244,7 @@ function update_roster($date, $player_name, $prepaid, $preferred_position = null
     }
 
     // Find an available spot
-    $spot = find_available_spot($lines);
+    $spot = find_available_spot($lines, $preferred_position);
     
     if ($spot) {
         // Player can be added to roster
@@ -367,29 +367,29 @@ function move_waitlist_to_roster($lines, $day_of_week) {
 }
 
 function finalize_roster_at_930pm($date) {
-$day_directory_map = get_day_directory_map($date);
-$day_of_week = date_i18n('l', strtotime($date));
-$day_directory = $day_directory_map[$day_of_week] ?? null;
+    $day_directory_map = get_day_directory_map($date);
+    $day_of_week = date('l', strtotime($date));
+    $day_directory = $day_directory_map[$day_of_week] ?? null;
 
-if (!$day_directory) {
-hockey_log("No directory mapping found for date: {$date}", 'error');
-return;
-}
+    if (!$day_directory) {
+        hockey_log("No directory mapping found for date: {$date}", 'error');
+        return;
+    }
 
-$formatted_date = date_i18n('D_M_j', strtotime($date));
-$season = get_current_season($date);
-$file_path = realpath(__DIR__ . "/../rosters/") . "/{$season}/{$day_directory}/Pickup_Roster-{$formatted_date}.txt";
+    $formatted_date = date('D_M_j', strtotime($date));
+    $season = get_current_season($date);
+    $file_path = realpath(__DIR__ . "/../rosters/") . "/{$season}/{$day_directory}/Pickup_Roster-{$formatted_date}.txt";
 
-if (!file_exists($file_path)) {
-hockey_log("Roster file not found: {$file_path}", 'error');
-return;
-}
-$roster = file_get_contents($file_path);
-$roster .= "\n-- Roster Finalized at 9:30 PM --";
+    if (!file_exists($file_path)) {
+        hockey_log("Roster file not found: {$file_path}", 'error');
+        return;
+    }
+    $roster = file_get_contents($file_path);
+    $roster .= "\n-- Roster Finalized at 9:30 PM --";
 
-if (file_put_contents($file_path, $roster) === false) {
-hockey_log("Unable to finalize roster file: {$file_path}", 'error');
-}
+    if (file_put_contents($file_path, $roster) === false) {
+        hockey_log("Unable to finalize roster file: {$file_path}", 'error');
+    }
 }
 
 // Fetch the current roster from the appropriate file
@@ -488,6 +488,7 @@ function contains_profanity($text) {
         '/\bwop\b/i', '/wop\w*/i',
         '/\bdago\b/i', '/dago\w*/i',
         '/\bwetback\b/i', '/wetback\w*/i',
+        '/\bshame\b/i',
         // Add more patterns as needed
     ];
 
@@ -530,44 +531,80 @@ function is_empty_position($line, $preferred_position = null) {
     return $result;
 }
 
-function find_available_spot($lines) {
+function find_available_spot($lines, $preferred_position = null) {
     $sections = get_roster_sections($lines, date('l'));
     $end_line = isset($sections['waitlist']) ? $sections['waitlist']['start'] : count($lines);
     
-    hockey_log("Searching for spot between lines 0 and {$end_line}", 'debug');
+    hockey_log("Searching for spot between lines 0 and {$end_line}" . 
+        ($preferred_position ? " (preferred position: {$preferred_position})" : ""), 'debug');
     
-    // Count available spots for forwards and defense
-    $forward_spots = 0;
-    $defense_spots = 0;
+    $forward_spots = [];
+    $defense_spots = [];
+    $goalie_spots = [];
     
-    $available_spots = [];
-    
+    // Collect all available spots
     for ($i = 0; $i < $end_line; $i++) {
         $line = trim($lines[$i]);
         if ($line === 'F-') {
-            $forward_spots++;
-            $available_spots[] = [
-                'line_number' => $i,
-                'position' => 'F'
-            ];
+            $forward_spots[] = ['line_number' => $i, 'position' => 'F'];
         } elseif ($line === 'D-') {
-            $defense_spots++;
-            $available_spots[] = [
-                'line_number' => $i,
-                'position' => 'D'
-            ];
+            $defense_spots[] = ['line_number' => $i, 'position' => 'D'];
+        } elseif ($line === 'Goal:') {
+            $goalie_spots[] = ['line_number' => $i, 'position' => 'Goal'];
         }
     }
     
-    hockey_log("Found {$forward_spots} forward and {$defense_spots} defense spots available", 'debug');
+    hockey_log("Available spots - Forward: " . count($forward_spots) . 
+               ", Defense: " . count($defense_spots) . 
+               ", Goalie: " . count($goalie_spots), 'debug');
     
-    // If we found any spots, return the first one
-    if (!empty($available_spots)) {
-        $selected = $available_spots[0];
-        hockey_log("Selected position {$selected['position']} at line {$selected['line_number']}", 'debug');
-        return $selected;
+    // Special handling for goalies
+    if (strtolower($preferred_position) === 'goalie') {
+        if (!empty($goalie_spots)) {
+            hockey_log("Found available goalie spot for goalie player", 'debug');
+            $spot = $goalie_spots[array_rand($goalie_spots)];
+            hockey_log("Selected goalie spot at line {$spot['line_number']}", 'debug');
+            return $spot;
+        }
+        hockey_log("No goalie spots available for goalie player, must go to waitlist", 'debug');
+        return null;
     }
     
+    // Non-goalie players can only be assigned to forward or defense positions
+    if ($preferred_position) {
+        switch (strtolower($preferred_position)) {
+            case 'forward':
+                if (!empty($forward_spots)) {
+                    hockey_log("Found available forward spots for preferred position", 'debug');
+                    $spot = $forward_spots[array_rand($forward_spots)];
+                    hockey_log("Selected forward spot at line {$spot['line_number']}", 'debug');
+                    return $spot;
+                }
+                hockey_log("No forward spots available despite preference", 'debug');
+                break;
+            case 'defence':
+            case 'defense':
+                if (!empty($defense_spots)) {
+                    hockey_log("Found available defense spots for preferred position", 'debug');
+                    $spot = $defense_spots[array_rand($defense_spots)];
+                    hockey_log("Selected defense spot at line {$spot['line_number']}", 'debug');
+                    return $spot;
+                }
+                hockey_log("No defense spots available despite preference", 'debug');
+                break;
+        }
+    }
+    
+    // If no preferred position available, randomly select from any non-goalie spot
+    $all_spots = array_merge($forward_spots, $defense_spots);
+    if (!empty($all_spots)) {
+        hockey_log("Falling back to random position selection (excluding goalie spots)", 'debug');
+        $spot = $all_spots[array_rand($all_spots)];
+        hockey_log("Selected random spot: {$spot['position']} at line {$spot['line_number']}", 'debug');
+        return $spot;
+    }
+    
+    hockey_log("No available spots found", 'debug');
     return null;
 }
 

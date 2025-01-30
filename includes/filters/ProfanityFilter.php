@@ -10,7 +10,7 @@ class ProfanityFilter {
         $this->blacklist = [
             // Profanity
             'fuck', 'fucking', 'fucker', 'fck', 'fuk',
-            'shit', 'sh1t', 'sh!t',
+            'shit', 'sh1t', 'sh!t', 'shame',
             'ass', 'asshole', 'ass hole',
             'bitch', 'b1tch',
             'dick', 'd1ck',

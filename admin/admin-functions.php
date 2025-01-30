@@ -1,4 +1,6 @@
 <?php
+use HockeySignin\Form_Handler;
+
 function hockeysignin_add_admin_menu() {
     add_menu_page('Hockey Sign-in', 'Hockey Sign-in', 'manage_options', 'hockeysignin', 'hockeysignin_admin_page', 'dashicons-admin-users', 25);
     add_submenu_page('hockeysignin', 'Settings', 'Settings', 'manage_options', 'hockeysignin_settings', 'hockeysignin_settings_page');
@@ -40,12 +42,12 @@ function hockeysignin_settings_page() {
 function hockeysignin_admin_page() {
     echo '<div class="wrap"><h1>Hockey Player Check-In</h1>';
     
-    $handler = \hockeysignin\Core\FormHandler::getInstance();
+    $handler = Form_Handler::getInstance();
     $current_date = current_time('Y-m-d');
     $current_time = current_time('H:i');
     
     if (isset($_POST['manual_start'])) {
-        if (!$handler->verifyNonce()) {
+        if (!$handler->verify_nonce()) {
             die('Security check failed');
         }
         
