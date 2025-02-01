@@ -43,9 +43,13 @@ function create_daily_roster_files() {
     $local_time = current_time('H:i');
     
     hockey_log("Starting daily roster file creation at {$local_time} for {$current_date} ({$day_of_week})", 'debug');
+    hockey_log("WordPress cron running as: " . get_current_user_id(), 'debug');
     
-    // Call the existing function to create the roster
-    create_next_game_roster_files($current_date);
+    try {
+        create_next_game_roster_files($current_date);
+    } catch (Exception $e) {
+        hockey_log("Error creating roster files: " . $e->getMessage(), 'error');
+    }
 }
 
 function process_waitlist_at_6pm() {
@@ -67,24 +71,30 @@ function process_waitlist_at_6pm() {
         
         $formatted_date = date('D_M_j', strtotime($current_date));
         $season = get_current_season($current_date);
-        $file_path = realpath(__DIR__ . "/../rosters/") . "/{$season}/{$day_directory}/Pickup_Roster-{$formatted_date}.txt";
+        
+        // Use WordPress path functions instead of realpath
+        $file_path = plugin_dir_path(dirname(__FILE__)) . "rosters/{$season}/{$day_directory}/Pickup_Roster-{$formatted_date}.txt";
         
         hockey_log("Attempting to process file: {$file_path}", 'debug');
         
         if (file_exists($file_path)) {
-            // Create backup before processing
             $backup_path = $file_path . '.backup';
-            copy($file_path, $backup_path);
-            hockey_log("Created backup at: {$backup_path}", 'debug');
-            
-            hockey_log("Found roster file, reading contents", 'debug');
-            $roster = file_get_contents($file_path);
-            $lines = explode("\n", $roster);
-            
-            $updated_lines = move_waitlist_to_roster($lines, $day_of_week);
-            if ($updated_lines) {
-                file_put_contents($file_path, implode("\n", $updated_lines));
-                hockey_log("Waitlist processing complete and file updated", 'debug');
+            if (@copy($file_path, $backup_path)) {
+                hockey_log("Created backup at: {$backup_path}", 'debug');
+                
+                $roster = file_get_contents($file_path);
+                $lines = explode("\n", $roster);
+                
+                $updated_lines = move_waitlist_to_roster($lines, $day_of_week);
+                if ($updated_lines) {
+                    if (@file_put_contents($file_path, implode("\n", $updated_lines))) {
+                        hockey_log("Waitlist processing complete and file updated", 'debug');
+                    } else {
+                        hockey_log("Failed to write updated roster to file", 'error');
+                    }
+                }
+            } else {
+                hockey_log("Failed to create backup file", 'error');
             }
         } else {
             hockey_log("Roster file not found: {$file_path}", 'error');

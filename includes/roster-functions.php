@@ -72,7 +72,7 @@ function create_next_game_roster_files($date) {
 
     $formatted_date = date('D_M_j', strtotime($date));
     $season = get_current_season($date);
-    $file_path = realpath(__DIR__ . "/../rosters/") . "/{$season}/{$day_directory}/Pickup_Roster-{$formatted_date}.txt";
+    $file_path = plugin_dir_path(dirname(__FILE__)) . "rosters/{$season}/{$day_directory}/Pickup_Roster-{$formatted_date}.txt";
 
     if (!file_exists($file_path)) {
         if (file_exists($template_path)) {
@@ -115,7 +115,7 @@ function check_in_player($date, $player_name) {
     $day_directory = $day_directory_map[$day_of_week] ?? null;
     $formatted_date = date('D_M_j', strtotime($date));
     $season = get_current_season($date);
-    $file_path = realpath(__DIR__ . "/../rosters/") . "/{$season}/{$day_directory}/Pickup_Roster-{$formatted_date}.txt";
+    $file_path = plugin_dir_path(dirname(__FILE__)) . "rosters/{$season}/{$day_directory}/Pickup_Roster-{$formatted_date}.txt";
     
     hockey_log("Checking roster file: {$file_path}", 'debug');
     
@@ -175,34 +175,61 @@ function check_out_player($player_name) {
     $day_directory = $day_directory_map[$day_of_week] ?? null;
     $formatted_date = date('D_M_j', strtotime($current_date));
     $season = get_current_season($current_date);
-    $file_path = realpath(__DIR__ . "/../rosters/") . "/{$season}/{$day_directory}/Pickup_Roster-{$formatted_date}.txt";
+    $file_path = plugin_dir_path(dirname(__FILE__)) . "rosters/{$season}/{$day_directory}/Pickup_Roster-{$formatted_date}.txt";
     
     if (!file_exists($file_path)) {
-        return "No roster file found for today.";
+        return false;
     }
     
-    $roster = file_get_contents($file_path);
-    $lines = explode("\n", $roster);
+    $lines = file($file_path, FILE_IGNORE_NEW_LINES);
+    $sections = get_roster_sections($lines, $day_of_week);
     $player_found = false;
     
-    // Process each line
+    // First check regular roster spots
     foreach ($lines as $i => $line) {
-        // Case insensitive search for the player name
-        if (stripos($line, $player_name) !== false) {
-            // Remove the player from the line
-            $lines[$i] = preg_replace('/([FDG]-\s*)' . preg_quote($player_name, '/') . '.*$/i', '$1', $line);
+        if (stripos($line, $player_name) !== false && !preg_match('/^WL:|^\d+\./', $line)) {
+            // Clean up the line, removing player name and any extra hyphens
+            $lines[$i] = preg_replace('/([FDG](?:oal)?(?:-|:))\s*[^-]*/', '$1', $line);
+            // Remove any double hyphens that might have been created
+            $lines[$i] = preg_replace('/-+/', '-', $lines[$i]);
             $player_found = true;
             break;
         }
     }
     
-    if ($player_found) {
-        file_put_contents($file_path, implode("\n", $lines));
-        hockey_log("Player checked out: {$player_name}", 'debug');
-        return "Player checked out successfully.";
+    // If not found in regular spots, check waitlist
+    if (!$player_found && isset($sections['waitlist']['start'])) {
+        $waitlist_start = $sections['waitlist']['start'];
+        
+        // Find player in waitlist
+        for ($i = $waitlist_start + 1; $i < count($lines); $i++) {
+            if (stripos($lines[$i], $player_name) !== false) {
+                // Remove this line
+                array_splice($lines, $i, 1);
+                $player_found = true;
+                
+                // Renumber remaining waitlist entries
+                $count = 1;
+                for ($j = $waitlist_start + 1; $j < count($lines); $j++) {
+                    if (preg_match('/^\d+\./', $lines[$j])) {
+                        $player = preg_replace('/^\d+\.\s*/', '', $lines[$j]);
+                        $lines[$j] = $count . ". " . $player;
+                        $count++;
+                    }
+                }
+                break;
+            }
+        }
     }
     
-    return "Player not found on the roster.";
+    if ($player_found) {
+        file_put_contents($file_path, implode("\n", $lines));
+        hockey_log("Player checked out successfully: {$player_name}", 'debug');
+        return true;
+    }
+    
+    hockey_log("Player not found for checkout: {$player_name}", 'debug');
+    return false;
 }
 
 function update_roster($date, $player_name, $prepaid, $preferred_position = null, $forceWaitlist = false) {
@@ -219,7 +246,7 @@ function update_roster($date, $player_name, $prepaid, $preferred_position = null
     $day_directory = $day_directory_map[$day_of_week] ?? null;
     $formatted_date = date('D_M_j', strtotime($date));
     $season = get_current_season($date);
-    $file_path = realpath(__DIR__ . "/../rosters/") . "/{$season}/{$day_directory}/Pickup_Roster-{$formatted_date}.txt";
+    $file_path = plugin_dir_path(dirname(__FILE__)) . "rosters/{$season}/{$day_directory}/Pickup_Roster-{$formatted_date}.txt";
     
     if (!file_exists($file_path)) {
         hockey_log("Roster file not found: {$file_path}", 'error');
@@ -239,18 +266,32 @@ function update_roster($date, $player_name, $prepaid, $preferred_position = null
 
     // Handle non-database players (forceWaitlist) first
     if ($forceWaitlist) {
+        if (!isset($sections['waitlist']['start'])) {
+            hockey_log("Error: Waitlist section not found in roster", 'error');
+            return "Error: Could not process roster.";
+        }
+        
         $waitlist_start = $sections['waitlist']['start'];
+        $waitlist_end = $sections['waitlist']['end'] ?? count($lines);
         $waitlist_count = 0;
-        for ($i = $waitlist_start; $i < count($lines); $i++) {
-            if (preg_match('/^\d+\./', $lines[$i])) {
+        
+        // Get current waitlist entries
+        $waitlist_lines = array_slice($lines, $waitlist_start + 1, $waitlist_end - $waitlist_start - 1);
+        foreach ($waitlist_lines as $line) {
+            if (preg_match('/^\d+\./', $line)) {
                 $waitlist_count++;
             }
         }
         
-        $lines[] = ($waitlist_count + 1) . ". " . $player_name;
+        // Add new entry after existing entries
+        array_splice($lines, $waitlist_start + $waitlist_count + 1, 0, [($waitlist_count + 1) . ". " . $player_name]);
         hockey_log("Non-database player {$player_name} added to waitlist at position " . ($waitlist_count + 1), 'debug');
         
-        file_put_contents($file_path, implode("\n", $lines));
+        if (@file_put_contents($file_path, implode("\n", $lines)) === false) {
+            hockey_log("Failed to write to roster file", 'error');
+            return "Error: Could not update roster file.";
+        }
+        
         return "Thank you! You've been added to our waitlist for tonight. Please check back at 6pm to see if you have made the roster! You can reach us at halifaxpickuphockey@gmail.com to ask about Regular subscriber spots!";
     }
 
@@ -389,7 +430,7 @@ function finalize_roster_at_930pm($date) {
 
     $formatted_date = date('D_M_j', strtotime($date));
     $season = get_current_season($date);
-    $file_path = realpath(__DIR__ . "/../rosters/") . "/{$season}/{$day_directory}/Pickup_Roster-{$formatted_date}.txt";
+    $file_path = plugin_dir_path(dirname(__FILE__)) . "rosters/{$season}/{$day_directory}/Pickup_Roster-{$formatted_date}.txt";
 
     if (!file_exists($file_path)) {
         hockey_log("Roster file not found: {$file_path}", 'error');
@@ -412,7 +453,7 @@ function get_current_roster() {
     $formatted_date = date('D_M_j', strtotime($date));
     $season = get_current_season($date);
     
-    $file_path = realpath(__DIR__ . "/../rosters/") . "/{$season}/{$day_directory}/Pickup_Roster-{$formatted_date}.txt";
+    $file_path = plugin_dir_path(dirname(__FILE__)) . "rosters/{$season}/{$day_directory}/Pickup_Roster-{$formatted_date}.txt";
     
     if (file_exists($file_path)) {
         return file_get_contents($file_path);
@@ -452,7 +493,7 @@ $day_directory_map = get_day_directory_map($date);
 $day_directory = $day_directory_map[$day_of_week] ?? null;
 $formatted_date = date('D_M_j', strtotime($date));
 $season = get_current_season($date);
-$file_path = realpath(__DIR__ . "/../rosters/") . "/{$season}/{$day_directory}/Pickup_Roster-{$formatted_date}.txt";
+$file_path = plugin_dir_path(dirname(__FILE__)) . "rosters/{$season}/{$day_directory}/Pickup_Roster-{$formatted_date}.txt";
 
 if (file_exists($file_path)) {
 $roster = file_get_contents($file_path);

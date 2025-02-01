@@ -114,6 +114,10 @@ add_action('init', function() {
     }
 });
 
+// Add handlers for scheduled events
+add_action('create_daily_roster_files_event', 'create_daily_roster_files');
+add_action('move_waitlist_to_roster_event', 'process_waitlist_at_6pm');
+
 // Keep these hooks outside since they need to be registered early
 register_activation_hook(__FILE__, 'hockeysignin_activate');
 register_deactivation_hook(__FILE__, 'hockeysignin_deactivation');
