@@ -1,7 +1,7 @@
 <?php
 // Only register the action handlers
 add_action('create_daily_roster_files_event', 'create_daily_roster_files');
-add_action('move_waitlist_to_roster_event', 'process_waitlist_at_6pm');
+add_action('move_waitlist_to_roster_event', 'process_waitlist');
 
 // Add manual trigger capability
 add_action('admin_init', function() {
@@ -13,7 +13,7 @@ add_action('admin_init', function() {
     
     if ($_POST['action'] === 'trigger_waitlist_processing') {
         hockey_log("Manual trigger received", 'debug');
-        process_waitlist_at_6pm();
+        process_waitlist();
     }
     
     if ($_POST['action'] === 'undo_waitlist_processing') {
@@ -48,7 +48,7 @@ function create_daily_roster_files() {
     create_next_game_roster_files($current_date);
 }
 
-function process_waitlist_at_6pm() {
+function process_waitlist() {
     hockey_log("Starting waitlist processing job", 'debug');
     
     try {
@@ -90,6 +90,6 @@ function process_waitlist_at_6pm() {
             hockey_log("Roster file not found: {$file_path}", 'error');
         }
     } catch (Exception $e) {
-        hockey_log("Error in process_waitlist_at_6pm: " . $e->getMessage(), 'error');
+        hockey_log("Error in process_waitlist: " . $e->getMessage(), 'error');
     }
 }

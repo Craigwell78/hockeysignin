@@ -133,8 +133,8 @@ function check_in_player($date, $player_name) {
     
     // Look up the player in the database
     $player = $wpdb->get_row($wpdb->prepare(
-        "SELECT * FROM wp_participants_database WHERE CONCAT(`first_name`, ' ', `last_name`) = %s",
-        $player_name
+        "SELECT * FROM wp_participants_database WHERE LOWER(CONCAT(`first_name`, ' ', `last_name`)) = LOWER(%s)",
+        stripslashes($player_name)
     ));
     
     // If player exists in database
@@ -185,19 +185,38 @@ function check_out_player($player_name) {
     $lines = explode("\n", $roster);
     $player_found = false;
     
-    // Process each line
+    // First check main roster
     foreach ($lines as $i => $line) {
-        // Case insensitive search for the player name
-        if (stripos($line, $player_name) !== false) {
-            // Remove the player from the line
+        if (stripos($line, $player_name) !== false && preg_match('/([FDG]-\s*)' . preg_quote($player_name, '/') . '/i', $line)) {
             $lines[$i] = preg_replace('/([FDG]-\s*)' . preg_quote($player_name, '/') . '.*$/i', '$1', $line);
             $player_found = true;
             break;
         }
     }
     
+    // If not found in main roster, check waitlist
+    if (!$player_found) {
+        foreach ($lines as $i => $line) {
+            if (preg_match('/^\d+\.\s*' . preg_quote($player_name, '/') . '/i', $line)) {
+                // Remove the entire waitlist entry
+                unset($lines[$i]);
+                $player_found = true;
+                
+                // Reindex remaining waitlist entries
+                $waitlist_number = 1;
+                foreach ($lines as $j => $waitlist_line) {
+                    if (preg_match('/^\d+\.\s*(.+)$/', $waitlist_line, $matches)) {
+                        $lines[$j] = $waitlist_number . ". " . $matches[1];
+                        $waitlist_number++;
+                    }
+                }
+                break;
+            }
+        }
+    }
+    
     if ($player_found) {
-        file_put_contents($file_path, implode("\n", $lines));
+        file_put_contents($file_path, implode("\n", array_values($lines)));
         hockey_log("Player checked out: {$player_name}", 'debug');
         return "Player checked out successfully.";
     }
@@ -205,7 +224,12 @@ function check_out_player($player_name) {
     return "Player not found on the roster.";
 }
 
-function update_roster($date, $player_name, $prepaid, $preferred_position = null, $forceWaitlist = false) {
+function update_roster($date, $player_name, $prepaid = false, $position = null, $force_waitlist = false) {
+    // Unescape any escaped characters in the player name
+    $player_name = stripslashes($player_name);
+    
+    hockey_log("Processing roster update for player: {$player_name}", 'debug');
+    
     // Check for profanity first, before any roster operations
     $filter = \hockeysignin\Filters\ProfanityFilter::getInstance();
     if ($filter->containsProfanity($player_name)) {
@@ -238,7 +262,7 @@ function update_roster($date, $player_name, $prepaid, $preferred_position = null
     }
 
     // Handle non-database players (forceWaitlist) first
-    if ($forceWaitlist) {
+    if ($force_waitlist) {
         $waitlist_start = $sections['waitlist']['start'];
         $waitlist_count = 0;
         for ($i = $waitlist_start; $i < count($lines); $i++) {
@@ -251,11 +275,11 @@ function update_roster($date, $player_name, $prepaid, $preferred_position = null
         hockey_log("Non-database player {$player_name} added to waitlist at position " . ($waitlist_count + 1), 'debug');
         
         file_put_contents($file_path, implode("\n", $lines));
-        return "Thank you! You've been added to our waitlist for tonight. Please check back at 6pm to see if you have made the roster! You can reach us at halifaxpickuphockey@gmail.com to ask about Regular subscriber spots!";
+        return "Thank you! You've been added to our waitlist for tonight. Please check back at 5pm to see if you have made the roster! You can reach us at southshorepickuphockey@gmail.com to ask about Regular subscriber spots!";
     }
 
     // Find an available spot
-    $spot = find_available_spot($lines, $preferred_position);
+    $spot = find_available_spot($lines, $position);
     
     if ($spot) {
         // Player can be added to roster
@@ -279,7 +303,7 @@ function update_roster($date, $player_name, $prepaid, $preferred_position = null
         }
         
         file_put_contents($file_path, implode("\n", $lines));
-        return "You have been added to the roster. Please check back after 6pm for finalized teams.";
+        return "You have been added to the roster. Please check back after 5pm for finalized teams.";
     } else {
         // Add to waitlist
         $waitlist_start = $sections['waitlist']['start'];
@@ -297,7 +321,7 @@ function update_roster($date, $player_name, $prepaid, $preferred_position = null
         hockey_log("Player {$player_name} added to waitlist at position " . ($waitlist_count + 1), 'debug');
         
         file_put_contents($file_path, implode("\n", $lines));
-        return "Thank you! You've been added to our waitlist for tonight. Please check back at 6pm to see if you have made the roster! You can reach us at halifaxpickuphockey@gmail.com to ask about Regular subscriber spots!";
+        return "Thank you! You've been added to our waitlist for tonight. Please check back at 5pm to see if you have made the roster! You can reach us at southshorepickuphockey@gmail.com to ask about Regular subscriber spots!";
     }
 }
 
@@ -470,7 +494,7 @@ break;
 
 if ($vacant_spot_found) {
 file_put_contents($file_path, $roster);
-return "You have been added to the roster. Please contact HPH admin on FB / Messenger, at payforhockey@hotmail.com or at 902-488-5590 to confirm your spot.";
+return "You have been added to the roster. Please contact HPH admin on FB / Messenger, at southshorepickuphockey@gmail.com or at 902-488-5590 to confirm your spot.";
 } else {
 return "No vacant spots available. You have been added to the waitlist.";
 }
@@ -754,9 +778,14 @@ function capitalize_player_name($name) {
     // Split the name into parts
     $name_parts = explode(' ', trim($name));
     
-    // Capitalize first letter of each part
+    // Capitalize each part, including after apostrophes
     $capitalized_parts = array_map(function($part) {
-        return ucfirst(strtolower($part));
+        // Split on apostrophe if it exists
+        if (strpos($part, "'") !== false) {
+            $subparts = explode("'", $part);
+            return ucfirst($subparts[0]) . "'" . ucfirst($subparts[1]);
+        }
+        return ucfirst($part);
     }, $name_parts);
     
     // Join the parts back together

@@ -37,9 +37,7 @@ class SeasonConfig {
     }
     
     private function getSeasonMap($month_day) {
-        if ($month_day >= '10-01' || $month_day < '04-01') {
-            return $this->regular_season_map;
-        }
-        return $this->spring_summer_map;
+        $config = get_option('hockey_directory_map', []);
+        return $config;
     }
 } 

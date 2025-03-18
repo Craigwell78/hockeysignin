@@ -82,19 +82,11 @@ add_action('wp_enqueue_scripts', 'hockeysignin_enqueue_public_scripts');
 
 // Shortcode for displaying the sign-in form and handling submissions
 function hockeysignin_shortcode() {
-    // Replace class with direct time check
-    $current_hour = current_time('G'); // 24-hour format
-    $current_day = current_time('l'); // Day of week
+    // Use the fully qualified class name
+    $visibility = new \HockeySignin\CheckInVisibility('SSPH');
     
-    // Check if check-in should be disabled
-    if (get_option('hockeysignin_off_state')) {
-        $custom_text = get_option('hockeysignin_custom_text', 'Sign-in is currently disabled.');
-        return '<div class="hockeysignin-message">' . esc_html($custom_text) . '</div>';
-    }
-    
-    // Check if within allowed hours (8am to 6pm)
-    if ($current_hour < 8 || $current_hour >= 18) {
-        return '<div class="hockeysignin-message" style="text-align: center;">Check-in is available from 8am to 6pm on game days.</div>';
+    if (!$visibility->shouldShowCheckIn()) {
+        return '<div class="hockeysignin-message" style="text-align: center;">Check-in is available from 8am to 5pm on game days.</div>';
     }
     
     ob_start();

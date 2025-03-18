@@ -9,7 +9,7 @@ function hockeysignin_add_admin_menu() {
 function hockeysignin_settings_page() {
     ?>
     <div class="wrap">
-            <h1>Hockey Sign-in Settings</h1>
+        <h1>Hockey Sign-in Settings</h1>
         <form method="post" action="options.php">
             <?php
             settings_fields('hockeysignin_settings_group');
@@ -19,24 +19,6 @@ function hockeysignin_settings_page() {
         </form>
     </div>
     <?php
-    
-    // Add new testing mode setting
-    register_setting('hockeysignin_options', 'hockeysignin_testing_mode');
-    
-    add_settings_section(
-        'hockeysignin_testing_section',
-        'Testing Mode Settings',
-        'hockeysignin_testing_section_callback',
-        'hockeysignin'
-    );
-    
-    add_settings_field(
-        'hockeysignin_testing_mode',
-        'Enable Testing Mode',
-        'hockeysignin_testing_mode_callback',
-        'hockeysignin',
-        'hockeysignin_testing_section'
-    );
 }
 
 function hockeysignin_admin_page() {
@@ -56,8 +38,9 @@ function hockeysignin_admin_page() {
         echo '<div class="updated"><p>Roster file created for ' . esc_html($manually_started_next_game_date) . '.</p></div>';
     }
     
-    // Check if it's past 6 PM
-    if ($current_time >= '18:00') {
+    // Check if it's past waitlist processing time
+    $waitlist_time = get_option('hockey_waitlist_processing_time', '18:00');
+    if ($current_time >= $waitlist_time) {
         $day_of_week = date('l', strtotime($current_date));
         $day_directory_map = get_day_directory_map($current_date);
         $day_directory = $day_directory_map[$day_of_week] ?? null;
@@ -71,7 +54,7 @@ function hockeysignin_admin_page() {
                 $roster = file_get_contents($file_path);
                 $lines = explode("\n", $roster);
                 move_waitlist_to_roster($lines, $day_of_week);
-                echo '<div class="updated"><p>Roster has been automatically updated at 6 PM.</p></div>';
+                echo '<div class="updated"><p>Roster has been automatically updated at ' . esc_html($waitlist_time) . '.</p></div>';
             }
         }
     }
@@ -147,7 +130,7 @@ function get_next_game_date() {
 add_action('admin_menu', 'hockeysignin_add_admin_menu');
 
 function hockeysignin_settings_init() {
-    // Register all settings
+    // Register settings
     register_setting('hockeysignin_settings_group', 'hockeysignin_off_state');
     register_setting('hockeysignin_settings_group', 'hockeysignin_custom_text');
     register_setting('hockeysignin_settings_group', 'hockeysignin_hide_next_game');
@@ -190,10 +173,288 @@ function hockeysignin_off_state_callback() {
 
 function hockeysignin_testing_mode_callback() {
     $testing_mode = get_option('hockeysignin_testing_mode', '0');
-    echo '<input type="checkbox" id="hockeysignin_testing_mode" 
-          name="hockeysignin_testing_mode" 
-          value="1" ' . checked('1', $testing_mode, false) . '/>
-          <label for="hockeysignin_testing_mode"> Allow check-in form at any time (for testing)</label>';
+    hockey_log("Current testing mode value: " . $testing_mode, 'debug');
+    ?>
+    <input type="checkbox" 
+           id="hockeysignin_testing_mode" 
+           name="hockeysignin_testing_mode" 
+           value="1" 
+           <?php checked('1', $testing_mode); ?>>
+    <label for="hockeysignin_testing_mode">Enable testing mode (bypasses time restrictions)</label>
+    <?php
 }
 
 add_action('admin_init', 'hockeysignin_settings_init');
+
+add_action('update_option_hockeysignin_testing_mode', function($old_value, $new_value) {
+    hockey_log("Testing mode option updated - Old: {$old_value}, New: {$new_value}", 'debug');
+}, 10, 2);
+
+function hockeysignin_add_season_wizard() {
+    add_submenu_page(
+        'hockeysignin',
+        'Season Setup',
+        'Season Setup',
+        'manage_options',
+        'hockeysignin_season_setup',
+        'render_season_setup'
+    );
+}
+add_action('admin_menu', 'hockeysignin_add_season_wizard');
+
+function render_season_setup() {
+    if (isset($_POST['create_season'])) {
+        if (isset($_POST['confirm_configuration_change']) && $_POST['confirm_configuration_change'] === 'yes') {
+            handle_season_setup();
+        } else {
+            // Show confirmation dialog
+            ?>
+            <div class="wrap">
+                <h2>Confirm Season Configuration Change</h2>
+                <p>Are you sure you want to change the current season configuration? This will affect:</p>
+                <ul style="list-style-type: disc; margin-left: 20px;">
+                    <li>Daily roster creation</li>
+                    <li>Waitlist processing</li>
+                    <li>Check-in/out system</li>
+                    <li>All scheduled tasks</li>
+                </ul>
+                
+                <form method="post">
+                    <?php wp_nonce_field('season_setup_nonce'); ?>
+                    
+                    <!-- Preserve all previous form data -->
+                    <?php
+                    foreach ($_POST as $key => $value) {
+                        if (is_array($value)) {
+                            foreach ($value as $k => $v) {
+                                echo '<input type="hidden" name="' . esc_attr($key) . '[' . esc_attr($k) . ']" value="' . esc_attr($v) . '">';
+                            }
+                        } else {
+                            echo '<input type="hidden" name="' . esc_attr($key) . '" value="' . esc_attr($value) . '">';
+                        }
+                    }
+                    ?>
+                    <input type="hidden" name="confirm_configuration_change" value="yes">
+                    
+                    <p class="submit">
+                        <input type="submit" class="button button-primary" value="Yes, Change Configuration">
+                        <a href="<?php echo admin_url('admin.php?page=hockeysignin_season_setup'); ?>" class="button">Cancel</a>
+                    </p>
+                </form>
+            </div>
+            <?php
+            return;
+        }
+    }
+
+    ?>
+    <div class="wrap">
+        <h1>Season Setup Wizard</h1>
+        
+        <div class="notice notice-info">
+            <p>Note: After creating the season structure, you can edit roster templates using the File Manager plugin in: <code>/wp-content/plugins/hockeysignin/rosters/</code></p>
+        </div>
+
+        <?php
+        // Add current season info
+        $current_date = current_time('Y-m-d');
+        $current_season = get_current_season($current_date);
+        $next_game_date = get_next_game_date();
+        $next_game_day = date('l', strtotime($next_game_date));
+        $day_directory_map = get_day_directory_map($next_game_date);
+        $next_day_directory = $day_directory_map[$next_game_day] ?? null;
+        ?>
+        
+        <div class="card" style="max-width: 800px; margin-bottom: 20px; padding: 10px;">
+            <h3>Current Configuration</h3>
+            <p><strong>Active Season:</strong> <?php echo esc_html($current_season); ?></p>
+            <p><strong>Base Path:</strong> <code>/wp-content/plugins/hockeysignin/rosters/<?php echo esc_html($current_season); ?>/</code></p>
+            <?php if ($next_day_directory): ?>
+                <p><strong>Next Active Directory (<?php echo esc_html($next_game_day); ?>):</strong> <code><?php echo esc_html($next_day_directory); ?></code></p>
+                <p><strong>Next Game Date:</strong> <?php echo esc_html($next_game_date); ?></p>
+            <?php endif; ?>
+        </div>
+
+        <form method="post" class="season-setup-form">
+            <?php wp_nonce_field('season_setup_nonce'); ?>
+            
+            <table class="form-table">
+                <tr>
+                    <th><label for="season_name">Season Name</label></th>
+                    <td>
+                        <input type="text" name="season_name" id="season_name" class="regular-text" 
+                               placeholder="RegularSeason2024-2025 or Spring2025" required>
+                        <p class="description">Enter the season name exactly as it should appear in the folder structure</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="waitlist_time">Waitlist Processing Time</label></th>
+                    <td>
+                        <input type="time" name="waitlist_time" id="waitlist_time" value="18:00" required>
+                        <p class="description">Time when waitlist will be processed daily (24-hour format)</p>
+                    </td>
+                </tr>
+            </table>
+
+            <h3>Game Schedule</h3>
+            <table class="widefat" style="margin-top: 20px;">
+                <thead>
+                    <tr>
+                        <th>Day</th>
+                        <th>Venue</th>
+                        <th>Start Time (24h)</th>
+                        <th>Enable</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    $days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+                    foreach ($days as $day) {
+                        ?>
+                        <tr>
+                            <td><?php echo $day; ?></td>
+                            <td>
+                                <input type="text" name="venue[<?php echo $day; ?>]" 
+                                       placeholder="Forum or Civic" class="regular-text">
+                            </td>
+                            <td>
+                                <input type="time" name="time[<?php echo $day; ?>]" 
+                                       value="22:30" class="regular-text">
+                            </td>
+                            <td>
+                                <input type="checkbox" name="enabled[<?php echo $day; ?>]" value="1">
+                            </td>
+                        </tr>
+                        <?php
+                    }
+                    ?>
+                </tbody>
+            </table>
+
+            <p class="submit">
+                <input type="submit" name="create_season" class="button button-primary" value="Create Season Structure">
+            </p>
+        </form>
+    </div>
+    <?php
+
+    // Add this temporary code to admin/admin-functions.php for testing
+    function check_cron_schedules() {
+        $crons = _get_cron_array();
+        echo '<div class="card" style="max-width: 800px; margin: 20px 0; padding: 10px;">';
+        echo '<h3>Scheduled Tasks</h3>';
+        echo '<table class="widefat">';
+        echo '<thead><tr><th>Task</th><th>Next Run (Your Time)</th></tr></thead>';
+        echo '<tbody>';
+        
+        foreach ($crons as $timestamp => $cron) {
+            foreach ($cron as $hook => $events) {
+                if (in_array($hook, ['create_daily_roster_files_event', 'move_waitlist_to_roster_event'])) {
+                    $local_time = get_date_from_gmt(date('Y-m-d H:i:s', $timestamp));
+                    echo '<tr>';
+                    echo '<td>' . esc_html($hook) . '</td>';
+                    echo '<td>' . esc_html($local_time) . '</td>';
+                    echo '</tr>';
+                }
+            }
+        }
+        
+        echo '</tbody></table></div>';
+    }
+    // Add to render_season_setup() temporarily
+    check_cron_schedules();
+}
+
+function handle_season_setup() {
+    if (!wp_verify_nonce($_POST['_wpnonce'], 'season_setup_nonce')) {
+        wp_die('Security check failed');
+    }
+
+    $season_name = sanitize_text_field($_POST['season_name']);
+    $venues = $_POST['venue'];
+    $times = $_POST['time'];
+    $enabled = $_POST['enabled'] ?? [];
+    $waitlist_time = sanitize_text_field($_POST['waitlist_time']);
+    
+    // Create directory map
+    $directory_map = [];
+    foreach ($venues as $day => $venue) {
+        if (empty($venue) || !isset($enabled[$day])) continue;
+        
+        // Convert 24hr time to 12hr format with AM/PM
+        $time_24 = $times[$day];
+        $timestamp = strtotime($time_24);
+        $time_12 = date('hi', $timestamp) . (date('a', $timestamp) === 'am' ? 'AM' : 'PM');
+        
+        // Preserve venue case as entered
+        $venue = trim($venue);
+        $directory_map[$day] = $day . $time_12 . $venue;
+    }
+
+    // Update directory map in WordPress options
+    update_option('hockey_directory_map', $directory_map);
+    
+    // Update active season
+    update_option('hockey_active_season', $season_name);
+    
+    // Create season folders
+    $base_path = WP_PLUGIN_DIR . '/hockeysignin/rosters/';
+    
+    // Create folders and copy templates
+    foreach ($directory_map as $day => $dir) {
+        $full_path = $base_path . $season_name . '/' . $dir;
+        wp_mkdir_p($full_path);
+        
+        // Copy appropriate template
+        $template = $day === 'Friday' ? 'roster_template_friday.txt' : 'roster_template.txt';
+        copy($base_path . $template, $full_path . '/template.txt');
+    }
+
+    // Update waitlist processing time in wp_options
+    update_option('hockey_waitlist_processing_time', $waitlist_time);
+
+    // Clear and reschedule cron jobs
+    wp_clear_scheduled_hook('create_daily_roster_files_event');
+    wp_clear_scheduled_hook('move_waitlist_to_roster_event');
+    
+    // Reschedule with new configuration
+    $site_timezone = new DateTimeZone(wp_timezone_string());
+    $current_time = new DateTime('now', $site_timezone);
+    
+    // Schedule roster creation for next 8am
+    $roster_time = new DateTime('today 8:00:00', $site_timezone);
+    if ($current_time > $roster_time) {
+        $roster_time->modify('+1 day');
+    }
+    
+    // Schedule waitlist processing for configured time
+    $waitlist_time_obj = new DateTime('today ' . $waitlist_time, $site_timezone);
+    if ($current_time > $waitlist_time_obj) {
+        $waitlist_time_obj->modify('+1 day');
+    }
+
+    wp_schedule_event(
+        $roster_time->setTimezone(new DateTimeZone('UTC'))->getTimestamp(),
+        'daily',
+        'create_daily_roster_files_event'
+    );
+    
+    wp_schedule_event(
+        $waitlist_time_obj->setTimezone(new DateTimeZone('UTC'))->getTimestamp(),
+        'daily',
+        'move_waitlist_to_roster_event'
+    );
+
+    // Force refresh of next game date calculation
+    wp_cache_delete('next_game_date', 'hockeysignin');
+    
+    // Clear any transients that might cache the game schedule
+    delete_transient('hockey_game_schedule');
+
+    add_settings_error(
+        'season_setup',
+        'season_created',
+        'Season structure created and configuration updated successfully!',
+        'updated'
+    );
+}

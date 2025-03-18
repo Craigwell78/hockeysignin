@@ -1,6 +1,5 @@
 <?php
-
-namespace hockeysignin\Core;
+namespace HockeySignin;
 
 class CheckInVisibility {
     private $instance;
@@ -11,7 +10,11 @@ class CheckInVisibility {
     
     public function shouldShowCheckIn() {
         // Check for testing mode first
-        if (get_option('hockeysignin_testing_mode', '0') === '1') {
+        $testing_mode = get_option('hockeysignin_testing_mode', '0');
+        hockey_log("Testing mode check - Value: " . $testing_mode, 'debug');
+        
+        if ($testing_mode === '1') {
+            hockey_log("Testing mode is enabled, allowing check-in", 'debug');
             return true;
         }
         
@@ -31,8 +34,16 @@ class CheckInVisibility {
             return false;
         }
         
-        // Check if within check-in hours (8am to 6pm)
-        if ($hour >= 8 && $hour < 18) {
+        // Get check-in time range from GameSchedule
+        $schedule = \hockeysignin\Core\GameSchedule::getInstance();
+        $time_range = $schedule->getCheckInTimeRange();
+        
+        // Convert times to hours for comparison
+        $start_hour = (int)date('G', strtotime($time_range['start']));
+        $end_hour = (int)date('G', strtotime($time_range['end']));
+        
+        // Check if within check-in hours
+        if ($hour >= $start_hour && $hour < $end_hour) {
             return true;
         }
         

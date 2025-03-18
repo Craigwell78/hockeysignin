@@ -25,6 +25,10 @@ require_once plugin_dir_path(__FILE__) . 'includes/helper-functions.php';
 // Load roster functions next since many other files depend on it
 require_once plugin_dir_path(__FILE__) . 'includes/roster-functions.php';
 
+// Load class files
+require_once plugin_dir_path(__FILE__) . 'includes/class-checkin-visibility.php';
+require_once plugin_dir_path(__FILE__) . 'includes/class-form-handler.php';
+
 // Keep autoloader after helper functions are loaded
 spl_autoload_register(function ($class) {
     // Quick check for our namespace prefix to avoid unnecessary logging
@@ -86,31 +90,39 @@ add_action('init', function() {
     wp_clear_scheduled_hook('create_daily_roster_files_event');
     wp_clear_scheduled_hook('move_waitlist_to_roster_event');
     
-    // Get current time in site's timezone
     $site_timezone = new DateTimeZone(wp_timezone_string());
     $current_time = new DateTime('now', $site_timezone);
+    
+    // Get configured waitlist time
+    $waitlist_time = get_option('hockey_waitlist_processing_time', '18:00');
     
     // Schedule roster creation for next 8am
     $roster_time = new DateTime('today 8:00:00', $site_timezone);
     if ($current_time > $roster_time) {
         $roster_time->modify('+1 day');
     }
-    $roster_utc = $roster_time->setTimezone(new DateTimeZone('UTC'))->getTimestamp();
     
-    // Schedule waitlist processing for next 6pm
-    $waitlist_time = new DateTime('today 18:00:00', $site_timezone);
-    if ($current_time > $waitlist_time) {
-        $waitlist_time->modify('+1 day');
+    // Schedule waitlist processing for configured time
+    $waitlist_time_obj = new DateTime('today ' . $waitlist_time, $site_timezone);
+    if ($current_time > $waitlist_time_obj) {
+        $waitlist_time_obj->modify('+1 day');
     }
-    $waitlist_utc = $waitlist_time->setTimezone(new DateTimeZone('UTC'))->getTimestamp();
-    
+
     // Only schedule if not already scheduled
     if (!wp_next_scheduled('create_daily_roster_files_event')) {
-        wp_schedule_event($roster_utc, 'daily', 'create_daily_roster_files_event');
+        wp_schedule_event(
+            $roster_time->setTimezone(new DateTimeZone('UTC'))->getTimestamp(),
+            'daily',
+            'create_daily_roster_files_event'
+        );
     }
     
     if (!wp_next_scheduled('move_waitlist_to_roster_event')) {
-        wp_schedule_event($waitlist_utc, 'daily', 'move_waitlist_to_roster_event');
+        wp_schedule_event(
+            $waitlist_time_obj->setTimezone(new DateTimeZone('UTC'))->getTimestamp(),
+            'daily',
+            'move_waitlist_to_roster_event'
+        );
     }
 });
 
@@ -148,6 +160,3 @@ function enqueue_hockey_roster_styles() {
 }
 add_action('wp_enqueue_scripts', 'enqueue_hockey_roster_styles');
 add_action('admin_enqueue_scripts', 'enqueue_hockey_roster_styles');
-
-// Add after your existing requires
-require_once plugin_dir_path(__FILE__) . 'includes/class-checkin-visibility.php';

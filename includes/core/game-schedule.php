@@ -4,10 +4,6 @@ namespace hockeysignin\Core;
 
 class GameSchedule {
     private static $instance = null;
-    private $game_days = [2, 4, 5, 6]; // Tuesday, Thursday, Friday, Saturday
-    private $game_schedule = ['Tuesday', 'Thursday', 'Friday', 'Saturday'];
-    
-    private function __construct() {}
     
     public static function getInstance() {
         if (self::$instance === null) {
@@ -17,70 +13,57 @@ class GameSchedule {
     }
     
     public function getNextGameDate() {
-        $today = current_time('Y-m-d');
-        $day_of_week = date('N', strtotime($today));
-        $current_time = current_time('H:i');
-        
-        // Check if today is a game day and it's before 8 AM
-        if (in_array($day_of_week, $this->game_days) && $current_time < '08:00') {
-            return $today;
+        $directory_map = get_option('hockey_directory_map', []);
+        if (empty($directory_map)) {
+            return null;
         }
         
-        // Special cases
-        if ($this->isBetweenSaturdayAndTuesday($day_of_week, $current_time)) {
-            return date('Y-m-d', strtotime('next Tuesday', strtotime($today)));
-        }
+        $today = new \DateTime('now', new \DateTimeZone(wp_timezone_string()));
+        $today_day = $today->format('l');
+        $game_days = array_keys($directory_map);
         
-        if ($this->isBetweenTuesdayAndThursday($day_of_week, $current_time)) {
-            return date('Y-m-d', strtotime('next Thursday', strtotime($today)));
-        }
-        
-        if ($this->isBetweenThursdayAndFriday($day_of_week, $current_time)) {
-            return date('Y-m-d', strtotime('next Friday', strtotime($today)));
-        }
-        
-        if ($this->isBetweenFridayAndSaturday($day_of_week, $current_time)) {
-            return date('Y-m-d', strtotime('next Saturday', strtotime($today)));
-        }
-        
-        // Default case: find next game day
-        return $this->findNextGameDay($day_of_week);
-    }
-    
-    private function isBetweenSaturdayAndTuesday($day_of_week, $current_time) {
-        return ($day_of_week == 6 && $current_time >= '23:00') || 
-               $day_of_week == 7 || 
-               $day_of_week == 1 || 
-               ($day_of_week == 2 && $current_time < '08:00');
-    }
-    
-    private function isBetweenTuesdayAndThursday($day_of_week, $current_time) {
-        return ($day_of_week == 2 && $current_time >= '23:00') || 
-               $day_of_week == 3 || 
-               ($day_of_week == 4 && $current_time < '08:00');
-    }
-    
-    private function isBetweenThursdayAndFriday($day_of_week, $current_time) {
-        return ($day_of_week == 4 && $current_time >= '23:00') || 
-               ($day_of_week == 5 && $current_time < '08:00');
-    }
-    
-    private function isBetweenFridayAndSaturday($day_of_week, $current_time) {
-        return ($day_of_week == 5 && $current_time >= '23:00') || 
-               ($day_of_week == 6 && $current_time < '08:00');
-    }
-    
-    private function findNextGameDay($current_day_of_week) {
-        foreach ($this->game_days as $day) {
-            if ($day > $current_day_of_week) {
-                return date('Y-m-d', strtotime('next ' . $this->game_schedule[$day - 2]));
+        // If today is a game day and it's before the game time
+        if (in_array($today_day, $game_days)) {
+            $game_time = $this->getGameTime($directory_map[$today_day]);
+            $current_time = $today->format('Hi');
+            
+            if ($current_time < $game_time) {
+                return $today->format('Y-m-d');
             }
         }
-        // If no game day found in current week, return first game day of next week
-        return date('Y-m-d', strtotime('next ' . $this->game_schedule[0]));
+        
+        // Find the next game day
+        $next_date = clone $today;
+        do {
+            $next_date->modify('+1 day');
+            $next_day = $next_date->format('l');
+        } while (!in_array($next_day, $game_days));
+        
+        return $next_date->format('Y-m-d');
+    }
+    
+    private function getGameTime($directory) {
+        // Extract time from directory name (format: DayHHmmAMPMVenue)
+        preg_match('/\d{4}(?:AM|PM)/', $directory, $matches);
+        return $matches[0] ?? '0000';
     }
     
     public function isGameDay($date) {
-        return in_array(date('l', strtotime($date)), $this->game_schedule);
+        $directory_map = get_option('hockey_directory_map', []);
+        $day = date('l', strtotime($date));
+        return isset($directory_map[$day]);
+    }
+    
+    public function getCheckInTimeRange() {
+        // Start time is fixed at 8am
+        $start = '8:00';
+        
+        // End time is the waitlist processing time
+        $waitlist_time = get_option('hockey_waitlist_processing_time', '17:00');
+        
+        return [
+            'start' => $start,
+            'end' => $waitlist_time
+        ];
     }
 } 
