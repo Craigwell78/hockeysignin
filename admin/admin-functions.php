@@ -51,7 +51,10 @@ function hockeysignin_admin_page() {
             die('Security check failed');
         }
         
+        hockey_log("Manual start button clicked", 'debug');
         $manually_started_next_game_date = isset($_POST['date']) ? sanitize_text_field($_POST['date']) : get_next_game_date();
+        hockey_log("Next game date determined: " . $manually_started_next_game_date, 'debug');
+        
         create_next_game_roster_files($manually_started_next_game_date);
         echo '<div class="updated"><p>Roster file created for ' . esc_html($manually_started_next_game_date) . '.</p></div>';
     }
@@ -141,7 +144,10 @@ function hockeysignin_admin_page() {
 
 // Function to get the next game date
 function get_next_game_date() {
-    return \hockeysignin\Core\GameSchedule::getInstance()->getNextGameDate();
+    hockey_log("get_next_game_date() called", 'debug');
+    $next_date = \hockeysignin\Core\GameSchedule::getInstance()->getNextGameDate();
+    hockey_log("get_next_game_date() returning: " . $next_date, 'debug');
+    return $next_date;
 }
 
 add_action('admin_menu', 'hockeysignin_add_admin_menu');

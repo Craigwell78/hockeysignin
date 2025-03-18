@@ -1,14 +1,14 @@
-Goal:
+Goal: Mitchell Wasilik
 Dark
 
 F- Ken Leblanc
-F-
-F-
-F-
-F-
-F-
+F- Johnny Mindorff
+F- Ryan Hackett
+F- Mark Pottie
+F- Ryan Sidney
+F- Aidan Reed
 
-D-
+D- Rob Macisaac
 D- Zenon Pilipowicz
 D- Pat Hickey
 D- Austen Bedore
@@ -16,11 +16,11 @@ D- Austen Bedore
 Goal: Max Neveu
 Light
 
-F-
-F- Steve Pottie
+F- Ben Swain
+F- Steve Pottie 
 F- Ben Fitch
-F-
-F- 
+F- Shane Pottie
+F- Josh Leblanc
 F- Ryan Drane
 
 D- Dan Grenier
@@ -29,5 +29,3 @@ D- Cody Nichols
 D- Pat Hamilton
 
 WL:
-1. Shane Pottie
-2. Darien Boudreau

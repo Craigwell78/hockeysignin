@@ -4,8 +4,8 @@ namespace hockeysignin\Core;
 
 class GameSchedule {
     private static $instance = null;
-    private $game_days = [2, 4, 5, 6]; // Tuesday, Thursday, Friday, Saturday
     private $game_schedule = ['Tuesday', 'Thursday', 'Friday', 'Saturday'];
+    private $game_days = [2, 4, 5, 6]; // 1 = Monday, 2 = Tuesday, etc.
     
     private function __construct() {}
     
@@ -18,66 +18,42 @@ class GameSchedule {
     
     public function getNextGameDate() {
         $today = current_time('Y-m-d');
-        $day_of_week = date('N', strtotime($today));
         $current_time = current_time('H:i');
+        $day_of_week = date('N', strtotime($today)); // 1 (Monday) through 7 (Sunday)
         
-        // Check if today is a game day and it's before 8 AM
-        if (in_array($day_of_week, $this->game_days) && $current_time < '08:00') {
+        hockey_log("GameSchedule::getNextGameDate() - Today: {$today}, Time: {$current_time}, Day of week: {$day_of_week}", 'debug');
+        hockey_log("Game days array: " . print_r($this->game_days, true), 'debug');
+        
+        // If it's a game day and before or exactly 8am, return today
+        if (in_array($day_of_week, $this->game_days) && $current_time <= '08:00') {
+            hockey_log("Current day is game day at or before 8am", 'debug');
             return $today;
         }
         
-        // Special cases
-        if ($this->isBetweenSaturdayAndTuesday($day_of_week, $current_time)) {
-            return date('Y-m-d', strtotime('next Tuesday', strtotime($today)));
+        // If it's a game day after 8am, we still want to use today until midnight
+        if (in_array($day_of_week, $this->game_days)) {
+            hockey_log("Current day is game day after 8am", 'debug');
+            return $today;
         }
         
-        if ($this->isBetweenTuesdayAndThursday($day_of_week, $current_time)) {
-            return date('Y-m-d', strtotime('next Thursday', strtotime($today)));
-        }
-        
-        if ($this->isBetweenThursdayAndFriday($day_of_week, $current_time)) {
-            return date('Y-m-d', strtotime('next Friday', strtotime($today)));
-        }
-        
-        if ($this->isBetweenFridayAndSaturday($day_of_week, $current_time)) {
-            return date('Y-m-d', strtotime('next Saturday', strtotime($today)));
-        }
-        
-        // Default case: find next game day
-        return $this->findNextGameDay($day_of_week);
-    }
-    
-    private function isBetweenSaturdayAndTuesday($day_of_week, $current_time) {
-        return ($day_of_week == 6 && $current_time >= '23:00') || 
-               $day_of_week == 7 || 
-               $day_of_week == 1 || 
-               ($day_of_week == 2 && $current_time < '08:00');
-    }
-    
-    private function isBetweenTuesdayAndThursday($day_of_week, $current_time) {
-        return ($day_of_week == 2 && $current_time >= '23:00') || 
-               $day_of_week == 3 || 
-               ($day_of_week == 4 && $current_time < '08:00');
-    }
-    
-    private function isBetweenThursdayAndFriday($day_of_week, $current_time) {
-        return ($day_of_week == 4 && $current_time >= '23:00') || 
-               ($day_of_week == 5 && $current_time < '08:00');
-    }
-    
-    private function isBetweenFridayAndSaturday($day_of_week, $current_time) {
-        return ($day_of_week == 5 && $current_time >= '23:00') || 
-               ($day_of_week == 6 && $current_time < '08:00');
-    }
-    
-    private function findNextGameDay($current_day_of_week) {
-        foreach ($this->game_days as $day) {
-            if ($day > $current_day_of_week) {
-                return date('Y-m-d', strtotime('next ' . $this->game_schedule[$day - 2]));
+        // Find the next game day
+        foreach ($this->game_days as $index => $game_day) {
+            hockey_log("Checking game day: {$game_day}", 'debug');
+            if ($game_day > $day_of_week) {
+                // Calculate days until next game
+                $days_until = $game_day - $day_of_week;
+                $next_date = date('Y-m-d', strtotime("+{$days_until} days", strtotime($today)));
+                hockey_log("Found next game day: {$next_date} (day {$game_day})", 'debug');
+                return $next_date;
             }
         }
-        // If no game day found in current week, return first game day of next week
-        return date('Y-m-d', strtotime('next ' . $this->game_schedule[0]));
+        
+        // If we're past Saturday or no later games this week, get next Tuesday
+        // Calculate days until next Tuesday (day 2)
+        $days_until = 7 - $day_of_week + 2;
+        $next_date = date('Y-m-d', strtotime("+{$days_until} days", strtotime($today)));
+        hockey_log("No more games this week, returning next Tuesday: {$next_date}", 'debug');
+        return $next_date;
     }
     
     public function isGameDay($date) {

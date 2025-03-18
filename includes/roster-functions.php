@@ -56,9 +56,19 @@ function create_next_game_roster_files($date) {
     $day_of_week = date('l', strtotime($date));
     
     // Choose template based on day
-    $template_file = ($day_of_week === 'Friday') 
-        ? 'roster_template_friday.txt' 
-        : 'roster_template.txt';
+    switch ($day_of_week) {
+        case 'Friday':
+            $template_file = 'roster_template_friday.txt';
+            break;
+        case 'Tuesday':
+        case 'Thursday':
+        case 'Saturday':
+            $template_file = 'roster_template.txt';
+            break;
+        default:
+            hockey_log("Not a game day: {$day_of_week}", 'debug');
+            return;
+    }
     
     $template_path = realpath(__DIR__ . "/../rosters/") . "/{$template_file}";
     

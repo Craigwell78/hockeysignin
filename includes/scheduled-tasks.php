@@ -42,23 +42,68 @@ function create_daily_roster_files() {
     $day_of_week = date('l', strtotime($current_date));
     $local_time = current_time('H:i');
     
-    hockey_log("Starting daily roster file creation at {$local_time} for {$current_date} ({$day_of_week})", 'debug');
-    hockey_log("WordPress cron running as: " . get_current_user_id(), 'debug');
+    // Get current UTC time
+    $utc_time = gmdate('H:i');
+    
+    hockey_log("Daily roster creation check at {$local_time} (UTC: {$utc_time}) for {$current_date} ({$day_of_week})", 'debug');
     
     try {
-        create_next_game_roster_files($current_date);
+        // Check if it's a game day and LOCAL time is BEFORE 8:00am
+        if (\hockeysignin\Core\GameSchedule::getInstance()->isGameDay($current_date) && 
+            $local_time < '08:00') {
+            
+            hockey_log("Creating roster for game day {$day_of_week} (Local time: {$local_time})", 'debug');
+            
+            // Check if the roster file already exists to avoid duplicate creation
+            $day_directory_map = get_day_directory_map($current_date);
+            $day_directory = $day_directory_map[$day_of_week] ?? null;
+            
+            if (!$day_directory) {
+                hockey_log("No directory mapping found for {$day_of_week} on {$current_date}", 'error');
+                return;
+            }
+            
+            $formatted_date = date('D_M_j', strtotime($current_date));
+            $season = get_current_season($current_date);
+            $file_path = plugin_dir_path(dirname(__FILE__)) . "rosters/{$season}/{$day_directory}/Pickup_Roster-{$formatted_date}.txt";
+            
+            if (file_exists($file_path)) {
+                hockey_log("Roster file already exists at: {$file_path}", 'debug');
+            } else {
+                hockey_log("Attempting to create roster file at: {$file_path}", 'debug');
+                $result = create_next_game_roster_files($current_date);
+                hockey_log("Roster creation result: " . ($result ? "Success" : "Failed"), 'debug');
+            }
+        } else {
+            hockey_log("No roster creation needed: not a game day or outside local time window (08:00am-18:00)", 'debug');
+        }
     } catch (Exception $e) {
         hockey_log("Error creating roster files: " . $e->getMessage(), 'error');
     }
 }
 
 function process_waitlist_at_6pm() {
+    $local_time = current_time('H:i');
+    hockey_log("Waitlist processing triggered at {$local_time}", 'debug');
+    
+    // Only process if it's between 6pm and 7pm to avoid repeated processing
+    if ($local_time < '18:00' || $local_time >= '19:00') {
+        hockey_log("Outside waitlist processing window, needs to be at 6pm local time", 'debug');
+        return;
+    }
+    
     hockey_log("Starting waitlist processing job", 'debug');
     
     try {
         $current_date = current_time('Y-m-d');
         $day_of_week = date('l', strtotime($current_date));
         hockey_log("Processing for date: {$current_date} ({$day_of_week})", 'debug');
+        
+        // Only process if today is a game day
+        if (!\hockeysignin\Core\GameSchedule::getInstance()->isGameDay($current_date)) {
+            hockey_log("Not a game day, skipping waitlist processing", 'debug');
+            return;
+        }
         
         $day_directory_map = get_day_directory_map($current_date);
         hockey_log("Directory map: " . print_r($day_directory_map, true), 'debug');
