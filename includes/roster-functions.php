@@ -92,8 +92,43 @@ function create_next_game_roster_files($date) {
                 wp_mkdir_p($dir);
             }
             
-            // Copy template to new file
-            copy($template_path, $file_path);
+            // For Friday rosters, update the rink labels based on which rink is hosting Fast skate
+            if ($day_of_week === 'Friday') {
+                $template_content = file_get_contents($template_path);
+                $fast_rink = get_fast_skate_rink($date);
+                
+                // Update Civic rink label
+                if ($fast_rink === 'CIVIC') {
+                    $template_content = preg_replace(
+                        '/CIVIC 10:30PM\n\[FAST\/BEGINNER-RUSTY\] SKATE/',
+                        'CIVIC 10:30PM\nFAST SKATE',
+                        $template_content
+                    );
+                    $template_content = preg_replace(
+                        '/FORUM 10:30PM\n\[FAST\/BEGINNER-RUSTY\] SKATE/',
+                        'FORUM 10:30PM\nBEGINNER/RUSTY SKATE',
+                        $template_content
+                    );
+                } else {
+                    $template_content = preg_replace(
+                        '/CIVIC 10:30PM\n\[FAST\/BEGINNER-RUSTY\] SKATE/',
+                        'CIVIC 10:30PM\nBEGINNER/RUSTY SKATE',
+                        $template_content
+                    );
+                    $template_content = preg_replace(
+                        '/FORUM 10:30PM\n\[FAST\/BEGINNER-RUSTY\] SKATE/',
+                        'FORUM 10:30PM\nFAST SKATE',
+                        $template_content
+                    );
+                }
+                
+                // Write the updated content to the new file
+                file_put_contents($file_path, $template_content);
+            } else {
+                // For non-Friday rosters, just copy the template
+                copy($template_path, $file_path);
+            }
+            
             chmod($file_path, 0664); // Set file permissions to 664
             hockey_log("Roster file created: {$file_path}", 'debug');
         } else {
