@@ -118,15 +118,19 @@ function hockeysignin_activate() {
         wp_schedule_event($creation_utc, 'daily', 'create_daily_roster_files_event');
     }
     
-    // Schedule waitlist processing for 6pm local time
-    $waitlist_time = new DateTime('today 18:00:00', $site_timezone);
-    if (new DateTime('now', $site_timezone) > $waitlist_time) {
-        $waitlist_time->modify('+1 day');
-    }
-    $waitlist_utc = $waitlist_time->setTimezone(new DateTimeZone('UTC'))->getTimestamp();
-    wp_schedule_event($waitlist_utc, 'daily', 'move_waitlist_to_roster_event');
+    // Schedule waitlist processing for 6pm, 6:15pm, 6:30pm, and 6:45pm to ensure it runs
+    $waitlist_times = ['18:00', '18:01', '18:02', '18:03'];
     
-    hockey_log("Hockey signin plugin activated. Scheduled daily roster creation checks and daily waitlist processing at 6pm", 'debug');
+    foreach ($waitlist_times as $time) {
+        $waitlist_time = new DateTime('today ' . $time, $site_timezone);
+        if (new DateTime('now', $site_timezone) > $waitlist_time) {
+            $waitlist_time->modify('+1 day');
+        }
+        $waitlist_utc = $waitlist_time->setTimezone(new DateTimeZone('UTC'))->getTimestamp();
+        wp_schedule_event($waitlist_utc, 'daily', 'move_waitlist_to_roster_event');
+    }
+    
+    hockey_log("Hockey signin plugin activated. Scheduled daily roster creation checks and waitlist processing at 6pm", 'debug');
 }
 
 function hockeysignin_deactivation() {

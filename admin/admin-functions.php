@@ -59,6 +59,20 @@ function hockeysignin_admin_page() {
         echo '<div class="updated"><p>Roster file created for ' . esc_html($manually_started_next_game_date) . '.</p></div>';
     }
     
+    // Check if it's past 6 PM and add a helpful message about waitlist processing
+    $processed_key = 'waitlist_processed_' . $current_date;
+    
+    // Add this near the top of the function, after checking nonces
+    if (isset($_POST['force_waitlist_processing'])) {
+        if (!$handler->verify_nonce()) {
+            die('Security check failed');
+        }
+        
+        hockey_log("Manual waitlist processing triggered by admin", 'debug');
+        process_waitlist_at_6pm();
+        echo '<div class="updated"><p>Waitlist processing completed.</p></div>';
+    }
+    
     // Check if it's past 6 PM
     if ($current_time >= '18:00') {
         $day_of_week = date('l', strtotime($current_date));
@@ -118,6 +132,23 @@ function hockeysignin_admin_page() {
     wp_nonce_field('hockeysignin_action', 'hockeysignin_nonce');
     echo '<input type="submit" class="button-secondary" value="Undo Last Waitlist Processing" onclick="return confirm(\'Undo the last waitlist processing?\');">';
     echo '</form>';
+
+    // Add this button near your other waitlist controls (around line 110-120)
+    echo '<h2>Waitlist Processing</h2>';
+    echo '<form method="post" style="margin-bottom: 20px;">';
+    wp_nonce_field('hockeysignin_action', 'hockeysignin_nonce');
+    echo '<input type="hidden" name="force_waitlist_processing" value="1">';
+    echo '<input type="submit" class="button-primary" value="Process Waitlist Now">';
+    echo '</form>';
+    
+    // Display status of today's waitlist processing
+    if (get_transient($processed_key)) {
+        echo '<div class="notice notice-success inline"><p>Waitlist has been processed for today (' . esc_html($current_date) . ').</p></div>';
+    } else if ($current_time >= '18:00') {
+        echo '<div class="notice notice-warning inline"><p>It\'s after 6pm, but waitlist processing has not yet run for today. You can process it manually using the button above.</p></div>';
+    } else {
+        echo '<div class="notice notice-info inline"><p>Waitlist will be automatically processed at 6pm today.</p></div>';
+    }
 
     echo '<h2>Manual Player Check-In</h2>';
     echo '<form method="post" action="">';

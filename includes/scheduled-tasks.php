@@ -48,11 +48,9 @@ function create_daily_roster_files() {
     hockey_log("Daily roster creation check at {$local_time} (UTC: {$utc_time}) for {$current_date} ({$day_of_week})", 'debug');
     
     try {
-        // Check if it's a game day and LOCAL time is BEFORE 8:00am
-        if (\hockeysignin\Core\GameSchedule::getInstance()->isGameDay($current_date) && 
-            $local_time < '08:00') {
-            
-            hockey_log("Creating roster for game day {$day_of_week} (Local time: {$local_time})", 'debug');
+        // Check if it's a game day
+        if (\hockeysignin\Core\GameSchedule::getInstance()->isGameDay($current_date)) {
+            hockey_log("Game day detected for {$day_of_week} (Local time: {$local_time})", 'debug');
             
             // Check if the roster file already exists to avoid duplicate creation
             $day_directory_map = get_day_directory_map($current_date);
@@ -75,7 +73,7 @@ function create_daily_roster_files() {
                 hockey_log("Roster creation result: " . ($result ? "Success" : "Failed"), 'debug');
             }
         } else {
-            hockey_log("No roster creation needed: not a game day or outside local time window (08:00am-18:00)", 'debug');
+            hockey_log("No roster creation needed: not a game day", 'debug');
         }
     } catch (Exception $e) {
         hockey_log("Error creating roster files: " . $e->getMessage(), 'error');
@@ -86,16 +84,24 @@ function process_waitlist_at_6pm() {
     $local_time = current_time('H:i');
     hockey_log("Waitlist processing triggered at {$local_time}", 'debug');
     
-    // Only process if it's between 6pm and 7pm to avoid repeated processing
-    if ($local_time < '18:00' || $local_time >= '19:00') {
-        hockey_log("Outside waitlist processing window, needs to be at 6pm local time", 'debug');
+    // Check if we've already processed the waitlist today to prevent duplicates
+    $current_date = current_time('Y-m-d');
+    $processed_key = 'waitlist_processed_' . $current_date;
+    
+    if (get_transient($processed_key)) {
+        hockey_log("Waitlist already processed for today {$current_date}", 'debug');
+        return;
+    }
+    
+    // Allow processing starting at 6pm
+    if ($local_time < '18:00') {
+        hockey_log("Too early for waitlist processing, needs to be after 6pm local time", 'debug');
         return;
     }
     
     hockey_log("Starting waitlist processing job", 'debug');
     
     try {
-        $current_date = current_time('Y-m-d');
         $day_of_week = date('l', strtotime($current_date));
         hockey_log("Processing for date: {$current_date} ({$day_of_week})", 'debug');
         
@@ -144,6 +150,13 @@ function process_waitlist_at_6pm() {
         } else {
             hockey_log("Roster file not found: {$file_path}", 'error');
         }
+        
+        // After successful processing, set a transient to mark this day as processed
+        // Expire at midnight
+        $seconds_until_midnight = strtotime('tomorrow midnight') - time();
+        set_transient($processed_key, true, $seconds_until_midnight);
+        
+        hockey_log("Waitlist processing complete and marked as processed for today", 'debug');
     } catch (Exception $e) {
         hockey_log("Error in process_waitlist_at_6pm: " . $e->getMessage(), 'error');
     }

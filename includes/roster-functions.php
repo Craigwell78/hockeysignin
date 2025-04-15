@@ -102,7 +102,7 @@ function create_next_game_roster_files($date) {
     }
 }
 
-function check_in_player($date, $player_name) {
+function check_in_player($date, $player_name, $skate_preference = null) {
     hockey_log("Starting check-in process for player: {$player_name}", 'debug');
     
     // Capitalize the player name
@@ -119,9 +119,16 @@ function check_in_player($date, $player_name) {
         $date = current_time('Y-m-d');
     }
     
+    $day_of_week = date('l', strtotime($date));
+    
+    // For Friday skates, validate skate preference
+    if ($day_of_week === 'Friday' && !$skate_preference) {
+        hockey_log("Check-in rejected - missing skate preference for Friday skate", 'warning');
+        return "Check-in failed: Please select a skate preference for Friday skates.";
+    }
+    
     // Check if player is already checked in
     $day_directory_map = get_day_directory_map($date);
-    $day_of_week = date('l', strtotime($date));
     $day_directory = $day_directory_map[$day_of_week] ?? null;
     $formatted_date = date('D_M_j', strtotime($date));
     $season = get_current_season($date);
@@ -138,8 +145,6 @@ function check_in_player($date, $player_name) {
     }
     
     global $wpdb;
-    
-    $day_of_week = date('l', strtotime($date));
     
     // Look up the player in the database
     $player = $wpdb->get_row($wpdb->prepare(
@@ -160,19 +165,19 @@ function check_in_player($date, $player_name) {
         // If player is not registered for this day, treat like non-database player
         if (!$prepaid) {
             hockey_log("Player {$player_name} is not registered for {$day_of_week}", 'debug');
-            return update_roster($date, $player_name, false, null, true);  // Force to waitlist
+            return update_roster($date, $player_name, false, null, true, $skate_preference);  // Force to waitlist
         }
         
         // If player is a goalie, only allow them in goalie spots
         if (strtolower($player->position) === 'goalie') {
             hockey_log("Player {$player_name} is a goalie", 'debug');
-            return update_roster($date, $player_name, true, 'Goalie', false);
+            return update_roster($date, $player_name, true, 'Goalie', false, $skate_preference);
         }
         
-        return update_roster($date, $player_name, $prepaid, $player->position);
+        return update_roster($date, $player_name, $prepaid, $player->position, false, $skate_preference);
     } else {
         hockey_log("Player not found in database: {$player_name}", 'debug');
-        return update_roster($date, $player_name, false, null, true);
+        return update_roster($date, $player_name, false, null, true, $skate_preference);
     }
 }
 
@@ -242,7 +247,7 @@ function check_out_player($player_name) {
     return false;
 }
 
-function update_roster($date, $player_name, $prepaid, $preferred_position = null, $forceWaitlist = false) {
+function update_roster($date, $player_name, $prepaid, $preferred_position = null, $forceWaitlist = false, $skate_preference = null) {
     // Check for profanity first, before any roster operations
     $filter = \hockeysignin\Filters\ProfanityFilter::getInstance();
     if ($filter->containsProfanity($player_name)) {
@@ -293,8 +298,14 @@ function update_roster($date, $player_name, $prepaid, $preferred_position = null
             }
         }
         
+        // Add preference to player name for waitlist
+        $preference_suffix = '';
+        if ($day_of_week === 'Friday' && $skate_preference) {
+            $preference_suffix = " ({$skate_preference})";
+        }
+        
         // Add new entry after existing entries
-        array_splice($lines, $waitlist_start + $waitlist_count + 1, 0, [($waitlist_count + 1) . ". " . $player_name]);
+        array_splice($lines, $waitlist_start + $waitlist_count + 1, 0, [($waitlist_count + 1) . ". " . $player_name . $preference_suffix]);
         hockey_log("Non-database player {$player_name} added to waitlist at position " . ($waitlist_count + 1), 'debug');
         
         if (@file_put_contents($file_path, implode("\n", $lines)) === false) {
@@ -305,8 +316,19 @@ function update_roster($date, $player_name, $prepaid, $preferred_position = null
         return "Thank you! You've been added to our waitlist for tonight. Please check back at 6pm to see if you have made the roster! You can reach us at halifaxpickuphockey@gmail.com to ask about Regular subscriber spots!";
     }
 
+    // For Friday skates, determine which rink to place the player on
+    $target_rink = null;
+    if ($day_of_week === 'Friday' && $skate_preference) {
+        $fast_rink = get_fast_skate_rink($date);
+        if ($skate_preference === 'fast') {
+            $target_rink = $fast_rink;
+        } elseif ($skate_preference === 'beginner') {
+            $target_rink = ($fast_rink === 'FORUM') ? 'CIVIC' : 'FORUM';
+        }
+    }
+    
     // Find an available spot
-    $spot = find_available_spot($lines, $preferred_position);
+    $spot = find_available_spot($lines, $preferred_position, $target_rink);
     
     if ($spot) {
         // Player can be added to roster
@@ -322,7 +344,7 @@ function update_roster($date, $player_name, $prepaid, $preferred_position = null
         
         $lines[$spot['line_number']] = $replacement;
         
-        // Log the assignment (keep detailed logging but simplify user message)
+        // Log the assignment
         if ($day_of_week === 'Friday') {
             hockey_log("Player {$player_name} assigned to {$spot['rink']} rink at position {$position}", 'debug');
         } else {
@@ -343,8 +365,14 @@ function update_roster($date, $player_name, $prepaid, $preferred_position = null
             }
         }
         
+        // Add preference to player name for waitlist
+        $preference_suffix = '';
+        if ($day_of_week === 'Friday' && $skate_preference) {
+            $preference_suffix = " ({$skate_preference})";
+        }
+        
         // Add player to waitlist
-        $lines[] = ($waitlist_count + 1) . ". " . $player_name;
+        $lines[] = ($waitlist_count + 1) . ". " . $player_name . $preference_suffix;
         hockey_log("Player {$player_name} added to waitlist at position " . ($waitlist_count + 1), 'debug');
         
         file_put_contents($file_path, implode("\n", $lines));
@@ -527,7 +555,7 @@ return "No vacant spots available. You have been added to the waitlist.";
 }
 } else {
 hockey_log("Roster file not found: {$file_path}", 'error');
-return "Roster file not found for today.<br><br>Our skates are Tuesday 10:30pm Forum, Thursday 10:30pm Civic, and Friday & Saturday 10:30pm Forum.<br><br>Check in begins at 8:00am for each skate.";
+return "Roster file not found for today.<br><br>Our skates are Tuesday 10:30pm Forum, Thursday 10:30pm Civic, and Friday & Saturday 10:30pm Forum.<br>We now offer Beginner/Rusty *and* Quicker pace skates Friday nights.<br>Check in begins at 8:00am for each skate.";
 }
 }
 
@@ -593,12 +621,13 @@ function is_empty_position($line, $preferred_position = null) {
     return $result;
 }
 
-function find_available_spot($lines, $preferred_position = null) {
+function find_available_spot($lines, $preferred_position = null, $target_rink = null) {
     $sections = get_roster_sections($lines, date('l'));
     $end_line = isset($sections['waitlist']) ? $sections['waitlist']['start'] : count($lines);
     
     hockey_log("Searching for spot between lines 0 and {$end_line}" . 
-        ($preferred_position ? " (preferred position: {$preferred_position})" : ""), 'debug');
+        ($preferred_position ? " (preferred position: {$preferred_position})" : "") .
+        ($target_rink ? " (target rink: {$target_rink})" : ""), 'debug');
     
     $forward_spots = [];
     $defense_spots = [];
@@ -812,4 +841,16 @@ function capitalize_player_name($name) {
     
     // Join the parts back together
     return implode(' ', $capitalized_parts);
+}
+
+function get_fast_skate_rink($date) {
+    // Reference date: April 18, 2024 - Fast skate at Forum
+    $reference_date = strtotime('2024-04-18');
+    $current_date = strtotime($date);
+    
+    // Calculate weeks difference
+    $weeks_diff = floor(($current_date - $reference_date) / (7 * 24 * 60 * 60));
+    
+    // If even number of weeks, Fast is at Forum, otherwise at Civic
+    return ($weeks_diff % 2 == 0) ? 'FORUM' : 'CIVIC';
 }

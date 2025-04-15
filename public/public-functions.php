@@ -107,6 +107,19 @@ function hockeysignin_shortcode() {
             <label for="player_name">Player Name:</label>
             <input type="text" id="player_name" name="player_name" required>
             
+            <?php
+            // Add skate preference dropdown for Fridays
+            $day_of_week = date('l');
+            if ($day_of_week === 'Friday') {
+                echo '<label for="skate_preference">Skate Preference:</label>';
+                echo '<select id="skate_preference" name="skate_preference" required>';
+                echo '<option value="fast">Fast</option>';
+                echo '<option value="beginner">Beginner/Rusty</option>';
+                echo '<option value="either">Either</option>';
+                echo '</select>';
+            }
+            ?>
+            
             <div id="new_player_info" style="display: none;">
                 <p>Not in our database? Please provide:</p>
                 <input type="text" 
@@ -126,3 +139,40 @@ add_shortcode('hockeysignin', 'hockeysignin_shortcode');
 
 // Shortcode for displaying the roster
 add_shortcode('hockeysignin_roster', 'display_roster');
+
+// Add function to check roster existence during page loads
+function check_and_create_roster_on_page_load() {
+    // Only run this check once per page load
+    static $checked = false;
+    if ($checked) return;
+    $checked = true;
+    
+    $current_date = current_time('Y-m-d');
+    
+    // Only proceed if it's a game day
+    if (!\hockeysignin\Core\GameSchedule::getInstance()->isGameDay($current_date)) {
+        return;
+    }
+    
+    $day_of_week = date('l', strtotime($current_date));
+    $day_directory_map = get_day_directory_map($current_date);
+    $day_directory = $day_directory_map[$day_of_week] ?? null;
+    
+    if (!$day_directory) {
+        return;
+    }
+    
+    $formatted_date = date('D_M_j', strtotime($current_date));
+    $season = get_current_season($current_date);
+    $file_path = plugin_dir_path(dirname(__FILE__)) . "../rosters/{$season}/{$day_directory}/Pickup_Roster-{$formatted_date}.txt";
+    
+    // If roster doesn't exist, create it
+    if (!file_exists($file_path)) {
+        hockey_log("Roster file missing during page load, attempting to create: {$file_path}", 'debug');
+        $result = create_next_game_roster_files($current_date);
+        hockey_log("Page load roster creation result: " . ($result ? "Success" : "Failed"), 'debug');
+    }
+}
+
+// Hook into WordPress to check roster on every page load
+add_action('wp', 'check_and_create_roster_on_page_load');
