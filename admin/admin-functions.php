@@ -51,9 +51,42 @@ function hockeysignin_admin_page() {
             $file_path = realpath(__DIR__ . "/../rosters/") . "/{$season}/{$day_directory}/Pickup_Roster-{$formatted_date}.txt";
             
             if (file_exists($file_path)) {
+                // Create backup before processing
+                $backup_path = $file_path . '.backup';
+                if (!copy($file_path, $backup_path)) {
+                    hockey_log("Failed to create backup file: {$backup_path}", 'error');
+                    echo '<div class="error"><p>Failed to create backup file before processing waitlist.</p></div>';
+                    return;
+                }
+                hockey_log("Created backup file: {$backup_path}", 'debug');
+
+                // Read and process the file
                 $roster = file_get_contents($file_path);
+                if ($roster === false) {
+                    hockey_log("Failed to read roster file: {$file_path}", 'error');
+                    echo '<div class="error"><p>Failed to read roster file.</p></div>';
+                    return;
+                }
+
                 $lines = explode("\n", $roster);
-                move_waitlist_to_roster($lines, $day_of_week);
+                $updated_lines = move_waitlist_to_roster($lines, $day_of_week);
+
+                if ($updated_lines === null) {
+                    hockey_log("Failed to process waitlist", 'error');
+                    echo '<div class="error"><p>Failed to process waitlist.</p></div>';
+                    return;
+                }
+
+                // Write the changes back to the file
+                if (file_put_contents($file_path, implode("\n", $updated_lines)) === false) {
+                    hockey_log("Failed to write updated roster to file: {$file_path}", 'error');
+                    // Try to restore from backup
+                    copy($backup_path, $file_path);
+                    echo '<div class="error"><p>Failed to write updated roster to file.</p></div>';
+                    return;
+                }
+
+                hockey_log("Successfully processed waitlist and updated roster file", 'debug');
                 echo '<div class="updated"><p>Roster has been automatically updated at ' . esc_html($waitlist_time) . '.</p></div>';
             }
         }
@@ -261,17 +294,27 @@ function render_season_setup() {
         $current_season = get_current_season($current_date);
         $next_game_date = get_next_game_date();
         $next_game_day = date('l', strtotime($next_game_date));
-        $day_directory_map = get_day_directory_map($next_game_date);
-        $next_day_directory = $day_directory_map[$next_game_day] ?? null;
+        $directory_map = get_option('hockey_directory_map', []);
+        $waitlist_time = get_option('hockey_waitlist_processing_time', '18:00');
         ?>
         
         <div class="card" style="max-width: 800px; margin-bottom: 20px; padding: 10px;">
             <h3>Current Configuration</h3>
             <p><strong>Active Season:</strong> <?php echo esc_html($current_season); ?></p>
             <p><strong>Base Path:</strong> <code>/wp-content/plugins/hockeysignin/rosters/<?php echo esc_html($current_season); ?>/</code></p>
-            <?php if ($next_day_directory): ?>
-                <p><strong>Next Active Directory (<?php echo esc_html($next_game_day); ?>):</strong> <code><?php echo esc_html($next_day_directory); ?></code></p>
-                <p><strong>Next Game Date:</strong> <?php echo esc_html($next_game_date); ?></p>
+            <p><strong>Waitlist Processing Time:</strong> <?php echo esc_html(date('g:i A', strtotime($waitlist_time))); ?></p>
+            
+            <?php if (!empty($directory_map)): ?>
+                <h4>Configured Game Days:</h4>
+                <ul style="list-style-type: disc; margin-left: 20px;">
+                    <?php foreach ($directory_map as $day => $directory): ?>
+                        <li><strong><?php echo esc_html($day); ?>:</strong> <code><?php echo esc_html($directory); ?></code></li>
+                    <?php endforeach; ?>
+                </ul>
+                
+                <p><strong>Next Game Date:</strong> <?php echo esc_html($next_game_date); ?> (<?php echo esc_html($next_game_day); ?>)</p>
+            <?php else: ?>
+                <p><em>No game days are currently configured.</em></p>
             <?php endif; ?>
         </div>
 
@@ -414,6 +457,9 @@ function handle_season_setup() {
     update_option('hockey_waitlist_processing_time', $waitlist_time);
 
     // Clear and reschedule cron jobs
+    $had_roster_schedule = wp_next_scheduled('create_daily_roster_files_event');
+    $had_waitlist_schedule = wp_next_scheduled('move_waitlist_to_roster_event');
+    
     wp_clear_scheduled_hook('create_daily_roster_files_event');
     wp_clear_scheduled_hook('move_waitlist_to_roster_event');
     
@@ -448,9 +494,15 @@ function handle_season_setup() {
             'move_waitlist_to_roster_event'
         );
         
-        hockey_log("Scheduled cron jobs for game day: {$current_day}", 'debug');
+        // Only log if the schedule actually changed
+        if (!$had_roster_schedule || !$had_waitlist_schedule) {
+            hockey_log("Scheduled cron jobs for game day: {$current_day}", 'debug');
+        }
     } else {
-        hockey_log("Not scheduling cron jobs - not a game day ({$current_day})", 'debug');
+        // Only log if we actually cleared a schedule
+        if ($had_roster_schedule || $had_waitlist_schedule) {
+            hockey_log("Not scheduling cron jobs - not a game day ({$current_day})", 'debug');
+        }
     }
 
     // Force refresh of next game date calculation

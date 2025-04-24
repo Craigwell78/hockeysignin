@@ -79,6 +79,54 @@ function process_waitlist() {
         return;
     }
     
-    // Process waitlist for the next game
-    move_waitlist_to_roster($next_game_date);
+    // Get file path
+    $day_directory_map = get_day_directory_map($next_game_date);
+    $day_directory = $day_directory_map[$current_day] ?? null;
+    
+    if (!$day_directory) {
+        hockey_log("No directory mapping found for date: {$next_game_date}", 'error');
+        return;
+    }
+
+    $formatted_date = date('D_M_j', strtotime($next_game_date));
+    $season = get_current_season($next_game_date);
+    $file_path = realpath(__DIR__ . "/../rosters/") . "/{$season}/{$day_directory}/Pickup_Roster-{$formatted_date}.txt";
+    
+    if (!file_exists($file_path)) {
+        hockey_log("Roster file not found: {$file_path}", 'error');
+        return;
+    }
+
+    // Create backup before processing
+    $backup_path = $file_path . '.backup';
+    if (!copy($file_path, $backup_path)) {
+        hockey_log("Failed to create backup file: {$backup_path}", 'error');
+        return;
+    }
+    hockey_log("Created backup file: {$backup_path}", 'debug');
+
+    // Read and process the file
+    $roster = file_get_contents($file_path);
+    if ($roster === false) {
+        hockey_log("Failed to read roster file: {$file_path}", 'error');
+        return;
+    }
+
+    $lines = explode("\n", $roster);
+    $updated_lines = move_waitlist_to_roster($lines, $current_day);
+
+    if ($updated_lines === null) {
+        hockey_log("Failed to process waitlist", 'error');
+        return;
+    }
+
+    // Write the changes back to the file
+    if (file_put_contents($file_path, implode("\n", $updated_lines)) === false) {
+        hockey_log("Failed to write updated roster to file: {$file_path}", 'error');
+        // Try to restore from backup
+        copy($backup_path, $file_path);
+        return;
+    }
+
+    hockey_log("Successfully processed waitlist and updated roster file", 'debug');
 }

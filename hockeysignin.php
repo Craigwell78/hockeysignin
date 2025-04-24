@@ -87,6 +87,9 @@ add_action('plugins_loaded', function() {
 // Move scheduling code into init hook
 add_action('init', function() {
     // Clear any existing schedules first
+    $had_roster_schedule = wp_next_scheduled('create_daily_roster_files_event');
+    $had_waitlist_schedule = wp_next_scheduled('move_waitlist_to_roster_event');
+    
     wp_clear_scheduled_hook('create_daily_roster_files_event');
     wp_clear_scheduled_hook('move_waitlist_to_roster_event');
     
@@ -127,9 +130,15 @@ add_action('init', function() {
             'move_waitlist_to_roster_event'
         );
         
-        hockey_log("Scheduled cron jobs for game day: {$current_day}", 'debug');
+        // Only log if the schedule actually changed
+        if (!$had_roster_schedule || !$had_waitlist_schedule) {
+            hockey_log("Scheduled cron jobs for game day: {$current_day}", 'debug');
+        }
     } else {
-        hockey_log("Not scheduling cron jobs - not a game day ({$current_day})", 'debug');
+        // Only log if we actually cleared a schedule
+        if ($had_roster_schedule || $had_waitlist_schedule) {
+            hockey_log("Not scheduling cron jobs - not a game day ({$current_day})", 'debug');
+        }
     }
 });
 
