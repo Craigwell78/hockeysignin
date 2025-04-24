@@ -420,30 +420,38 @@ function handle_season_setup() {
     // Reschedule with new configuration
     $site_timezone = new DateTimeZone(wp_timezone_string());
     $current_time = new DateTime('now', $site_timezone);
+    $current_day = $current_time->format('l');
     
-    // Schedule roster creation for next 8am
-    $roster_time = new DateTime('today 8:00:00', $site_timezone);
-    if ($current_time > $roster_time) {
-        $roster_time->modify('+1 day');
-    }
-    
-    // Schedule waitlist processing for configured time
-    $waitlist_time_obj = new DateTime('today ' . $waitlist_time, $site_timezone);
-    if ($current_time > $waitlist_time_obj) {
-        $waitlist_time_obj->modify('+1 day');
-    }
+    // Only schedule if it's a configured game day
+    if (array_key_exists($current_day, $directory_map)) {
+        // Schedule roster creation for next 8am
+        $roster_time = new DateTime('today 8:00:00', $site_timezone);
+        if ($current_time > $roster_time) {
+            $roster_time->modify('+1 day');
+        }
+        
+        // Schedule waitlist processing for configured time
+        $waitlist_time_obj = new DateTime('today ' . $waitlist_time, $site_timezone);
+        if ($current_time > $waitlist_time_obj) {
+            $waitlist_time_obj->modify('+1 day');
+        }
 
-    wp_schedule_event(
-        $roster_time->setTimezone(new DateTimeZone('UTC'))->getTimestamp(),
-        'daily',
-        'create_daily_roster_files_event'
-    );
-    
-    wp_schedule_event(
-        $waitlist_time_obj->setTimezone(new DateTimeZone('UTC'))->getTimestamp(),
-        'daily',
-        'move_waitlist_to_roster_event'
-    );
+        wp_schedule_event(
+            $roster_time->setTimezone(new DateTimeZone('UTC'))->getTimestamp(),
+            'daily',
+            'create_daily_roster_files_event'
+        );
+        
+        wp_schedule_event(
+            $waitlist_time_obj->setTimezone(new DateTimeZone('UTC'))->getTimestamp(),
+            'daily',
+            'move_waitlist_to_roster_event'
+        );
+        
+        hockey_log("Scheduled cron jobs for game day: {$current_day}", 'debug');
+    } else {
+        hockey_log("Not scheduling cron jobs - not a game day ({$current_day})", 'debug');
+    }
 
     // Force refresh of next game date calculation
     wp_cache_delete('next_game_date', 'hockeysignin');

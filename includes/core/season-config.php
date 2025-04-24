@@ -4,22 +4,11 @@ namespace hockeysignin\Core;
 
 class SeasonConfig {
     private static $instance = null;
+    private $directory_map;
     
-    private $regular_season_map = [
-        'Tuesday' => 'Tues1030Forum',
-        'Thursday' => 'Thur1030Civic',
-        'Friday' => 'Fri1030Forum',
-        'Saturday' => 'Sat1030Forum',
-    ];
-    
-    private $spring_summer_map = [
-        'Tuesday' => 'Tues1030Civic',
-        'Thursday' => 'Thur1030Civic',
-        'Friday' => 'Fri1030Civic',
-        'Saturday' => 'Sat1030Civic',
-    ];
-    
-    private function __construct() {}
+    private function __construct() {
+        $this->directory_map = get_option('hockey_directory_map', []);
+    }
     
     public static function getInstance() {
         if (self::$instance === null) {
@@ -29,15 +18,11 @@ class SeasonConfig {
     }
     
     public function getDayDirectory($date) {
-        $month_day = date('m-d', strtotime($date));
         $day_of_week = date('l', strtotime($date));
-        
-        $map = $this->getSeasonMap($month_day);
-        return $map[$day_of_week] ?? null;
+        return isset($this->directory_map[$day_of_week]) ? $this->directory_map[$day_of_week] : null;
     }
     
-    private function getSeasonMap($month_day) {
-        $config = get_option('hockey_directory_map', []);
-        return $config;
+    public function getGameDays() {
+        return array_keys($this->directory_map);
     }
 } 

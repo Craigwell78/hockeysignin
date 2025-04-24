@@ -129,16 +129,17 @@ function check_in_player($date, $player_name) {
     
     global $wpdb;
     
-    $day_of_week = date('l', strtotime($date));
-    
     // Look up the player in the database
+    hockey_log("Looking up player in database: {$player_name}", 'debug');
+    $normalized_name = str_replace("'", "''", $player_name); // Handle apostrophes for SQL
     $player = $wpdb->get_row($wpdb->prepare(
-        "SELECT * FROM wp_participants_database WHERE LOWER(CONCAT(`first_name`, ' ', `last_name`)) = LOWER(%s)",
-        stripslashes($player_name)
+        "SELECT * FROM wp_participants_database 
+        WHERE LOWER(REPLACE(CONCAT(`first_name`, ' ', `last_name`), '''', '')) = LOWER(REPLACE(%s, '''', ''))",
+        $normalized_name
     ));
     
-    // If player exists in database
     if ($player) {
+        hockey_log("Player found in database: {$player_name}", 'debug');
         // Unserialize the active_nights array
         $active_nights = maybe_unserialize($player->active_nights);
         

@@ -51,11 +51,17 @@ class CheckInVisibility {
     }
     
     private function getGameDays() {
-        $game_days = [
-            'HPH' => ['Tue', 'Thu', 'Fri', 'Sat'],
-            'SSPH' => ['Sun', 'Thu']
-        ];
+        // Get the directory map from WordPress options
+        $directory_map = get_option('hockey_directory_map', []);
         
-        return $game_days[$this->instance] ?? [];
+        // Extract enabled days from the directory map
+        $enabled_days = array_keys($directory_map);
+        
+        // Convert full day names to three-letter abbreviations
+        $game_days = array_map(function($day) {
+            return substr($day, 0, 3);
+        }, $enabled_days);
+        
+        return $game_days;
     }
 } 

@@ -38,58 +38,47 @@ add_action('admin_init', function() {
 });
 
 function create_daily_roster_files() {
-    $current_date = current_time('Y-m-d');
-    $day_of_week = date('l', strtotime($current_date));
-    $local_time = current_time('H:i');
+    $current_day = current_time('l');
     
-    hockey_log("Starting daily roster file creation at {$local_time} for {$current_date} ({$day_of_week})", 'debug');
+    // Get the directory map from WordPress options
+    $directory_map = get_option('hockey_directory_map', []);
     
-    // Call the existing function to create the roster
-    create_next_game_roster_files($current_date);
+    // Only run on configured game days
+    if (!array_key_exists($current_day, $directory_map)) {
+        hockey_log("Not a game day ({$current_day}), skipping roster creation", 'debug');
+        return;
+    }
+    
+    // Get the next game date
+    $next_game_date = get_next_game_date();
+    if (!$next_game_date) {
+        hockey_log("No next game date found", 'error');
+        return;
+    }
+    
+    // Create roster files for the next game
+    create_next_game_roster_files($next_game_date);
 }
 
 function process_waitlist() {
-    hockey_log("Starting waitlist processing job", 'debug');
+    $current_day = current_time('l');
     
-    try {
-        $current_date = current_time('Y-m-d');
-        $day_of_week = date('l', strtotime($current_date));
-        hockey_log("Processing for date: {$current_date} ({$day_of_week})", 'debug');
-        
-        $day_directory_map = get_day_directory_map($current_date);
-        hockey_log("Directory map: " . print_r($day_directory_map, true), 'debug');
-        
-        $day_directory = $day_directory_map[$day_of_week] ?? null;
-        if (!$day_directory) {
-            hockey_log("No directory found for {$day_of_week}", 'error');
-            return;
-        }
-        
-        $formatted_date = date('D_M_j', strtotime($current_date));
-        $season = get_current_season($current_date);
-        $file_path = realpath(__DIR__ . "/../rosters/") . "/{$season}/{$day_directory}/Pickup_Roster-{$formatted_date}.txt";
-        
-        hockey_log("Attempting to process file: {$file_path}", 'debug');
-        
-        if (file_exists($file_path)) {
-            // Create backup before processing
-            $backup_path = $file_path . '.backup';
-            copy($file_path, $backup_path);
-            hockey_log("Created backup at: {$backup_path}", 'debug');
-            
-            hockey_log("Found roster file, reading contents", 'debug');
-            $roster = file_get_contents($file_path);
-            $lines = explode("\n", $roster);
-            
-            $updated_lines = move_waitlist_to_roster($lines, $day_of_week);
-            if ($updated_lines) {
-                file_put_contents($file_path, implode("\n", $updated_lines));
-                hockey_log("Waitlist processing complete and file updated", 'debug');
-            }
-        } else {
-            hockey_log("Roster file not found: {$file_path}", 'error');
-        }
-    } catch (Exception $e) {
-        hockey_log("Error in process_waitlist: " . $e->getMessage(), 'error');
+    // Get the directory map from WordPress options
+    $directory_map = get_option('hockey_directory_map', []);
+    
+    // Only run on configured game days
+    if (!array_key_exists($current_day, $directory_map)) {
+        hockey_log("Not a game day ({$current_day}), skipping waitlist processing", 'debug');
+        return;
     }
+    
+    // Get the next game date
+    $next_game_date = get_next_game_date();
+    if (!$next_game_date) {
+        hockey_log("No next game date found", 'error');
+        return;
+    }
+    
+    // Process waitlist for the next game
+    move_waitlist_to_roster($next_game_date);
 }

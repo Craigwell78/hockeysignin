@@ -9,11 +9,5 @@ return [
         'roster_template' => realpath(__DIR__ . '/../../rosters/roster_template.txt'),
         'roster_base' => realpath(__DIR__ . '/../../rosters/'),
         'log_file' => realpath(__DIR__ . '/../../logs/debug.log')
-    ],
-    'game_days' => [
-        'Tuesday' => 2,
-        'Thursday' => 4,
-        'Friday' => 5,
-        'Saturday' => 6
     ]
 ];

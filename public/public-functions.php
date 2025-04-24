@@ -86,10 +86,9 @@ function hockeysignin_shortcode() {
     $visibility = new \HockeySignin\CheckInVisibility('SSPH');
     
     if (!$visibility->shouldShowCheckIn()) {
-        return '<div class="hockeysignin-message" style="text-align: center;">Check-in is available from 8am to 5pm on game days.</div>';
+        return '<div class="hockeysignin-message" style="text-align: center;">Check-in is available from 8am to 6pm on game days.</div>';
     }
-    
-    ob_start();
+        ob_start();
     ?>
     <div class="hockeysignin-container">
         <form method="post" action="" id="hockey-signin-form">
