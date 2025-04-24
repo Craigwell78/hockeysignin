@@ -54,6 +54,7 @@ function is_game_day($date = null) {
 
 function create_next_game_roster_files($date) {
     $day_of_week = date('l', strtotime($date));
+    hockey_log("Creating roster files for {$day_of_week} {$date}", 'debug');
     
     // Choose template based on day
     switch ($day_of_week) {
@@ -70,7 +71,15 @@ function create_next_game_roster_files($date) {
             return;
     }
     
-    $template_path = realpath(__DIR__ . "/../rosters/") . "/{$template_file}";
+    // Get the plugin directory path
+    $plugin_dir = plugin_dir_path(dirname(__FILE__));
+    $template_path = $plugin_dir . "rosters/{$template_file}";
+    hockey_log("Template path: {$template_path}", 'debug');
+    
+    if (!file_exists($template_path)) {
+        hockey_log("Template file does not exist: {$template_path}", 'error');
+        return;
+    }
     
     $day_directory_map = get_day_directory_map($date);
     $day_directory = $day_directory_map[$day_of_week] ?? null;
@@ -82,22 +91,62 @@ function create_next_game_roster_files($date) {
 
     $formatted_date = date('D_M_j', strtotime($date));
     $season = get_current_season($date);
-    $file_path = plugin_dir_path(dirname(__FILE__)) . "rosters/{$season}/{$day_directory}/Pickup_Roster-{$formatted_date}.txt";
+    $file_path = $plugin_dir . "rosters/{$season}/{$day_directory}/Pickup_Roster-{$formatted_date}.txt";
+    hockey_log("Target roster file path: {$file_path}", 'debug');
 
     if (!file_exists($file_path)) {
-        if (file_exists($template_path)) {
-            // Create directory if it doesn't exist
-            $dir = dirname($file_path);
-            if (!file_exists($dir)) {
-                wp_mkdir_p($dir);
+        // Create directory if it doesn't exist
+        $dir = dirname($file_path);
+        hockey_log("Creating directory: {$dir}", 'debug');
+        
+        if (!file_exists($dir)) {
+            if (!wp_mkdir_p($dir)) {
+                hockey_log("Failed to create directory: {$dir}", 'error');
+                return;
             }
+            // Set directory permissions
+            if (!chmod($dir, 0775)) {
+                hockey_log("Failed to set directory permissions: {$dir}", 'error');
+                return;
+            }
+        }
+        
+        // For Friday rosters, update the rink labels based on which rink is hosting Fast skate
+        if ($day_of_week === 'Friday') {
+            $template_content = file_get_contents($template_path);
+            $fast_rink = get_fast_skate_rink($date);
+            hockey_log("Friday skate - Fast rink: {$fast_rink}", 'debug');
             
-            // For Friday rosters, update the rink labels based on which rink is hosting Fast skate
-            if ($day_of_week === 'Friday') {
-                $template_content = file_get_contents($template_path);
-                $fast_rink = get_fast_skate_rink($date);
-                
-                // Update Civic rink label
+            // Replace literal \n with actual newlines
+            $template_content = str_replace('\\n', "\n", $template_content);
+            
+            // Update Civic rink label - set to 11pm for Spring session
+            if ($season === 'Spring2025') {
+                if ($fast_rink === 'CIVIC') {
+                    $template_content = preg_replace(
+                        '/CIVIC 10:30PM\n\[FAST\/BEGINNER-RUSTY\] SKATE/',
+                        'CIVIC 11:00PM\nFAST SKATE',
+                        $template_content
+                    );
+                    $template_content = preg_replace(
+                        '/FORUM 10:30PM\n\[FAST\/BEGINNER-RUSTY\] SKATE/',
+                        'FORUM 10:30PM\nBEGINNER/RUSTY SKATE',
+                        $template_content
+                    );
+                } else {
+                    $template_content = preg_replace(
+                        '/CIVIC 10:30PM\n\[FAST\/BEGINNER-RUSTY\] SKATE/',
+                        'CIVIC 11:00PM\nBEGINNER/RUSTY SKATE',
+                        $template_content
+                    );
+                    $template_content = preg_replace(
+                        '/FORUM 10:30PM\n\[FAST\/BEGINNER-RUSTY\] SKATE/',
+                        'FORUM 10:30PM\nFAST SKATE',
+                        $template_content
+                    );
+                }
+            } else {
+                // Regular season handling (10:30pm)
                 if ($fast_rink === 'CIVIC') {
                     $template_content = preg_replace(
                         '/CIVIC 10:30PM\n\[FAST\/BEGINNER-RUSTY\] SKATE/',
@@ -121,19 +170,30 @@ function create_next_game_roster_files($date) {
                         $template_content
                     );
                 }
-                
-                // Write the updated content to the new file
-                file_put_contents($file_path, $template_content);
-            } else {
-                // For non-Friday rosters, just copy the template
-                copy($template_path, $file_path);
             }
             
-            chmod($file_path, 0664); // Set file permissions to 664
-            hockey_log("Roster file created: {$file_path}", 'debug');
+            // Write the updated content to the new file
+            if (file_put_contents($file_path, $template_content) === false) {
+                hockey_log("Failed to write Friday roster file: {$file_path}", 'error');
+                return;
+            }
         } else {
-            hockey_log("Roster template not found: {$template_path}", 'error');
+            // For non-Friday rosters, just copy the template
+            if (!copy($template_path, $file_path)) {
+                hockey_log("Failed to copy roster template: {$template_path} to {$file_path}", 'error');
+                return;
+            }
         }
+        
+        // Set file permissions
+        if (!chmod($file_path, 0664)) {
+            hockey_log("Failed to set permissions on roster file: {$file_path}", 'error');
+            return;
+        }
+        
+        hockey_log("Roster file created successfully: {$file_path}", 'debug');
+    } else {
+        hockey_log("Roster file already exists: {$file_path}", 'debug');
     }
 }
 
@@ -162,7 +222,7 @@ function check_in_player($date, $player_name, $skate_preference = null) {
         return "Check-in failed: Please select a skate preference for Friday skates.";
     }
     
-    // Check if player is already checked in
+    // Get roster file path
     $day_directory_map = get_day_directory_map($date);
     $day_directory = $day_directory_map[$day_of_week] ?? null;
     $formatted_date = date('D_M_j', strtotime($date));
@@ -171,12 +231,23 @@ function check_in_player($date, $player_name, $skate_preference = null) {
     
     hockey_log("Checking roster file: {$file_path}", 'debug');
     
-    if (file_exists($file_path)) {
-        $roster = file_get_contents($file_path);
-        if (strpos($roster, $player_name) !== false) {
-            hockey_log("Player {$player_name} is already checked in", 'debug');
-            return "already_checked_in";
+    // Ensure roster file exists
+    if (!file_exists($file_path)) {
+        hockey_log("Roster file does not exist, creating it now", 'debug');
+        create_next_game_roster_files($date);
+        
+        // Verify the file was created
+        if (!file_exists($file_path)) {
+            hockey_log("Failed to create roster file: {$file_path}", 'error');
+            return "Error: Could not create roster file.";
         }
+    }
+    
+    // Check if player is already checked in
+    $roster = file_get_contents($file_path);
+    if (strpos($roster, $player_name) !== false) {
+        hockey_log("Player {$player_name} is already checked in", 'debug');
+        return "already_checked_in";
     }
     
     global $wpdb;
@@ -360,6 +431,7 @@ function update_roster($date, $player_name, $prepaid, $preferred_position = null
         } elseif ($skate_preference === 'beginner') {
             $target_rink = ($fast_rink === 'FORUM') ? 'CIVIC' : 'FORUM';
         }
+        hockey_log("Friday skate - Target rink determined: {$target_rink} for {$skate_preference} skate", 'debug');
     }
     
     // Find an available spot
@@ -386,7 +458,11 @@ function update_roster($date, $player_name, $prepaid, $preferred_position = null
             hockey_log("Player {$player_name} assigned to position {$position}", 'debug');
         }
         
-        file_put_contents($file_path, implode("\n", $lines));
+        if (@file_put_contents($file_path, implode("\n", $lines)) === false) {
+            hockey_log("Failed to write to roster file", 'error');
+            return "Error: Could not update roster file.";
+        }
+        
         return "You have been added to the roster. Please check back after 6pm for finalized teams.";
     } else {
         // Add to waitlist
@@ -410,7 +486,11 @@ function update_roster($date, $player_name, $prepaid, $preferred_position = null
         $lines[] = ($waitlist_count + 1) . ". " . $player_name . $preference_suffix;
         hockey_log("Player {$player_name} added to waitlist at position " . ($waitlist_count + 1), 'debug');
         
-        file_put_contents($file_path, implode("\n", $lines));
+        if (@file_put_contents($file_path, implode("\n", $lines)) === false) {
+            hockey_log("Failed to write to roster file", 'error');
+            return "Error: Could not update roster file.";
+        }
+        
         return "Thank you! You've been added to our waitlist for tonight. Please check back at 6pm to see if you have made the roster! You can reach us at halifaxpickuphockey@gmail.com to ask about Regular subscriber spots!";
     }
 }
@@ -664,19 +744,62 @@ function find_available_spot($lines, $preferred_position = null, $target_rink = 
         ($preferred_position ? " (preferred position: {$preferred_position})" : "") .
         ($target_rink ? " (target rink: {$target_rink})" : ""), 'debug');
     
+    // Log the first few lines of the roster for debugging
+    hockey_log("First 10 lines of roster:", 'debug');
+    for ($i = 0; $i < min(10, count($lines)); $i++) {
+        hockey_log("Line {$i}: '{$lines[$i]}'", 'debug');
+    }
+    
     $forward_spots = [];
     $defense_spots = [];
     $goalie_spots = [];
     
+    // Get the start lines for each rink section
+    $civic_start = null;
+    $forum_start = null;
+    for ($i = 0; $i < $end_line; $i++) {
+        if (preg_match('/^CIVIC (10:30|11:00)PM/', $lines[$i])) {
+            $civic_start = $i;
+        } elseif (strpos($lines[$i], 'FORUM 10:30PM') === 0) {
+            $forum_start = $i;
+        }
+    }
+    
     // Collect all available spots
     for ($i = 0; $i < $end_line; $i++) {
         $line = trim($lines[$i]);
-        if ($line === 'F-') {
-            $forward_spots[] = ['line_number' => $i, 'position' => 'F'];
-        } elseif ($line === 'D-') {
-            $defense_spots[] = ['line_number' => $i, 'position' => 'D'];
-        } elseif ($line === 'Goal:') {
-            $goalie_spots[] = ['line_number' => $i, 'position' => 'Goal'];
+        
+        // Skip lines that don't contain position markers
+        if (!preg_match('/^(F-|D-|Goal:)/', $line)) {
+            continue;
+        }
+        
+        // Determine which rink this spot is in
+        $current_rink = null;
+        if ($civic_start !== null && $i > $civic_start && ($forum_start === null || $i < $forum_start)) {
+            $current_rink = 'CIVIC';
+        } elseif ($forum_start !== null && $i > $forum_start) {
+            $current_rink = 'FORUM';
+        }
+        
+        // For Friday skates, check if the spot is in the target rink
+        if ($target_rink && $current_rink !== $target_rink) {
+            hockey_log("Skipping spot at line {$i} - wrong rink: {$current_rink}", 'debug');
+            continue;
+        }
+        
+        // Check if the spot is empty (no player name after the position marker)
+        if (preg_match('/^(F-|D-|Goal:)\s*$/', $line)) {
+            hockey_log("Found empty spot at line {$i}: {$line} in rink {$current_rink}", 'debug');
+            if ($line === 'F-') {
+                $forward_spots[] = ['line_number' => $i, 'position' => 'F', 'rink' => $current_rink];
+            } elseif ($line === 'D-') {
+                $defense_spots[] = ['line_number' => $i, 'position' => 'D', 'rink' => $current_rink];
+            } elseif ($line === 'Goal:') {
+                $goalie_spots[] = ['line_number' => $i, 'position' => 'Goal', 'rink' => $current_rink];
+            }
+        } else {
+            hockey_log("Spot at line {$i} is not empty: {$line}", 'debug');
         }
     }
     
@@ -689,7 +812,7 @@ function find_available_spot($lines, $preferred_position = null, $target_rink = 
         if (!empty($goalie_spots)) {
             hockey_log("Found available goalie spot for goalie player", 'debug');
             $spot = $goalie_spots[array_rand($goalie_spots)];
-            hockey_log("Selected goalie spot at line {$spot['line_number']}", 'debug');
+            hockey_log("Selected goalie spot at line {$spot['line_number']} in rink {$spot['rink']}", 'debug');
             return $spot;
         }
         hockey_log("No goalie spots available for goalie player, must go to waitlist", 'debug');
@@ -704,7 +827,7 @@ function find_available_spot($lines, $preferred_position = null, $target_rink = 
                 if (!empty($forward_spots)) {
                     hockey_log("Found available forward spots for preferred position", 'debug');
                     $spot = $forward_spots[array_rand($forward_spots)];
-                    hockey_log("Selected forward spot at line {$spot['line_number']}", 'debug');
+                    hockey_log("Selected forward spot at line {$spot['line_number']} in rink {$spot['rink']}", 'debug');
                     return $spot;
                 }
                 hockey_log("No forward spots available despite preference", 'debug');
@@ -714,7 +837,7 @@ function find_available_spot($lines, $preferred_position = null, $target_rink = 
                 if (!empty($defense_spots)) {
                     hockey_log("Found available defense spots for preferred position", 'debug');
                     $spot = $defense_spots[array_rand($defense_spots)];
-                    hockey_log("Selected defense spot at line {$spot['line_number']}", 'debug');
+                    hockey_log("Selected defense spot at line {$spot['line_number']} in rink {$spot['rink']}", 'debug');
                     return $spot;
                 }
                 hockey_log("No defense spots available despite preference", 'debug');
@@ -727,7 +850,7 @@ function find_available_spot($lines, $preferred_position = null, $target_rink = 
     if (!empty($all_spots)) {
         hockey_log("Falling back to random position selection (excluding goalie spots)", 'debug');
         $spot = $all_spots[array_rand($all_spots)];
-        hockey_log("Selected random spot: {$spot['position']} at line {$spot['line_number']}", 'debug');
+        hockey_log("Selected random spot: {$spot['position']} at line {$spot['line_number']} in rink {$spot['rink']}", 'debug');
         return $spot;
     }
     
@@ -763,10 +886,11 @@ function get_roster_sections($lines, $day_of_week) {
         
         foreach ($lines as $i => $line) {
             $line = trim($line);
-            if ($line === 'CIVIC 10:30PM') {
+            // Match either 10:30PM or 11:00PM for Civic
+            if (preg_match('/^CIVIC (10:30|11:00)PM/', $line)) {
                 $civic_start = $i;
             }
-            if ($line === 'FORUM 10:30PM') {
+            if (strpos($line, 'FORUM 10:30PM') === 0) {
                 $forum_start = $i;
             }
             if ($line === 'WL:') {
@@ -785,18 +909,24 @@ function get_roster_sections($lines, $day_of_week) {
             ];
         }
         
-        hockey_log("Error: Could not find all sections in Friday roster", 'error');
+        hockey_log("Error: Could not find all sections in Friday roster. Civic: {$civic_start}, Forum: {$forum_start}, Waitlist: {$waitlist_start}", 'error');
         return null;
     }
     
     // Keep existing non-Friday logic
+    $waitlist_start = array_search('WL:', $lines);
+    if ($waitlist_start === false) {
+        hockey_log("Error: Could not find waitlist section in non-Friday roster", 'error');
+        return null;
+    }
+    
     return [
         'main' => [
             'start' => 0,
-            'end' => array_search('WL:', $lines)
+            'end' => $waitlist_start
         ],
         'waitlist' => [
-            'start' => array_search('WL:', $lines),
+            'start' => $waitlist_start,
             'end' => count($lines)
         ]
     ];

@@ -33,7 +33,8 @@ class Form_Handler {
         }
         
         $date = $date ?? current_time('Y-m-d');
-        return check_in_player($date, $player_name);
+        $skate_preference = isset($_POST['skate_preference']) ? sanitize_text_field($_POST['skate_preference']) : null;
+        return check_in_player($date, $player_name, $skate_preference);
     }
     
     public function handleCheckOut($player_name) {
