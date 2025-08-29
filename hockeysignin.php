@@ -65,7 +65,8 @@ add_action('plugins_loaded', function() {
         'includes/core/config.php',
         'includes/class-form-handler.php',
         'includes/core/game-schedule.php',
-        'includes/core/season-config.php',        
+        'includes/core/season-config.php',
+        'includes/core/date-override.php',        
         'includes/filters/profanity-list.php',
         'includes/filters/ProfanityFilter.php',
         'includes/roster-functions.php',
@@ -140,11 +141,24 @@ add_action('init', function() {
             hockey_log("Not scheduling cron jobs - not a game day ({$current_day})", 'debug');
         }
     }
+    
+    // Schedule cleanup of expired date overrides to run weekly
+    if (!wp_next_scheduled('cleanup_date_overrides_event')) {
+        wp_schedule_event(
+            time() + (7 * 24 * 60 * 60), // Start in 7 days
+            'weekly',
+            'cleanup_date_overrides_event'
+        );
+        hockey_log("Scheduled weekly cleanup of expired date overrides", 'debug');
+    }
 });
 
 // Keep these hooks outside since they need to be registered early
 register_activation_hook(__FILE__, 'hockeysignin_activate');
 register_deactivation_hook(__FILE__, 'hockeysignin_deactivation');
+
+// Add cron job hooks
+add_action('cleanup_date_overrides_event', 'cleanup_expired_date_overrides');
 
 function hockeysignin_activate() {
     // Create logs directory if it doesn't exist
@@ -164,6 +178,7 @@ function hockeysignin_activate() {
 function hockeysignin_deactivation() {
     wp_clear_scheduled_hook('create_daily_roster_files_event');
     wp_clear_scheduled_hook('move_waitlist_to_roster_event');
+    wp_clear_scheduled_hook('cleanup_date_overrides_event');
 }
 
 function enqueue_hockey_roster_styles() {

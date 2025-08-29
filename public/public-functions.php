@@ -70,7 +70,21 @@ function display_next_game_date() {
         return;
     }
     $next_game_date = get_next_game_date();
-    echo "The next scheduled skate date is " . esc_html(date('l, F jS', strtotime($next_game_date))) . ".";
+    
+    // Check if the next game date has an override
+    $date_override = \hockeysignin\Core\DateOverride::getInstance();
+    $override_message = '';
+    
+    if ($date_override->hasOverride($next_game_date)) {
+        $override = $date_override->getOverride($next_game_date);
+        $override_message = ' <strong>Note: This is a rescheduled skate (originally ' . 
+                          date('l, F jS', strtotime($override['original_date'])) . 
+                          ' moved to ' . date('l, F jS', strtotime($next_game_date)) . 
+                          ' at ' . date('g:i A', strtotime($override['actual_time'])) . 
+                          ' at ' . $override['actual_venue'] . ').</strong>';
+    }
+    
+    echo "The next scheduled skate date is " . esc_html(date('l, F jS', strtotime($next_game_date))) . "." . $override_message;
 }
 
 // Enqueue necessary scripts and styles for the public-facing parts

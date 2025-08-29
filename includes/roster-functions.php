@@ -28,11 +28,29 @@ function get_current_season($date = null) {
 }
 
 function get_day_directory_map($date) {
+    // Check for date override first
+    $date_override = \hockeysignin\Core\DateOverride::getInstance();
+    
+    if ($date_override->hasOverride($date)) {
+        $actual_day = $date_override->getDayOfWeek($date);
+        $directory = $date_override->getDirectoryForDate($date);
+        
+        if ($directory) {
+            hockey_log("Using date override for {$date}: {$actual_day} → {$directory}", 'debug');
+            return [$actual_day => $directory];
+        }
+    }
+    
+    // Fall back to regular season configuration
     $day_of_week = date('l', strtotime($date));
     $directory = \hockeysignin\Core\SeasonConfig::getInstance()->getDayDirectory($date);
     
     if (!$directory) {
-        hockey_log("No directory mapping found for {$day_of_week} on {$date}", 'error');
+        // Only log as error if it's a configured game day
+        $directory_map = get_option('hockey_directory_map', []);
+        if (array_key_exists($day_of_week, $directory_map)) {
+            hockey_log("No directory mapping found for {$day_of_week} on {$date}", 'error');
+        }
         return [];
     }
     
@@ -53,20 +71,28 @@ function is_game_day($date = null) {
 }
 
 function create_next_game_roster_files($date) {
-    $day_of_week = date('l', strtotime($date));
+    // Get the actual day of week for template selection
+    $date_override = \hockeysignin\Core\DateOverride::getInstance();
+    $actual_day_of_week = $date_override->getActualDayOfWeek($date);
     
-    // Choose template based on day
-    $template_file = ($day_of_week === 'Friday') 
+    // Choose template based on actual day (for proper template selection)
+    $template_file = ($actual_day_of_week === 'Friday') 
         ? 'roster_template_friday.txt' 
         : 'roster_template.txt';
     
     $template_path = realpath(__DIR__ . "/../rosters/") . "/{$template_file}";
     
     $day_directory_map = get_day_directory_map($date);
-    $day_directory = $day_directory_map[$day_of_week] ?? null;
+    // Use the replacing day for directory structure (handled in get_day_directory_map)
+    $replacing_day = $date_override->getDayOfWeek($date);
+    $day_directory = $day_directory_map[$replacing_day] ?? null;
 
     if (!$day_directory) {
-        hockey_log("No directory mapping found for date: {$date}", 'error');
+        // Only log as error if it's a configured game day
+        $directory_map = get_option('hockey_directory_map', []);
+        if (array_key_exists($day_of_week, $directory_map)) {
+            hockey_log("No directory mapping found for date: {$date}", 'error');
+        }
         return;
     }
 
@@ -431,18 +457,61 @@ function finalize_roster_at_930pm($date) {
 // Fetch the current roster from the appropriate file
 function get_current_roster() {
     $date = current_time('Y-m-d');
-    $day_of_week = date('l', strtotime($date));
     $day_directory_map = get_day_directory_map($date);
-    $day_directory = $day_directory_map[$day_of_week] ?? null;
+    
+    // Get the first (and only) directory from the map
+    $day_directory = reset($day_directory_map);
+    if (!$day_directory) {
+        hockey_log("No day directory found for date {$date}", 'debug');
+        return false;
+    }
+    
     $formatted_date = date('D_M_j', strtotime($date));
     $season = get_current_season($date);
     
     $file_path = realpath(__DIR__ . "/../rosters/") . "/{$season}/{$day_directory}/Pickup_Roster-{$formatted_date}.txt";
     
+    hockey_log("Looking for roster file: {$file_path}", 'debug');
+    
     if (file_exists($file_path)) {
+        hockey_log("Roster file found: {$file_path}", 'debug');
         return file_get_contents($file_path);
     }
+    
+    hockey_log("Roster file not found: {$file_path}", 'debug');
     return false;
+}
+
+// Check if today is a skate day (independent of check-in hours)
+function is_today_skate_day() {
+    $current_date = current_time('Y-m-d');
+    $current_day = date('D', current_time('timestamp'));
+    
+    // Check if there's a date override for today
+    $date_override = \hockeysignin\Core\DateOverride::getInstance();
+    $has_override = $date_override->hasOverride($current_date);
+    
+    if ($has_override) {
+        hockey_log("Date override detected for {$current_date}, today is a skate day", 'debug');
+        return true;
+    }
+    
+    // Check if today is a regular game day
+    $directory_map = get_option('hockey_directory_map', []);
+    $enabled_days = array_keys($directory_map);
+    $game_days = array_map(function($day) {
+        return substr($day, 0, 3);
+    }, $enabled_days);
+    
+    $is_game_day = in_array($current_day, $game_days);
+    
+    if ($is_game_day) {
+        hockey_log("Today ({$current_day}) is a regular game day", 'debug');
+    } else {
+        hockey_log("Today ({$current_day}) is not a game day", 'debug');
+    }
+    
+    return $is_game_day;
 }
 
 // Display the roster or the next scheduled skate date
@@ -452,18 +521,40 @@ function display_roster($date = null) {
         return '';
     }
     
-    // Get the roster content
-    $roster_content = get_current_roster();
-    
-    if ($roster_content !== false) {
-        return '<div class="hockey-roster-display">' . esc_html($roster_content) . '</div>';
+    // Check if today is a skate day (roster should be visible until midnight on skate days)
+    if (is_today_skate_day()) {
+        hockey_log("Today is a skate day, checking for roster file", 'debug');
+        
+        // Get the roster content
+        $roster_content = get_current_roster();
+        
+        if ($roster_content !== false) {
+            hockey_log("Roster file found, displaying content", 'debug');
+            return '<div class="hockey-roster-display">' . esc_html($roster_content) . '</div>';
+        } else {
+            hockey_log("No roster file found for today's skate", 'debug');
+        }
     }
     
     // Show next game date when no roster is available
     if (get_option('hockeysignin_hide_next_game', '0') !== '1') {
         $next_game_day = calculate_next_game_day();
         $next_game_day_formatted = date_i18n('l, F jS', strtotime($next_game_day));
-        return '<div class="hockey-roster-display">The next scheduled skate date is ' . $next_game_day_formatted . '.</div>';
+        
+        // Check if the next game date has an override
+        $date_override = \hockeysignin\Core\DateOverride::getInstance();
+        $override_message = '';
+        
+        if ($date_override->hasOverride($next_game_day)) {
+            $override = $date_override->getOverride($next_game_day);
+            $override_message = ' <strong>Note: This is a rescheduled skate (originally ' . 
+                              date('l, F jS', strtotime($override['original_date'])) . 
+                              ' moved to ' . date('l, F jS', strtotime($override['actual_date'])) . 
+                              ' at ' . date('g:i A', strtotime($override['actual_time'])) . 
+                              ' at ' . $override['actual_venue'] . ').</strong>';
+        }
+        
+        return '<div class="hockey-roster-display">The next scheduled skate date is ' . $next_game_day_formatted . '.' . $override_message . '</div>';
     }
     
     return '';
@@ -483,7 +574,7 @@ if (file_exists($file_path)) {
 $roster = file_get_contents($file_path);
 
 // Check for vacant spots
-$positions = ['F -', 'D -', 'Goal:'];
+$positions = ['F-', 'D-', 'Goal:'];
 $vacant_spot_found = false;
 foreach ($positions as $position) {
 if (strpos($roster, "{$position} \n") !== false) {
@@ -581,12 +672,24 @@ function find_available_spot($lines, $preferred_position = null) {
     // Collect all available spots
     for ($i = 0; $i < $end_line; $i++) {
         $line = trim($lines[$i]);
-        if ($line === 'F-') {
-            $forward_spots[] = ['line_number' => $i, 'position' => 'F'];
-        } elseif ($line === 'D-') {
-            $defense_spots[] = ['line_number' => $i, 'position' => 'D'];
-        } elseif ($line === 'Goal:') {
-            $goalie_spots[] = ['line_number' => $i, 'position' => 'Goal'];
+        
+        // Skip lines that don't contain position markers
+        if (!preg_match('/^(F-|D-|Goal:)/', $line)) {
+            continue;
+        }
+        
+        // Check if the spot is empty (no player name after the position marker)
+        if (preg_match('/^(F-|D-|Goal:)\s*$/', $line)) {
+            hockey_log("Found empty spot at line {$i}: {$line}", 'debug');
+            if (preg_match('/^F-/', $line)) {
+                $forward_spots[] = ['line_number' => $i, 'position' => 'F'];
+            } elseif (preg_match('/^D-/', $line)) {
+                $defense_spots[] = ['line_number' => $i, 'position' => 'D'];
+            } elseif (preg_match('/^Goal:/', $line)) {
+                $goalie_spots[] = ['line_number' => $i, 'position' => 'Goal'];
+            }
+        } else {
+            hockey_log("Spot at line {$i} is not empty: {$line}", 'debug');
         }
     }
     

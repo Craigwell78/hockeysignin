@@ -131,6 +131,11 @@ function hockeysignin_admin_page() {
     wp_nonce_field('hockeysignin_action', 'hockeysignin_nonce');
     echo '<input type="submit" class="button-secondary" value="Undo Last Waitlist Processing" onclick="return confirm(\'Undo the last waitlist processing?\');">';
     echo '</form>';
+    
+    // Add quick date override button
+    echo '<form method="post" action="' . admin_url('admin.php?page=hockeysignin_date_overrides') . '" style="margin-top: 10px;">';
+    echo '<input type="submit" class="button button-secondary" value="Manage Date Overrides">';
+    echo '</form>';
 
     echo '<h2>Manual Player Check-In</h2>';
     echo '<form method="post" action="">';
@@ -235,6 +240,18 @@ function hockeysignin_add_season_wizard() {
 }
 add_action('admin_menu', 'hockeysignin_add_season_wizard');
 
+function hockeysignin_add_date_overrides() {
+    add_submenu_page(
+        'hockeysignin',
+        'Date Overrides',
+        'Date Overrides',
+        'manage_options',
+        'hockeysignin_date_overrides',
+        'render_date_overrides'
+    );
+}
+add_action('admin_menu', 'hockeysignin_add_date_overrides');
+
 function render_season_setup() {
     if (isset($_POST['create_season'])) {
         if (isset($_POST['confirm_configuration_change']) && $_POST['confirm_configuration_change'] === 'yes') {
@@ -302,13 +319,21 @@ function render_season_setup() {
             <h3>Current Configuration</h3>
             <p><strong>Active Season:</strong> <?php echo esc_html($current_season); ?></p>
             <p><strong>Base Path:</strong> <code>/wp-content/plugins/hockeysignin/rosters/<?php echo esc_html($current_season); ?>/</code></p>
-            <p><strong>Waitlist Processing Time:</strong> <?php echo esc_html(date('g:i A', strtotime($waitlist_time))); ?></p>
             
             <?php if (!empty($directory_map)): ?>
                 <h4>Configured Game Days:</h4>
                 <ul style="list-style-type: disc; margin-left: 20px;">
-                    <?php foreach ($directory_map as $day => $directory): ?>
-                        <li><strong><?php echo esc_html($day); ?>:</strong> <code><?php echo esc_html($directory); ?></code></li>
+                    <?php 
+                    $waitlist_times = get_option('hockey_waitlist_processing_times', []);
+                    foreach ($directory_map as $day => $directory): 
+                        $waitlist_time = $waitlist_times[$day] ?? get_option('hockey_waitlist_processing_time', '18:00');
+                    ?>
+                        <li>
+                            <strong><?php echo esc_html($day); ?>:</strong> 
+                            <code><?php echo esc_html($directory); ?></code>
+                            <br>
+                            <span style="margin-left: 20px;">Waitlist Processing: <?php echo esc_html(date('g:i A', strtotime($waitlist_time))); ?></span>
+                        </li>
                     <?php endforeach; ?>
                 </ul>
                 
@@ -346,12 +371,14 @@ function render_season_setup() {
                         <th>Day</th>
                         <th>Venue</th>
                         <th>Start Time (24h)</th>
+                        <th>Waitlist Time (24h)</th>
                         <th>Enable</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php
                     $days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+                    $waitlist_times = get_option('hockey_waitlist_processing_times', []);
                     foreach ($days as $day) {
                         ?>
                         <tr>
@@ -363,6 +390,10 @@ function render_season_setup() {
                             <td>
                                 <input type="time" name="time[<?php echo $day; ?>]" 
                                        value="22:30" class="regular-text">
+                            </td>
+                            <td>
+                                <input type="time" name="waitlist_time[<?php echo $day; ?>]" 
+                                       value="<?php echo esc_attr($waitlist_times[$day] ?? '18:00'); ?>" class="regular-text">
                             </td>
                             <td>
                                 <input type="checkbox" name="enabled[<?php echo $day; ?>]" value="1">
@@ -417,7 +448,7 @@ function handle_season_setup() {
     $venues = $_POST['venue'];
     $times = $_POST['time'];
     $enabled = $_POST['enabled'] ?? [];
-    $waitlist_time = sanitize_text_field($_POST['waitlist_time']);
+    $waitlist_times = $_POST['waitlist_time'] ?? [];
     
     // Create directory map
     $directory_map = [];
@@ -440,6 +471,15 @@ function handle_season_setup() {
     // Update active season
     update_option('hockey_active_season', $season_name);
     
+    // Save day-specific waitlist times
+    $day_waitlist_times = [];
+    foreach ($waitlist_times as $day => $time) {
+        if (isset($enabled[$day])) {
+            $day_waitlist_times[$day] = sanitize_text_field($time);
+        }
+    }
+    update_option('hockey_waitlist_processing_times', $day_waitlist_times);
+    
     // Create season folders
     $base_path = WP_PLUGIN_DIR . '/hockeysignin/rosters/';
     
@@ -454,7 +494,7 @@ function handle_season_setup() {
     }
 
     // Update waitlist processing time in wp_options
-    update_option('hockey_waitlist_processing_time', $waitlist_time);
+    update_option('hockey_waitlist_processing_time', $waitlist_times[date('l')] ?? '18:00');
 
     // Clear and reschedule cron jobs
     $had_roster_schedule = wp_next_scheduled('create_daily_roster_files_event');
@@ -477,7 +517,7 @@ function handle_season_setup() {
         }
         
         // Schedule waitlist processing for configured time
-        $waitlist_time_obj = new DateTime('today ' . $waitlist_time, $site_timezone);
+        $waitlist_time_obj = new DateTime('today ' . ($waitlist_times[date('l')] ?? '18:00'), $site_timezone);
         if ($current_time > $waitlist_time_obj) {
             $waitlist_time_obj->modify('+1 day');
         }
@@ -517,4 +557,333 @@ function handle_season_setup() {
         'Season structure created and configuration updated successfully!',
         'updated'
     );
+}
+
+function render_date_overrides() {
+    if (isset($_POST['add_override'])) {
+        if (wp_verify_nonce($_POST['_wpnonce'], 'date_override_nonce')) {
+            handle_date_override_add();
+        }
+    }
+    
+    if (isset($_POST['remove_override'])) {
+        if (wp_verify_nonce($_POST['_wpnonce'], 'date_override_nonce')) {
+            handle_date_override_remove();
+        }
+    }
+    
+    if (isset($_POST['generate_roster'])) {
+        if (wp_verify_nonce($_POST['_wpnonce'], 'date_override_nonce')) {
+            handle_override_roster_generation();
+        }
+    }
+    
+    ?>
+    <div class="wrap">
+        <h1>Date Overrides</h1>
+        
+        <div class="notice notice-info">
+            <p><strong>How Date Overrides Work:</strong> When you create a date override, the system will generate a roster file for the new date and place it in the <strong>replacing day's directory</strong>. This maintains your existing folder structure while allowing for schedule changes.</p>
+            <p><strong>Example:</strong> If you're replacing a Wednesday skate with a Thursday, the Thursday roster file will be created in the Wednesday directory.</p>
+            <p><strong>Waitlist Processing:</strong> For override dates, the system uses the <strong>replacing day's waitlist time</strong> by default. However, you can set a custom waitlist time for specific overrides if needed.</p>
+        </div>
+        
+        <?php
+        // Display current overrides
+        $date_override = \hockeysignin\Core\DateOverride::getInstance();
+        $overrides = $date_override->getAllOverrides();
+        ?>
+        
+        <div class="card" style="max-width: 800px; margin-bottom: 20px; padding: 10px;">
+            <h3>Current Overrides</h3>
+            <?php if (empty($overrides)): ?>
+                <p><em>No date overrides are currently configured.</em></p>
+            <?php else: ?>
+                <table class="widefat">
+                    <thead>
+                        <tr>
+                            <th>Original Date</th>
+                            <th>Replacing</th>
+                            <th>New Date</th>
+                            <th>New Day/Time/Venue</th>
+                            <th>Waitlist Time</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($overrides as $date => $override): 
+                            // Get the waitlist time for the replacing day
+                            $waitlist_times = get_option('hockey_waitlist_processing_times', []);
+                            $replacing_day_waitlist = $waitlist_times[$override['replacing_day']] ?? get_option('hockey_waitlist_processing_time', '18:00');
+                        ?>
+                            <tr>
+                                <td><?php echo esc_html(date('M j, Y', strtotime($override['original_date']))); ?></td>
+                                <td><?php echo esc_html($override['replacing_day']); ?></td>
+                                <td><?php echo esc_html(date('M j, Y', strtotime($override['actual_date']))); ?></td>
+                                <td>
+                                    <?php echo esc_html($override['actual_day']); ?> at 
+                                    <?php echo esc_html(date('g:i A', strtotime($override['actual_time']))); ?> at 
+                                    <?php echo esc_html($override['actual_venue']); ?>
+                                </td>
+                                <td>
+                                    <?php if (!empty($override['custom_waitlist_time'])): ?>
+                                        <strong><?php echo esc_html(date('g:i A', strtotime($override['custom_waitlist_time']))); ?></strong>
+                                        <br><small>(custom time)</small>
+                                    <?php else: ?>
+                                        <strong><?php echo esc_html(date('g:i A', strtotime($replacing_day_waitlist))); ?></strong>
+                                        <br><small>(from <?php echo esc_html($override['replacing_day']); ?>)</small>
+                                    <?php endif; ?>
+                                </td>
+                                <td>
+                                    <form method="post" style="display: inline;">
+                                        <?php wp_nonce_field('date_override_nonce'); ?>
+                                        <input type="hidden" name="remove_override" value="1">
+                                        <input type="hidden" name="override_date" value="<?php echo esc_attr($date); ?>">
+                                        <input type="submit" class="button button-small" value="Remove" onclick="return confirm('Remove this override?')">
+                                    </form>
+                                    
+                                    <form method="post" style="display: inline; margin-left: 5px;">
+                                        <?php wp_nonce_field('date_override_nonce'); ?>
+                                        <input type="hidden" name="generate_roster" value="1">
+                                        <input type="hidden" name="override_date" value="<?php echo esc_attr($date); ?>">
+                                        <input type="submit" class="button button-small button-primary" value="Generate Roster">
+                                    </form>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+            <?php endif; ?>
+        </div>
+        
+        <div class="card" style="max-width: 800px; margin-bottom: 20px; padding: 10px;">
+            <h3>Current Season Waitlist Times</h3>
+            <p>These are the waitlist processing times for each configured game day. When you create an override, the system will use the <strong>replacing day's</strong> waitlist time.</p>
+            <?php
+            $directory_map = get_option('hockey_directory_map', []);
+            $waitlist_times = get_option('hockey_waitlist_processing_times', []);
+            
+            if (!empty($directory_map)): ?>
+                <table class="widefat">
+                    <thead>
+                        <tr>
+                            <th>Game Day</th>
+                            <th>Directory</th>
+                            <th>Waitlist Processing Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($directory_map as $day => $directory): 
+                            $waitlist_time = $waitlist_times[$day] ?? get_option('hockey_waitlist_processing_time', '18:00');
+                        ?>
+                            <tr>
+                                <td><strong><?php echo esc_html($day); ?></strong></td>
+                                <td><code><?php echo esc_html($directory); ?></code></td>
+                                <td><strong><?php echo esc_html(date('g:i A', strtotime($waitlist_time))); ?></strong></td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+            <?php else: ?>
+                <p><em>No game days are currently configured.</em></p>
+            <?php endif; ?>
+        </div>
+        
+        <div class="card" style="max-width: 800px; margin-bottom: 20px; padding: 10px;">
+            <h3>Add New Date Override</h3>
+            <form method="post" class="date-override-form">
+                <?php wp_nonce_field('date_override_nonce'); ?>
+                
+                <table class="form-table">
+                    <tr>
+                        <th><label for="original_date">Original Scheduled Date</label></th>
+                        <td>
+                            <input type="date" name="original_date" id="original_date" required>
+                            <p class="description">The date that was originally scheduled</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><label for="replacing_day">Replacing Which Day</label></th>
+                        <td>
+                            <select name="replacing_day" id="replacing_day" required>
+                                <option value="">Select a day</option>
+                                <?php
+                                $directory_map = get_option('hockey_directory_map', []);
+                                foreach ($directory_map as $day => $directory) {
+                                    echo '<option value="' . esc_attr($day) . '">' . esc_html($day) . '</option>';
+                                }
+                                ?>
+                            </select>
+                            <p class="description">Which regular game day this is replacing</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><label for="actual_date">New Date</label></th>
+                        <td>
+                            <input type="date" name="actual_date" id="actual_date" required>
+                            <p class="description">The new date when the game will actually happen</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><label for="actual_day">New Day of Week</label></th>
+                        <td>
+                            <select name="actual_day" id="actual_day" required>
+                                <option value="">Select a day</option>
+                                <option value="Monday">Monday</option>
+                                <option value="Tuesday">Tuesday</option>
+                                <option value="Wednesday">Wednesday</option>
+                                <option value="Thursday">Thursday</option>
+                                <option value="Friday">Friday</option>
+                                <option value="Saturday">Saturday</option>
+                                <option value="Sunday">Sunday</option>
+                            </select>
+                            <p class="description">The day of the week for the new date (used for template selection)</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><label for="actual_time">New Time</label></th>
+                        <td>
+                            <input type="time" name="actual_time" id="actual_time" required>
+                            <p class="description">The new time for the game (24-hour format)</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><label for="actual_venue">New Venue</label></th>
+                        <td>
+                            <input type="text" name="actual_venue" id="actual_venue" required>
+                            <p class="description">The new venue (e.g., Civic, Forum)</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><label for="custom_waitlist_time">Custom Waitlist Time (Optional)</label></th>
+                        <td>
+                            <input type="time" name="custom_waitlist_time" id="custom_waitlist_time">
+                            <p class="description">Leave blank to use the replacing day's waitlist time, or set a custom time for this specific override</p>
+                        </td>
+                    </tr>
+                </table>
+                
+                <p class="submit">
+                    <input type="submit" name="add_override" class="button button-primary" value="Add Date Override">
+                </p>
+            </form>
+        </div>
+    </div>
+    <?php
+}
+
+function handle_date_override_add() {
+    $original_date = sanitize_text_field($_POST['original_date']);
+    $replacing_day = sanitize_text_field($_POST['replacing_day']);
+    $actual_date = sanitize_text_field($_POST['actual_date']);
+    $actual_day = sanitize_text_field($_POST['actual_day']);
+    $actual_time = sanitize_text_field($_POST['actual_time']);
+    $actual_venue = sanitize_text_field($_POST['actual_venue']);
+    $custom_waitlist_time = !empty($_POST['custom_waitlist_time']) ? sanitize_text_field($_POST['custom_waitlist_time']) : null;
+    
+    // Validate inputs
+    if (empty($original_date) || empty($replacing_day) || empty($actual_date) || 
+        empty($actual_day) || empty($actual_time) || empty($actual_venue)) {
+        add_settings_error(
+            'date_override',
+            'missing_fields',
+            'All fields are required.',
+            'error'
+        );
+        return;
+    }
+    
+    // Add the override
+    $date_override = \hockeysignin\Core\DateOverride::getInstance();
+    $result = $date_override->addOverride(
+        $original_date,
+        $replacing_day,
+        $actual_date,
+        $actual_day,
+        $actual_time,
+        $actual_venue,
+        $custom_waitlist_time
+    );
+    
+    if ($result) {
+        add_settings_error(
+            'date_override',
+            'override_added',
+            'Date override added successfully!',
+            'updated'
+        );
+    } else {
+        add_settings_error(
+            'date_override',
+            'override_failed',
+            'Failed to add date override.',
+            'error'
+        );
+    }
+}
+
+function handle_date_override_remove() {
+    $override_date = sanitize_text_field($_POST['override_date']);
+    
+    if (empty($override_date)) {
+        add_settings_error(
+            'date_override',
+            'missing_date',
+            'No override date specified.',
+            'error'
+        );
+        return;
+    }
+    
+    $date_override = \hockeysignin\Core\DateOverride::getInstance();
+    $result = $date_override->removeOverride($override_date);
+    
+    if ($result) {
+        add_settings_error(
+            'date_override',
+            'override_removed',
+            'Date override removed successfully!',
+            'updated'
+        );
+    } else {
+        add_settings_error(
+            'date_override',
+            'override_failed',
+            'Failed to remove date override.',
+            'error'
+        );
+    }
+}
+
+function handle_override_roster_generation() {
+    $override_date = sanitize_text_field($_POST['override_date']);
+    
+    if (empty($override_date)) {
+        add_settings_error(
+            'date_override',
+            'missing_date',
+            'No override date specified.',
+            'error'
+        );
+        return;
+    }
+    
+    // Generate roster for the override date
+    $result = create_next_game_roster_files($override_date);
+    
+    if ($result !== false) {
+        add_settings_error(
+            'date_override',
+            'roster_generated',
+            'Roster file generated successfully for the override date!',
+            'updated'
+        );
+    } else {
+        add_settings_error(
+            'date_override',
+            'roster_failed',
+            'Failed to generate roster file for the override date.',
+            'error'
+        );
+    }
 }

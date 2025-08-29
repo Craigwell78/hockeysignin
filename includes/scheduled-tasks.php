@@ -79,6 +79,36 @@ function process_waitlist() {
         return;
     }
     
+    // Get day-specific waitlist time (considering date overrides)
+    $date_override = \hockeysignin\Core\DateOverride::getInstance();
+    
+    if ($date_override->hasOverride($next_game_date)) {
+        $override = $date_override->getOverride($next_game_date);
+        
+        // Check if override has a custom waitlist time
+        if (!empty($override['custom_waitlist_time'])) {
+            $waitlist_time = $override['custom_waitlist_time'];
+            hockey_log("Using custom waitlist time for override date {$next_game_date}: {$waitlist_time}", 'debug');
+        } else {
+            // For override dates without custom time, use the replacing day's waitlist time
+            $replacing_day = $date_override->getDayOfWeek($next_game_date);
+            $waitlist_times = get_option('hockey_waitlist_processing_times', []);
+            $waitlist_time = $waitlist_times[$replacing_day] ?? get_option('hockey_waitlist_processing_time', '18:00');
+            hockey_log("Using waitlist time from replacing day ({$replacing_day}): {$waitlist_time}", 'debug');
+        }
+    } else {
+        // For regular dates, use the current day's waitlist time
+        $waitlist_times = get_option('hockey_waitlist_processing_times', []);
+        $waitlist_time = $waitlist_times[$current_day] ?? get_option('hockey_waitlist_processing_time', '18:00');
+    }
+    
+    // Check if it's time to process waitlist
+    $current_time = current_time('H:i');
+    if ($current_time < $waitlist_time) {
+        hockey_log("Not yet time for waitlist processing (current: {$current_time}, waitlist: {$waitlist_time})", 'debug');
+        return;
+    }
+    
     // Get file path
     $day_directory_map = get_day_directory_map($next_game_date);
     $day_directory = $day_directory_map[$current_day] ?? null;
@@ -129,4 +159,17 @@ function process_waitlist() {
     }
 
     hockey_log("Successfully processed waitlist and updated roster file", 'debug');
+}
+
+function cleanup_expired_date_overrides() {
+    try {
+        $date_override = \hockeysignin\Core\DateOverride::getInstance();
+        $cleaned = $date_override->cleanupExpiredOverrides();
+        
+        if ($cleaned > 0) {
+            hockey_log("Cleaned up {$cleaned} expired date overrides", 'info');
+        }
+    } catch (Exception $e) {
+        hockey_log("Error cleaning up expired date overrides: " . $e->getMessage(), 'error');
+    }
 }
