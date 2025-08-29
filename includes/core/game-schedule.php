@@ -4,8 +4,8 @@ namespace hockeysignin\Core;
 
 class GameSchedule {
     private static $instance = null;
-    private $game_schedule = ['Tuesday', 'Thursday', 'Friday', 'Saturday'];
-    private $game_days = [2, 4, 5, 6]; // 1 = Monday, 2 = Tuesday, etc.
+    private $game_schedule = ['Monday', 'Tuesday', 'Thursday', 'Friday', 'Saturday'];
+    private $game_days = [1, 2, 4, 5, 6]; // 1 = Monday, 2 = Tuesday, etc.
     
     private function __construct() {}
     
@@ -37,22 +37,28 @@ class GameSchedule {
         }
         
         // Find the next game day
-        foreach ($this->game_days as $index => $game_day) {
+        $next_game_day = null;
+        $min_days_until = 7; // Start with maximum possible days
+        
+        foreach ($this->game_days as $game_day) {
             hockey_log("Checking game day: {$game_day}", 'debug');
-            if ($game_day > $day_of_week) {
-                // Calculate days until next game
-                $days_until = $game_day - $day_of_week;
-                $next_date = date('Y-m-d', strtotime("+{$days_until} days", strtotime($today)));
-                hockey_log("Found next game day: {$next_date} (day {$game_day})", 'debug');
-                return $next_date;
+            
+            // Calculate days until this game day
+            $days_until = $game_day - $day_of_week;
+            if ($days_until <= 0) {
+                $days_until += 7; // Add a week if the day has passed
+            }
+            
+            // If this is sooner than our current best, update
+            if ($days_until < $min_days_until) {
+                $min_days_until = $days_until;
+                $next_game_day = $game_day;
             }
         }
         
-        // If we're past Saturday or no later games this week, get next Tuesday
-        // Calculate days until next Tuesday (day 2)
-        $days_until = 7 - $day_of_week + 2;
-        $next_date = date('Y-m-d', strtotime("+{$days_until} days", strtotime($today)));
-        hockey_log("No more games this week, returning next Tuesday: {$next_date}", 'debug');
+        // Calculate the next date
+        $next_date = date('Y-m-d', strtotime("+{$min_days_until} days", strtotime($today)));
+        hockey_log("Found next game day: {$next_date} (day {$next_game_day})", 'debug');
         return $next_date;
     }
     

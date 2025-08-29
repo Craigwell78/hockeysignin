@@ -111,12 +111,15 @@ function hockeysignin_shortcode() {
             // Add skate preference dropdown for Fridays
             $day_of_week = date('l');
             if ($day_of_week === 'Friday') {
-                echo '<label for="skate_preference">Skate Preference:</label>';
-                echo '<select id="skate_preference" name="skate_preference" required>';
-                echo '<option value="fast">Fast</option>';
-                echo '<option value="beginner">Beginner/Rusty</option>';
-                echo '<option value="either">Either</option>';
-                echo '</select>';
+                $season = get_current_season();
+                if (strpos($season, 'Summer') === false) {
+                    echo '<label for="skate_preference">Skate Preference:</label>';
+                    echo '<select id="skate_preference" name="skate_preference" required>';
+                    echo '<option value="fast">Fast</option>';
+                    echo '<option value="beginner">Beginner/Rusty</option>';
+                    echo '<option value="either">Either</option>';
+                    echo '</select>';
+                }
             }
             ?>
             

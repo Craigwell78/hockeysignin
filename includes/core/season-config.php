@@ -6,6 +6,7 @@ class SeasonConfig {
     private static $instance = null;
     
     private $regular_season_map = [
+        'Monday' => 'Mon1030Forum',
         'Tuesday' => 'Tues1030Forum',
         'Thursday' => 'Thur1030Civic',
         'Friday' => 'Fri1030Forum',
@@ -13,10 +14,11 @@ class SeasonConfig {
     ];
     
     private $spring_summer_map = [
-        'Tuesday' => 'Tues1030Civic',
-        'Thursday' => 'Thur1030Civic',
-        'Friday' => 'Fri1030Civic',
-        'Saturday' => 'Sat1030Civic',
+        'Monday' => 'Mon1030Forum',
+        'Tuesday' => 'Tues1030Forum',
+        'Thursday' => 'Thur1030Forum',
+        'Friday' => 'Fri1030Forum',
+        'Saturday' => 'Sat1000Forum',
     ];
     
     private function __construct() {}

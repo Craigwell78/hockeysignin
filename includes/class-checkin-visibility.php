@@ -41,7 +41,7 @@ class CheckInVisibility {
     
     private function getGameDays() {
         $game_days = [
-            'HPH' => ['Tue', 'Thu', 'Fri', 'Sat'],
+            'HPH' => ['Mon', 'Tue', 'Thu', 'Fri', 'Sat'],
             'SSPH' => ['Sun', 'Thu']
         ];
         

@@ -26,10 +26,11 @@ return [
         'start' => '06-01',
         'end' => '09-30',
         'directory_map' => [
-            'Tuesday' => 'Tues1030Civic',
-            'Thursday' => 'Thur1030Civic',
-            'Friday' => 'Fri1030Civic',
-            'Saturday' => 'Sat1030Civic'
+            'Monday' => 'Mon1030Forum',
+            'Tuesday' => 'Tues1030Forum',
+            'Thursday' => 'Thur1030Forum',
+            'Friday' => 'Fri1030Forum',
+            'Saturday' => 'Sat1000Forum'
         ],
         'folder_format' => 'Summer{year}'
     ]

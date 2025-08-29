@@ -33,7 +33,6 @@ class ProfanityFilter {
             
             // Common variations
             'stfu', 'gtfo', 'kys',
-            'kys', 'kys',
         ];
     }
     
@@ -47,32 +46,44 @@ class ProfanityFilter {
     public function containsProfanity($text) {
         $text = strtolower(trim($text));
         
-        // Remove spaces and special characters
-        $textNoSpaces = preg_replace('/[\s\-\_\.\,\!\@\#\$]+/', '', $text);
-        
         foreach ($this->blacklist as $word) {
-            // Check original text with spaces
-            if (strpos($text, $word) !== false) {
-                hockey_log("Profanity detected (direct match): {$word}", 'warning');
+            // Check for word boundaries using regex - this prevents false positives
+            // like "David Chiasson" being blocked because it contains "ass"
+            $pattern = '/\b' . preg_quote($word, '/') . '\b/i';
+            if (preg_match($pattern, $text)) {
+                hockey_log("Profanity detected (word boundary match): {$word}", 'warning');
                 return true;
             }
             
-            // Check without spaces and special characters
-            $wordNoSpaces = preg_replace('/[\s\-\_\.\,\!\@\#\$]+/', '', $word);
-            if (strpos($textNoSpaces, $wordNoSpaces) !== false) {
-                hockey_log("Profanity detected (normalized): {$word}", 'warning');
-                return true;
-            }
-            
-            // Check for l33t speak variations
-            $l33t = str_replace(
+            // Check for l33t speak variations with word boundaries
+            // This prevents false positives while still catching intentional l33t speak
+            $l33t_word = str_replace(
                 ['a', 'e', 'i', 'o', 's'],
                 ['@', '3', '1', '0', '$'],
-                $wordNoSpaces
+                $word
             );
-            if (strpos($textNoSpaces, $l33t) !== false) {
-                hockey_log("Profanity detected (l33t speak): {$word}", 'warning');
+            $l33t_pattern = '/\b' . preg_quote($l33t_word, '/') . '\b/i';
+            if (preg_match($l33t_pattern, $text)) {
+                hockey_log("Profanity detected (l33t speak with boundaries): {$word}", 'warning');
                 return true;
+            }
+            
+            // Check for common misspellings and variations with word boundaries
+            $variations = [
+                str_replace('s', '$', $word),  // 'ass' -> 'a$$'
+                str_replace('a', '@', $word),  // 'ass' -> '@ss'
+                str_replace('i', '1', $word),  // 'shit' -> 'sh1t'
+                str_replace('e', '3', $word),  // 'fuck' -> 'fu3k'
+            ];
+            
+            foreach ($variations as $variation) {
+                if ($variation !== $word) {  // Skip if no change was made
+                    $variation_pattern = '/\b' . preg_quote($variation, '/') . '\b/i';
+                    if (preg_match($variation_pattern, $text)) {
+                        hockey_log("Profanity detected (variation with boundaries): {$word} -> {$variation}", 'warning');
+                        return true;
+                    }
+                }
             }
         }
         

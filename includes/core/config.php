@@ -33,7 +33,7 @@ class Config {
 
     public function getSeasonFolder($date) {
         $season = $this->getSeason($date);
-        $folder = $season === 'regular' ? 'RegularSeason2024-2025' : 'Summer2024';
+        $folder = $season === 'regular' ? 'RegularSeason2024-2025' : 'Summer2025';
         return $folder;
     }
 }
