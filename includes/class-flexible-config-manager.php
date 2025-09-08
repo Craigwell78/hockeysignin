@@ -27,7 +27,7 @@ class FlexibleConfigManager {
      */
     public function add_admin_menu() {
         add_submenu_page(
-            'hockey-admin',
+            'hockeysignin',
             'Season Configuration',
             'Season Config',
             'manage_options',

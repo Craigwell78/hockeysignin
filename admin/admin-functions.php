@@ -2,7 +2,7 @@
 use HockeySignin\Form_Handler;
 
 function hockeysignin_add_admin_menu() {
-    add_menu_page('Hockey Sign-in', 'Hockey Sign-in', 'manage_options', 'hockeysignin', 'hockeysignin_admin_page', 'dashicons-admin-users', 25);
+    add_menu_page('Nova Adult Hockey', 'Nova Adult Hockey', 'manage_options', 'hockeysignin', 'hockeysignin_admin_page', 'dashicons-admin-users', 25);
     add_submenu_page('hockeysignin', 'Settings', 'Settings', 'manage_options', 'hockeysignin_settings', 'hockeysignin_settings_page');
 }
 
