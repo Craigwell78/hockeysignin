@@ -1,11 +1,11 @@
 <?php
 /**
-* Plugin Name: Hockey Sign-in
-* Plugin URI: http://halifaxpickuphockey.com
-* Description: A custom sign-in and roster management system for hockey players, integrating with Participants Database.
-* Version: 1.0
+* Plugin Name: Nova Adult Hockey Sign-in
+* Plugin URI: http://novaadulthockey.com
+* Description: A unified sign-in and roster management system for Nova Adult Hockey communities, supporting multiple regions and venues.
+* Version: 2.0
  * Author: Jason Craig, ChatGPT 4o, Tabnine AI, Cursor Tab, Perplexity Pro
-* Author URI: http://halifaxpickuphockey.com
+* Author URI: http://novaadulthockey.com
 */
 
 // Add filter to suppress specific debug messages
@@ -24,6 +24,9 @@ require_once plugin_dir_path(__FILE__) . 'includes/helper-functions.php';
 
 // Load roster functions next since many other files depend on it
 require_once plugin_dir_path(__FILE__) . 'includes/roster-functions.php';
+
+// Load class files
+require_once plugin_dir_path(__FILE__) . 'includes/class-checkin-visibility.php';
 
 // Keep autoloader after helper functions are loaded
 spl_autoload_register(function ($class) {
@@ -60,8 +63,10 @@ add_action('plugins_loaded', function() {
     $include_files = [
         'includes/core/config.php',
         'includes/class-form-handler.php',
+        'includes/class-nova-hockey-manager.php',
         'includes/core/game-schedule.php',
-        'includes/core/season-config.php',        
+        'includes/core/season-config.php',
+        'includes/core/date-override.php',        
         'includes/filters/profanity-list.php',
         'includes/filters/ProfanityFilter.php',
         'includes/roster-functions.php',
@@ -148,6 +153,3 @@ function enqueue_hockey_roster_styles() {
 }
 add_action('wp_enqueue_scripts', 'enqueue_hockey_roster_styles');
 add_action('admin_enqueue_scripts', 'enqueue_hockey_roster_styles');
-
-// Add after your existing requires
-require_once plugin_dir_path(__FILE__) . 'includes/class-checkin-visibility.php';
