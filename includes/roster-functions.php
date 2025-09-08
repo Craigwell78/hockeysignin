@@ -59,10 +59,22 @@ function create_next_game_roster_files($date) {
     // Get the season first to determine which template to use
     $season = get_current_season($date);
     
-    // Choose template based on day and season
+    // Choose template based on day, season, and Friday skill menu setting
     if ($day_of_week === 'Friday' && strpos($season, 'Summer') === false) {
-        // Use Friday template only for non-Summer seasons
-        $template_file = 'roster_template_friday.txt';
+        // Check if Friday skill menu is enabled
+        if (class_exists('\hockeysignin\Admin\FlexibleConfigManager')) {
+            $friday_skill_menu_enabled = \hockeysignin\Admin\FlexibleConfigManager::isFridaySkillMenuEnabled();
+        } else {
+            $friday_skill_menu_enabled = false; // Default to disabled
+        }
+        
+        if ($friday_skill_menu_enabled) {
+            // Use Friday template only when skill menu is enabled
+            $template_file = 'roster_template_friday.txt';
+        } else {
+            // Use regular template when skill menu is disabled
+            $template_file = 'roster_template.txt';
+        }
     } else {
         // Use regular template for all Summer skates and non-Friday skates
         $template_file = 'roster_template.txt';
@@ -107,8 +119,8 @@ function create_next_game_roster_files($date) {
             }
         }
         
-        // For Friday rosters in non-Summer seasons, update the rink labels
-        if ($day_of_week === 'Friday' && strpos($season, 'Summer') === false) {
+        // For Friday rosters in non-Summer seasons with skill menu enabled, update the rink labels
+        if ($day_of_week === 'Friday' && strpos($season, 'Summer') === false && $template_file === 'roster_template_friday.txt') {
             $template_content = file_get_contents($template_path);
             $fast_rink = get_fast_skate_rink($date);
             hockey_log("Friday skate - Fast rink: {$fast_rink}", 'debug');
@@ -226,10 +238,18 @@ function check_in_player($date, $player_name, $skate_preference = null) {
     $season = get_current_season($date);
     hockey_log("Processing check-in for {$day_of_week} during {$season}", 'debug');
     
-    // For Friday skates, validate skate preference only for non-Summer seasons
-    if ($day_of_week === 'Friday' && strpos($season, 'Summer') === false && !$skate_preference) {
-        hockey_log("Check-in rejected - missing skate preference for Friday skate during {$season}", 'warning');
-        return "Check-in failed: Please select a skate preference for Friday skates.";
+    // For Friday skates, validate skate preference only when skill menu is enabled
+    if ($day_of_week === 'Friday' && strpos($season, 'Summer') === false) {
+        if (class_exists('\hockeysignin\Admin\FlexibleConfigManager')) {
+            $friday_skill_menu_enabled = \hockeysignin\Admin\FlexibleConfigManager::isFridaySkillMenuEnabled();
+        } else {
+            $friday_skill_menu_enabled = false; // Default to disabled
+        }
+        
+        if ($friday_skill_menu_enabled && !$skate_preference) {
+            hockey_log("Check-in rejected - missing skate preference for Friday skate during {$season}", 'warning');
+            return "Check-in failed: Please select a skate preference for Friday skates.";
+        }
     }
     
     // Get roster file path
