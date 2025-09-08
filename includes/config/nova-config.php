@@ -23,6 +23,7 @@ function get_nova_hockey_config() {
                     ]
                 ],
                 'schedules' => [
+                    'Monday' => ['Forum'],
                     'Tuesday' => ['Forum'],
                     'Thursday' => ['Civic'],
                     'Friday' => ['Forum'],
@@ -33,6 +34,7 @@ function get_nova_hockey_config() {
                         'start' => '10-01',
                         'end' => '03-31',
                         'directory_map' => [
+                            'Monday' => 'Mon1030Forum',
                             'Tuesday' => 'Tues1030Forum',
                             'Thursday' => 'Thur1030Civic',
                             'Friday' => 'Fri1030Forum',
@@ -44,6 +46,7 @@ function get_nova_hockey_config() {
                         'start' => '04-01',
                         'end' => '05-31',
                         'directory_map' => [
+                            'Monday' => 'Mon1030Civic',
                             'Tuesday' => 'Tues1030Civic',
                             'Thursday' => 'Thur1030Civic',
                             'Friday' => 'Fri1030Civic',

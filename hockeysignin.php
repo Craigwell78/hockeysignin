@@ -64,6 +64,7 @@ add_action('plugins_loaded', function() {
         'includes/core/config.php',
         'includes/class-form-handler.php',
         'includes/class-nova-hockey-manager.php',
+        'includes/class-flexible-config-manager.php',
         'includes/core/game-schedule.php',
         'includes/core/season-config.php',
         'includes/core/date-override.php',        
@@ -82,6 +83,11 @@ add_action('plugins_loaded', function() {
         } else {
             hockey_log("Failed to include: {$file_path}", 'error');
         }
+    }
+    
+    // Initialize flexible configuration manager
+    if (class_exists('\hockeysignin\Admin\FlexibleConfigManager')) {
+        \hockeysignin\Admin\FlexibleConfigManager::getInstance();
     }
 });
 
