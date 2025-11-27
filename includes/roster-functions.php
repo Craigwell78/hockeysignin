@@ -59,26 +59,8 @@ function create_next_game_roster_files($date) {
     // Get the season first to determine which template to use
     $season = get_current_season($date);
     
-    // Choose template based on day, season, and Friday skill menu setting
-    if ($day_of_week === 'Friday' && strpos($season, 'Summer') === false) {
-        // Check if Friday skill menu is enabled
-        if (class_exists('\hockeysignin\Admin\FlexibleConfigManager')) {
-            $friday_skill_menu_enabled = \hockeysignin\Admin\FlexibleConfigManager::isFridaySkillMenuEnabled();
-        } else {
-            $friday_skill_menu_enabled = false; // Default to disabled
-        }
-        
-        if ($friday_skill_menu_enabled) {
-            // Use Friday template only when skill menu is enabled
-            $template_file = 'roster_template_friday.txt';
-        } else {
-            // Use regular template when skill menu is disabled
-            $template_file = 'roster_template.txt';
-        }
-    } else {
-        // Use regular template for all Summer skates and non-Friday skates
-        $template_file = 'roster_template.txt';
-    }
+    // Use regular template for all skates (simplified from two-rink system)
+    $template_file = 'roster_template.txt';
     
     // Get the plugin directory path
     $plugin_dir = plugin_dir_path(dirname(__FILE__));
@@ -120,7 +102,7 @@ function create_next_game_roster_files($date) {
         }
         
         // For Friday rosters in non-Summer seasons with skill menu enabled, update the rink labels
-        if ($day_of_week === 'Friday' && strpos($season, 'Summer') === false && $template_file === 'roster_template_friday.txt') {
+        if (false) { // Disabled: Friday two-rink template logic
             $template_content = file_get_contents($template_path);
             $fast_rink = get_fast_skate_rink($date);
             hockey_log("Friday skate - Fast rink: {$fast_rink}", 'debug');
@@ -189,10 +171,7 @@ function create_next_game_roster_files($date) {
             // For Summer Fridays and non-Friday rosters
             $template_content = file_get_contents($template_path);
             
-            // Add FORUM 10:30PM header for summer Friday rosters
-            if ($day_of_week === 'Friday' && strpos($season, 'Summer') !== false) {
-                $template_content = "FORUM 10:30PM\n\n" . $template_content;
-            }
+            // No special Friday handling needed
             
             // Ensure the file ends with a newline
             if (substr($template_content, -1) !== "\n") {
@@ -217,7 +196,7 @@ function create_next_game_roster_files($date) {
     }
 }
 
-function check_in_player($date, $player_name, $skate_preference = null) {
+function check_in_player($date, $player_name) {
     hockey_log("Starting check-in process for player: {$player_name}", 'debug');
     
     // Capitalize the player name
@@ -238,19 +217,7 @@ function check_in_player($date, $player_name, $skate_preference = null) {
     $season = get_current_season($date);
     hockey_log("Processing check-in for {$day_of_week} during {$season}", 'debug');
     
-    // For Friday skates, validate skate preference only when skill menu is enabled
-    if ($day_of_week === 'Friday' && strpos($season, 'Summer') === false) {
-        if (class_exists('\hockeysignin\Admin\FlexibleConfigManager')) {
-            $friday_skill_menu_enabled = \hockeysignin\Admin\FlexibleConfigManager::isFridaySkillMenuEnabled();
-        } else {
-            $friday_skill_menu_enabled = false; // Default to disabled
-        }
-        
-        if ($friday_skill_menu_enabled && !$skate_preference) {
-            hockey_log("Check-in rejected - missing skate preference for Friday skate during {$season}", 'warning');
-            return "Check-in failed: Please select a skate preference for Friday skates.";
-        }
-    }
+    // No skate preference validation needed - all skates use same format
     
     // Get roster file path
     $day_directory_map = get_day_directory_map($date);
@@ -289,17 +256,19 @@ function check_in_player($date, $player_name, $skate_preference = null) {
     
     // If player exists in database
     if ($player) {
+        hockey_log("Player {$player_name} found in database", 'warning');
+        
         // Unserialize the active_nights array
         $active_nights = maybe_unserialize($player->active_nights);
         
         // Check if they're registered for this day
         $prepaid = is_array($active_nights) && in_array($day_of_week, $active_nights);
         
-        hockey_log("Player {$player_name} prepaid status: " . ($prepaid ? 'yes' : 'no'), 'debug');
+        hockey_log("Player {$player_name} prepaid status: " . ($prepaid ? 'yes' : 'no'), 'warning');
         
         // If player is not registered for this day, treat like non-database player
         if (!$prepaid) {
-            hockey_log("Player {$player_name} is not registered for {$day_of_week}", 'debug');
+            hockey_log("Player {$player_name} is not registered for {$day_of_week}", 'warning');
             return update_roster($date, $player_name, false, null, true, $skate_preference);  // Force to waitlist
         }
         
@@ -311,7 +280,7 @@ function check_in_player($date, $player_name, $skate_preference = null) {
         
         return update_roster($date, $player_name, $prepaid, $player->position, false, $skate_preference);
     } else {
-        hockey_log("Player not found in database: {$player_name}", 'debug');
+        hockey_log("Player not found in database: {$player_name}", 'warning');
         return update_roster($date, $player_name, false, null, true, $skate_preference);
     }
 }
@@ -441,7 +410,7 @@ function update_roster($date, $player_name, $prepaid, $preferred_position = null
         
         // Add new entry after existing entries
         array_splice($lines, $waitlist_start + $waitlist_count + 1, 0, [($waitlist_count + 1) . ". " . $player_name . $preference_suffix]);
-        hockey_log("Non-database player {$player_name} added to waitlist at position " . ($waitlist_count + 1), 'debug');
+        hockey_log("Non-database player {$player_name} added to waitlist at position " . ($waitlist_count + 1), 'warning');
         
         if (@file_put_contents($file_path, implode("\n", $lines)) === false) {
             hockey_log("Failed to write to roster file", 'error');
@@ -451,17 +420,8 @@ function update_roster($date, $player_name, $prepaid, $preferred_position = null
         return "Thank you! You've been added to our waitlist for tonight. Please check back at 6pm to see if you have made the roster! You can reach us at halifaxpickuphockey@gmail.com to ask about Regular subscriber spots!";
     }
 
-    // For Friday skates, determine which rink to place the player on
+    // No special Friday rink handling needed
     $target_rink = null;
-    if ($day_of_week === 'Friday' && $skate_preference) {
-        $fast_rink = get_fast_skate_rink($date);
-        if ($skate_preference === 'fast') {
-            $target_rink = $fast_rink;
-        } elseif ($skate_preference === 'beginner') {
-            $target_rink = ($fast_rink === 'FORUM') ? 'CIVIC' : 'FORUM';
-        }
-        hockey_log("Friday skate - Target rink determined: {$target_rink} for {$skate_preference} skate", 'debug');
-    }
     
     // Find an available spot
     $spot = find_available_spot($lines, $preferred_position, $target_rink);
@@ -482,9 +442,9 @@ function update_roster($date, $player_name, $prepaid, $preferred_position = null
         
         // Log the assignment
         if ($day_of_week === 'Friday') {
-            hockey_log("Player {$player_name} assigned to {$spot['rink']} rink at position {$position}", 'debug');
+            hockey_log("Player {$player_name} assigned to {$spot['rink']} rink at position {$position}", 'warning');
         } else {
-            hockey_log("Player {$player_name} assigned to position {$position}", 'debug');
+            hockey_log("Player {$player_name} assigned to position {$position}", 'warning');
         }
         
         if (@file_put_contents($file_path, implode("\n", $lines)) === false) {
@@ -513,7 +473,7 @@ function update_roster($date, $player_name, $prepaid, $preferred_position = null
         
         // Add player to waitlist
         $lines[] = ($waitlist_count + 1) . ". " . $player_name . $preference_suffix;
-        hockey_log("Player {$player_name} added to waitlist at position " . ($waitlist_count + 1), 'debug');
+        hockey_log("Player {$player_name} added to waitlist at position " . ($waitlist_count + 1), 'warning');
         
         if (@file_put_contents($file_path, implode("\n", $lines)) === false) {
             hockey_log("Failed to write to roster file", 'error');
@@ -708,7 +668,7 @@ function contains_profanity($text) {
         '/\bfuck\b/i', '/fuck\w*/i',
         '/\bshit\b/i', '/shit\w*/i',
         '/\bbitch\b/i', '/bitch\w*/i',
-        '/\basshole\b/i', '/ass\w*/i',
+        '/\basshole\b/i', '/\bass\b/i',  // Fixed: only match complete word "ass"
         '/\bdick\b/i', '/dick\w*/i',
         '/\bcunt\b/i', '/cunt\w*/i',
         '/\bslut\b/i', '/slut\w*/i',
@@ -911,54 +871,7 @@ function get_position_from_line($line) {
 }
 
 function get_roster_sections($lines, $day_of_week) {
-    if ($day_of_week === 'Friday') {
-        $civic_start = false;
-        $forum_start = false;
-        $waitlist_start = false;
-        $season = get_current_season(current_time('Y-m-d'));
-        $is_summer = strpos($season, 'Summer') !== false;
-        
-        foreach ($lines as $i => $line) {
-            $line = trim($line);
-            if (preg_match('/^CIVIC (10:30|11:00)PM/', $line)) {
-                $civic_start = $i;
-            }
-            if (strpos($line, 'FORUM 10:30PM') === 0) {
-                $forum_start = $i;
-            }
-            if ($line === 'WL:') {
-                $waitlist_start = $i;
-            }
-        }
-        
-        if ($is_summer) {
-            // For summer, we only need Forum and waitlist sections
-            if ($forum_start !== false && $waitlist_start !== false) {
-                return [
-                    'forum' => ['start' => $forum_start],
-                    'waitlist' => [
-                        'start' => $waitlist_start,
-                        'end' => count($lines)
-                    ]
-                ];
-            }
-            hockey_log("Error: Could not find required sections in summer Friday roster. Forum: {$forum_start}, Waitlist: {$waitlist_start}", 'error');
-        } else {
-            // For non-summer, we need all three sections
-            if ($civic_start !== false && $forum_start !== false && $waitlist_start !== false) {
-                return [
-                    'civic' => ['start' => $civic_start],
-                    'forum' => ['start' => $forum_start],
-                    'waitlist' => [
-                        'start' => $waitlist_start,
-                        'end' => count($lines)
-                    ]
-                ];
-            }
-            hockey_log("Error: Could not find all sections in winter Friday roster. Civic: {$civic_start}, Forum: {$forum_start}, Waitlist: {$waitlist_start}", 'error');
-        }
-        return null;
-    }
+    // Simplified: no special Friday handling needed
     
     // Keep existing non-Friday logic
     $waitlist_start = array_search('WL:', $lines);

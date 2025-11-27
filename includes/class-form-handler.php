@@ -33,8 +33,7 @@ class Form_Handler {
         }
         
         $date = $date ?? current_time('Y-m-d');
-        $skate_preference = isset($_POST['skate_preference']) ? sanitize_text_field($_POST['skate_preference']) : null;
-        return check_in_player($date, $player_name, $skate_preference);
+        return check_in_player($date, $player_name);
     }
     
     public function handleCheckOut($player_name) {
@@ -42,7 +41,11 @@ class Form_Handler {
             return 'Security check failed';
         }
         
-        check_out_player($player_name);
-        return "{$player_name} has been checked out.";
+        $result = check_out_player($player_name);
+        if ($result) {
+            return "{$player_name} has been checked out.";
+        } else {
+            return "{$player_name} is not currently checked in.";
+        }
     }
 } 

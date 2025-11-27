@@ -85,11 +85,24 @@ function hockeysignin_shortcode() {
     // Replace class with direct time check
     $current_hour = current_time('G'); // 24-hour format
     $current_day = current_time('l'); // Day of week
+    $current_date = current_time('Y-m-d');
     
     // Check if check-in should be disabled
     if (get_option('hockeysignin_off_state')) {
         $custom_text = get_option('hockeysignin_custom_text', 'Sign-in is currently disabled.');
         return '<div class="hockeysignin-message">' . esc_html($custom_text) . '</div>';
+    }
+    
+    // Check if it's a game day
+    $game_days = ['Monday', 'Tuesday', 'Thursday', 'Friday', 'Saturday'];
+    $is_game_day = in_array($current_day, $game_days);
+    
+    // Check for date overrides
+    $date_override = \hockeysignin\Core\DateOverride::getInstance();
+    $has_override = $date_override->hasOverride($current_date);
+    
+    if (!$is_game_day && !$has_override) {
+        return '<div class="hockeysignin-message" style="text-align: center;">Check-in is only available on game days.</div>';
     }
     
     // Check if within allowed hours (8am to 6pm)
@@ -108,19 +121,7 @@ function hockeysignin_shortcode() {
             <input type="text" id="player_name" name="player_name" required>
             
             <?php
-            // Add skate preference dropdown for Fridays
-            $day_of_week = date('l');
-            if ($day_of_week === 'Friday') {
-                $season = get_current_season();
-                if (strpos($season, 'Summer') === false) {
-                    echo '<label for="skate_preference">Skate Preference:</label>';
-                    echo '<select id="skate_preference" name="skate_preference" required>';
-                    echo '<option value="fast">Fast</option>';
-                    echo '<option value="beginner">Beginner/Rusty</option>';
-                    echo '<option value="either">Either</option>';
-                    echo '</select>';
-                }
-            }
+            // No skate preference needed - all skates use same format
             ?>
             
             <div id="new_player_info" style="display: none;">

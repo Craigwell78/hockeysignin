@@ -1,0 +1,11 @@
+# Force proper MIME type for text files
+<FilesMatch "\.(txt|roster)$">
+    Header set Content-Type "text/plain; charset=utf-8"
+    Header set Content-Disposition "inline"
+</FilesMatch>
+
+# Allow direct access to roster files
+<FilesMatch "Pickup_Roster.*\.txt$">
+    Order allow,deny
+    Allow from all
+</FilesMatch>

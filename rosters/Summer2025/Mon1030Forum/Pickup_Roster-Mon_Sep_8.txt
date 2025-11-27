@@ -1,37 +1,31 @@
-Goal:
+Goal: Antonio Mazzotta
 Dark
 
-F-
+F- Guillaume Reid
 F- Blair Sanderson
-F-
-F-
+F- Sébastien Dufour
 F- Colin Vandenbrink
-F-
+F- Scott Long
+F- Steve Patterson
 
-D-
 D- George Guthrie
-D-
+D- Dan Grenier
+D- Dave Frost
 D-
 
 Goal: Nick Sperdakes
 Light
 
-F-
-F-
-F-
-F-
-F-
+F- Cameron Bissell
+F- Sam Legere
+F- Mike Gouthro
+F- Nathan Van Rensburg
+F- Alec Cameron
 F-
 
-D-
-D-
-D-
+D- Guy Pratt
+D- Joel Pearl
+D- Zenon Pilipowicz
 D-
 
 WL:
-1. Steve Patterson
-2. Joel Pearl
-3. Scott Maclean
-4. Dan Grenier
-5. Alec Cameron
-6. Guy Pratt
