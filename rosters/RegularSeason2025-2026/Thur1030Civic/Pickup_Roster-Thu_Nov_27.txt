@@ -2,11 +2,11 @@ Goal: Max Neveu
 Dark
 
 F- Nick Young
-F-
-F-
-F-
-F-
-F- James Whitehead
+F- Steve Patterson
+F- Daniel Doucette
+F- Mateus Bacardi
+F- Krystyne Lawson
+F- Brad Archibald
 
 D- Tim Richardson
 D- Justin Dill
@@ -16,24 +16,16 @@ D- Pat Hickey
 Goal: Ty Firth
 Light
 
-F- Steve Patterson
-F-
+F- Liam Mann
+F- Tyler Rose
 F- Mark Pottie
-F-
-F-
-F-
+F- Gary Dawe
+F- James Whitehead
+F- David Hanlon
 
-D- David Hanlon
 D- Alistair Gilroy
 D- Rob Macisaac
 D- Alex Madden
+D- Jake Rankin
 
 WL:
-1. Daniel Doucette
-2. Krystyne Lawson
-3. Gary Dawe
-4. Brad Archibald
-5. Josh Leblanc
-6. Tyler Rose
-7. Liam Mann
-8. Mateus Bacardi
